@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArticleBlocks } from "@/components/ArticleBlocks";
-import { Recommendations } from "@/components/Recommendations";
-import { ShareButton } from "@/components/ShareButton";
-import { ArticleCard } from "@/components/ArticleCard";
-import { SECTIONS, articlePath, articles, bySlug, getArticle } from "@/content/articles";
+import { ArticleView } from "@/components/ArticleView";
+import { articlePath, generic, getArticle } from "@/content/articles";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return articles.map((a) => ({ section: a.section, slug: a.slug }));
+  return generic().map((a) => ({ section: a.section, slug: a.slug }));
 }
 
 type P = { params: Promise<{ section: string; slug: string }> };
@@ -38,43 +34,6 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
 export default async function ArticlePage({ params }: P) {
   const { section, slug } = await params;
   const a = getArticle(section, slug);
-  if (!a) notFound();
-  const sec = SECTIONS[a.section];
-  const related = a.related.map((s) => bySlug(s)).filter((x) => !!x);
-
-  return (
-    <article className="wrap page article">
-      <p className="crumbs">
-        <Link href="/">Portada</Link>
-        {a.section !== "despedidas" && (
-          <>
-            {" · "}
-            <Link href={sec.path}>{sec.label}</Link>
-          </>
-        )}
-      </p>
-      <h1>{a.h1}</h1>
-      <p className="answer">{a.answer}</p>
-      <ArticleBlocks blocks={a.blocks} />
-      <Recommendations slug={a.slug} />
-      <div className="share-row">
-        <ShareButton title={a.title} path={articlePath(a)} />
-      </div>
-      {related.length > 0 && (
-        <section className="block" aria-labelledby="rel-t">
-          <h2 id="rel-t">Otros marrones relacionados</h2>
-          <ul className="cards">
-            {related.map((r) => (
-              <ArticleCard key={r!.slug} a={r!} />
-            ))}
-          </ul>
-        </section>
-      )}
-      <p>
-        <Link href="/" className="more">
-          ← Volver a la portada de Despedidas
-        </Link>
-      </p>
-    </article>
-  );
+  if (!a || a.custom) notFound();
+  return <ArticleView a={a} />;
 }

@@ -25,7 +25,10 @@ export type Block =
       budget: string;
       items: { titulo: string; texto: string }[];
     }
-  | { type: "play" };
+  | { type: "play" }
+  | { type: "tool"; id: ToolId };
+
+export type ToolId = "bingo" | "coartada" | "subasta" | "esquela" | "ruleta" | "tragaperras" | "rasca";
 
 export type Article = {
   slug: string;
@@ -40,6 +43,10 @@ export type Article = {
   tag: string;
   related: string[];
   blocks: Block[];
+  /** Además de su sección, aparece listado en estas (p. ej. una herramienta en Juegos). */
+  listIn?: Section[];
+  /** Tiene su propia carpeta en app/ (no pasa por [section]/[slug]). */
+  custom?: boolean;
 };
 
 export type Recomendacion = {

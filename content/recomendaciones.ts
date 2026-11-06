@@ -17,6 +17,14 @@ export const recomendaciones: Recomendacion[] = [
       // { label: "Caretas con su cara", url: "https://…", comisionado: true },
     ],
   },
+  {
+    articulo: "subasta-regalos-imposibles",
+    titulo: "Si el regalo ganador te ha convencido",
+    casera: "Antes de comprar nada, prueba la versión casera. Suele hacer más gracia y cuesta menos.",
+    enlaces: [
+      // { label: "Caretas con su cara", url: "https://…", comisionado: true },
+    ],
+  },
 ];
 
 export function recomendacionesDe(slug: string) {

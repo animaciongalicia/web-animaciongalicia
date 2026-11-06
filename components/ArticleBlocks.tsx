@@ -7,8 +7,9 @@ import { Ideas } from "./Ideas";
 import { Checklist } from "./Checklist";
 import { Steps } from "./Steps";
 import { PlayGame } from "./PlayGame";
+import { ToolRenderer } from "./tools/ToolRenderer";
 
-export function ArticleBlocks({ blocks }: { blocks: Block[] }) {
+export function ArticleBlocks({ blocks, toolOverride }: { blocks: Block[]; toolOverride?: React.ReactNode }) {
   return (
     <>
       {blocks.map((b, i) => {
@@ -33,6 +34,8 @@ export function ArticleBlocks({ blocks }: { blocks: Block[] }) {
             return <Ideas key={i} title={b.title} budget={b.budget} items={b.items} />;
           case "play":
             return <PlayGame key={i} />;
+          case "tool":
+            return <ToolRenderer key={i} id={b.id} override={toolOverride} />;
         }
       })}
     </>

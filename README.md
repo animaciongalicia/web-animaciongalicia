@@ -1,6 +1,7 @@
 # Menú Marrón
 
-Revista digital de humor práctico para quien se ha comido el marrón de organizar algo en un grupo de WhatsApp.
+Revista digital de tonterías útiles para quien se ha comido el marrón de organizar algo: una despedida, un cumpleaños,
+un regalo conjunto o lo que toque. El chat de WhatsApp es solo uno de los sitios donde se sufre.
 **Menú Marrón, un proyecto de Animación Galicia.** Next.js 15 + TypeScript, contenido en archivos versionados.
 
 ```bash
@@ -22,6 +23,26 @@ npm run typecheck
 | `/contacto/` | Contacto y «Cuéntanos tu marrón» |
 | `/informacion-editorial/` | Quiénes somos, escenas ficticias y afiliación |
 
+## Herramientas (todas en el navegador, sin cuentas ni base de datos)
+
+| Herramienta | Ruta |
+| --- | --- |
+| Esquela del plan que murió (enlace compartible con vista previa propia) | `/despedidas/esquela-plan-cancelado/` |
+| Operación Coartada (dentro del artículo del cumpleaños sorpresa) | `/cumpleanos/organizar-cumpleanos-sorpresa/` |
+| La subasta de regalos imposibles | `/regalos/subasta-regalos-imposibles/` |
+| Bingo del chat | `/juegos/bingo-grupo-whatsapp/` |
+| Ruleta del marrón | `/juegos/ruleta-del-marron/` |
+| Tragaperras de excusas | `/juegos/tragaperras-excusas/` |
+| Rasca-y-pierde del organizador | `/juegos/rasca-y-pierde-organizador/` |
+| ¿Quién dijo esto? | `/juegos/quien-dijo-esto/` |
+
+Código en `components/tools/`, textos en `content/` (`bingo.ts`, `coartada.ts`, `subasta.ts`, `tragaperras.ts`).
+Para añadir una frase al bingo o un regalo a la subasta basta con añadir una línea al archivo de contenido.
+Una herramienta nueva es un componente + un bloque `{ type: "tool", id }` en un artículo.
+
+La esquela guarda sus datos en la URL (`?plan=…&causa=…`) y `/og/esquela.png` dibuja la imagen de vista previa con
+esos datos. Las esquelas personalizadas llevan `noindex`: solo se indexa la página base.
+
 ## Añadir un artículo (sin tocar rutas)
 
 Edita `content/articles.ts` y añade un objeto a `articles`:
@@ -41,7 +62,8 @@ Edita `content/articles.ts` y añade un objeto a `articles`:
 
 La ruta, la página, el sitemap y la imagen de vista previa (`/og/<slug>.png`) salen solos.
 Tipos de bloque en `content/types.ts`. Las escenas de chat siempre se muestran como «Chat ficticio».
-Para listarlo en la portada, añade el slug a `HOME_ORDER`.
+Para listarlo en la portada, añade el slug a `HOME_ORDER` (recursos) o `HOME_TOOLS` (herramientas).
+`listIn: ["juegos"]` lo muestra también en otra categoría sin duplicar la URL.
 
 ## Actualizar una recomendación
 

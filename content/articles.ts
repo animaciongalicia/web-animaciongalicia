@@ -166,6 +166,7 @@ export const articles: Article[] = [
     answer:
       "Tres juegos para que el amigo de la universidad y la prima del novio dejen de mirarse el móvil. Cada uno con duración y tamaño de grupo. Sin disfraces obligatorios.",
     problema: "Aquí no se conoce nadie",
+    listIn: ["juegos"],
     tag: "Romper el hielo",
     related: ["quien-dijo-esto", "mensajes-pedir-bizum"],
     blocks: [
@@ -228,7 +229,7 @@ export const articles: Article[] = [
     description:
       "Nombres discretos para el grupo, mensaje inicial y checklist corto para montar una fiesta sorpresa sin que el homenajeado se huela nada.",
     answer:
-      "Lo primero: crea el grupo sin el homenajeado y ponle un nombre que no levante sospechas. Aquí van nombres, el mensaje de arranque y un checklist para que nadie la líe.",
+      "Lo primero: monta el plan sin el homenajeado y ponle un nombre que no levante sospechas. Aquí van nombres, el mensaje de arranque, un generador de coartadas y un checklist para que nadie la líe.",
     problema: "Que no se entere",
     tag: "Sorpresa",
     related: ["regalos-absurdos-40-cumpleanos", "nombres-grupos-whatsapp"],
@@ -264,6 +265,12 @@ export const articles: Article[] = [
           { who: "Sistema", text: "Marcos ha salido del grupo" },
         ],
       },
+      { type: "h2", text: "Operación Coartada" },
+      {
+        type: "p",
+        text: "La sorpresa se hunde casi siempre en el mismo punto: la excusa para llevar al homenajeado hasta allí. Dile quién lo entretiene, cuánto tiempo hay que ganar y cuánto sospecha, y la máquina te da tres coartadas y el mensaje de emergencia por si llega antes de hora.",
+      },
+      { type: "tool", id: "coartada" },
       {
         type: "checklist",
         title: "Checklist corto",
@@ -378,6 +385,116 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "esquela-plan-cancelado",
+    section: "despedidas",
+    custom: true,
+    listIn: ["juegos"],
+    title: "Esquela graciosa para un viaje de amigos cancelado",
+    h1: "Esquela graciosa para un viaje o plan de amigos cancelado",
+    description:
+      "Redacta la esquela de un plan que ha muerto: viaje, cena o despedida. Escribe la causa del fallecimiento y compártela. Incluye el plan B.",
+    answer:
+      "El plan ha muerto y alguien tiene que decirlo. Rellena cuatro datos y sale una esquela lista para el chat, con enlace y vista previa. Después, el plan B.",
+    problema: "El plan se ha caído",
+    tag: "Herramienta",
+    related: ["ruleta-del-marron", "tragaperras-excusas"],
+    blocks: [
+      { type: "tool", id: "esquela" },
+      {
+        type: "chat",
+        title: "Cuando la esquela llega al chat",
+        messages: [
+          { who: "Lucía", text: "✝ Nos dejó el fin de semana en Oporto. Le sobreviven una cena en Vigo y 11 personas que jamás habían confirmado.", out: true },
+          { who: "Pablo", text: "Oporto ha fallecido. ¿Quién viene a cenar el sábado?" },
+          { who: "Nuria", text: "Yo voy. Pero que no sea en Oporto." },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "subasta-regalos-imposibles",
+    section: "regalos",
+    listIn: ["juegos"],
+    title: "Regalos graciosos para un amigo que lo tiene todo: la subasta de regalos imposibles",
+    h1: "Regalos graciosos para un amigo que lo tiene todo",
+    description:
+      "Una subasta con dinero ficticio de regalos imposibles que termina en tres versiones reales del regalo: casera, comprable y entre todos.",
+    answer:
+      "Cada uno tiene 100 euros de mentira y puja por regalos imposibles. Lo que ganáis es de mentira, pero el regalo, en tres versiones, es de verdad: casera, comprable y entre todos.",
+    problema: "Qué regalar",
+    tag: "Subasta",
+    related: ["regalos-absurdos-40-cumpleanos", "ruleta-del-marron"],
+    blocks: [{ type: "tool", id: "subasta" }],
+  },
+  {
+    slug: "bingo-grupo-whatsapp",
+    section: "juegos",
+    title: "Bingo del grupo de WhatsApp para jugar mientras organizas la despedida",
+    h1: "Bingo del grupo de WhatsApp: juega mientras organizas",
+    description:
+      "Un bingo de las cosas que pasan en cualquier grupo cuando se organiza algo. Cartón en el móvil, primera línea gana y el premio se entrega en la cena.",
+    answer:
+      "Cada uno abre su cartón y marca lo que pasa de verdad en el grupo. Quien completa la primera línea, gana. Funciona mientras se organiza cualquier cosa.",
+    problema: "Un juego para el grupo",
+    tag: "Bingo",
+    related: ["quien-dijo-esto", "ruleta-del-marron"],
+    blocks: [
+      { type: "tool", id: "bingo" },
+      {
+        type: "steps",
+        title: "Cómo se juega",
+        items: [
+          "Mandad el enlace al grupo. Cada uno recibe un cartón distinto.",
+          "Se marca una casilla solo si alguien lo hace de verdad. Con testigos.",
+          "La primera línea gana. Tres líneas son bingo.",
+          "El premio lo fija el grupo antes de empezar. Que sea ridículo.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ruleta-del-marron",
+    section: "juegos",
+    title: "Ruleta para decidir quién paga, quién organiza y quién se come el marrón",
+    h1: "Ruleta para decidir quién se come el marrón",
+    description:
+      "Una ruleta con los nombres del grupo para decidir quién paga la señal, quién lleva la tarta o quién habla con el que no contesta.",
+    answer:
+      "Escribe los nombres, elige la pregunta y gira. Es más justo que el grupo, y nadie puede decir que lo has decidido tú.",
+    problema: "Quién hace qué",
+    tag: "Ruleta",
+    related: ["tragaperras-excusas", "esquela-plan-cancelado"],
+    blocks: [{ type: "tool", id: "ruleta" }],
+  },
+  {
+    slug: "tragaperras-excusas",
+    section: "juegos",
+    title: "Generador de excusas para no ir a una despedida (con probabilidad de que cuele)",
+    h1: "Generador de excusas para no ir (con probabilidad de que cuele)",
+    description:
+      "Una tragaperras de excusas para no ir a una despedida o a un plan de grupo. Cada excusa lleva su porcentaje de credibilidad.",
+    answer:
+      "Tira de la palanca y sale una excusa con su porcentaje de credibilidad. Por si algún día la necesitas. O por si la reconoces.",
+    problema: "Excusas",
+    tag: "Tragaperras",
+    related: ["ruleta-del-marron", "esquela-plan-cancelado"],
+    blocks: [{ type: "tool", id: "tragaperras" }],
+  },
+  {
+    slug: "rasca-y-pierde-organizador",
+    section: "juegos",
+    title: "Cuántos van a ir de verdad a la despedida: rasca y descubre",
+    h1: "Cuántos van a ir de verdad: rasca y descubre",
+    description:
+      "Un rasca con el número real de gente que pagará a tiempo, pagará tarde o se caerá el día antes. Cien por cien científico.",
+    answer:
+      "Pon cuántos estáis apuntados y rasca. Te dice cuántos pagarán a tiempo, cuántos tarde y cuántos se caerán. Es ficción, pero se parece mucho a la realidad.",
+    problema: "Cuántos vienen",
+    tag: "Rasca",
+    related: ["mensajes-pedir-bizum", "ruleta-del-marron"],
+    blocks: [{ type: "tool", id: "rasca" }],
+  },
 ];
 
 export const SECTIONS = {
@@ -419,12 +536,27 @@ export function getArticle(section: string, slug: string) {
   return articles.find((a) => a.section === section && a.slug === slug);
 }
 
+/** Artículos servidos por [section]/[slug]. Los `custom` tienen su propia carpeta. */
+export const generic = () => articles.filter((a) => !a.custom);
+
+/** Herramientas y juegos interactivos (para la portada y la categoría Juegos). */
+export const HOME_TOOLS = [
+  "esquela-plan-cancelado",
+  "bingo-grupo-whatsapp",
+  "subasta-regalos-imposibles",
+  "ruleta-del-marron",
+  "tragaperras-excusas",
+  "rasca-y-pierde-organizador",
+  "quien-dijo-esto",
+];
+export const herramientas = () => HOME_TOOLS.map((s) => bySlug(s)!).filter(Boolean);
+
 export function bySlug(slug: string) {
   return articles.find((a) => a.slug === slug);
 }
 
 export function bySection(section: Article["section"]) {
-  return articles.filter((a) => a.section === section);
+  return articles.filter((a) => a.section === section || a.listIn?.includes(section));
 }
 
 /** Filtro simple por tipo de problema (datos editoriales). */

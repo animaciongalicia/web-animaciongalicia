@@ -11,7 +11,7 @@ export default function EditorialPage() {
     <div className="wrap page article">
       <h1>Información editorial y afiliación</h1>
       <h2>Quién está detrás</h2>
-      <p>Menú Marrón es un proyecto de Animación Galicia: una revista digital de humor práctico para quien se ha comido el marrón de organizar algo en un grupo de WhatsApp.</p>
+      <p>Menú Marrón es un proyecto de Animación Galicia: una revista digital de tonterías útiles para quien se ha comido el marrón de organizar algo: una despedida, un cumpleaños, un regalo conjunto o lo que toque.</p>
       <h2>Escenas inventadas</h2>
       <p>Las conversaciones, nombres y situaciones de la web son ficticios y están marcados como tal. No ridiculizamos a personas reales.</p>
       <h2>Afiliación</h2>

@@ -31,11 +31,13 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
   const s = SECTIONS[section as Cat];
   const list = bySection(section as Cat);
   return (
-    <div className="wrap page">
-      <p className="kicker">{s.label}</p>
-      <h1>{s.title}</h1>
-      <p className="lead">{s.intro}</p>
-      <ul className="cards">
+    <div className="wrap-wide page">
+      <header className="section-head">
+        <p className="kicker">{s.label}</p>
+        <h1>{s.title}</h1>
+        <p className="lead">{s.intro}</p>
+      </header>
+      <ul className="cards cards-3">
         {list.map((a) => (
           <ArticleCard key={a.slug} a={a} />
         ))}

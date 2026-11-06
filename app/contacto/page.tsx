@@ -14,8 +14,10 @@ export default function ContactoPage() {
   const testMode = !(process.env.RESEND_API_KEY && process.env.CONTACT_TO_EMAIL && process.env.CONTACT_FROM_EMAIL);
   return (
     <div className="wrap page">
-      <p className="kicker">Contacto</p>
-      <h1>Contacto y buzón de marrones</h1>
+      <header className="section-head">
+        <p className="kicker">Contacto</p>
+        <h1>Contacto y buzón de marrones</h1>
+      </header>
       <ContactForms testMode={testMode} />
     </div>
   );
