@@ -12,7 +12,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Menú Marrón · Menudo marrón organizar una despedida en Galicia",
+    default: "Menú Marrón · Menudo marrón organizar este evento",
     template: "%s · Menú Marrón",
   },
   description: SITE.tagline,

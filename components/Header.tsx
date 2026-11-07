@@ -13,7 +13,7 @@ export function Header() {
         <Link href="/" className="logo" aria-label={`${SITE.name}, ir a la portada`}>
           Menú <em>Marrón</em>
         </Link>
-        <p className="mast-tag">Lo mejor (y lo peor) de la red sobre el marrón de organizar algo</p>
+        <p className="mast-tag">Humor con cabeza para quien se ha comido el marrón de organizar</p>
         <NavLinks />
       </div>
     </header>

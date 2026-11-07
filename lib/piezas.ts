@@ -21,3 +21,22 @@ export function fechaLarga(iso: string) {
   const [y, m, d] = iso.split("-").map(Number);
   return `${d} ${MESES[m - 1]} ${y}`;
 }
+
+function textos(p: Pieza): string[] {
+  const out: string[] = [p.dek];
+  for (const b of p.bloques) {
+    if (b.t === "p" || b.t === "h2" || b.t === "cita") out.push(b.x);
+    else if (b.t === "ul" || b.t === "ol") out.push(...b.x);
+    else if (b.t === "caja") out.push(...(Array.isArray(b.x) ? b.x : [b.x]));
+  }
+  return out;
+}
+export const palabras = (p: Pieza) => textos(p).join(" ").split(/\s+/).filter(Boolean).length;
+export const minutosLectura = (p: Pieza) => Math.max(1, Math.round(palabras(p) / 200));
+
+/** Anterior y siguiente dentro de la misma sección (más nuevo primero). */
+export function vecinas(p: Pieza) {
+  const lista = bySeccion(p.seccion);
+  const i = lista.findIndex((x) => x.slug === p.slug);
+  return { siguiente: lista[i + 1], anterior: lista[i - 1] };
+}

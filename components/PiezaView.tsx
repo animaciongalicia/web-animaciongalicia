@@ -1,18 +1,28 @@
 import Link from "next/link";
 import { CopyButton } from "./CopyButton";
-import { ShareBar } from "./ShareBar";
+import { Bloques } from "./Bloques";
 import { EmbedVideo } from "./Embed";
 import { JsonLd } from "./JsonLd";
 import { PiezaCard } from "./PiezaCard";
+import { Sidebar } from "./Sidebar";
 import { SECCIONES } from "@/content/piezas";
-import { bySlug, fechaLarga, piezaPath } from "@/lib/piezas";
+import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, vecinas, visibles } from "@/lib/piezas";
 import { absoluteUrl, SITE } from "@/lib/site";
 import { AGENCIA } from "@/lib/company";
 import type { Pieza } from "@/content/types";
 
 export function PiezaView({ p }: { p: Pieza }) {
   const sec = SECCIONES[p.seccion];
-  const relacionadas = (p.relacionadas ?? []).map((s) => bySlug(s)).filter((x): x is Pieza => !!x);
+  const { anterior, siguiente } = vecinas(p);
+
+  // Sigue leyendo: primero las relacionadas a mano; luego otras de la sección; luego lo último.
+  const elegidas = new Map<string, Pieza>();
+  const candidatas = [
+    ...(p.relacionadas ?? []).map((s) => bySlug(s)),
+    ...bySeccion(p.seccion),
+    ...visibles(),
+  ];
+  for (const c of candidatas) if (c && c.slug !== p.slug && elegidas.size < 3) elegidas.set(c.slug, c);
 
   return (
     <article className="wrap-wide page pieza" data-seccion={p.seccion}>
@@ -29,110 +39,90 @@ export function PiezaView({ p }: { p: Pieza }) {
           publisher: { "@type": "Organization", name: AGENCIA.nombre },
         }}
       />
-      <header className="pieza-head read">
+      <header className="pieza-head">
         <p className="crumbs">
           <Link href="/">Portada</Link>
-          {p.seccion !== "despedidas" && (
-            <>
-              <span aria-hidden="true"> / </span>
-              <Link href={sec.path}>{sec.label}</Link>
-            </>
-          )}
+          <span aria-hidden="true"> / </span>
+          <Link href={sec.path}>{sec.label}</Link>
         </p>
         <p className="kicker">{p.tag}</p>
         <h1>{p.h1}</h1>
         <p className="dek">{p.dek}</p>
         <p className="byline">
-          Por la redacción de Menú Marrón · <time dateTime={p.fecha}>{fechaLarga(p.fecha)}</time>
+          Por la redacción de Menú Marrón · <time dateTime={p.fecha}>{fechaLarga(p.fecha)}</time> ·{" "}
+          {minutosLectura(p)} min de lectura
         </p>
         {p.borrador && (
           <p className="banner" role="note">
-            Muestra de formato (borrador). {p.verificacion}
+            Borrador: visible solo en preview.
           </p>
         )}
       </header>
 
-      <div className="read">
-        {p.embed && <EmbedVideo embed={p.embed} />}
+      <div className="pieza-layout">
+        <div className="pieza-main">
+          {SITE.salientes && p.embed && <EmbedVideo embed={p.embed} />}
+          <div className="prose">
+            <Bloques bloques={p.bloques} />
+          </div>
 
-        <aside className="source" aria-label="Fuentes">
-          <p className="source-title">Lo hemos visto en</p>
-          <ul>
-            {p.fuentes.map((f) => (
-              <li key={f.url}>
-                <a href={f.url} target="_blank" rel="noopener noreferrer nofollow">
-                  {f.nombre}
-                </a>
-                <span className="source-type"> · {f.tipo}</span>
-              </li>
-            ))}
-          </ul>
-        </aside>
+          {p.fuentes && p.fuentes.length > 0 && (
+            <aside className="source" aria-label="Fuentes">
+              <p className="source-title">Fuentes</p>
+              <ul>
+                {p.fuentes.map((f) => (
+                  <li key={f.url}>
+                    {SITE.salientes ? (
+                      <a href={f.url} target="_blank" rel="noopener noreferrer nofollow">
+                        {f.nombre}
+                      </a>
+                    ) : (
+                      f.nombre
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
 
-        <div className="prose">
-          {p.cuerpo.map((t, i) => (
-            <p key={i}>{t}</p>
-          ))}
-        </div>
-
-        {p.items && (
-          <ol className="items">
-            {p.items.map((it) => (
-              <li key={it.titulo}>
-                <h2>{it.titulo}</h2>
-                <p>{it.texto}</p>
-                {it.fuente && (
-                  <p className="source-line">
-                    Fuente:{" "}
-                    <a href={it.fuente.url} target="_blank" rel="noopener noreferrer nofollow">
-                      {it.fuente.nombre}
-                    </a>
-                  </p>
-                )}
-              </li>
-            ))}
-          </ol>
-        )}
-
-        {p.porQueFunciona && (
-          <section className="note">
-            <h2>Por qué funciona</h2>
-            <p>{p.porQueFunciona}</p>
-          </section>
-        )}
-
-        {p.queHacer && (
-          <section className="note note-do">
-            <h2>Qué hacer con esto</h2>
-            <p>{p.queHacer.texto}</p>
-            {p.queHacer.mensaje && (
-              <>
-                <blockquote className="msg">{p.queHacer.mensaje}</blockquote>
-                <ShareBar text={p.queHacer.mensaje} path={piezaPath(p)} copyLabel="Copiar mensaje" />
-              </>
-            )}
-          </section>
-        )}
-
-        {!p.queHacer?.mensaje && (
           <div className="share-row">
             <CopyButton text={absoluteUrl(piezaPath(p))} label="Copiar enlace" />
           </div>
-        )}
+
+          {(anterior || siguiente) && (
+            <nav className="prevnext" aria-label={`Más en ${sec.label}`}>
+              {siguiente ? (
+                <Link href={piezaPath(siguiente)} data-seccion={siguiente.seccion}>
+                  <span className="kicker">← Anterior en {sec.label}</span>
+                  {siguiente.titulo}
+                </Link>
+              ) : (
+                <span />
+              )}
+              {anterior ? (
+                <Link href={piezaPath(anterior)} data-seccion={anterior.seccion} className="next">
+                  <span className="kicker">Siguiente en {sec.label} →</span>
+                  {anterior.titulo}
+                </Link>
+              ) : (
+                <span />
+              )}
+            </nav>
+          )}
+        </div>
+        <Sidebar p={p} />
       </div>
 
-      {relacionadas.length > 0 && (
-        <section className="related" aria-labelledby="rel-t">
-          <h2 id="rel-t" className="section-title">
-            Más de la misma revista
-          </h2>
-          <ul className="cards cards-3">
-            {relacionadas.map((r) => (
-              <PiezaCard key={r.slug} p={r} />
-            ))}
-          </ul>
-        </section>
-      )}
+      <section className="related" aria-labelledby="rel-t">
+        <h2 id="rel-t" className="section-title">
+          Sigue leyendo
+        </h2>
+        <ul className="cards cards-3">
+          {[...elegidas.values()].map((r) => (
+            <PiezaCard key={r.slug} p={r} />
+          ))}
+        </ul>
+      </section>
     </article>
   );
 }

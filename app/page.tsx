@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PiezaCard } from "@/components/PiezaCard";
 import { SECCIONES } from "@/content/piezas";
 import type { Seccion } from "@/content/types";
-import { bySeccion, fechaLarga, galicia, piezaPath, seccionLabel, visibles } from "@/lib/piezas";
+import { DESDE_GALICIA } from "@/content/galicia";
+import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, seccionLabel, visibles } from "@/lib/piezas";
 
-const TITLE = "Menú Marrón · Menudo marrón organizar una despedida en Galicia";
+const TITLE = "Menú Marrón · Menudo marrón organizar este evento";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description:
-    "La revista gallega de lo mejor (y lo peor) que hay en la red sobre organizar despedidas, cumpleaños y regalos: vídeos, historias y hallazgos con comentario propio. Un proyecto de Animación Galicia.",
+    "Ideas, retos y locuras para organizar despedidas de soltero y de soltera, cumpleaños y regalos en Galicia. Humor con cabeza para quien se ha comido el marrón de organizar. Un proyecto de Animación Galicia.",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
@@ -26,17 +26,17 @@ export default function Home() {
   const todas = visibles();
   const lead = todas.find((p) => p.destacada) ?? todas[0];
   const resto = todas.filter((p) => p !== lead);
-  const gal = galicia();
+  const gal = DESDE_GALICIA.map((g) => ({ ...g, pieza: bySlug(g.slug) })).filter((g) => g.pieza);
 
   return (
     <>
       <section className="front-head">
         <div className="wrap-wide">
-          <p className="kicker">Despedidas · Cumpleaños · Regalos</p>
-          <h1>Menudo marrón organizar una despedida en Galicia</h1>
+          <p className="kicker">Despedidas · Cumpleaños · Regalos · Juegos</p>
+          <h1>Menudo marrón organizar este evento</h1>
           <p className="lead">
-            Vídeos, historias y hallazgos de la red sobre organizar fiestas, cumpleaños y regalos. Con nuestro
-            comentario encima y, cuando toca, el mensaje que mandarle al grupo.
+            Ideas, retos y locuras para organizar despedidas de soltero y de soltera, cumpleaños y regalos en Galicia.
+            Con humor, con cabeza y sin humo.
           </p>
         </div>
       </section>
@@ -56,6 +56,7 @@ export default function Home() {
             <p className="dek">{lead.dek}</p>
             <p className="meta">
               <time dateTime={lead.fecha}>{fechaLarga(lead.fecha)}</time>
+              <span>{minutosLectura(lead)} min</span>
               {lead.borrador && <span className="draft">Borrador</span>}
             </p>
             <Link href={piezaPath(lead)} className="more">
@@ -86,7 +87,8 @@ export default function Home() {
         </section>
       )}
 
-      <section className="wrap-wide section" aria-labelledby="sec-t">
+      <section className="band" aria-labelledby="sec-t">
+        <div className="wrap-wide section">
         <h2 id="sec-t" className="section-title">
           Por secciones
         </h2>
@@ -115,23 +117,26 @@ export default function Home() {
             );
           })}
         </div>
+        </div>
       </section>
 
       <section className="wrap-wide section galicia" aria-labelledby="gal-t">
         <div>
           <p className="kicker">Hecha en Galicia</p>
           <h2 id="gal-t" className="feature-title">
-            Para quien organiza en Galicia
+            Para quien organiza desde Galicia
           </h2>
           <p className="deck">
-            Vigo, A Coruña, Santiago, Ourense, Lugo, Pontevedra o Sanxenxo: el marrón es el mismo en todas partes,
-            pero los precios, los planes y las anécdotas no. Aquí vamos juntando lo que pasa por aquí.
+            El marrón es el mismo en Vigo, A Coruña, Santiago, Ourense, Lugo, Pontevedra o Sanxenxo. Los planes, los
+            precios y la lluvia, no. Aquí vamos juntando lo que funciona por aquí.
           </p>
         </div>
         {gal.length > 0 && (
-          <ul className="cards cards-2">
-            {gal.slice(0, 2).map((p) => (
-              <PiezaCard key={p.slug} p={p} />
+          <ul className="gal-list">
+            {gal.map((g) => (
+              <li key={g.slug} data-seccion={g.pieza!.seccion}>
+                <Link href={piezaPath(g.pieza!)}>{g.texto}</Link>
+              </li>
             ))}
           </ul>
         )}
@@ -140,7 +145,7 @@ export default function Home() {
       <section className="wrap-wide section tip" aria-labelledby="tip-t">
         <div className="closing">
           <h2 id="tip-t">¿Has visto algo que tenemos que ver?</h2>
-          <p>Mándanos el enlace. Si nos hace reír y ayuda a quien organiza, lo contamos con tu nombre si quieres.</p>
+          <p>Mándanos el enlace o cuéntanos tu marrón. Si nos hace reír y ayuda a quien organiza, lo contamos.</p>
           <Link href="/contacto/#enlace" className="btn btn-primary">
             Mandar un enlace
           </Link>

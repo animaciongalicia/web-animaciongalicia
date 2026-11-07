@@ -1,46 +1,88 @@
 import Link from "next/link";
-import { AGENCIA } from "@/lib/company";
+import { SECCIONES } from "@/content/piezas";
+import type { Seccion } from "@/content/types";
+import { PIE_DIVERTIDO } from "@/content/galicia";
+import { bySlug, piezaPath } from "@/lib/piezas";
 import { SITE } from "@/lib/site";
 
+const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
+
 export function Footer() {
+  const divertido = PIE_DIVERTIDO.map((d) => ({ ...d, pieza: bySlug(d.slug) })).filter((d) => d.pieza);
   return (
     <footer className="site-footer">
-      <div className="wrap-wide foot-grid">
-        <div>
-          <p className="signature">{SITE.signature}</p>
-          <p className="small">
-            Revista que recoge lo mejor y lo peor de la red sobre organizar fiestas, cumpleaños y regalos, con
-            comentario propio. Los contenidos de terceros se enlazan o se incrustan con su reproductor oficial y se
-            citan con su fuente.
-          </p>
-          <p className="small">
-            <Link href="/informacion-editorial/">Cómo trabajamos, derechos y afiliación</Link>
-          </p>
-        </div>
-        <div className="foot-agency">
-          <p className="foot-title">{AGENCIA.nombre}</p>
-          <p className="small">{AGENCIA.lema}</p>
-          <ul className="brands">
-            {AGENCIA.marcas.map((m) => (
-              <li key={m.nombre}>
-                {m.url ? (
-                  <a href={m.url} target="_blank" rel="noopener">
-                    {m.nombre}
-                  </a>
-                ) : (
-                  m.nombre
-                )}
-              </li>
-            ))}
-          </ul>
-          {AGENCIA.web && (
-            <p className="small">
-              <a href={AGENCIA.web} target="_blank" rel="noopener">
-                Web de la agencia
-              </a>
+      <div className="wrap-wide">
+        <div className="foot-grid">
+          <div className="foot-brand">
+            <p className="foot-logo">
+              Menú <em>Marrón</em>
             </p>
-          )}
+            <p className="small">
+              Menudo marrón organizar este evento. Ideas, retos y locuras para despedidas de soltero y de soltera,
+              cumpleaños y regalos. Hecha en Galicia, con humor y sin humo.
+            </p>
+            <p className="small">
+              {SITE.signature.replace("Animación Galicia", "")}
+              <Link href="/animacion-galicia/">Animación Galicia</Link>
+            </p>
+          </div>
+
+          <nav aria-label="Secciones">
+            <p className="foot-title">Secciones</p>
+            <ul>
+              {ORDEN.map((s) => (
+                <li key={s}>
+                  <Link href={SECCIONES[s].path}>{SECCIONES[s].label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Lo último">
+            <p className="foot-title">Para pasar el rato</p>
+            <ul>
+              {divertido.map((d) => (
+                <li key={d.slug}>
+                  <Link href={piezaPath(d.pieza!)}>{d.texto}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="La revista">
+            <p className="foot-title">La revista</p>
+            <ul>
+              <li>
+                <Link href="/contacto/#enlace">Mándanos un enlace</Link>
+              </li>
+              <li>
+                <Link href="/contacto/#marron">Cuéntanos tu marrón</Link>
+              </li>
+              <li>
+                <Link href="/contacto/">Contacto</Link>
+              </li>
+              <li>
+                <Link href="/animacion-galicia/">Animación Galicia</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
+
+        <ul className="legal-bar" aria-label="Información legal">
+          <li>© {new Date().getFullYear()} Menú Marrón</li>
+          <li>
+            <Link href="/aviso-legal/">Aviso legal</Link>
+          </li>
+          <li>
+            <Link href="/privacidad/">Política de privacidad</Link>
+          </li>
+          <li>
+            <Link href="/cookies/">Política de cookies</Link>
+          </li>
+          <li>
+            <Link href="/como-trabajamos/">Cómo trabajamos</Link>
+          </li>
+        </ul>
       </div>
     </footer>
   );

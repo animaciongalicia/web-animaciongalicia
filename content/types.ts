@@ -4,13 +4,19 @@ export type Fuente = {
   nombre: string;
   url: string;
   tipo: "video" | "articulo" | "hilo" | "imagen" | "audio" | "ficha";
-  autor?: string;
-  /** Fecha de la fuente (texto libre: «marzo de 2026»). */
-  fecha?: string;
 };
 
 /** Solo reproductores oficiales. Nunca se copia ni se re-aloja un vídeo. */
 export type Embed = { proveedor: "youtube"; id: string; titulo: string };
+
+export type Bloque =
+  | { t: "p"; x: string }
+  | { t: "h2"; x: string }
+  | { t: "ul"; x: string[] }
+  | { t: "ol"; x: string[] }
+  | { t: "caja"; tipo: "idea" | "ojo" | "dato" | "frase"; titulo?: string; x: string | string[] }
+  | { t: "cita"; x: string; autor?: string }
+  | { t: "leetambien"; slug: string };
 
 export type Pieza = {
   slug: string;
@@ -21,24 +27,16 @@ export type Pieza = {
   titulo: string;
   /** H1 de la página. */
   h1: string;
-  /** Entradilla: qué es y por qué te importa, en dos líneas. */
+  /** Entradilla: qué es y por qué te importa. */
   dek: string;
   /** Fecha de publicación (ISO, AAAA-MM-DD). */
   fecha: string;
-  fuentes: Fuente[];
+  bloques: Bloque[];
+  /** Hallazgos de la red (solo si se citan). Los enlaces salientes están apagados por defecto. */
+  fuentes?: Fuente[];
   embed?: Embed;
-  /** Texto propio, párrafo a párrafo. Es lo que aporta valor. */
-  cuerpo: string[];
-  /** Compilaciones: varios hallazgos dentro de una misma pieza. */
-  items?: { titulo: string; texto: string; fuente?: Fuente }[];
-  porQueFunciona?: string;
-  /** Qué hacer con esto: situación y, si procede, mensaje para pegar. */
-  queHacer?: { texto: string; mensaje?: string };
-  /** Nota de verificación visible al lector. */
-  verificacion?: string;
-  /** Pieza con ángulo gallego: aparece en el bloque de Galicia. */
+  /** Pieza con ángulo gallego. */
   galicia?: boolean;
-  lugares?: string[];
   relacionadas?: string[];
   destacada?: boolean;
   /** Borrador: visible solo en preview (noindex). No se publica en producción. */

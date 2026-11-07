@@ -1,9 +1,11 @@
 export const SITE = {
   name: "Menú Marrón",
   signature: "Menú Marrón, un proyecto de Animación Galicia",
-  tagline: "La revista de lo mejor (y lo peor) que hay en la red sobre el marrón de organizar fiestas, cumpleaños y regalos. Hecha en Galicia.",
+  tagline: "Menudo marrón organizar este evento: ideas, retos y locuras para despedidas de soltero y soltera, cumpleaños y regalos en Galicia.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   indexable: process.env.SITE_INDEXABLE === "true",
+  /** Enlaces salientes y vídeos incrustados. Apagados hasta que se indique. */
+  salientes: false,
 } as const;
 
 export const NAV = [

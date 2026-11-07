@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { fechaLarga, piezaPath } from "@/lib/piezas";
-import { seccionLabel } from "@/lib/piezas";
+import { fechaLarga, minutosLectura, piezaPath, seccionLabel } from "@/lib/piezas";
 import type { Pieza } from "@/content/types";
 
 export function PiezaCard({ p, big = false }: { p: Pieza; big?: boolean }) {
@@ -15,6 +14,7 @@ export function PiezaCard({ p, big = false }: { p: Pieza; big?: boolean }) {
       <p className="deck">{p.dek}</p>
       <p className="meta">
         <time dateTime={p.fecha}>{fechaLarga(p.fecha)}</time>
+        <span>{minutosLectura(p)} min</span>
         {p.borrador && <span className="draft">Borrador</span>}
       </p>
     </li>
