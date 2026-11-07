@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
   description: SITE.tagline,
   applicationName: SITE.name,
+  alternates: { types: { "application/rss+xml": "/feed.xml" } },
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
   other: { "geo.region": "ES-GA", "geo.placename": "Galicia" },
   openGraph: {

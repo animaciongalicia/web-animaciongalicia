@@ -158,9 +158,9 @@ export const piezas: Pieza[] = [
       {
         t: "ul",
         x: [
-          "Tricount. Pensada para eventos y viajes: creas un evento, añades a la gente, apuntas cada gasto y la app calcula quién debe a quién. Se comparte con un enlace, ideal para un grupo grande.",
-          "Splitwise. La veterana. Reparte gastos de forma muy flexible y lleva el saldo de cada persona. Algunas funciones son de pago, así que conviene mirar qué incluye la versión gratuita antes de montar el grupo.",
-          "Settle Up. Otra aplicación de gastos compartidos para viajes y planes de grupo. Es una alternativa si las anteriores no os convencen.",
+          "Tricount. Pones nombre al viaje o a la cena, invitas al grupo, apuntas cada gasto y la app calcula quién debe a quién. Su web la presenta como gratuita, sin anuncios y sin límites.",
+          "Splitwise. La veterana: reparte los gastos a partes iguales, por porcentajes o por cuotas y lleva el saldo de cada persona. Es gratuita en iPhone, Android y web, pero según su web hay funciones de pago (plan Pro), como escanear tickets, ver gráficos o convertir divisas.",
+          "Settle Up. Otra aplicación de este tipo, por si las anteriores no os convencen. Esta no la hemos comprobado: mirad qué ofrece antes de elegirla.",
           "Bizum. No lleva la cuenta, pero cobra: con la opción de solicitar dinero que tienen muchas apps de bancos, puedes pedir una cantidad a varias personas a la vez.",
         ],
       },
@@ -176,7 +176,7 @@ export const piezas: Pieza[] = [
         x: [
           "Una cena y poco más: no hace falta app. Una persona paga y pide el importe por Bizum.",
           "Un fin de semana en Sanxenxo, Vigo o A Coruña con alojamiento y varias comidas: una app de gastos compartidos. Cada uno apunta lo que paga y la app liquida al final.",
-          "Un grupo de más de diez personas o con invitados que no se conocen: elegid la app que se pueda usar con un enlace, sin que cada persona tenga que crearse una cuenta.",
+          "Un grupo de más de diez personas o con invitados que no se conocen: antes de elegir, mirad si cada persona tiene que crearse una cuenta o basta con que lo haga quien organiza.",
         ],
       },
       { t: "h2", x: "Cómo evitar que se líe" },

@@ -66,6 +66,10 @@ que hace la web: enlaces internos dentro del texto (`leetambien`), un bloque de 
 («Sigue leyendo»), anterior/siguiente dentro de la sección y una barra lateral con la sección, lo último y «Desde
 Galicia». Para medirlo hará falta analítica (no hay ninguna instalada); habría que añadir aviso de cookies antes.
 
+## Estrategia de visitas y posicionamiento
+
+Ver `docs/estrategia-seo-y-visitas.md`.
+
 ## SEO para Galicia (sutil)
 
 - Portada: H1 «Menudo marrón organizar este evento», con descripción que menciona despedidas de soltero y soltera,
@@ -97,7 +101,7 @@ Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso 
   conviene citarlo.
 - [ ] **La agencia**: `web` y `descripcion` de cada marca en `lib/company.ts` (ahora solo hay una palabra para
   Suunia Viajes y Mil Eventos Galicia y nada para SeaGalicia y LuxeGalicia). Comprobar cómo se escribe cada nombre.
-- [ ] **Revisión editorial** de los 8 posts: son textos propios, no proceden de una fuente. Comprobar los datos de
-  las apps de gastos (Tricount, Splitwise, Settle Up, Bizum) y la película citada antes de publicar.
-- [ ] **Acceso de lectura a enlaces**: añadir al entorno los dominios de `docs/fuentes-para-rastreo.md`.
+- [ ] **Revisión editorial** de los 8 posts: son textos propios, no proceden de una fuente. Lo que dicen de Tricount
+  y Splitwise está comprobado contra sus webs; falta Settle Up y Bizum (la película citada es de conocimiento general).
+- [x] Acceso de lectura a enlaces: dominios añadidos al entorno (hay que listar también la variante `www.` de cada uno).
 - [ ] Dominio, correo de los formularios, proyecto de Vercel conectado, y analítica con su aviso de cookies si se quiere medir.

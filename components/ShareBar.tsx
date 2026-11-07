@@ -20,7 +20,7 @@ export function ShareBar({
   return (
     <div className="actions">
       <CopyButton text={full} label={copyLabel} />
-      <a className="btn btn-wa" href={waLink(full)} target="_blank" rel="noopener noreferrer">
+      <a className="btn btn-wa" href={waLink(full)} target="_blank" rel="nofollow noopener noreferrer">
         Mandar por WhatsApp
       </a>
     </div>

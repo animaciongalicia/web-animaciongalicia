@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CopyButton } from "./CopyButton";
+import { ShareBar } from "./ShareBar";
 import { Bloques } from "./Bloques";
 import { EmbedVideo } from "./Embed";
 import { JsonLd } from "./JsonLd";
@@ -29,7 +29,20 @@ export function PiezaView({ p }: { p: Pieza }) {
       <JsonLd
         data={{
           "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Portada", item: absoluteUrl("/") },
+            { "@type": "ListItem", position: 2, name: sec.label, item: absoluteUrl(sec.path) },
+            { "@type": "ListItem", position: 3, name: p.h1, item: absoluteUrl(piezaPath(p)) },
+          ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
           "@type": "Article",
+          image: absoluteUrl(`/og/${p.slug}.png`),
+          dateModified: p.fecha,
           headline: p.h1,
           description: p.dek,
           datePublished: p.fecha,
@@ -86,7 +99,7 @@ export function PiezaView({ p }: { p: Pieza }) {
           )}
 
           <div className="share-row">
-            <CopyButton text={absoluteUrl(piezaPath(p))} label="Copiar enlace" />
+            <ShareBar text={p.titulo} path={piezaPath(p)} copyLabel="Copiar enlace" />
           </div>
 
           {(anterior || siguiente) && (
