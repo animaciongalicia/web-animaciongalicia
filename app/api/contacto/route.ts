@@ -15,13 +15,19 @@ export async function POST(req: Request) {
   // Honeypot: los bots rellenan este campo.
   if (clip(data.web, 50)) return NextResponse.json({ ok: true, mode: "ok" });
 
-  const kind = data.kind === "marron" ? "marron" : "contacto";
+  const kind = data.kind === "marron" ? "marron" : data.kind === "enlace" ? "enlace" : "contacto";
   const mensaje = clip(data.mensaje, 4000);
   const email = clip(data.email, 160);
-  const asunto = clip(data.asunto, 120) || (kind === "marron" ? "Cuéntanos tu marrón" : "Contacto");
+  const asunto =
+    clip(data.asunto, 120) || (kind === "marron" ? "Cuéntanos tu marrón" : kind === "enlace" ? "Enlace sugerido" : "Contacto");
   const permiso = data.permiso === "si";
 
-  if (!mensaje) return NextResponse.json({ error: "Falta el mensaje" }, { status: 400 });
+  const url = clip(data.url, 500);
+  if (kind === "enlace") {
+    if (!/^https?:\/\/[^\s]+$/.test(url)) return NextResponse.json({ error: "Enlace no válido" }, { status: 400 });
+  } else if (!mensaje) {
+    return NextResponse.json({ error: "Falta el mensaje" }, { status: 400 });
+  }
   if (kind === "contacto" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return NextResponse.json({ error: "Correo no válido" }, { status: 400 });
   }
@@ -36,10 +42,11 @@ export async function POST(req: Request) {
   }
 
   const text = [
-    `Tipo: ${kind === "marron" ? "Cuéntanos tu marrón" : "Contacto"}`,
+    `Tipo: ${kind === "marron" ? "Cuéntanos tu marrón" : kind === "enlace" ? "Enlace sugerido" : "Contacto"}`,
+    kind === "enlace" ? `Enlace: ${url}` : "",
     `Asunto: ${asunto}`,
     `Correo de respuesta: ${email || "(no indicado)"}`,
-    kind === "marron" ? `Permiso para publicar: ${permiso ? "SÍ" : "NO"}` : "",
+    kind !== "contacto" ? `Permiso para citar: ${permiso ? "SÍ" : "NO"}` : "",
     "",
     mensaje,
   ]

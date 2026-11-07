@@ -1,18 +1,18 @@
 import { ImageResponse } from "next/og";
-import { articles } from "@/content/articles";
+import { visibles } from "@/lib/piezas";
 
 export const dynamicParams = false;
 
-const HOME_TITLE = "Ideas, juegos y marrones para organizar una despedida";
+const HOME_TITLE = "Menudo marrón organizar una despedida en Galicia";
 
 export function generateStaticParams() {
-  return [{ file: "inicio.png" }, ...articles.map((a) => ({ file: `${a.slug}.png` }))];
+  return [{ file: "inicio.png" }, ...visibles().map((p) => ({ file: `${p.slug}.png` }))];
 }
 
 export async function GET(_req: Request, { params }: { params: Promise<{ file: string }> }) {
   const { file } = await params;
   const slug = file.replace(/\.png$/, "");
-  const title = articles.find((a) => a.slug === slug)?.h1 ?? HOME_TITLE;
+  const title = visibles().find((p) => p.slug === slug)?.h1 ?? HOME_TITLE;
   return new ImageResponse(
     (
       <div
@@ -22,15 +22,15 @@ export async function GET(_req: Request, { params }: { params: Promise<{ file: s
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f6efe0",
-          color: "#2a1608",
+          background: "#f5f2ea",
+          color: "#1b1a17",
           padding: 70,
-          borderBottom: "24px solid #ff5a1f",
+          borderTop: "14px solid #7b2d2d",
         }}
       >
-        <div style={{ fontSize: 38, fontWeight: 800 }}>MENÚ MARRÓN</div>
-        <div style={{ fontSize: title.length > 60 ? 62 : 76, fontWeight: 900, lineHeight: 1.05 }}>{title}</div>
-        <div style={{ fontSize: 30, color: "#a33a00", fontWeight: 700 }}>Un proyecto de Animación Galicia</div>
+        <div style={{ display: "flex", fontSize: 40, fontWeight: 700, letterSpacing: 4 }}>MENÚ MARRÓN</div>
+        <div style={{ display: "flex", fontSize: title.length > 70 ? 56 : 68, fontWeight: 700, lineHeight: 1.1 }}>{title}</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#7b2d2d" }}>Revista hecha en Galicia · Un proyecto de Animación Galicia</div>
       </div>
     ),
     { width: 1200, height: 630 },

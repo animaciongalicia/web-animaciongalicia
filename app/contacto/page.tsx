@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ContactForms } from "@/components/ContactForms";
 
 export const metadata: Metadata = {
-  title: "Contacto y buzón «Cuéntanos tu marrón»",
+  title: "Contacto, enlaces y «Cuéntanos tu marrón»",
   description:
-    "Escríbenos o cuéntanos tu marrón: la frase que hundió tu plan, el Bizum que nunca llegó o el grupo de WhatsApp que se vino abajo.",
+    "Escríbenos, mándanos un enlace que nos tiene que hacer reír o cuéntanos tu marrón de organizar. Revista hecha en Galicia.",
   alternates: { canonical: "/contacto/" },
   openGraph: { url: "/contacto/", title: "Contacto · Menú Marrón", images: [{ url: "/og/inicio.png", width: 1200, height: 630, alt: "Menú Marrón, un proyecto de Animación Galicia" }] },
   twitter: { card: "summary_large_image", images: ["/og/inicio.png"] },
@@ -16,7 +16,7 @@ export default function ContactoPage() {
     <div className="wrap page">
       <header className="section-head">
         <p className="kicker">Contacto</p>
-        <h1>Contacto y buzón de marrones</h1>
+        <h1>Contacto, enlaces y marrones</h1>
       </header>
       <ContactForms testMode={testMode} />
     </div>

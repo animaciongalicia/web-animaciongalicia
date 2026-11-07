@@ -1,59 +1,46 @@
-export type Section = "despedidas" | "cumpleanos" | "regalos" | "juegos";
+export type Seccion = "despedidas" | "cumpleanos" | "regalos" | "juegos";
 
-export type ChatMessage = { who: string; text: string; out?: boolean };
-
-export type Block =
-  | { type: "h2"; text: string }
-  | { type: "p"; text: string }
-  | { type: "chat"; title: string; messages: ChatMessage[] }
-  | { type: "copylist"; title?: string; items: { label?: string; text: string }[] }
-  | {
-      type: "template";
-      title?: string;
-      fields: { key: string; label: string; value: string }[];
-      messages: { label: string; text: string }[];
-    }
-  | { type: "steps"; title?: string; items: string[] }
-  | { type: "checklist"; title?: string; items: string[] }
-  | {
-      type: "games";
-      items: { name: string; duracion: string; tamano: string; reglas: string[] }[];
-    }
-  | {
-      type: "ideas";
-      title: string;
-      budget: string;
-      items: { titulo: string; texto: string }[];
-    }
-  | { type: "play" }
-  | { type: "tool"; id: ToolId };
-
-export type ToolId = "bingo" | "coartada" | "subasta" | "esquela" | "ruleta" | "tragaperras" | "rasca";
-
-export type Article = {
-  slug: string;
-  section: Section;
-  title: string;
-  h1: string;
-  description: string;
-  /** Respuesta o recurso al principio. */
-  answer: string;
-  /** Tipo de problema, para filtrar o enlazar. */
-  problema: string;
-  tag: string;
-  related: string[];
-  blocks: Block[];
-  /** Además de su sección, aparece listado en estas (p. ej. una herramienta en Juegos). */
-  listIn?: Section[];
-  /** Tiene su propia carpeta en app/ (no pasa por [section]/[slug]). */
-  custom?: boolean;
+export type Fuente = {
+  nombre: string;
+  url: string;
+  tipo: "video" | "articulo" | "hilo" | "imagen" | "audio" | "ficha";
+  autor?: string;
+  /** Fecha de la fuente (texto libre: «marzo de 2026»). */
+  fecha?: string;
 };
 
-export type Recomendacion = {
-  articulo: string;
+/** Solo reproductores oficiales. Nunca se copia ni se re-aloja un vídeo. */
+export type Embed = { proveedor: "youtube"; id: string; titulo: string };
+
+export type Pieza = {
+  slug: string;
+  seccion: Seccion;
+  /** Etiqueta corta de la tarjeta. */
+  tag: string;
+  /** <title> y titular en listados (con la búsqueda literal). */
   titulo: string;
-  /** Idea casera: siempre disponible. */
-  casera: string;
-  /** Enlaces externos. Vacío = no se muestra nada comercial. */
-  enlaces: { label: string; url: string; comisionado: boolean }[];
+  /** H1 de la página. */
+  h1: string;
+  /** Entradilla: qué es y por qué te importa, en dos líneas. */
+  dek: string;
+  /** Fecha de publicación (ISO, AAAA-MM-DD). */
+  fecha: string;
+  fuentes: Fuente[];
+  embed?: Embed;
+  /** Texto propio, párrafo a párrafo. Es lo que aporta valor. */
+  cuerpo: string[];
+  /** Compilaciones: varios hallazgos dentro de una misma pieza. */
+  items?: { titulo: string; texto: string; fuente?: Fuente }[];
+  porQueFunciona?: string;
+  /** Qué hacer con esto: situación y, si procede, mensaje para pegar. */
+  queHacer?: { texto: string; mensaje?: string };
+  /** Nota de verificación visible al lector. */
+  verificacion?: string;
+  /** Pieza con ángulo gallego: aparece en el bloque de Galicia. */
+  galicia?: boolean;
+  lugares?: string[];
+  relacionadas?: string[];
+  destacada?: boolean;
+  /** Borrador: visible solo en preview (noindex). No se publica en producción. */
+  borrador?: boolean;
 };

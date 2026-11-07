@@ -1,13 +1,18 @@
 # Menú Marrón
 
-Revista digital de tonterías útiles para quien se ha comido el marrón de organizar algo: una despedida, un cumpleaños,
-un regalo conjunto o lo que toque. El chat de WhatsApp es solo uno de los sitios donde se sufre.
-**Menú Marrón, un proyecto de Animación Galicia.** Next.js 15 + TypeScript, contenido en archivos versionados.
+Revista digital hecha en Galicia que recoge **lo mejor y lo peor de la red sobre el marrón de organizar algo**
+(despedidas, cumpleaños, regalos, grupos) y lo cuenta con comentario propio. No inventa juegos ni herramientas:
+encuentra, selecciona, verifica y añade valor.
+
+**Menú Marrón, un proyecto de Animación Galicia.** La agencia aparece solo en el pie, sin venta directa.
+
+Next.js 15 + TypeScript, contenido en archivos versionados, tipografías autoalojadas (Newsreader + Inter, sin
+peticiones a Google).
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # build de producción
+npm run build
 npm run lint
 npm run typecheck
 ```
@@ -16,79 +21,86 @@ npm run typecheck
 
 | Ruta | Qué es |
 | --- | --- |
-| `/` | Portada de Despedidas |
-| `/cumpleanos/`, `/regalos/`, `/juegos/` | Categorías con introducción y artículos |
-| `/<seccion>/<slug>/` | Artículo (URL canónica única) |
-| `/despedidas/` | Redirige a `/` (los artículos viven en `/despedidas/<slug>/`) |
-| `/contacto/` | Contacto y «Cuéntanos tu marrón» |
-| `/informacion-editorial/` | Quiénes somos, escenas ficticias y afiliación |
+| `/` | Portada de Despedidas, estilo periódico |
+| `/cumpleanos/`, `/regalos/`, `/juegos/` | Secciones: se van llenando con piezas |
+| `/<seccion>/<slug>/` | Una pieza (URL canónica única) |
+| `/despedidas/` | Redirige a `/` (las piezas viven en `/despedidas/<slug>/`) |
+| `/contacto/` | Contacto, **«Mándanos un enlace»** y «Cuéntanos tu marrón» |
+| `/informacion-editorial/` | Cómo trabajamos, derechos de terceros y afiliación |
 
-## Herramientas (todas en el navegador, sin cuentas ni base de datos)
+## Cómo se añade una pieza
 
-| Herramienta | Ruta |
-| --- | --- |
-| Esquela del plan que murió (enlace compartible con vista previa propia) | `/despedidas/esquela-plan-cancelado/` |
-| Operación Coartada (dentro del artículo del cumpleaños sorpresa) | `/cumpleanos/organizar-cumpleanos-sorpresa/` |
-| La subasta de regalos imposibles | `/regalos/subasta-regalos-imposibles/` |
-| Bingo del chat | `/juegos/bingo-grupo-whatsapp/` |
-| Ruleta del marrón | `/juegos/ruleta-del-marron/` |
-| Tragaperras de excusas | `/juegos/tragaperras-excusas/` |
-| Rasca-y-pierde del organizador | `/juegos/rasca-y-pierde-organizador/` |
-| ¿Quién dijo esto? | `/juegos/quien-dijo-esto/` |
-
-Código en `components/tools/`, textos en `content/` (`bingo.ts`, `coartada.ts`, `subasta.ts`, `tragaperras.ts`).
-Para añadir una frase al bingo o un regalo a la subasta basta con añadir una línea al archivo de contenido.
-Una herramienta nueva es un componente + un bloque `{ type: "tool", id }` en un artículo.
-
-La esquela guarda sus datos en la URL (`?plan=…&causa=…`) y `/og/esquela.png` dibuja la imagen de vista previa con
-esos datos. Las esquelas personalizadas llevan `noindex`: solo se indexa la página base.
-
-## Añadir un artículo (sin tocar rutas)
-
-Edita `content/articles.ts` y añade un objeto a `articles`:
+Todo está en `content/piezas.ts`. Una pieza es un hallazgo + texto propio:
 
 ```ts
 {
-  slug: "mi-articulo",
-  section: "despedidas",        // despedidas | cumpleanos | regalos | juegos
-  title: "…", h1: "…", description: "…",
-  answer: "Respuesta o recurso al principio.",
-  problema: "Acabo de crear el grupo",   // tipo de problema (sirve para filtrar/enlazar)
-  tag: "Nombres de grupo",
-  related: ["otro-slug"],
-  blocks: [ /* chat, copylist, template, steps, checklist, games, ideas, play */ ],
+  slug: "mi-pieza",
+  seccion: "despedidas",            // despedidas | cumpleanos | regalos | juegos
+  tag: "Viral",
+  titulo: "…",                      // <title>: lleva la búsqueda literal
+  h1: "…",
+  dek: "Entradilla: qué es y por qué te importa.",
+  fecha: "2026-11-07",
+  fuentes: [{ nombre: "…", url: "https://…", tipo: "video" }],
+  embed: { proveedor: "youtube", id: "XXXXXXXXXXX", titulo: "…" },   // opcional
+  cuerpo: ["Texto propio, párrafo a párrafo."],
+  porQueFunciona: "…",
+  queHacer: { texto: "…", mensaje: "Mensaje para pegar en el grupo" },
+  verificacion: "Qué comprobamos y qué no",
+  galicia: true,                    // ángulo gallego: sale en el bloque de Galicia
+  lugares: ["Vigo"],
+  relacionadas: ["otro-slug"],
 }
 ```
 
-La ruta, la página, el sitemap y la imagen de vista previa (`/og/<slug>.png`) salen solos.
-Tipos de bloque en `content/types.ts`. Las escenas de chat siempre se muestran como «Chat ficticio».
-Para listarlo en la portada, añade el slug a `HOME_ORDER` (recursos) o `HOME_TOOLS` (herramientas).
-`listIn: ["juegos"]` lo muestra también en otra categoría sin duplicar la URL.
+- Compilaciones (varios hallazgos en una pieza): usa `items`.
+- `destacada: true` la pone de pieza principal en la portada.
+- `borrador: true`: visible solo en preview (con aviso y `noindex`). **En producción no existe** (404, fuera del
+  sitemap).
 
-## Actualizar una recomendación
+## Reglas editoriales (derechos y honestidad)
 
-`content/recomendaciones.ts`. Cada entrada tiene una idea `casera` (siempre visible) y `enlaces` externos.
-Con `enlaces` vacío no se muestra nada comercial. Para un enlace de afiliación real:
-`{ label, url, comisionado: true }`. Sale con aviso visible y `rel="sponsored"`.
+- Se enlaza o se incrusta con el reproductor **oficial** (YouTube sin cookies). No se copia ni se aloja ningún
+  vídeo, imagen ni meme ajeno. El texto es propio; las citas, breves y con fuente.
+- Las fuentes salen con `rel="noopener noreferrer nofollow"` y `target="_blank"`.
+- No se hace humor a costa de daños ni de personas privadas. Lo que no se ha podido verificar se dice
+  en `verificacion`.
+- Quien sea autor de algo enlazado puede pedir su retirada desde Contacto.
+
+## SEO (posicionamiento en Galicia)
+
+- Título y H1 de la portada con «Galicia»; metadatos `geo.region = ES-GA`; JSON-LD de `WebSite` y `Organization`
+  (Animación Galicia, `areaServed: Galicia`) y de `Article` en cada pieza.
+- Canonicals, Open Graph con imagen por pieza (`/og/<slug>.png`), sitemap y robots coherentes con el entorno.
+- En preview todo va con `noindex` y `robots.txt` bloqueado. Para producción: `SITE_INDEXABLE=true`.
+- Las piezas con ángulo gallego (`galicia: true`, `lugares`) alimentan el bloque «Para quien organiza en Galicia».
+  Las páginas locales por ciudad (Vigo, A Coruña…) necesitan datos reales y quedan para una fase posterior.
 
 ## Variables de entorno (`.env.example`)
 
 | Variable | Para qué |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | URL pública (canonicals, sitemap, Open Graph). Sin barra final. |
-| `SITE_INDEXABLE` | `true` solo en producción. Si no, `noindex` y `robots.txt` bloqueado. |
-| `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL` | Envío real del formulario (Resend). |
+| `SITE_INDEXABLE` | `true` solo en producción. |
+| `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL` | Envío real de los formularios (Resend). |
 
-Sin las tres variables de correo, el formulario funciona en **modo de prueba**: avisa de forma visible y no envía nada.
+Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso visible, no envían nada).
+
+## Pie con la agencia
+
+`lib/company.ts`: lema y marcas de Animación Galicia. Rellena la `url` de cada una para que se enlacen; sin `url` se
+muestra solo el nombre.
 
 ## Pendiente antes de publicar
 
-- [ ] **Dominio.** Sin decidir. `animaciongalicia.com` puede tener web propia; Menú Marrón ocupa `/`. Valorar dominio propio o subdominio.
-- [ ] **Contacto.** Destinatario y proveedor de correo; verificar un envío real antes de darlo por operativo.
-- [ ] **Privacidad / aviso legal.** Faltan los datos del titular. No se ha inventado texto legal. El formulario recoge correos, así que hace falta antes de producción.
-- [ ] **Afiliación.** Enlaces reales del propietario (por ahora no hay ninguno y el bloque comercial está oculto).
-- [ ] **Migración.** Si el dominio tiene URLs anteriores: mapa de equivalencias y redirecciones, revisión de URLs prioritarias, comprobación de seguridad y acciones manuales/indexación en Search Console antes de activar.
-- [ ] **Identidad.** Logo y colores definitivos (ahora logotipo de texto y paleta propuesta).
-- [ ] Revisión editorial del humor por el propietario.
-
-Fase posterior (no incluido): salas privadas, capturas de WhatsApp, cuentas, Supabase, IA en tiempo de uso, guías locales y reservas.
+- [ ] **Las 3 piezas actuales son muestras de formato** (borrador): se montaron con resultados de búsqueda sin poder
+  leer las páginas originales. Verificarlas o sustituirlas por piezas reales.
+- [ ] **Acceso de lectura a enlaces.** El entorno de Claude no puede abrir webs externas salvo las permitidas.
+  Para que Claude lea los enlaces que se le pasen, hay que ampliar el acceso de red del entorno, o pegar el texto.
+- [ ] URLs de la agencia y de sus marcas (Suunia Viajes, Mil Eventos Galicia, SeaGalicia, LuxeGalicia) y
+  comprobar cómo se escribe cada nombre.
+- [ ] Dominio (sin decidir). Si hay URLs anteriores: mapa de redirecciones y revisión en Search Console.
+- [ ] Destinatario y proveedor de correo de los formularios; verificar un envío real.
+- [ ] Privacidad y aviso legal (faltan los datos del titular; no se ha inventado texto legal).
+- [ ] Proyecto de Vercel conectado a este repositorio (no hay ninguno ahora).
+- [ ] Revisión editorial del tono por el propietario.

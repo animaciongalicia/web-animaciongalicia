@@ -6,11 +6,14 @@ export function Header() {
   return (
     <header className="masthead">
       <div className="wrap-wide">
-        <p className="mast-top">Revista digital · Un proyecto de Animación Galicia</p>
+        <p className="mast-top">
+          <span>Revista digital · Hecha en Galicia</span>
+          <span className="mast-right">Un proyecto de Animación Galicia</span>
+        </p>
         <Link href="/" className="logo" aria-label={`${SITE.name}, ir a la portada`}>
-          Menú <span>Marrón</span>
+          Menú <em>Marrón</em>
         </Link>
-        <p className="mast-tag">Tonterías útiles para sobrevivir al marrón de organizar algo</p>
+        <p className="mast-tag">Lo mejor (y lo peor) de la red sobre el marrón de organizar algo</p>
         <NavLinks />
       </div>
     </header>

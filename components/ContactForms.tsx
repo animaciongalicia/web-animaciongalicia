@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Kind = "contacto" | "marron";
+type Kind = "contacto" | "marron" | "enlace";
 
 function Form({ kind }: { kind: Kind }) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "test" | "error">("idle");
@@ -33,36 +33,44 @@ function Form({ kind }: { kind: Kind }) {
   }
 
   const marron = kind === "marron";
+  const publica = kind !== "contacto";
 
   return (
     <form onSubmit={onSubmit} className="form card">
       {/* honeypot */}
       <input type="text" name="web" tabIndex={-1} autoComplete="off" className="hp" aria-hidden="true" />
-      {!marron && (
+      {kind === "contacto" && (
         <label className="field">
           <span>Asunto</span>
           <input type="text" name="asunto" required maxLength={120} />
         </label>
       )}
+      {kind === "enlace" && (
+        <label className="field">
+          <span>Enlace (vídeo, noticia, hilo, publicación…)</span>
+          <input type="url" name="url" required maxLength={500} placeholder="https://" />
+        </label>
+      )}
       <label className="field">
-        <span>{marron ? "Tu anécdota" : "Mensaje"}</span>
-        <textarea name="mensaje" required rows={marron ? 7 : 5} maxLength={4000} />
+        <span>
+          {marron ? "Tu anécdota" : kind === "enlace" ? "Por qué nos hará reír (una frase basta)" : "Mensaje"}
+        </span>
+        <textarea name="mensaje" required={kind !== "enlace"} rows={marron ? 7 : 5} maxLength={4000} />
       </label>
       <label className="field">
-        <span>{marron ? "Correo (solo si quieres que te contestemos)" : "Correo para responderte"}</span>
-        <input type="email" name="email" required={!marron} maxLength={160} />
+        <span>{kind === "contacto" ? "Correo para responderte" : "Correo (solo si quieres que te contestemos)"}</span>
+        <input type="email" name="email" required={kind === "contacto"} maxLength={160} />
       </label>
-      {marron && (
+      {publica && (
         <label className="check">
           <input type="checkbox" name="permiso" />
           <span>
-            Me parece bien que se publique en Menú Marrón (sin mi nombre). Si no marcas esto, solo lo leemos y nos
-            reímos en privado.
+            Me parece bien que se cite en Menú Marrón (sin mi nombre salvo que lo pongas). Si no marcas esto, solo lo leemos.
           </span>
         </label>
       )}
       <button className="btn btn-primary" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Enviando…" : marron ? "Contar mi marrón" : "Enviar mensaje"}
+        {status === "sending" ? "Enviando…" : marron ? "Contar mi marrón" : kind === "enlace" ? "Mandar el enlace" : "Enviar mensaje"}
       </button>
       <div role="status" aria-live="polite" className="form-status">
         {status === "ok" && <p className="ok">Recibido. Gracias.</p>}
@@ -81,15 +89,23 @@ export function ContactForms({ testMode }: { testMode: boolean }) {
   return (
     <>
       {testMode && (
-        <p className="banner">
+        <p className="banner-test">
           Modo de prueba: el envío no está conectado a ningún correo todavía. Lo que escribas aquí no llegará a
           nadie.
         </p>
       )}
       <section id="contacto" className="block">
         <h2>Escríbenos</h2>
-        <p>Una duda, una colaboración o algo que corregir. Dinos asunto, mensaje y a qué correo contestarte.</p>
+        <p>Una duda, una colaboración o algo que corregir. Si eres autor de algo que enlazamos y prefieres que lo retiremos, escríbenos aquí.</p>
         <Form kind="contacto" />
+      </section>
+      <section id="enlace" className="block">
+        <h2>Mándanos un enlace</h2>
+        <p>
+          ¿Un vídeo, una noticia, un hilo, una reseña legendaria? Si tiene que ver con organizar algo y te ha hecho
+          reír, mándalo. Lo leemos, lo comprobamos y, si entra, lo contamos con comentario propio y citando la fuente.
+        </p>
+        <Form kind="enlace" />
       </section>
       <section id="marron" className="block">
         <h2>Cuéntanos tu marrón</h2>

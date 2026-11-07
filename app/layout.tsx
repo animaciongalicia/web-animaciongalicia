@@ -1,18 +1,24 @@
 import type { Metadata, Viewport } from "next";
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource-variable/inter";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
+import { AGENCIA } from "@/lib/company";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Menú Marrón · Ideas, juegos y marrones para organizar una despedida",
+    default: "Menú Marrón · Menudo marrón organizar una despedida en Galicia",
     template: "%s · Menú Marrón",
   },
   description: SITE.tagline,
   applicationName: SITE.name,
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
+  other: { "geo.region": "ES-GA", "geo.placename": "Galicia" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -23,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6efe0",
+  themeColor: "#f5f2ea",
   width: "device-width",
   initialScale: 1,
 };
@@ -32,6 +38,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                name: SITE.name,
+                url: SITE.url,
+                inLanguage: "es",
+                description: SITE.tagline,
+                publisher: { "@type": "Organization", name: AGENCIA.nombre },
+              },
+              {
+                "@type": "Organization",
+                name: AGENCIA.nombre,
+                description: AGENCIA.lema,
+                areaServed: { "@type": "AdministrativeArea", name: "Galicia" },
+              },
+            ],
+          }}
+        />
         <a href="#main" className="skip">
           Saltar al contenido
         </a>

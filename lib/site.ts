@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Menú Marrón",
   signature: "Menú Marrón, un proyecto de Animación Galicia",
-  tagline: "Tonterías útiles, juegos absurdos y mensajes listos para sobrevivir al marrón de organizar algo",
+  tagline: "La revista de lo mejor (y lo peor) que hay en la red sobre el marrón de organizar fiestas, cumpleaños y regalos. Hecha en Galicia.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   indexable: process.env.SITE_INDEXABLE === "true",
 } as const;
