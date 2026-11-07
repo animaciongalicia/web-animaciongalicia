@@ -1,3 +1,7 @@
+/** Subcarpeta donde vive la revista dentro del dominio (p. ej. "/revista"). Vacío = raíz. */
+const rawBase = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").trim();
+export const BASE = rawBase && rawBase !== "/" ? `/${rawBase.replace(/^\/+|\/+$/g, "")}` : "";
+
 export const SITE = {
   name: "Menú Marrón",
   signature: "Menú Marrón, un proyecto de Animación Galicia",
@@ -16,6 +20,11 @@ export const NAV = [
   { label: "Contacto", href: "/contacto/" },
 ] as const;
 
+/** Añade la subcarpeta a una ruta interna (para fetch, compartir, etc.). */
+export function withBase(path: string) {
+  return `${BASE}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export function absoluteUrl(path: string) {
-  return `${SITE.url}${path.startsWith("/") ? path : `/${path}`}`;
+  return `${SITE.url}${withBase(path)}`;
 }

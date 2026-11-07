@@ -1,5 +1,5 @@
 import { piezaPath, visibles } from "@/lib/piezas";
-import { SITE } from "@/lib/site";
+import { absoluteUrl, SITE } from "@/lib/site";
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -12,8 +12,8 @@ export function GET() {
     .map(
       (p) => `    <item>
       <title>${esc(p.titulo)}</title>
-      <link>${SITE.url}${piezaPath(p)}</link>
-      <guid isPermaLink="true">${SITE.url}${piezaPath(p)}</guid>
+      <link>${absoluteUrl(piezaPath(p))}</link>
+      <guid isPermaLink="true">${absoluteUrl(piezaPath(p))}</guid>
       <pubDate>${new Date(p.fecha + "T09:00:00Z").toUTCString()}</pubDate>
       <description>${esc(p.dek)}</description>
     </item>`,
@@ -23,7 +23,7 @@ export function GET() {
 <rss version="2.0">
   <channel>
     <title>${esc(SITE.name)}</title>
-    <link>${SITE.url}/</link>
+    <link>${absoluteUrl("/")}</link>
     <description>${esc(SITE.tagline)}</description>
     <language>es</language>
 ${items}

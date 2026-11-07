@@ -1,4 +1,123 @@
-# Cómo hacer que Menú Marrón posicione, aparezca en buscadores y tenga visitas
+# Estrategia de visitas y posicionamiento (actualizada con el dominio real)
+
+> **Cambio importante respecto a la versión anterior:** el dominio no es nuevo. `animaciongalicia.com` tiene 15 años
+> y, según tus datos, unos 3.000 enlaces entrantes. Es el mayor activo del proyecto. También es una web WordPress en
+> producción con páginas comerciales que ya trabajan «despedidas en Galicia». Por eso la revista va en una
+> **subcarpeta** y no en la raíz. Detalle en `docs/arquitectura-subcarpeta.md`.
+
+## A. Cómo se aprovecha la antigüedad del dominio y los enlaces
+
+1. **La revista dentro de `/revista/`** hereda toda la autoridad del dominio. Un post nuevo parte con ventaja sobre el
+   de una web recién creada, que sin enlaces tarda meses en aparecer. Con un dominio de 15 años y enlaces, las
+   primeras posiciones para búsquedas largas pueden llegar mucho antes. No puedo prometer plazos ni cifras: hay que
+   medirlo en Search Console.
+2. **Verificar los 3.000 enlaces.** Hoy es un dato tuyo que no he podido contrastar. Hace falta saber a qué páginas
+   apuntan: eso decide qué proteger y a qué páginas conviene enviar autoridad desde la revista.
+3. **Enlaces internos con sentido** entre WordPress y la revista (cuando lo indiques). Es la palanca más potente y la
+   más barata: los posts de la revista, con temas más amplios y virales, enviarán autoridad a las páginas
+   comerciales, y las comerciales, a los posts.
+4. **El nombre ya pesa en Galicia.** Se usa en las descripciones y en el contenido («hecha en Galicia», «un
+   proyecto de Animación Galicia») sin forzarlo en cada título.
+5. **No competir con lo existente.** La revista no hace páginas por ciudad ni disputa «despedidas en Vigo» o
+   «packs»: eso ya lo hace WordPress. La revista trabaja lo informativo, lo largo y lo absurdo.
+
+## B. Cómo atraer «todo tipo de búsquedas absurdas»
+
+La idea: cubrir de forma masiva las **preguntas que la gente teclea de verdad y que nadie contesta bien**. Es el
+terreno donde un dominio con autoridad rinde más y donde la competencia (directorios y agencias) no escribe.
+
+**Formato estrella: las «preguntas chotas»** (ya hay 4 posts). Un post por tema con 8–11 preguntas como subtítulos,
+cada una con una respuesta de 40–70 palabras que realmente ayuda. Los subtítulos con forma de pregunta son los que
+Google reutiliza en «Otras preguntas de los usuarios». Cada post puede aparecer por 10 búsquedas distintas.
+
+**Otros formatos para tener variedad (el contenido «random» que pides):**
+
+| Formato | Ejemplo de titular |
+| --- | --- |
+| Pregunta chota | ¿Se puede ir a una despedida en pijama? |
+| Mito o verdad | ¿Es verdad que al novio le toca pagar? |
+| Versus | Barco o casa rural para una despedida: quién gana |
+| Lista absurda | 15 cosas que solo entiende quien organizó una despedida |
+| Glosario | Diccionario del grupo de WhatsApp de una despedida |
+| Protocolo | Qué hacer si el novio se queda dormido a las once |
+| Calendario | Qué fin de semana es peor para hacer una despedida en Galicia |
+| Test o cuestionario | ¿Qué amigo eres en la despedida? (ver las 4 herramientas) |
+| Caso real (anónimo) | «Se equivocaron de día y celebraron el cumple de la profe» |
+
+## C. Banco de 40 ideas de titulares (sin volúmenes validados)
+
+No son volúmenes de búsqueda, sino preguntas plausibles. La prioridad se decide con Search Console cuando haya datos.
+
+**Despedidas**
+1. ¿Se puede ir a una despedida de soltero en pijama?
+2. ¿Qué pasa si el novio se duerme en su despedida?
+3. ¿Es obligatorio ir a la despedida de un amigo que no soportas?
+4. ¿Cuánto se pone cada uno en una despedida de soltero?
+5. ¿Se puede hacer una despedida de soltera sin alcohol?
+6. ¿Qué se le dice al novio cuando vuelve de su despedida?
+7. ¿Es de mala educación no ir a una despedida?
+8. ¿Cuántos días antes de la boda se hace la despedida?
+9. ¿Se puede hacer una despedida de soltero y soltera juntos?
+10. ¿Qué hacer si llueve en una despedida en Galicia?
+11. ¿Qué lleva una maleta de despedida?
+12. Diccionario del grupo de WhatsApp de una despedida
+13. 15 cosas que solo entiende quien organizó una despedida
+14. Barco o casa rural para una despedida: quién gana
+15. Mitos de las despedidas de soltero que nadie debería creer
+
+**Cumpleaños**
+16. ¿A qué edad se deja de hacer fiesta de cumpleaños?
+17. ¿Quién tiene que invitar en un cumpleaños de adultos?
+18. ¿Qué se dice en un brindis de cumpleaños si no se te ocurre nada?
+19. Cumpleaños en lunes: cómo celebrarlo sin morir
+20. ¿Cuánto hay que gastar en el regalo del cumpleaños de un amigo?
+21. Discursos de cumpleaños de tres frases
+22. ¿Cuántas velas se ponen en una tarta de 40?
+23. Cumpleaños sorpresa: 10 cosas que salen mal
+24. ¿Qué hago si no me gusta la fiesta sorpresa que me han hecho?
+
+**Regalos**
+25. ¿Qué se le regala a alguien que no quiere nada?
+26. Regalos absurdos que sí se pueden usar
+27. ¿Se puede regalar un regalo que te han regalado?
+28. Cómo envolver un regalo que no tiene forma
+29. Regalos para el novio que no sean un disfraz
+30. ¿Qué regalar a un amigo que se va a vivir fuera?
+
+**Dinero y organización**
+31. ¿Quién paga la despedida si el novio no puede?
+32. Cómo pedir dinero a los amigos sin quedar de borde
+33. ¿Qué hacer si un amigo no paga la despedida?
+34. Hoja de gastos de una despedida: modelo para copiar
+35. ¿Se puede reclamar la señal si un amigo se cae?
+
+**Humor y absurdo**
+36. ¿Por qué nadie responde en el grupo de la despedida?
+37. Tipos de amigos en una despedida (y cuál eres)
+38. El primer mensaje del grupo de una despedida, analizado
+39. Frases que se oyen en todas las despedidas
+40. Cosas que no se te deben olvidar para una despedida (y se te olvidan)
+
+## D. Cómo se produce a este ritmo
+
+- **Ritmo**: 2–3 posts por semana al principio. Con el formato de preguntas, un post de 450–550 palabras se hace en
+  una sesión.
+- **Flujo**: eliges 5–10 titulares del banco; yo escribo los posts, los reviso contra lo que se pueda verificar y
+  los publicamos por tandas. Tú das el visto bueno antes de publicar.
+- **Calidad**: cada respuesta tiene que ser útil de verdad. Un texto vacío con la pregunta en el título no aguanta
+  en Google. Por eso las respuestas llevan criterio, ejemplos y un toque local.
+- **Lo que solo tú puedes aportar**: anécdotas reales (anónimas), precios reales, fotos propias. Un post con una
+  anécdota real gana siempre a uno genérico.
+
+## E. Las 4 herramientas como contenido
+
+Un post por herramienta (cuando pases los dominios): qué problema resuelve, cómo se usa y por qué es útil. Son
+posts de alto valor porque convierten visitas en uso real, y cada herramienta puede ser un imán de enlaces propio.
+Se enlazan entre sí y con las preguntas chotas relacionadas.
+
+---
+
+# Plan original (sigue siendo válido en lo no contradictorio)
 
 Plan realista, ordenado por prioridad. Ninguna cifra está prometida: hoy no hay datos propios (no hay analítica ni
 Search Console) y el dominio es nuevo. Lo que sí se puede afirmar es qué hace falta y en qué orden.

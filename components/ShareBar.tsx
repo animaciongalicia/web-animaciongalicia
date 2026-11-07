@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { CopyButton } from "./CopyButton";
 import { waLink } from "@/lib/share";
+import { withBase } from "@/lib/site";
 
 /** Copiar + WhatsApp. `path` se añade al final del texto con el origen real. */
 export function ShareBar({
@@ -16,7 +17,7 @@ export function ShareBar({
 }) {
   const [origin, setOrigin] = useState("");
   useEffect(() => setOrigin(window.location.origin), []);
-  const full = path ? `${text}\n${origin}${path}` : text;
+  const full = path ? `${text}\n${origin}${withBase(path)}` : text;
   return (
     <div className="actions">
       <CopyButton text={full} label={copyLabel} />

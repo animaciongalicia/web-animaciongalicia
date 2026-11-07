@@ -7,10 +7,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { AGENCIA } from "@/lib/company";
-import { SITE } from "@/lib/site";
+import { absoluteUrl, SITE, BASE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(SITE.url + BASE + "/"),
   title: {
     default: "Menú Marrón · Menudo marrón organizar este evento",
     template: "%s · Menú Marrón",
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 "@type": "WebSite",
                 name: SITE.name,
-                url: SITE.url,
+                url: absoluteUrl("/"),
                 inLanguage: "es",
                 description: SITE.tagline,
                 publisher: { "@type": "Organization", name: AGENCIA.nombre },

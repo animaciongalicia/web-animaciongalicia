@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { withBase } from "@/lib/site";
 
 type Kind = "contacto" | "marron" | "enlace";
 
@@ -18,7 +19,7 @@ function Form({ kind }: { kind: Kind }) {
     body.kind = kind;
     body.permiso = fd.get("permiso") ? "si" : "no";
     try {
-      const res = await fetch("/api/contacto/", {
+      const res = await fetch(withBase("/api/contacto/"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

@@ -16,6 +16,20 @@ npm run lint
 npm run typecheck
 ```
 
+## Dominio y dónde vive
+
+`animaciongalicia.com` tiene 15 años y ~3.000 enlaces entrantes (dato aportado, sin verificar), y **hoy es una web
+WordPress comercial en producción**. La revista **no ocupa la raíz**: está preparada para vivir en `/revista/`.
+Ver `docs/arquitectura-subcarpeta.md`.
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://animaciongalicia.com   # sin subcarpeta
+NEXT_PUBLIC_BASE_PATH=/revista                      # vacío = raíz
+```
+
+Con `NEXT_PUBLIC_BASE_PATH=/revista`, todas las rutas de abajo cuelgan de `/revista` (menú, enlaces, canonicals,
+sitemap, feed, imágenes de vista previa, formularios y botones de compartir).
+
 ## Estructura
 
 | Ruta | Qué es |
@@ -104,4 +118,7 @@ Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso 
 - [ ] **Revisión editorial** de los 8 posts: son textos propios, no proceden de una fuente. Lo que dicen de Tricount
   y Splitwise está comprobado contra sus webs; falta Settle Up y Bizum (la película citada es de conocimiento general).
 - [x] Acceso de lectura a enlaces: dominios añadidos al entorno (hay que listar también la variante `www.` de cada uno).
-- [ ] Dominio, correo de los formularios, proyecto de Vercel conectado, y analítica con su aviso de cookies si se quiere medir.
+- [ ] **Decidir dónde vive la revista**: subcarpeta `/revista/` con proxy (recomendado), subdominio, o ninguna.
+- [ ] **Auditoría de enlaces entrantes** antes de tocar nada (Search Console → Enlaces).
+- [ ] Los 4 dominios de las herramientas y qué hace cada una, para su post.
+- [ ] Correo de los formularios, proyecto de Vercel conectado, y analítica con su aviso de cookies si se quiere medir.
