@@ -64,8 +64,7 @@ export function Cookies() {
             Cookies
           </p>
           <p>
-            Usamos Google Analytics para saber qué se lee y mejorar la revista. Solo se activa si lo aceptas. Más en la{" "}
-            <Link href="/cookies/">política de cookies</Link>.
+            Medimos las visitas con Google Analytics, solo si aceptas. <Link href="/cookies/">Más info</Link>.
           </p>
           <div className="cookie-botones">
             <button type="button" className="btn" onClick={() => guardar("rechazado")}>

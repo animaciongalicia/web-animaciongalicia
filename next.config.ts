@@ -9,10 +9,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
-      // /despedidas/ equivale a la portada. Los artículos viven en /despedidas/<slug>/.
+      // La página de la agencia se fusionó con «Cómo trabajamos».
       base
-        ? { source: `/${base}/despedidas`, destination: `/${base}/`, permanent: true, basePath: false as const }
-        : { source: "/despedidas", destination: "/", permanent: true },
+        ? { source: `/${base}/animacion-galicia`, destination: `/${base}/como-trabajamos/`, permanent: true, basePath: false as const }
+        : { source: "/animacion-galicia", destination: "/como-trabajamos/", permanent: true },
       // URLs del WordPress anterior (solo si la revista vive en la raíz del dominio).
       ...(base ? [] : REDIRECTS_WORDPRESS.map((r) => ({ ...r, permanent: true }))),
     ];

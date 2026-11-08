@@ -37,7 +37,7 @@ const POSTS = [
   "/cumpleanos/preguntas-chorras-cumpleanos-adultos/",
 ];
 const innerWidthSafe = (n) => (n === "escritorio" ? 1100 : 340);
-const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/animacion-galicia/", "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"];
+const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/despedidas/", "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"];
 
 (async () => {
   const browser = await chromium.launch();
@@ -152,20 +152,41 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     const legal = await page.$$eval(".legal-bar a", (a) => a.map((x) => x.getAttribute("href")));
     ok(`[${name}] pie: enlaces legales (aviso, privacidad, cookies, cómo trabajamos)`, JSON.stringify(legal) === JSON.stringify(["/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"]), legal.join());
     const footLinks = await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")));
-    ok(`[${name}] pie: enlace a la agencia solo en el pie`, footLinks.includes("/animacion-galicia/"));
-    const mainAg = await page.$$eval("main a[href='/animacion-galicia/']", (a) => a.length);
+    ok(`[${name}] pie: enlace a la agencia solo en el pie`, footLinks.includes("/como-trabajamos/"));
+    const mainAg = await page.$$eval("main a[href='/como-trabajamos/']", (a) => a.length);
     ok(`[${name}] la página de la agencia no se enlaza desde el cuerpo`, mainAg === 0);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.screenshot({ path: `${OUT}/v5-${name}-pie.png` });
 
     // --- Agencia: nombres a la vista, sin enlaces
-    await page.goto(B + "/animacion-galicia/");
+    await page.goto(B + "/como-trabajamos/");
     const ag = await page.textContent("main");
     const dom = await page.$$eval(".marcas .web", (e) => e.map((x) => x.textContent));
     const enl = await page.$$eval("main a[href^='http']", (a) => a.map((x) => ({ h: x.href, t: x.target, r: x.rel })));
     ok(`[${name}] agencia: 18 webs del grupo, todas enlazadas en pestaña nueva`, dom.length === 18 && enl.length === 18 && enl.every((x) => esGrupo(x.h) && x.t === "_blank" && /noopener/.test(x.r) && !/nofollow/.test(x.r)), `${dom.length}/${enl.length}`);
     ok(`[${name}] agencia: 4 nombres a la vista`, ["Suunia Viajes", "Mil Eventos Galicia", "SeaGalicia", "LuxeGalicia"].every((n) => ag.includes(n)));
     await page.screenshot({ path: `${OUT}/v5-${name}-agencia.png`, fullPage: true });
+
+    // --- Archivo de Despedidas y buscador
+    await page.goto(B + "/despedidas/");
+    ok(`[${name}] archivo /despedidas/ lista todos los posts de la sección`, (await page.$$(".cards .card")).length >= 16, String((await page.$$(".cards .card")).length));
+    await page.fill("#q", "barco");
+    await page.waitForSelector(".buscador-res li");
+    const rb = await page.$$eval(".buscador-res li a", (a) => a.map((x) => x.getAttribute("href")));
+    ok(`[${name}] buscador: «barco» encuentra el post de barco o casa rural`, rb.some((h) => h.includes("barco-o-casa-rural")), rb.join());
+    await page.fill("#q", "zzzxxx");
+    ok(`[${name}] buscador: sin resultados muestra aviso`, /Nada con eso/.test(await page.textContent(".buscador-res")));
+    const sm = await (await page.request.get(B + "/sitemap.xml")).text();
+    const paths = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, ""));
+    const largos = [];
+    for (const u of paths) {
+      await page.goto(B + u);
+      const t = await page.title();
+      if (t.length > 60 && !/^(Aviso legal|Política)/.test(t)) largos.push(`${u} (${t.length})`);
+    }
+    ok(`[${name}] títulos de todas las páginas del sitemap ≤ 60 caracteres`, largos.length === 0, largos.join(" | "));
+    const mal = await page.request.get(B + "/animacion-galicia/", { maxRedirects: 0 });
+    ok(`[${name}] /animacion-galicia/ redirige a /como-trabajamos/`, mal.status() === 308 && mal.headers()["location"].endsWith("/como-trabajamos/"), mal.headers()["location"]);
 
     // --- Legales: contenido completo
     for (const [u, claves] of [["/aviso-legal/", ["LSSI-CE", "Propiedad intelectual", "Legislación aplicable"]], ["/privacidad/", ["RGPD", "Tus derechos", "Conservación", "Base jurídica"]], ["/cookies/", ["22.2 de la LSSI-CE", "navegador"]]]) {
@@ -203,7 +224,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     ok(`[${name}] /contacto/#marron abre el formulario de marrón`, await page.isVisible("#marron textarea"));
 
     // --- Cabeceras a todo el ancho
-    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/privacidad/", "/animacion-galicia/", "/contacto/"]) {
+    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/privacidad/", "/como-trabajamos/", "/contacto/"]) {
       await page.goto(B + u);
       const w = await page.evaluate(() => {
         const head = document.querySelector(".pieza-head, .section-head, .front-head > .wrap-wide");

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { Buscador } from "@/components/Buscador";
 import Link from "next/link";
 import { PiezaView } from "@/components/PiezaView";
 import { SECCIONES } from "@/content/piezas";
+import { META_SECCIONES } from "@/content/seo-meta";
 import { absoluteUrl } from "@/lib/site";
 import { metadataPieza } from "@/lib/seo";
-import { bySeccion, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, preguntas } from "@/lib/piezas";
+import { bySeccion, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, preguntas, visibles } from "@/lib/piezas";
 
 export const dynamicParams = false;
 
@@ -26,12 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ section: 
   const { section } = await params;
   if (CATS.includes(section as Cat)) {
     const s = SECCIONES[section as Cat];
+    const m = META_SECCIONES[section];
     const img = absoluteUrl("/og/inicio.png");
     return {
-      title: s.title,
-      description: s.intro,
+      title: { absolute: m.title },
+      description: m.description,
       alternates: { canonical: absoluteUrl(s.path) },
-      openGraph: { url: absoluteUrl(s.path), title: s.title, description: s.intro, images: [{ url: img, width: 1200, height: 630, alt: "Menú Marrón" }] },
+      openGraph: { url: absoluteUrl(s.path), title: m.title, description: m.description, images: [{ url: img, width: 1200, height: 630, alt: "Menú Marrón" }] },
       twitter: { card: "summary_large_image", images: [img] },
     };
   }
@@ -64,6 +67,7 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
           <p className="kicker">{s.label}</p>
           <h1>{s.title}</h1>
           <p className="lead">{s.intro}</p>
+          <Buscador items={visibles().map((p) => ({ t: p.titulo, d: p.dek, tag: p.tag, sec: p.seccion, href: piezaPath(p) }))} />
         </div>
       </section>
 

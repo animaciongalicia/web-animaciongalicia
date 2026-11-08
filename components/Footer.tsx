@@ -25,7 +25,7 @@ export function Footer() {
             </p>
             <p className="small">
               {SITE.signature.replace("Animación Galicia", "")}
-              <Link href="/animacion-galicia/">Animación Galicia</Link>
+              <Link href="/como-trabajamos/">Animación Galicia</Link>
             </p>
           </div>
 

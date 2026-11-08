@@ -40,7 +40,8 @@ NEXT_PUBLIC_BASE_PATH=                              # vacío: raíz. (/revista s
 | `/<seccion>/<slug>/` | Un post: texto a la izquierda y barra lateral para seguir navegando |
 | `/despedidas/` | Redirige a `/` (los posts viven en `/despedidas/<slug>/`) |
 | `/contacto/` | Contacto, «Mándanos un enlace» y «Cuéntanos tu marrón» |
-| `/animacion-galicia/` | La agencia y sus webs. Solo se enlaza desde el pie |
+| `/despedidas/` | Archivo de la sección con buscador y temas |
+| `/animacion-galicia/` | 301 a `/como-trabajamos/` (la agencia y las 18 webs viven ahí, enlazada solo desde el pie) |
 | URLs del WordPress antiguo | 301 a su equivalente (`content/redirects.ts`, propuesta a validar) |
 | `/aviso-legal/`, `/privacidad/`, `/cookies/`, `/como-trabajamos/` | Páginas legales, en la barra de abajo del pie |
 
@@ -111,7 +112,7 @@ Ver `docs/estrategia-seo-y-visitas.md`.
 
 ## Enlaces salientes y afiliación
 
-- **Webs del grupo: activos.** Abren en pestaña nueva y sin `nofollow` (`SITE.salientes.grupo`). Aparecen en `/animacion-galicia/`
+- **Webs del grupo: activos.** Abren en pestaña nueva y sin `nofollow` (`SITE.salientes.grupo`). Aparecen en `/como-trabajamos/`
   y, de forma discreta, en cajas «Del grupo» dentro de algunos posts (bloque `grupo`, máximo 1–2 por post).
 - **Terceros: apagados** (`SITE.salientes.terceros = false`): las fuentes salen como texto y los vídeos incrustados no se cargan.
 - **Afiliación: ninguna.** El botón de compartir por WhatsApp lleva `nofollow`.

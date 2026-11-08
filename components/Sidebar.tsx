@@ -32,7 +32,7 @@ export function Sidebar({ p }: { p: Pieza }) {
           ))}
         </ul>
         {mismas.length > cercanas.length && (
-          <Link href={SECCIONES[p.seccion].path} className="more">
+          <Link href={p.seccion === "despedidas" ? "/despedidas/" : SECCIONES[p.seccion].path} className="more">
             Ver los {mismas.length} →
           </Link>
         )}

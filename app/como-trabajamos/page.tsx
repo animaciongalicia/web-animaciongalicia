@@ -71,6 +71,7 @@ export default function ComoTrabajamos() {
             <ul className="marcas">
               {g.webs.map((w) => (
                 <li key={w.dominio}>
+                  <p className="nombre-web">{w.nombre}</p>
                   <p className="web">
                     <EnlaceGrupo dominio={w.dominio}>{w.ancla}</EnlaceGrupo>
                   </p>

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/newsreader/opsz.css";
-import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource-variable/newsreader/wght.css";
+import "@fontsource-variable/newsreader/wght-italic.css";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import { Header } from "@/components/Header";

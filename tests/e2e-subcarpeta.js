@@ -20,7 +20,7 @@ const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
   ok("tipografías cargan bajo /revista", fonts.some((f) => /Newsreader/.test(f)) && fonts.some((f) => /Inter/.test(f)));
 
   // Rastreo de todos los enlaces internos de varias páginas
-  const pages = ["/revista/", "/revista/regalos/", "/revista/juegos/", "/revista/cumpleanos/", "/revista/contacto/", "/revista/despedidas/despedida-como-resacon-en-las-vegas/", "/revista/animacion-galicia/", "/revista/privacidad/"];
+  const pages = ["/revista/", "/revista/regalos/", "/revista/juegos/", "/revista/cumpleanos/", "/revista/contacto/", "/revista/despedidas/despedida-como-resacon-en-las-vegas/", "/revista/como-trabajamos/", "/revista/privacidad/"];
   const all = new Set();
   for (const u of pages) {
     await page.goto(B + u);
@@ -55,8 +55,8 @@ const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
   ok("formulario funciona bajo /revista", true);
 
   // Redirección sin cadena
-  const r1 = await page.request.get(B + "/revista/despedidas/", { maxRedirects: 0 });
-  ok("/revista/despedidas/ → /revista/ en un solo salto", r1.status() === 308 && r1.headers()["location"].endsWith("/revista/"), r1.headers()["location"]);
+  const r1 = await page.request.get(B + "/revista/animacion-galicia/", { maxRedirects: 0 });
+  ok("/revista/animacion-galicia/ → /revista/como-trabajamos/ en un solo salto", r1.status() === 308 && r1.headers()["location"].endsWith("/revista/como-trabajamos/"), r1.headers()["location"]);
 
   // Aislamiento: la raíz y rutas fuera de /revista no existen aquí (las sirve WordPress)
   const root = await page.request.get(B + "/", { maxRedirects: 0 });
