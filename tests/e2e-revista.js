@@ -7,6 +7,8 @@ const B = "http://localhost:3100";
 const res = [];
 const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
 
+const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "gincanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
+const esGrupo = (h) => { try { return GRUPO.includes(new URL(h).hostname); } catch { return false; } };
 const POSTS = [
   "/despedidas/despedida-como-resacon-en-las-vegas/",
   "/despedidas/ideas-locas-grupo-whatsapp-despedida/",
@@ -26,6 +28,11 @@ const POSTS = [
   "/regalos/regalos-absurdos-que-si-se-pueden-usar/",
   "/regalos/preguntas-chotas-regalos/",
   "/cumpleanos/cumpleanos-tematicos-adultos-galicia/",
+  "/actividades-para-despedidas-de-soltero-y-soltera/",
+  "/despedidas-de-soltero-y-soltera-en-a-coruna/",
+  "/despedidas-de-soltero-y-soltera-en-vigo/",
+  "/despedidas-de-soltero-y-soltera-en-sanxenxo/",
+  "/despedidas-de-soltero-y-soltera-en-ourense/",
   "/cumpleanos/cumpleanos-sorpresa-cosas-que-salen-mal/",
   "/cumpleanos/preguntas-chotas-cumpleanos-adultos/",
 ];
@@ -44,10 +51,10 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
 
     // --- Portada
     await page.goto(B + "/");
-    ok(`[${name}] <title> de la portada conserva «Despedidas en Galicia»`, (await page.title()) === "Despedidas en Galicia: menudo marrón organizar este evento · Menú Marrón", await page.title());
+    ok(`[${name}] <title> de la portada SIN la palabra «despedidas»`, (await page.title()) === "Menudo marrón organizar este evento · Menú Marrón" && !/despedid/i.test(await page.title()), await page.title());
     ok(`[${name}] H1 = Menudo marrón organizar este evento`, (await page.textContent("h1")) === "Menudo marrón organizar este evento");
     const desc = await page.getAttribute('meta[name="description"]', "content");
-    ok(`[${name}] description con soltero, soltera, cumpleaños y Galicia`, /soltero/.test(desc) && /soltera/.test(desc) && /cumplea/.test(desc) && /Galicia/.test(desc), desc.slice(0, 70));
+    ok(`[${name}] description: despedidas en Galicia, cumpleaños, celebraciones y eventos`, /despedidas en Galicia/.test(desc) && /cumplea/.test(desc) && /celebraciones/.test(desc) && /eventos/.test(desc), desc.slice(0, 90));
     const labels = await page.$$eval("nav[aria-label=Principal] a", (a) => a.map((x) => x.textContent));
     ok(`[${name}] orden menú`, JSON.stringify(labels) === JSON.stringify(["Despedidas", "Cumpleaños", "Regalos", "Juegos", "Contacto"]));
     // Portada densa: situaciones, preguntas con ancla, secundarias y últimas
@@ -77,9 +84,12 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     for (const u of [...OTHER, ...POSTS]) {
       await page.goto(B + u);
       const h1 = (await page.$$("h1")).length;
-      const ext = await page.$$eval("a[href^='http']", (a) => a.map((x) => x.href).filter((h) => !h.startsWith("https://wa.me/")));
+      const todos = await page.$$eval("a[href^='http']", (a) => a.map((x) => ({ h: x.href, t: x.target, r: x.rel })));
+      const ext = todos.filter((x) => !x.h.startsWith("https://wa.me/") && !esGrupo(x.h)).map((x) => x.h);
+      const malGrupo = todos.filter((x) => esGrupo(x.h) && (x.t !== "_blank" || !/noopener/.test(x.r) || /nofollow/.test(x.r))).map((x) => x.h);
+      if (malGrupo.length) ok(`[${name}] ${u} enlaces al grupo abren en pestaña nueva y sin nofollow`, false, malGrupo.join());
       const ov = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
-      ok(`[${name}] ${u} H1=1, sin overflow, sin enlaces salientes`, h1 === 1 && !ov && ext.length === 0, `h1=${h1} ov=${ov} ext=${ext.join()}`);
+      ok(`[${name}] ${u} H1=1, sin overflow, sin enlaces salientes (salvo grupo y WhatsApp)`, h1 === 1 && !ov && ext.length === 0, `h1=${h1} ov=${ov} ext=${ext.join()}`);
     }
 
     // --- Post: layout de revista (no estrecho, con barra lateral)
@@ -151,7 +161,8 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     await page.goto(B + "/animacion-galicia/");
     const ag = await page.textContent("main");
     const dom = await page.$$eval(".marcas .web", (e) => e.map((x) => x.textContent));
-    ok(`[${name}] agencia: 18 webs del grupo como texto (sin enlaces)`, dom.length === 18 && (await page.$$("main a[href^='http']")).length === 0, `${dom.length}`);
+    const enl = await page.$$eval("main a[href^='http']", (a) => a.map((x) => ({ h: x.href, t: x.target, r: x.rel })));
+    ok(`[${name}] agencia: 18 webs del grupo, todas enlazadas en pestaña nueva`, dom.length === 18 && enl.length === 18 && enl.every((x) => esGrupo(x.h) && x.t === "_blank" && /noopener/.test(x.r) && !/nofollow/.test(x.r)), `${dom.length}/${enl.length}`);
     ok(`[${name}] agencia: 4 nombres a la vista`, ["Suunia Viajes", "Mil Eventos Galicia", "SeaGalicia", "LuxeGalicia"].every((n) => ag.includes(n)));
     await page.screenshot({ path: `${OUT}/v5-${name}-agencia.png`, fullPage: true });
 
@@ -203,6 +214,27 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
       });
       ok(`[${name}] ${u} cabecera a todo el ancho`, (Math.abs(w.h1 - w.head) <= 2 || u === "/") && (w.lead === "none" || w.lead === "-") && w.h1 >= Math.min(w.wrap, innerWidthSafe(name)) - 5, JSON.stringify(w));
     }
+
+    // «Lee también» discreto (sin caja)
+    await page.goto(B + "/despedidas/guia-para-organizar-despedidas-en-galicia/");
+    const lee = await page.evaluate(() => { const e = document.querySelector(".leetambien"); const c = getComputedStyle(e); return { bg: c.backgroundColor, bw: c.borderLeftWidth, fs: parseFloat(c.fontSize) }; });
+    ok(`[${name}] «lee también» discreto: sin fondo, borde fino y letra pequeña`, lee.bg === "rgba(0, 0, 0, 0)" && lee.bw === "2px" && lee.fs <= 17, JSON.stringify(lee));
+    // Páginas con ruta propia: canonical en la raíz y migas
+    await page.goto(B + "/despedidas-de-soltero-y-soltera-en-a-coruna/");
+    const can = await page.getAttribute('link[rel="canonical"]', "href");
+    ok(`[${name}] página conservada con canonical propio en la raíz`, can.endsWith("/despedidas-de-soltero-y-soltera-en-a-coruna/"), can);
+    const r = await page.request.get(B + "/despedidas-de-soltero-y-soltera-en-otras-ciudades/", { maxRedirects: 0 });
+    ok(`[${name}] «otras ciudades» redirige al pilar de actividades`, r.status() === 308 && r.headers()["location"].endsWith("/actividades-para-despedidas-de-soltero-y-soltera/"), r.headers()["location"]);
+    // Fotos (en preview se ven los marcadores de ejemplo)
+    await page.goto(B + "/fotos/");
+    await page.waitForLoadState("networkidle");
+    const gal = await page.$$eval(".galeria img", (i) => i.map((x) => x.naturalWidth));
+    ok(`[${name}] galería: 5 fotos cargadas`, gal.length === 5 && gal.every((w) => w > 0), JSON.stringify(gal));
+    await page.goto(B + "/");
+    await page.waitForLoadState("networkidle");
+    const tira = await page.$$eval(".tira-fotos img", (i) => i.map((x) => x.naturalWidth));
+    ok(`[${name}] portada: tira de fotos cargada`, tira.length >= 4 && tira.every((w) => w > 0), JSON.stringify(tira));
+    ok(`[${name}] pie: enlace a Fotos chotas`, (await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")))).includes("/fotos/"));
 
     const r404 = await page.goto(B + "/no-existe/");
     ok(`[${name}] 404`, r404.status() === 404);

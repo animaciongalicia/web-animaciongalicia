@@ -16,7 +16,9 @@ export type Bloque =
   | { t: "ol"; x: string[] }
   | { t: "caja"; tipo: "idea" | "ojo" | "dato" | "frase"; titulo?: string; x: string | string[] }
   | { t: "cita"; x: string; autor?: string }
-  | { t: "leetambien"; slug: string };
+  | { t: "leetambien"; slug: string }
+  | { t: "foto"; src: string; ancho: number; alto: number; alt: string; pie?: string }
+  | { t: "grupo"; dominio: string; x: string };
 
 export type Pieza = {
   slug: string;
@@ -41,4 +43,9 @@ export type Pieza = {
   destacada?: boolean;
   /** Borrador: visible solo en preview (noindex). No se publica en producción. */
   borrador?: boolean;
+  /** Ruta propia en la raíz del dominio (p. ej. "/actividades-para-despedidas-de-soltero-y-soltera/").
+   *  Sirve para conservar URLs antiguas con demanda sin redirigirlas. */
+  ruta?: string;
+  /** Foto de cabecera (se ve arriba del post, en las tarjetas y en la portada). */
+  imagen?: { src: string; ancho: number; alto: number; alt: string; credito?: string };
 };

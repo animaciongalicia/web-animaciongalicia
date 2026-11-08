@@ -7,6 +7,7 @@ const URLS = [
   "/despedidas-de-soltero-y-soltera-en-a-coruna/",
   "/despedidas-de-soltero-y-soltera-en-sanxenxo/",
   "/despedidas-de-soltero-y-soltera-en-ourense/",
+  "/despedidas-de-soltero-y-soltera-en-vigo/",
   "/actividades-para-despedidas-de-soltero-y-soltera/",
 ];
 

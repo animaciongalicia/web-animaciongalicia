@@ -396,3 +396,51 @@ ul, ol { padding-left: 1.2em; }
 @media (min-width: 800px) { .tip-grid { grid-template-columns: 1fr 1fr; } }
 .tip-grid .closing { max-width: none; }
 .closing-alt { background: var(--card); border-left-color: var(--c-cumpleanos); }
+
+/* Fotos y «del grupo» */
+.foto { margin: 28px 0; }
+.foto img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); background: var(--card); }
+.foto figcaption { font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); padding-top: 8px; }
+.caja-grupo { background: var(--card); border: 1px dashed var(--sec); border-left: 5px solid var(--sec); }
+.caja-grupo a { font-weight: 600; text-decoration-color: var(--sec); }
+.marcas .web a { text-decoration: none; color: var(--c-despedidas); }
+.marcas .web a:hover { text-decoration: underline; }
+.hero-foto { margin: 0 0 24px; }
+.hero-foto img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.hero-foto figcaption { font-family: var(--font-ui); font-size: 0.74rem; color: var(--muted); padding-top: 6px; }
+.thumb { margin: 0 0 12px; aspect-ratio: 16 / 9; overflow: hidden; background: var(--sec-soft); border: 1px solid var(--rule); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Galería y tira de fotos */
+.galeria { list-style: none; padding: 0; margin: 0 0 32px; columns: 1; column-gap: 20px; }
+@media (min-width: 640px) { .galeria { columns: 2; } }
+@media (min-width: 1000px) { .galeria { columns: 3; } }
+.galeria li { break-inside: avoid; margin-bottom: 20px; }
+.galeria figure { margin: 0; border: 1px solid var(--rule); background: var(--card); }
+.galeria img { width: 100%; height: auto; display: block; }
+.galeria figcaption { display: grid; gap: 2px; padding: 10px 14px 12px; font-size: 0.98rem; }
+.galeria .pie { line-height: 1.3; }
+.galeria .credito { font-family: var(--font-ui); font-size: 0.72rem; color: var(--muted); }
+.galeria-cta { max-width: none; margin-top: 12px; }
+.tira-fotos { list-style: none; padding: 0; margin: 0 0 10px; display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 640px) { .tira-fotos { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .tira-fotos { grid-template-columns: repeat(6, 1fr); } }
+.tira-fotos li { aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--rule); background: var(--card); }
+.tira-fotos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lead-foto { margin-bottom: 18px; border: 1px solid var(--rule); }
+.lead-foto img { width: 100%; height: auto; display: block; }
+
+/* ===== Enlaces internos discretos (sustituyen a las cajas grandes) ===== */
+.leetambien { margin: 16px 0; padding: 0 0 0 12px; border: 0; border-left: 2px solid var(--rule); background: transparent; font-size: 0.97rem; line-height: 1.4; }
+.leetambien .caja-titulo { display: inline; margin: 0 8px 0 0; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.12em; }
+.leetambien a { display: inline; font-size: 1rem; font-weight: 500; color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.leetambien a:hover { color: var(--sec); text-decoration-color: var(--sec); }
+.enlace-interno { margin: 14px 0; padding: 0 0 0 12px; border-left: 2px solid var(--rule); background: transparent; font-size: 0.97rem; line-height: 1.4; }
+.enlace-interno span { font-size: 0.62rem; color: var(--muted); margin-right: 8px; }
+.enlace-interno a { font-weight: 500; color: var(--muted); text-decoration-color: var(--rule); }
+.enlace-interno a:hover { color: var(--sec); text-decoration-color: var(--sec); }
+.caja-grupo { background: transparent; border: 0; border-left: 3px solid var(--rule); padding: 6px 14px; margin: 18px 0; }
+.caja-grupo p { font-size: 0.97rem; line-height: 1.4; }
+.caja-grupo .caja-titulo { color: var(--muted); margin-bottom: 2px; }
+.caja-grupo a { font-weight: 500; color: var(--ink); }
+.side-box .more { display: inline-block; margin-top: 8px; }

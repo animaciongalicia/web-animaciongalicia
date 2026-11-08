@@ -3,16 +3,19 @@ import Link from "next/link";
 import { SECCIONES } from "@/content/piezas";
 import type { Pieza, Seccion } from "@/content/types";
 import { DESDE_GALICIA, PORTADA_SECUNDARIAS, SITUACIONES } from "@/content/galicia";
+import Image from "next/image";
 import { absoluteUrl } from "@/lib/site";
+import { fotosVisibles } from "@/lib/fotos";
 import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, preguntas, seccionLabel, visibles } from "@/lib/piezas";
 
-// El <title> conserva «Despedidas en Galicia»: es la consulta que hoy trae los clics de la portada (posición ~11).
-const TITLE = "Despedidas en Galicia: menudo marrón organizar este evento · Menú Marrón";
+// Decisión del propietario: el <title> NO lleva la palabra «despedidas». La fuerza para «despedidas en Galicia» va en la
+// meta descripción, en el primer párrafo, en los subtítulos y en los enlaces internos.
+const TITLE = "Menudo marrón organizar este evento · Menú Marrón";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description:
-    "Despedidas de soltero y de soltera en Galicia, cumpleaños y regalos: ideas, retos y trucos para organizar sin que el grupo se hunda. Menú Marrón, un proyecto de Animación Galicia.",
+    "Coñas, ideas y consejos para despedidas en Galicia, cumpleaños, celebraciones y demás eventos. Menudo marrón organizarlos: aquí está el plan, el humor y el mensaje para el grupo. Un proyecto de Animación Galicia.",
   alternates: { canonical: absoluteUrl("/") },
   openGraph: {
     url: absoluteUrl("/"),
@@ -29,6 +32,7 @@ export default function Home() {
   const lead = todas.find((p) => p.destacada) ?? todas[0];
   const secundarias = PORTADA_SECUNDARIAS.map((s) => bySlug(s)).filter((p): p is Pieza => !!p && p !== lead);
   const ultimas = todas.filter((p) => p !== lead && !secundarias.includes(p)).slice(0, 6);
+  const fotos = fotosVisibles().slice(0, 6);
   const situaciones = SITUACIONES.map((s) => ({ ...s, pieza: bySlug(s.slug) })).filter((s) => s.pieza);
   const gal = DESDE_GALICIA.map((g) => ({ ...g, pieza: bySlug(g.slug) })).filter((g) => g.pieza);
 
@@ -81,9 +85,15 @@ export default function Home() {
             En portada
           </h2>
           <article className="lead-story" data-seccion={lead.seccion}>
-            <div className="lead-art" aria-hidden="true">
-              <span>{lead.tag}</span>
-            </div>
+            {lead.imagen ? (
+              <div className="lead-foto">
+                <Image src={lead.imagen.src} width={lead.imagen.ancho} height={lead.imagen.alto} alt={lead.imagen.alt} priority sizes="(min-width: 1100px) 640px, 100vw" />
+              </div>
+            ) : (
+              <div className="lead-art" aria-hidden="true">
+                <span>{lead.tag}</span>
+              </div>
+            )}
             <p className="kicker">
               {seccionLabel(lead.seccion)} · {lead.tag}
             </p>
@@ -145,6 +155,28 @@ export default function Home() {
               ))}
             </ul>
           </div>
+        </section>
+      )}
+
+      {fotos.length > 0 && (
+        <section className="wrap-wide section fotos-home" aria-labelledby="fot-t">
+          <h2 id="fot-t" className="section-title">
+            Fotos chotas
+          </h2>
+          <ul className="tira-fotos">
+            {fotos.map((f) => (
+              <li key={f.src}>
+                <Link href="/fotos/">
+                  <Image src={f.src} width={f.ancho} height={f.alto} alt={f.alt} sizes="(min-width: 1000px) 190px, 45vw" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p>
+            <Link href="/fotos/" className="more">
+              Ver todas las fotos →
+            </Link>
+          </p>
         </section>
       )}
 

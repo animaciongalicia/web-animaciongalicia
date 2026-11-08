@@ -1,8 +1,12 @@
 import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import type { Bloque } from "@/content/types";
 import { ENLACES_INTERNOS } from "@/content/enlaces";
 import { bySlug, piezaPath, seccionLabel, slugify } from "@/lib/piezas";
+import { webGrupo } from "@/lib/company";
+import { SITE } from "@/lib/site";
+import { EnlaceGrupo } from "./EnlaceGrupo";
 
 const ETIQUETA = { idea: "Idea", ojo: "Ojo con esto", dato: "Dato", frase: "" } as const;
 
@@ -62,6 +66,25 @@ function Uno({ b }: { b: Bloque }) {
           {b.autor && <footer>{b.autor}</footer>}
         </blockquote>
       );
+    case "foto":
+      return (
+        <figure className="foto">
+          <Image src={b.src} width={b.ancho} height={b.alto} alt={b.alt} sizes="(min-width: 1000px) 740px, 100vw" />
+          {b.pie && <figcaption>{b.pie}</figcaption>}
+        </figure>
+      );
+    case "grupo": {
+      const w = webGrupo(b.dominio);
+      if (!w || !SITE.salientes.grupo) return null;
+      return (
+        <aside className="caja caja-grupo">
+          <p className="caja-titulo">Del grupo</p>
+          <p>
+            <EnlaceGrupo dominio={b.dominio}>{w.nombre}</EnlaceGrupo>. {b.x}
+          </p>
+        </aside>
+      );
+    }
     case "leetambien": {
       const p = bySlug(b.slug);
       if (!p) return null;

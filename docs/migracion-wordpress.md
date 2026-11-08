@@ -16,11 +16,12 @@ WordPress + Elementor + Yoast + Site Kit de Google. Sitemap: `https://animaciong
 | `/organizar-una-despedida-en-galicia-animaciongalicia/` | Página | 2026-01-11 | 301 → guía pilar |
 | `/guia-para-organizar-despedidas-en-galicia/` | Página | 2026-01-02 | 301 → guía pilar |
 | `/como-organizar-una-despedida-en-galicia-sin-discusiones-ni-caos/` | Post | 2026-01-05 | 301 → guía pilar |
-| `/despedidas-de-soltero-y-soltera-en-a-coruna/` | Ciudad | 2026-01-11 | **CONSERVAR** (2.775 impresiones, pos. 29,6). Portar y mejorar |
+| `/despedidas-de-soltero-y-soltera-en-a-coruna/` | Ciudad | 2026-01-11 | **CONSERVAR** (2.775 impresiones, pos. 29,6). Ya existe como página «qué hacer de loco»; contrastar con el contenido del WordPress |
 | `/despedidas-de-soltero-y-soltera-en-sanxenxo/` | Ciudad | 2026-01-11 | **CONSERVAR** (2.521, pos. 27,7). Portar y mejorar |
 | `/despedidas-de-soltero-y-soltera-en-ourense/` | Ciudad | 2026-01-11 | **CONSERVAR** (849, pos. 43,8). Portar y mejorar |
 | `/actividades-para-despedidas-de-soltero-y-soltera/` | Página | 2026-01-11 | **CONSERVAR** (2.189, pos. 51,6). Será el pilar de actividades |
-| `/despedidas-de-soltero-y-soltera-en-vigo/` y `-en-otras-ciudades/` | Ciudad | 2026-01-11 | 301 → guía pilar (sin impresiones ni indexación) |
+| `/despedidas-de-soltero-y-soltera-en-vigo/` | Ciudad | 2026-01-11 | **CONSERVAR** (42 vistas en Analytics). Ya existe como página «qué hacer de loco» |
+| `/despedidas-de-soltero-y-soltera-en-otras-ciudades/` | Ciudad | 2026-01-11 | 301 → pilar de actividades |
 | `/aventuras-para-despedidas/` | Página | 2026-01-11 | 301 → `/juegos/` |
 | `/preguntas-frecuentas-y-dudas-para-despedidas/` | FAQ | 2025-12-22 | 301 → preguntas chotas de soltero |
 | `/noticias-despedidas/` | Post / índice | 2026-01-05 | 301 → `/` |

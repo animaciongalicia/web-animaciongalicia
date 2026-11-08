@@ -12,7 +12,7 @@ import { absoluteUrl, SITE, BASE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url + BASE + "/"),
   title: {
-    default: "Menú Marrón · Menudo marrón organizar este evento",
+    default: "Menudo marrón organizar este evento · Menú Marrón",
     template: "%s · Menú Marrón",
   },
   description: SITE.tagline,

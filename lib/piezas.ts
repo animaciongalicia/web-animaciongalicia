@@ -8,9 +8,13 @@ export const visibles = (): Pieza[] =>
     .filter((p) => !p.borrador || !SITE.indexable)
     .sort((a, b) => b.fecha.localeCompare(a.fecha));
 
-export const piezaPath = (p: Pick<Pieza, "seccion" | "slug">) => `/${p.seccion}/${p.slug}/`;
+export const piezaPath = (p: Pick<Pieza, "seccion" | "slug" | "ruta">) => p.ruta ?? `/${p.seccion}/${p.slug}/`;
+
+/** Posts con ruta propia en la raíz (URLs antiguas conservadas). */
+export const conRuta = () => visibles().filter((p) => p.ruta);
+export const getPorRaiz = (slugRaiz: string) => conRuta().find((p) => p.ruta === `/${slugRaiz}/`);
 export const getPieza = (seccion: string, slug: string) =>
-  visibles().find((p) => p.seccion === seccion && p.slug === slug);
+  visibles().find((p) => !p.ruta && p.seccion === seccion && p.slug === slug);
 export const bySlug = (slug: string) => visibles().find((p) => p.slug === slug);
 export const bySeccion = (s: Seccion) => visibles().filter((p) => p.seccion === s);
 export const galicia = () => visibles().filter((p) => p.galicia);

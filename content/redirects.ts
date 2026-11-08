@@ -7,6 +7,8 @@
  *   /despedidas-de-soltero-y-soltera-en-sanxenxo/   (2.521)
  *   /actividades-para-despedidas-de-soltero-y-soltera/ (2.189)
  *   /despedidas-de-soltero-y-soltera-en-ourense/    (849)
+ *   /despedidas-de-soltero-y-soltera-en-vigo/       (42 vistas en Analytics)
+ * Ya existen en la nueva web como páginas de «qué hacer de loco» (humor, sin tono de agencia).
  * Mientras no existan en la nueva web, el corte NO puede hacerse (darían 404).
  *
  * PROPUESTA — validar con Search Console y Analytics ANTES de publicar:
@@ -22,8 +24,7 @@ export const REDIRECTS_WORDPRESS: { source: string; destination: string }[] = [
   { source: "/organizar-una-despedida-en-galicia-animaciongalicia", destination: GUIA },
   { source: "/guia-para-organizar-despedidas-en-galicia", destination: GUIA },
   { source: "/como-organizar-una-despedida-en-galicia-sin-discusiones-ni-caos", destination: GUIA },
-  { source: "/despedidas-de-soltero-y-soltera-en-vigo", destination: GUIA },
-  { source: "/despedidas-de-soltero-y-soltera-en-otras-ciudades", destination: GUIA },
+  { source: "/despedidas-de-soltero-y-soltera-en-otras-ciudades", destination: "/actividades-para-despedidas-de-soltero-y-soltera/" },
   { source: "/aventuras-para-despedidas", destination: "/juegos/" },
   { source: "/preguntas-frecuentas-y-dudas-para-despedidas", destination: "/despedidas/preguntas-chotas-despedida-de-soltero/" },
   { source: "/noticias-despedidas", destination: "/" },

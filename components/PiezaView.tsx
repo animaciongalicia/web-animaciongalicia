@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ShareBar } from "./ShareBar";
 import { Bloques } from "./Bloques";
@@ -74,7 +75,13 @@ export function PiezaView({ p }: { p: Pieza }) {
 
       <div className="pieza-layout">
         <div className="pieza-main">
-          {SITE.salientes && p.embed && <EmbedVideo embed={p.embed} />}
+          {p.imagen && (
+            <figure className="hero-foto">
+              <Image src={p.imagen.src} width={p.imagen.ancho} height={p.imagen.alto} alt={p.imagen.alt} priority sizes="(min-width: 1000px) 740px, 100vw" />
+              {p.imagen.credito && <figcaption>Foto: {p.imagen.credito}</figcaption>}
+            </figure>
+          )}
+          {SITE.salientes.terceros && p.embed && <EmbedVideo embed={p.embed} />}
           <div className="prose">
             <Bloques bloques={p.bloques} slug={p.slug} />
           </div>
@@ -85,7 +92,7 @@ export function PiezaView({ p }: { p: Pieza }) {
               <ul>
                 {p.fuentes.map((f) => (
                   <li key={f.url}>
-                    {SITE.salientes ? (
+                    {SITE.salientes.terceros ? (
                       <a href={f.url} target="_blank" rel="noopener noreferrer nofollow">
                         {f.nombre}
                       </a>

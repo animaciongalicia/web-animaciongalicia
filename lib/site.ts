@@ -5,11 +5,14 @@ export const BASE = rawBase && rawBase !== "/" ? `/${rawBase.replace(/^\/+|\/+$/
 export const SITE = {
   name: "Menú Marrón",
   signature: "Menú Marrón, un proyecto de Animación Galicia",
-  tagline: "Menudo marrón organizar este evento: ideas, retos y locuras para despedidas de soltero y soltera, cumpleaños y regalos en Galicia.",
+  tagline: "Coñas, ideas y consejos para despedidas en Galicia, cumpleaños, celebraciones y demás eventos. Menudo marrón organizarlos.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   indexable: process.env.SITE_INDEXABLE === "true",
-  /** Enlaces salientes y vídeos incrustados. Apagados hasta que se indique. */
-  salientes: false,
+  /**
+   * Enlaces salientes. `grupo`: webs propias del grupo (activos; abren en pestaña nueva, sin nofollow).
+   * `terceros`: cualquier otra web y vídeos incrustados (apagado hasta que el propietario lo indique).
+   */
+  salientes: { grupo: true, terceros: false },
 } as const;
 
 export const NAV = [

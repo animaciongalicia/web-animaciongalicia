@@ -8,6 +8,10 @@ const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
 
 export function Sidebar({ p }: { p: Pieza }) {
   const mismas = bySeccion(p.seccion);
+  // Solo los 6 más cercanos al post actual (si no, en secciones grandes la barra se alarga demasiado).
+  const i = Math.max(0, mismas.findIndex((x) => x.slug === p.slug));
+  const desde = Math.min(Math.max(0, i - 2), Math.max(0, mismas.length - 6));
+  const cercanas = mismas.slice(desde, desde + 6);
   const ultimas = visibles().filter((x) => x.slug !== p.slug).slice(0, 4);
   const galicia = DESDE_GALICIA.map((g) => ({ ...g, pieza: bySlug(g.slug) })).filter((g) => g.pieza && g.slug !== p.slug);
 
@@ -24,12 +28,17 @@ export function Sidebar({ p }: { p: Pieza }) {
       <section className="side-box" data-seccion={p.seccion}>
         <h2>En {SECCIONES[p.seccion].label}</h2>
         <ul>
-          {mismas.map((x) => (
+          {cercanas.map((x) => (
             <li key={x.slug} aria-current={x.slug === p.slug ? "true" : undefined}>
               {x.slug === p.slug ? <span>{x.titulo}</span> : <Link href={piezaPath(x)}>{x.titulo}</Link>}
             </li>
           ))}
         </ul>
+        {mismas.length > cercanas.length && (
+          <Link href={SECCIONES[p.seccion].path} className="more">
+            Ver los {mismas.length} →
+          </Link>
+        )}
       </section>
 
       <section className="side-box side-last">

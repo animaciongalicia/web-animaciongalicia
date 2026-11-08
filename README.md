@@ -44,7 +44,9 @@ NEXT_PUBLIC_BASE_PATH=                              # vacío: raíz. (/revista s
 | URLs del WordPress antiguo | 301 a su equivalente (`content/redirects.ts`, propuesta a validar) |
 | `/aviso-legal/`, `/privacidad/`, `/cookies/`, `/como-trabajamos/` | Páginas legales, en la barra de abajo del pie |
 
-## Datos de Search Console
+## Datos de Search Console y Analytics
+
+Ver también `docs/analisis-analytics.md` (1.262 vistas en 10 meses, **216 vistas a la 404**, 0 conversiones medidas).
 
 Ver `docs/analisis-search-console.md`: demanda, páginas, indexación, enlaces y plan de ataque. **Hay 4 URLs antiguas que
 hay que conservar** (A Coruña, Sanxenxo, Ourense, Actividades); `tests/urls-conservadas.js` bloquea el corte hasta que existan.
@@ -109,8 +111,22 @@ Ver `docs/estrategia-seo-y-visitas.md`.
 
 ## Enlaces salientes y afiliación
 
-Apagados. `SITE.salientes = false` (en `lib/site.ts`): las fuentes salen como texto y los vídeos incrustados no se
-cargan. No hay afiliación. Para activarlos, cambiar ese valor y hacerlo con tu indicación.
+- **Webs del grupo: activos.** Abren en pestaña nueva y sin `nofollow` (`SITE.salientes.grupo`). Aparecen en `/animacion-galicia/`
+  y, de forma discreta, en cajas «Del grupo» dentro de algunos posts (bloque `grupo`, máximo 1–2 por post).
+- **Terceros: apagados** (`SITE.salientes.terceros = false`): las fuentes salen como texto y los vídeos incrustados no se cargan.
+- **Afiliación: ninguna.** El botón de compartir por WhatsApp lleva `nofollow`.
+
+## Fotos
+
+Galería `/fotos/`, foto de cabecera por post (`imagen` en `content/piezas.ts`), bloque `foto` y tira en la portada.
+
+1. Sube las fotos a `fotos-para-subir/` (desde GitHub: *Add file → Upload files*). Lee `fotos-para-subir/LEEME.md`.
+2. Opcional: leyendas en `fotos-para-subir/leyendas.txt` (`archivo | descripción | pie | etiqueta | crédito`).
+3. Procésalas: pídeselo a Claude Code, o `npm run fotos -- --consentimiento`. Las reduce a 1600 px, **les quita la ubicación y los
+   metadatos**, las registra en `content/fotos.ts` y borra los originales de la carpeta. (Una sola: `npm run foto -- …`.)
+
+**Reglas:** solo fotos propias o con permiso expreso de quienes salen, sin menores. Si el repositorio fuese público, los
+originales con GPS quedan en el historial de git: mantenlo privado. Los marcadores `ejemplo-*` solo se ven en preview.
 
 ## Variables de entorno (`.env.example`)
 

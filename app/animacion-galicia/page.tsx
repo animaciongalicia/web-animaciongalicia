@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AGENCIA, GRUPO } from "@/lib/company";
+import { EnlaceGrupo } from "@/components/EnlaceGrupo";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +31,9 @@ export default function AgenciaPage() {
                 <li key={w.dominio}>
                   <h3>{w.nombre}</h3>
                   <p>{w.descripcion}</p>
-                  <p className="web">{w.dominio}</p>
+                  <p className="web">
+                    <EnlaceGrupo dominio={w.dominio}>{w.dominio}</EnlaceGrupo>
+                  </p>
                 </li>
               ))}
             </ul>

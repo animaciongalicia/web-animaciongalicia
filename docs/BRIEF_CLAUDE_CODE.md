@@ -56,9 +56,12 @@ Se puede rastrear: el dominio está permitido en el entorno.
 | Plataforma | Next.js 15 + TypeScript en Vercel, contenido en archivos versionados. **Se elimina WordPress.** |
 | Raíz del dominio | La revista ocupa la raíz tras el corte. `NEXT_PUBLIC_BASE_PATH` (subcarpeta) sigue soportado pero no se usa. |
 | Menú | Despedidas (`/`) · Cumpleaños · Regalos · Juegos · Contacto, en ese orden. `/despedidas/` redirige a `/`. |
-| Páginas por ciudad | **No se crean nuevas.** Pero se **conservan A Coruña, Sanxenxo, Ourense y Actividades** (76 % de las impresiones): URL igual, contenido portado y mejorado. Vigo y «otras ciudades» se redirigen a la guía. |
-| `<title>` de la portada | «Despedidas en Galicia: menudo marrón organizar este evento · Menú Marrón» (la portada actual rankea en pos. 11 por «despedidas en galicia» y da 84 clics). El H1 sigue siendo «Menudo marrón organizar este evento». |
-| Enlaces salientes | **Apagados** (`SITE.salientes = false`) hasta que el propietario lo indique. Excepción: botón de compartir por WhatsApp (`nofollow`). |
+| Páginas por ciudad | Se **conservan las URLs** de A Coruña, Sanxenxo, Ourense, Vigo y Actividades, pero como **páginas de humor «qué hacer de loco en…»**, no de agencia (ya escritas, con `ruta` propia). «Otras ciudades» redirige al pilar de actividades. **Pendiente de contrastar con el contenido del WordPress** que se porte. |
+| `<title>` de la portada | **«Menudo marrón organizar este evento · Menú Marrón»: SIN la palabra «despedidas»** (decisión del propietario). La fuerza para «despedidas en Galicia» va en la **meta descripción** («Coñas, ideas y consejos para despedidas en Galicia, cumpleaños, celebraciones y demás eventos…»), en el primer párrafo, en los subtítulos y en los enlaces internos. Riesgo asumido: la portada actual rankea en pos. 11 por esa consulta con el título «Despedidas en Galicia - Packs y Ofertas»; medirlo en Search Console tras el corte. |
+| Tono y modelo | **No es una agencia**: es una revista de coñas, bromas, consejos y cosas divertidas para despedidas en Galicia, sin ponerlo en el título. **«Atraer sin atraer, vender sin vender»**: la venta es solo contextual y discreta (cajas «Del grupo» y enlaces a las webs del grupo). |
+| Fotos | Galería `/fotos/`, foto de cabecera por post y tira en la portada. Carpeta `fotos-para-subir/` + `npm run fotos`. Solo fotos propias o con permiso, sin menores, sin metadatos. |
+| «Lee también» | **Discretos**: línea de texto pequeña con filete lateral, sin caja (el propietario los veía intrusivos). |
+| Enlaces salientes | **A las webs del grupo: activos**, abren en pestaña nueva y **sin nofollow** (`SITE.salientes.grupo = true`). **A terceros: apagados** (`SITE.salientes.terceros = false`). Botón de compartir por WhatsApp con `nofollow`. |
 | Afiliación | **Ninguna** por ahora. |
 | Agencia | Solo en el pie y en `/animacion-galicia/` (nombres de las webs a la vista, sin venta). |
 | Pie | 4 columnas: la primera 2/5 y las otras tres 1/5 (`2fr 1fr 1fr 1fr`). Barra legal abajo del todo con separadores verticales. |
@@ -84,7 +87,7 @@ docs/           este brief, migracion-wordpress.md, estrategia-seo-y-visitas.md,
 tests/          e2e-revista.js, e2e-subcarpeta.js, palabras.js (Playwright; ver README)
 ```
 
-**Funciona hoy:** 20 posts publicados · portada tipo periódico · secciones · post con barra lateral · cajas de color ·
+**Funciona hoy:** 25 posts publicados · portada tipo periódico · secciones · post con barra lateral · cajas de color ·
 `leetambien` internos · anterior/siguiente · «Sigue leyendo» · tiempo de lectura · compartir por WhatsApp · RSS ·
 sitemap/robots coherentes con el entorno (`noindex` en preview) · canonicals · Open Graph con imagen por post ·
 JSON-LD (WebSite, Organization, Article, BreadcrumbList) · 404 · formularios con API y modo de prueba · páginas legales ·
@@ -94,8 +97,11 @@ en la propia web.
 **Comprobaciones:** `npm run lint`, `npm run typecheck`, `npm run build` limpios. `tests/e2e-revista.js` (~330 comprobaciones
 en móvil y escritorio) y `tests/e2e-subcarpeta.js` pasan.
 
-**No existe todavía:** proyecto de Vercel · analítica · envío de correo real · hub de herramientas · imágenes propias ·
-buscador interno · newsletter · datos históricos analizados.
+**Añadido en la última tanda:** páginas `ruta` propia (URLs antiguas conservadas) · 5 páginas «qué hacer de loco» · bloque `grupo`
+con enlaces a las webs del grupo · galería de fotos y foto de cabecera · scripts `npm run foto` y `npm run fotos` · «lee también» discretos.
+
+**No existe todavía:** proyecto de Vercel · analítica · envío de correo real · hub de herramientas · fotos reales (solo marcadores de ejemplo) ·
+buscador interno · newsletter.
 
 ## 5. Arquitectura técnica
 
@@ -114,12 +120,14 @@ buscador interno · newsletter · datos históricos analizados.
 
 ## 6. Contenido
 
-### 6.1 Posts publicados (20)
+### 6.1 Posts publicados (25)
 
 | Sección | Slug | Formato |
 | --- | --- | --- |
 | Despedidas | `despedida-como-resacon-en-las-vegas` | Guía de supervivencia (destacada) |
 | Despedidas | `guia-para-organizar-despedidas-en-galicia` | **Pilar / hub** (hereda las URLs antiguas) |
+| Despedidas | `actividades-absurdas-despedidas-galicia` (`ruta` `/actividades-para-despedidas-de-soltero-y-soltera/`) | **Pilar de actividades** |
+| Despedidas | `despedida-en-{a-coruna,vigo,sanxenxo,ourense}-que-hacer-de-loco` (`ruta` en la raíz, URL antigua) | Humor por destino |
 | Despedidas | `ideas-locas-grupo-whatsapp-despedida` | Lista |
 | Despedidas | `aplicaciones-compartir-gastos-despedida` | Comparativa (datos verificados con Tricount y Splitwise) |
 | Despedidas | `barco-o-casa-rural-despedida-galicia` | Versus |
@@ -147,7 +155,7 @@ Todos de 400–600 palabras, con referencia gallega natural, cajas de color y en
    (precios, locales, estadísticas). Lo que no esté verificado, no se afirma.
 3. **Humor con límites:** nos reímos de situaciones, no de personas ni de daños. Los retos que implican a terceros
    llevan avisos de consentimiento y seguridad.
-4. **Sin enlaces salientes ni afiliación** (por ahora). Se cita por nombre, sin enlazar.
+4. **Enlaces salientes solo a las webs del grupo** (pestaña nueva, sin nofollow), de forma **contextual y discreta** (bloque `grupo`, máximo 1–2 por post). **Nada de afiliación ni enlaces a terceros** (por ahora).
 5. **No copiar:** nada de textos, imágenes o vídeos ajenos. Lo leído en otras webs se usa solo para no repetir temas.
 6. **Verificar** los datos de terceros contra la fuente (como se hizo con Tricount y Splitwise) y decirlo cuando no se pueda.
 7. Estructura: respuesta al principio, subtítulos con la búsqueda, caja «idea/ojo/dato», frase destacada y
@@ -157,7 +165,7 @@ Todos de 400–600 palabras, con referencia gallega natural, cajas de color y en
 
 Plantilla: *qué problema resuelve · cómo se usa en 3 pasos · un ejemplo · para quién y cuándo · enlace*.
 Hay que decidir si el enlace va al dominio de la herramienta o a un hub interno (mejor interno). Se activa
-`SITE.salientes` solo para esos dominios. Necesito de cada una: nombre, qué hace en una frase y URL.
+`SITE.salientes.grupo` ya está activo. Necesito de cada una: nombre, qué hace en una frase y URL.
 
 ### 6.3b Pilares y páginas con demanda real (prioridad máxima, por los datos)
 
@@ -250,7 +258,8 @@ citarlos cuando estén activos (Resend, Vercel…).
 
 - `npm run lint`, `npm run typecheck`, `npm run build` sin avisos; `tests/e2e-revista.js` en verde.
 - Cada URL antigua con tráfico o enlaces responde con 301 al equivalente por intención (o se conserva). Cero 404 nuevos en el rastreo.
-- Un solo H1 por página, canonical propio, sin enlaces salientes (salvo compartir), sin overflow horizontal en 390 px y 1280 px.
+- Un solo H1 por página, canonical propio, sin enlaces salientes salvo las webs del grupo (pestaña nueva, sin nofollow) y compartir, sin overflow horizontal en 390 px y 1280 px.
+- `tests/urls-conservadas.js` en verde (las 5 URLs con demanda existen y responden 200).
 - Formularios con envío real verificado antes de darlos por operativos.
 - Páginas legales completas, sin marcadores «PENDIENTE».
 - Ningún dato sin verificar presentado como cierto.
@@ -264,7 +273,10 @@ citarlos cuando estén activos (Resend, Vercel…).
 5. Decisión de analítica (con banner o sin cookies) y cuenta de Resend.
 6. Acceso al DNS y al alojamiento del WordPress para el corte; qué ofrecían los packs de la portada actual.
 7. Anécdotas reales y precios reales para dar valor a los posts.
-8. Autorización expresa para activar enlaces salientes y, en su caso, enlaces a la agencia.
+8. Autorización expresa para activar enlaces a **terceros** (los del grupo ya están activos).
+9. **Fotos chotas**: subirlas a `fotos-para-subir/` (ver `LEEME.md`). Confirmar que el repositorio es **privado** (los originales con ubicación quedan en el historial).
+10. Elegir **qué web de Sanxenxo** enlazar desde la revista (hay tres) y confirmar `gincanas.es` / `ginkanas.es`.
+11. Rutas de la página 404 (GA4), informe de adquisición y datos de GA4 de cada web del grupo (`docs/analisis-analytics.md`).
 
 ## 13. Qué NO hacer
 

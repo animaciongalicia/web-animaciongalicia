@@ -45,3 +45,6 @@ export const GRUPO: { titulo: string; webs: WebGrupo[] }[] = [
     ],
   },
 ];
+
+export const urlGrupo = (dominio: string) => `https://${dominio}`;
+export const webGrupo = (dominio: string) => GRUPO.flatMap((g) => g.webs).find((w) => w.dominio === dominio);

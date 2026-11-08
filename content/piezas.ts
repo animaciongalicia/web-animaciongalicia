@@ -76,6 +76,7 @@ export const piezas: Pieza[] = [
         tipo: "frase",
         x: "La mejor despedida es la que se cuenta durante años. La peor, la que no se puede contar.",
       },
+      { t: "grupo", dominio: "luxegalicia.com", x: "Traslados para despedidas en Galicia, para tener el transporte de vuelta resuelto antes de la primera ronda." },
       { t: "leetambien", slug: "aplicaciones-compartir-gastos-despedida" },
     ],
   },
@@ -325,6 +326,7 @@ export const piezas: Pieza[] = [
         tipo: "frase",
         x: "Cantar en una plaza es fácil. Lo difícil es que luego tus amigos no lo suban a sus redes.",
       },
+      { t: "grupo", dominio: "gincanas.es", x: "Gincanas, si prefieres retos con organización." },
       { t: "leetambien", slug: "secuestro-falso-despedida-de-soltero" },
     ],
   },
@@ -557,6 +559,7 @@ export const piezas: Pieza[] = [
         titulo: "Un último consejo",
         x: "El tema debe poder disfrutarse con poco esfuerzo. Si para entrar hay que comprar un disfraz de 80 euros, la mitad de la gente se queda en casa.",
       },
+      { t: "grupo", dominio: "los7pc.com", x: "Local de cenas y baile." },
       { t: "leetambien", slug: "disfraces-para-novio-o-novia-despedida" },
     ],
   },
@@ -814,6 +817,11 @@ export const piezas: Pieza[] = [
         "slug": "preguntas-chotas-despedida-de-soltero"
       },
       {
+        "t": "grupo",
+        "dominio": "despedidasgalicia.es",
+        "x": "Despedidas en toda Galicia."
+      },
+      {
         "t": "leetambien",
         "slug": "preguntas-chotas-despedida-de-soltera"
       },
@@ -911,6 +919,11 @@ export const piezas: Pieza[] = [
         "tipo": "dato",
         "titulo": "Consejo",
         "x": "Si podéis, reservad con cancelación flexible o con un plan alternativo claro. En Galicia, el parte del tiempo manda más que el novio."
+      },
+      {
+        "t": "grupo",
+        "dominio": "seagalicia.com",
+        "x": "Alquiler de barcos, por si el plan acaba en el agua."
       },
       {
         "t": "leetambien",
@@ -1263,6 +1276,11 @@ export const piezas: Pieza[] = [
         "x": "Mensaje para el grupo: «Tres fechas posibles: [fecha 1], [fecha 2] y [fecha 3]. Votad con emoji. Gana la más votada el jueves.»"
       },
       {
+        "t": "grupo",
+        "dominio": "despedidasgalicia.es",
+        "x": "Despedidas en toda Galicia."
+      },
+      {
         "t": "leetambien",
         "slug": "guia-para-organizar-despedidas-en-galicia"
       }
@@ -1544,6 +1562,446 @@ export const piezas: Pieza[] = [
       {
         "t": "leetambien",
         "slug": "preguntas-chotas-regalos"
+      }
+    ]
+  },
+  {
+    "slug": "actividades-absurdas-despedidas-galicia",
+    "ruta": "/actividades-para-despedidas-de-soltero-y-soltera/",
+    "seccion": "despedidas",
+    "tag": "Actividades absurdas",
+    "titulo": "Actividades absurdas para despedidas en Galicia: qué hacer de loco en A Coruña, Vigo y Sanxenxo",
+    "h1": "Actividades absurdas para despedidas en Galicia: qué hacer de loco",
+    "dek": "Retos, disfraces y planes sin sentido para una despedida de soltero o de soltera, con el mapa de Galicia de fondo: A Coruña, Vigo, Sanxenxo y Ourense.",
+    "fecha": "2026-11-09",
+    "galicia": true,
+    "destacada": false,
+    "relacionadas": [
+      "guia-para-organizar-despedidas-en-galicia",
+      "secuestro-falso-despedida-de-soltero"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Una despedida normal es una cena. Una despedida absurda es lo que se cuenta diez años después. Estas son las actividades más disparatadas que puedes hacer en una despedida en Galicia, con una sola condición: todo con humor, con permiso del homenajeado y sin molestar a nadie."
+      },
+      {
+        "t": "p",
+        "x": "Valen para despedidas de soltero, de soltera o mixtas, y casi todas se hacen sin material, sin reservar y sin coger el coche."
+      },
+      {
+        "t": "h2",
+        "x": "Diez actividades absurdas que valen para cualquier ciudad"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "El guía turístico que no tiene ni idea. El novio hace de guía y explica al grupo la «historia» de cada monumento, fuente o estatua. Todo inventado y dicho con total seguridad.",
+          "La foto de estatua. En cada plaza, el grupo posa como una estatua. Gana quien aguante más sin reírse.",
+          "La gymkhana de fotos imposibles. Una lista de doce fotos (con un perro que se deje, con un camarero, con tres desconocidos que quieran) y siempre con permiso.",
+          "El reportero de la tele. Un amigo, con un micrófono de mentira, entrevista al novio y a quien quiera sobre su vida sentimental. Quien no quiera, no contesta.",
+          "El pregón del novio. Discurso solemne desde la escalinata de una plaza: «agradezco a esta ciudad…». Un minuto como máximo.",
+          "Las olimpiadas en la arena. Carrera de tres piernas, lanzamiento de chancla, carrera de sacos. Y mira la marea: en Galicia sube y baja de verdad.",
+          "El menú sorpresa. El grupo pide por el novio. Sin alergias, claro, y con derecho a una sola negativa.",
+          "El concurso de brindis. Cada uno brinda con una excusa distinta. Gana el más ridículo.",
+          "El tour de bares con pasaporte. Una hoja con una casilla por bar, una firma como sello y un reto distinto en cada sitio.",
+          "La búsqueda del tesoro absurda. Pistas que llevan a rincones de la ciudad. El premio es una tarta de verdad."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Las reglas del juego",
+        "x": [
+          "Siempre con permiso del homenajeado y de quien salga en la foto o en el vídeo.",
+          "Nada que moleste a la gente: si alguien dice que no, se acabó el reto.",
+          "Respeta las normas de cada sitio (monumentos, playas, parques) y los horarios de descanso.",
+          "Nada cerca del tráfico, del agua con marea alta ni con menores alrededor.",
+          "Quien lleva la voz cantante no se pasa con las copas."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Qué hacer de loco en cada ciudad"
+      },
+      {
+        "t": "p",
+        "x": "Cada ciudad tiene su propio escenario. Estas son las ideas para las cuatro con más despedidas."
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-a-coruna-que-hacer-de-loco"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-vigo-que-hacer-de-loco"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-sanxenxo-que-hacer-de-loco"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-ourense-que-hacer-de-loco"
+      },
+      {
+        "t": "h2",
+        "x": "Cómo montarlo sin que se líe"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Elige tres actividades, no diez: una despedida con demasiados retos acaba sin ninguno.",
+          "Pon a una persona al mando del reloj y otra al mando de las fotos.",
+          "Deja un hueco libre para comer: nadie hace bien un reto con hambre.",
+          "Ten un plan B cubierto, porque en Galicia llueve."
+        ]
+      },
+      {
+        "t": "grupo",
+        "dominio": "gincanas.es",
+        "x": "Gincanas, por si prefieres un reto con organización y no montarlo tú."
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "Una despedida absurda bien hecha es la que el novio recuerda con vergüenza y con ganas de repetir."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Mensaje para el grupo",
+        "x": "Equipo, el sábado tenemos tres retos: guía turístico, foto de estatua y brindis absurdo. Cada uno lleva una excusa para el brindis. Quien no la traiga, brinda con agua y cara de póker."
+      },
+      {
+        "t": "leetambien",
+        "slug": "secuestro-falso-despedida-de-soltero"
+      }
+    ]
+  },
+  {
+    "slug": "despedida-en-a-coruna-que-hacer-de-loco",
+    "ruta": "/despedidas-de-soltero-y-soltera-en-a-coruna/",
+    "seccion": "despedidas",
+    "tag": "Actividades absurdas",
+    "titulo": "Despedidas de soltero y soltera en A Coruña: ocho locuras para hacer de loco",
+    "h1": "Despedidas en A Coruña: ocho locuras para hacer de loco",
+    "dek": "Del Paseo Marítimo a la plaza de María Pita, ocho retos absurdos para una despedida en A Coruña. Con humor y sin que nadie acabe mal.",
+    "fecha": "2026-11-09",
+    "galicia": true,
+    "relacionadas": [
+      "actividades-absurdas-despedidas-galicia",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "A Coruña tiene mar a los dos lados, un paseo marítimo larguísimo y una ciudad lo bastante compacta como para recorrerla de reto en reto. Es perfecta para una despedida de soltero, de soltera o mixta que quiera hacer el loco sin coger el coche."
+      },
+      {
+        "t": "p",
+        "x": "Estas son ocho ideas absurdas que funcionan con un grupo de entre seis y quince personas, casi sin material y con el escenario ya montado."
+      },
+      {
+        "t": "h2",
+        "x": "Ocho locuras para hacer de loco"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "El novio, guía del faro. Foto de grupo ante la Torre de Hércules, el faro romano, mientras el novio cuenta su «historia» con total seguridad. Todo inventado y respetando las normas de la visita.",
+          "El Paseo Marítimo, versión olimpiadas. Relevos con paraguas y carrera de tres piernas en los tramos tranquilos, sin estorbar a corredores ni a ciclistas.",
+          "La foto de estatua en la plaza de María Pita. El grupo entero posa congelado frente al ayuntamiento. Gana quien aguante más.",
+          "El pregón desde la plaza. Un minuto de discurso solemne con micro de mentira, y un aplauso obligatorio.",
+          "El tour de tapas con sellos. Una hoja con casillas, una firma por local y un reto absurdo en cada parada.",
+          "El torneo de chancla en Riazor o el Orzán. Lanzamiento de chancla y carrera de sacos en la arena. Mira siempre la marea y no te acerques al agua.",
+          "El reportero del Orzán. Un amigo entrevista al novio con un micrófono de mentira. Quien quiera, se une. Quien no, pasa.",
+          "La búsqueda del tesoro por la ciudad vieja. Pistas que llevan de una plaza a otra. El premio es una tarta de las de verdad."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Antes de empezar",
+        "x": [
+          "Siempre con permiso del homenajeado y de quien salga en la foto.",
+          "Respeta las normas de cada monumento, playa o paseo.",
+          "Nada cerca del tráfico, del agua con marea alta ni con menores."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "El plan B, porque llueve"
+      },
+      {
+        "t": "p",
+        "x": "En A Coruña llueve lo justo para estropearte el plan al aire libre. Ten un sitio cubierto reservado o a mano: un local con sala para el grupo, un restaurante con mesa larga o un sitio donde el torneo de chancla se convierta en un concurso de brindis. Y si escampa, a la arena otra vez."
+      },
+      {
+        "t": "grupo",
+        "dominio": "despedidascoruna.es",
+        "x": "Despedidas en A Coruña."
+      },
+      {
+        "t": "grupo",
+        "dominio": "humoramarillocoruna.com",
+        "x": "Humor Amarillo, en A Coruña."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Mensaje para el grupo",
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+      },
+      {
+        "t": "leetambien",
+        "slug": "actividades-absurdas-despedidas-galicia"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-vigo-que-hacer-de-loco"
+      }
+    ]
+  },
+  {
+    "slug": "despedida-en-vigo-que-hacer-de-loco",
+    "ruta": "/despedidas-de-soltero-y-soltera-en-vigo/",
+    "seccion": "despedidas",
+    "tag": "Actividades absurdas",
+    "titulo": "Despedidas de soltero y soltera en Vigo: ocho locuras para hacer de loco",
+    "h1": "Despedidas en Vigo: ocho locuras para hacer de loco",
+    "dek": "Del Casco Vello a O Berbés y la ría: ocho retos absurdos para una despedida en Vigo, sin coger el coche y sin que se líe.",
+    "fecha": "2026-11-09",
+    "galicia": true,
+    "relacionadas": [
+      "actividades-absurdas-despedidas-galicia",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Vigo es una ciudad de cuestas, de ría y de mucha vida en la calle. Eso la hace ideal para una despedida de soltero, de soltera o mixta que prefiera retos de calle a un plan cerrado."
+      },
+      {
+        "t": "p",
+        "x": "Estas son ocho ideas absurdas para recorrerla con humor, con permiso del homenajeado y sin molestar a nadie."
+      },
+      {
+        "t": "h2",
+        "x": "Ocho locuras para hacer de loco"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "El pregón en el Casco Vello. Discurso solemne del novio, de un minuto, en una de sus plazas, con aplauso final del grupo.",
+          "La foto de estatua en cada plaza. El grupo se congela y gana quien aguante más sin moverse.",
+          "El guía de O Berbés. El novio explica al grupo la «historia» de cada rincón del barrio marinero. Inventada, claro.",
+          "La ruta de la ostra con reto. Cada parada, un reto: un brindis absurdo, una pose o una rima improvisada.",
+          "La subida a Monte do Castro. Una carrera de relevos cuesta arriba con paraguas, hasta las vistas de la ría. Sin correr de verdad si hace calor.",
+          "El torneo de chancla en Samil. Lanzamiento de chancla y carrera de sacos en la arena, mirando siempre la marea.",
+          "El reportero de la ría. Un amigo, micrófono de mentira, entrevista al novio y a quien quiera sobre su vida sentimental.",
+          "La búsqueda del tesoro por el centro. Pistas que llevan de un barrio a otro. Si la despedida cae en diciembre, las luces de Navidad de la ciudad hacen de escenario."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Antes de empezar",
+        "x": [
+          "Siempre con permiso del homenajeado y de quien salga en la foto.",
+          "Respeta las normas de cada plaza, playa o parque.",
+          "Nada cerca del tráfico, de las cuestas con prisas ni con menores."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "El plan B, porque llueve"
+      },
+      {
+        "t": "p",
+        "x": "En Vigo la lluvia es una costumbre, no una excepción. Ten un plan cubierto: un local con sala para el grupo, un restaurante con mesa larga o un sitio donde el pregón se haga entre cañas. Y si tienes en mente las Islas Cíes, recuerda que el acceso está regulado y conviene comprobarlo con tiempo."
+      },
+      {
+        "t": "grupo",
+        "dominio": "despedidasvigo.com",
+        "x": "Despedidas en Vigo."
+      },
+      {
+        "t": "grupo",
+        "dominio": "despedidas-vigo.es",
+        "x": "Local para despedidas en Vigo."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Mensaje para el grupo",
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+      },
+      {
+        "t": "leetambien",
+        "slug": "actividades-absurdas-despedidas-galicia"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-sanxenxo-que-hacer-de-loco"
+      }
+    ]
+  },
+  {
+    "slug": "despedida-en-sanxenxo-que-hacer-de-loco",
+    "ruta": "/despedidas-de-soltero-y-soltera-en-sanxenxo/",
+    "seccion": "despedidas",
+    "tag": "Actividades absurdas",
+    "titulo": "Despedidas de soltero y soltera en Sanxenxo: ocho locuras para hacer de loco",
+    "h1": "Despedidas en Sanxenxo: ocho locuras para hacer de loco",
+    "dek": "Playas, puerto deportivo y mucho verano: ocho retos absurdos para una despedida en Sanxenxo, con humor y sin que se líe.",
+    "fecha": "2026-11-09",
+    "galicia": true,
+    "relacionadas": [
+      "actividades-absurdas-despedidas-galicia",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Sanxenxo es, para mucha gente, el sitio de las despedidas de verano: playas, puerto deportivo y ambiente hasta tarde. También es el sitio donde más se llenan los planes, así que conviene llevar los retos pensados."
+      },
+      {
+        "t": "p",
+        "x": "Estas son ocho ideas absurdas para una despedida de soltero, de soltera o mixta, casi sin material y con el escenario ya incluido."
+      },
+      {
+        "t": "h2",
+        "x": "Ocho locuras para hacer de loco"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Las olimpiadas de Silgar. Carrera de tres piernas, lanzamiento de chancla y carrera de sacos en la arena. Mira siempre la marea.",
+          "El pregón en el puerto deportivo. Un minuto de discurso solemne del novio ante los barcos, con aplauso obligatorio.",
+          "La foto de estatua en el paseo. El grupo se queda congelado y gana quien aguante más.",
+          "El torneo de palas absurdo. Raquetas de playa con reglas inventadas: gana quien invente la regla más ridícula.",
+          "El reportero del chiringuito. Un amigo entrevista al novio con micro de mentira. Quien quiera, participa.",
+          "La ruta de Portonovo con brindis. Un reto distinto en cada tramo y un brindis con excusa en cada parada.",
+          "El concurso de disfraces de playa. Cada uno se disfraza con lo que haya: toallas, flotadores, sombreros.",
+          "La puesta de sol con discurso. El grupo se sienta frente al mar y cada uno dice una frase sobre el novio, sin repetir."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Antes de empezar",
+        "x": [
+          "Siempre con permiso del homenajeado y de quien salga en la foto.",
+          "Respeta las normas de las playas y del puerto, y no te acerques al agua con marea alta ni tras beber.",
+          "Nada con menores ni cerca de los barcos."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "El plan B, porque llueve"
+      },
+      {
+        "t": "p",
+        "x": "En temporada alta, Sanxenxo se llena y los sitios con sombra o techo vuelan. Reserva con tiempo un local cubierto o una mesa grande, y ten pensado qué haces si el día amanece nublado. Una de las mejores opciones es mover los retos a un sitio con música y convertirlos en un concurso de brindis."
+      },
+      {
+        "t": "grupo",
+        "dominio": "despedidassanxenxo.es",
+        "x": "Despedidas en Sanxenxo."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Mensaje para el grupo",
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+      },
+      {
+        "t": "leetambien",
+        "slug": "actividades-absurdas-despedidas-galicia"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-ourense-que-hacer-de-loco"
+      }
+    ]
+  },
+  {
+    "slug": "despedida-en-ourense-que-hacer-de-loco",
+    "ruta": "/despedidas-de-soltero-y-soltera-en-ourense/",
+    "seccion": "despedidas",
+    "tag": "Actividades absurdas",
+    "titulo": "Despedidas de soltero y soltera en Ourense: ocho locuras para hacer de loco",
+    "h1": "Despedidas en Ourense: ocho locuras para hacer de loco",
+    "dek": "Termas, Ponte Romana y vino del Ribeiro cerca: ocho retos absurdos para una despedida en Ourense, con humor y sin que se líe.",
+    "fecha": "2026-11-09",
+    "galicia": true,
+    "relacionadas": [
+      "actividades-absurdas-despedidas-galicia",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Ourense no tiene mar, pero tiene agua caliente: sus termas son famosas y dan para una despedida distinta. Con la ciudad, el río y la comarca del Ribeiro cerca, es un destino perfecto para quien no quiere el plan de playa de siempre."
+      },
+      {
+        "t": "p",
+        "x": "Estas son ocho ideas absurdas para una despedida de soltero, de soltera o mixta, con permiso del homenajeado y respetando las normas de cada sitio."
+      },
+      {
+        "t": "h2",
+        "x": "Ocho locuras para hacer de loco"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "La ruta de las Burgas en albornoz. Si las normas y los horarios lo permiten, el grupo hace un recorrido absurdo con albornoz y chancletas. Comprueba antes dónde se puede.",
+          "El pregón en la Ponte Romana. Un minuto de discurso solemne del novio con aplauso final del grupo.",
+          "La foto de estatua frente a la catedral. El grupo se congela. Gana quien aguante más sin moverse.",
+          "El guía termal. El novio explica al grupo la «historia» de cada fuente y de cada poza. Inventada, claro.",
+          "El concurso de brindis del Ribeiro. Cada uno brinda con una excusa distinta con vino de la zona. Gana el más ridículo.",
+          "El reportero del río. Un amigo, con micrófono de mentira, entrevista al novio y a quien quiera.",
+          "La gymkhana de fotos imposibles. Doce fotos de una lista, siempre con permiso de quien salga.",
+          "La búsqueda del tesoro por el casco viejo. Pistas que llevan de una plaza a otra. El premio es una tarta de las de verdad."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Antes de empezar",
+        "x": [
+          "Siempre con permiso del homenajeado y de quien salga en la foto.",
+          "En las termas y piscinas, respeta siempre las normas, los horarios y los precios de cada una.",
+          "Nada con alcohol en el agua ni con menores."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "El plan B, porque llueve"
+      },
+      {
+        "t": "p",
+        "x": "Ourense tiene veranos calurosos e inviernos fríos y húmedos. En verano, planea los retos al aire libre a primera hora o al atardecer. En invierno, el plan B está claro: las termas, que son un plan en sí mismas, y una cena larga."
+      },
+      {
+        "t": "grupo",
+        "dominio": "despedidasourense.com",
+        "x": "Despedidas en Ourense."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Mensaje para el grupo",
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+      },
+      {
+        "t": "leetambien",
+        "slug": "actividades-absurdas-despedidas-galicia"
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-en-a-coruna-que-hacer-de-loco"
       }
     ]
   },

@@ -1,0 +1,6 @@
+# Leyendas de las fotos (opcional pero recomendable). Una línea por foto, separada por «|»:
+#   archivo.jpg | descripción de la foto | pie de foto | etiqueta | crédito
+# Etiquetas posibles: Despedidas, Cumpleaños, Regalos, Juegos, Eventos
+# Las líneas que empiezan por # se ignoran. Ejemplo:
+#
+# novio-disfraz-flamenco.jpg | Novio vestido de flamenca posando en una plaza | Lo prometió y lo cumplió | Despedidas | Foto: Marcos
