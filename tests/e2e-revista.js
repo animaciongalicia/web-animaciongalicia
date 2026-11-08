@@ -244,9 +244,13 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     ok(`[${name}] galería: fotos cargadas`, gal.length >= 1 && gal.every((w) => w > 0), JSON.stringify(gal));
     await page.goto(B + "/");
     await page.waitForLoadState("networkidle");
-    const tira = await page.$$eval(".tira-fotos img", (i) => i.map((x) => x.naturalWidth));
-    ok(`[${name}] portada: tira de fotos cargada`, tira.length >= 4 && tira.every((w) => w > 0), JSON.stringify(tira));
-    ok(`[${name}] pie: enlace a Fotos chorras`, (await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")))).includes("/fotos/"));
+    ok(`[${name}] portada: sin tira de fotos (las fotos acompañan a los posts)`, (await page.$$(".tira-fotos")).length === 0);
+    ok(`[${name}] pie: sin enlace a galería`, !(await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")))).includes("/fotos/"));
+    await page.goto(B + "/despedidas/despedida-como-resacon-en-las-vegas/");
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
+    await page.waitForTimeout(600);
+    const fp = await page.$$eval(".hero-foto img, .prose .foto img", (i) => i.map((x) => x.naturalWidth));
+    ok(`[${name}] post: foto de cabecera y fotos en el texto cargadas`, fp.length >= 2 && fp.every((w) => w > 0), JSON.stringify(fp));
 
     const r404 = await page.goto(B + "/no-existe/");
     ok(`[${name}] 404`, r404.status() === 404);

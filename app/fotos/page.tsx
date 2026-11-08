@@ -14,7 +14,7 @@ export function generateMetadata(): Metadata {
     description: DESC,
     alternates: { canonical: absoluteUrl("/fotos/") },
     // Sin fotos reales no hay nada que indexar.
-    robots: hay ? undefined : { index: false, follow: true },
+    robots: { index: false, follow: true },
     openGraph: { url: absoluteUrl("/fotos/"), title: TITLE, description: DESC, images: [{ url: absoluteUrl("/og/inicio.png"), width: 1200, height: 630, alt: "Menú Marrón" }] },
     twitter: { card: "summary_large_image", images: [absoluteUrl("/og/inicio.png")] },
   };

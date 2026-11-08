@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { piezaPath, visibles } from "@/lib/piezas";
 import { absoluteUrl } from "@/lib/site";
-import { fotosVisibles } from "@/lib/fotos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fixed = [
@@ -10,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...fixed.map((p) => ({ url: absoluteUrl(p) })),
-    ...(fotosVisibles().length ? [{ url: absoluteUrl("/fotos/") }] : []),
     ...visibles()
       .filter((p) => !p.borrador)
       .map((p) => ({ url: absoluteUrl(piezaPath(p)), lastModified: p.fecha })),

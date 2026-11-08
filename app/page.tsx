@@ -5,7 +5,6 @@ import type { Pieza, Seccion } from "@/content/types";
 import { DESDE_GALICIA, PORTADA_SECUNDARIAS, SITUACIONES } from "@/content/galicia";
 import Image from "next/image";
 import { absoluteUrl } from "@/lib/site";
-import { fotosVisibles } from "@/lib/fotos";
 import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, preguntas, seccionLabel, visibles } from "@/lib/piezas";
 
 // Decisión del propietario: el <title> NO lleva la palabra «despedidas». La fuerza para «despedidas en Galicia» va en la
@@ -32,7 +31,6 @@ export default function Home() {
   const lead = todas.find((p) => p.destacada) ?? todas[0];
   const secundarias = PORTADA_SECUNDARIAS.map((s) => bySlug(s)).filter((p): p is Pieza => !!p && p !== lead);
   const ultimas = todas.filter((p) => p !== lead && !secundarias.includes(p)).slice(0, 6);
-  const fotos = fotosVisibles().slice(0, 6);
   const situaciones = SITUACIONES.map((s) => ({ ...s, pieza: bySlug(s.slug) })).filter((s) => s.pieza);
   const gal = DESDE_GALICIA.map((g) => ({ ...g, pieza: bySlug(g.slug) })).filter((g) => g.pieza);
 
@@ -158,27 +156,6 @@ export default function Home() {
         </section>
       )}
 
-      {fotos.length > 0 && (
-        <section className="wrap-wide section fotos-home" aria-labelledby="fot-t">
-          <h2 id="fot-t" className="section-title">
-            Fotos chorras
-          </h2>
-          <ul className="tira-fotos">
-            {fotos.map((f) => (
-              <li key={f.src}>
-                <Link href="/fotos/">
-                  <Image src={f.src} width={f.ancho} height={f.alto} alt={f.alt} sizes="(min-width: 1000px) 190px, 45vw" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p>
-            <Link href="/fotos/" className="more">
-              Ver todas las fotos →
-            </Link>
-          </p>
-        </section>
-      )}
 
       <section className="band" aria-labelledby="sec-t">
         <div className="wrap-wide section">

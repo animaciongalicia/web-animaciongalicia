@@ -5,13 +5,11 @@ import { SECCIONES } from "@/content/piezas";
 import type { Seccion } from "@/content/types";
 import { PIE_DIVERTIDO } from "@/content/galicia";
 import { bySlug, piezaPath } from "@/lib/piezas";
-import { fotosVisibles } from "@/lib/fotos";
 import { SITE } from "@/lib/site";
 
 const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
 
 export function Footer() {
-  const hayFotos = fotosVisibles().length > 0;
   const divertido = PIE_DIVERTIDO.map((d) => ({ ...d, pieza: bySlug(d.slug) })).filter((d) => d.pieza);
   return (
     <footer className="site-footer">
@@ -56,11 +54,6 @@ export function Footer() {
           <nav aria-label="Participa">
             <p className="foot-title">Participa</p>
             <ul>
-              {hayFotos && (
-                <li>
-                  <Link href="/fotos/">Mira las fotos chorras</Link>
-                </li>
-              )}
               <li>
                 <Link href="/contacto/#enlace">Pásanos algo que nos haga reír</Link>
               </li>

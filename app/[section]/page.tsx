@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { fotosVisibles } from "@/lib/fotos";
 import { PiezaView } from "@/components/PiezaView";
 import { SECCIONES } from "@/content/piezas";
 import { absoluteUrl } from "@/lib/site";
@@ -56,7 +55,6 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
   const secundarias = resto.slice(0, 2);
   const ultimas = resto.slice(2, 8);
   const chips = preguntas().filter((q) => q.pieza.seccion === seccion).slice(0, 8);
-  const fotos = fotosVisibles().slice(0, 6);
   const otras = (["despedidas", "cumpleanos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
 
   return (
@@ -145,22 +143,6 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
         </section>
       )}
 
-      {fotos.length > 0 && (
-        <section className="wrap-wide section fotos-home" aria-labelledby="fot-t">
-          <h2 id="fot-t" className="section-title">
-            Fotos chorras
-          </h2>
-          <ul className="tira-fotos">
-            {fotos.map((f) => (
-              <li key={f.src}>
-                <Link href="/fotos/">
-                  <Image src={f.src} width={f.ancho} height={f.alto} alt={f.alt} sizes="(min-width: 1000px) 190px, 45vw" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <section className="band">
         <div className="wrap-wide section">
