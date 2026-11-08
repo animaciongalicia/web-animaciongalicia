@@ -59,6 +59,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     h1: "Amigo invisible en la oficina: ideas, normas y cómo sobrevivir",
     dek: "Te toca el compañero que no conoces, con un presupuesto de diez euros y todo el mundo mirando. Cómo organizarlo, qué regalar y qué hacer si te toca el peor regalo.",
     fecha: FECHA,
+    imagen: { src: "/fotos/amigo-invisible-regalos.jpg", ancho: 1200, alto: 754, alt: "Intercambio de regalos con una carita seria encima" },
     galicia: true,
     relacionadas: ["regalo-colectivo-cumpleanos-sin-enemistades", "regalos-de-ultima-hora-cumpleanos"],
     bloques: [
@@ -100,6 +101,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     h1: "Qué decir cuando no te gusta el regalo (sin quedar fatal)",
     dek: "Lo abres, lo miras y tu cara dice más que tu boca. Frases, gestos y trucos para agradecer sin mentir demasiado y sin romper la amistad.",
     fecha: FECHA,
+    imagen: { src: "/fotos/regalo-cara-asco.jpg", ancho: 1200, alto: 900, alt: "Mujer con gesto de asco al abrir una caja roja" },
     galicia: true,
     relacionadas: ["preguntas-chorras-regalos", "regalos-atrevidos-para-cumpleanos"],
     bloques: [
@@ -339,6 +341,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     h1: "Ginkana de cumpleaños para adultos: ideas para casa o parque",
     dek: "Una ginkana de cumpleaños para adultos funciona si es corta, tiene retos fáciles y no obliga a nadie a hacer el ridículo. Pruebas listas para montar en una tarde.",
     fecha: FECHA,
+    imagen: { src: "/fotos/disfraz-acolchado-rojo.jpg", ancho: 1600, alto: 2138, alt: "Persona con un disfraz rojo acolchado con detalles dorados" },
     galicia: true,
     relacionadas: ["juegos-para-cumpleanos-de-adultos", "retos-de-plaza-declaracion-cantada-flashmob"],
     bloques: [
@@ -379,6 +382,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     h1: "Karaoke en casa: reglas para que no acabe mal (ni con los vecinos)",
     dek: "El karaoke es el mejor invento para una fiesta y el origen de muchas discusiones. Cómo organizarlo en casa para que todos canten, rían y nadie monopolice el micro.",
     fecha: FECHA,
+    imagen: { src: "/fotos/boda-pista-sudor.jpg", ancho: 990, alto: 482, alt: "Hombre sudado agarrando por la cabeza a otro en plena fiesta" },
     galicia: true,
     relacionadas: ["juegos-para-cumpleanos-de-adultos", "musica-para-fiesta-de-cumpleanos-playlist"],
     bloques: [

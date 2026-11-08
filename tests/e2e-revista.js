@@ -304,7 +304,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
     await page.waitForTimeout(600);
     const fp = await page.$$eval(".hero-foto img, .prose .foto img", (i) => i.map((x) => x.naturalWidth));
-    ok(`[${name}] post: foto de cabecera y fotos en el texto cargadas`, fp.length >= 2 && fp.every((w) => w > 0), JSON.stringify(fp));
+    ok(`[${name}] post: una sola foto (la de cabecera), cargada`, fp.length === 1 && fp.every((w) => w > 0), JSON.stringify(fp));
 
     const r404 = await page.goto(B + "/no-existe/");
     ok(`[${name}] 404`, r404.status() === 404);

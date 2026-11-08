@@ -26,6 +26,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     h1: "Qué regalar en un cumpleaños: ideas divertidas que sí se usan",
     dek: "Sin calcetines, sin tazas con frase y sin tarjeta regalo de último minuto. Ideas para acertar con quien cumple años, con humor y con algo de cabeza.",
     fecha: FECHA,
+    imagen: { src: "/fotos/calcetin-de-regalo.jpg", ancho: 1000, alto: 603, alt: "Hombre sosteniendo un calcetín con un regalo envuelto" },
     galicia: true,
     relacionadas: ["regalos-absurdos-que-si-se-pueden-usar", "regalos-atrevidos-para-cumpleanos", "regalos-para-quien-lo-tiene-todo"],
     bloques: [
@@ -65,6 +66,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     h1: "Regalos atrevidos para un cumpleaños: ideas con cara dura",
     dek: "Para quien se ríe de todo, aguanta una broma y no se ofende por un regalo que da que hablar. Ideas atrevidas con límites claros.",
     fecha: FECHA,
+    imagen: { src: "/fotos/regalo-cara-mano.jpg", ancho: 870, alto: 534, alt: "Hombre tapándose la cara mientras una mujer abre un regalo" },
     galicia: true,
     relacionadas: ["que-regalar-en-un-cumpleanos-ideas-divertidas", "regalos-absurdos-que-si-se-pueden-usar"],
     bloques: [
@@ -268,6 +270,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     h1: "Cumplir 30, 40 o 50: cómo celebrarlo sin dramas",
     dek: "Los cumpleaños redondos pesan: la gente se pone filosófica, la tarta se llena de velas y alguien dice «ya no estoy para esto». Cómo celebrarlo bien.",
     fecha: FECHA,
+    imagen: { src: "/fotos/cumple-70-baile.jpg", ancho: 960, alto: 640, alt: "Señora mayor bailando con gafas de fiesta rodeada de gente" },
     galicia: true,
     relacionadas: ["cumpleanos-tematicos-adultos-galicia", "brindis-gracioso-cumpleanos"],
     bloques: [
@@ -387,6 +390,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     h1: "Juegos para un cumpleaños de adultos (sin vergüenza ajena)",
     dek: "Juegos que sí funcionan con adultos: nada de mímica infantil. Dinámicas simples, risas aseguradas y con opción de no jugar sin que nadie se ofenda.",
     fecha: FECHA,
+    imagen: { src: "/fotos/cabina-fotos-novios.jpg", ancho: 960, alto: 640, alt: "Grupo con accesorios y carteles en una cabina de fotos de boda" },
     galicia: true,
     relacionadas: ["juego-yo-nunca-cena-amigos-preguntas", "bromas-cumpleanos-restaurante"],
     bloques: [

@@ -31,7 +31,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "La diferencia entre una despedida legendaria y un parte de incidencias casi nunca es la locura del plan. Es que alguien ha pensado tres cosas antes de salir: dónde está cada uno, cómo se vuelve y quién manda cuando todos han dejado de mandar. Con eso, el resto lo puede improvisar el grupo.",
       },
-      { t: "foto", src: "/fotos/jarra-cerveza-gigante.jpg", ancho: 850, alto: 450, alt: "Chorro de cerveza directo a la cara en una mesa de bar", pie: "Hidratación, la justa" },
       { t: "h2", x: "Seis reglas para que la noche sea una historia y no un expediente" },
       {
         t: "ol",
@@ -70,7 +69,6 @@ export const piezas: Pieza[] = [
           "03:00 Vuelta al alojamiento. Quien quiera seguir sigue, el novio no.",
         ],
       },
-      { t: "foto", src: "/fotos/brindis-champan-botella.jpg", ancho: 840, alto: 474, alt: "Grupo de amigas brindando y bebiendo champán de la botella", pie: "Aquí nadie conduce" },
       { t: "h2", x: "Y si ya ha pasado" },
       {
         t: "p",
@@ -105,7 +103,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "Estas ideas no sirven para nada que no sea ponértelo más fácil. Algunas son serias, otras no, y casi todas funcionan mejor si las anuncias con mucha solemnidad.",
       },
-      { t: "foto", src: "/fotos/pelo-al-viento-copa.jpg", ancho: 600, alto: 400, alt: "Mujeres moviendo el pelo con una copa en la mano de noche", pie: "Modo noche activado" },
       { t: "h2", x: "Ocho ideas para mover el grupo" },
       {
         t: "ol",
@@ -228,7 +225,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "Es un plan con una ventaja enorme: el novio llega al sitio sin saber dónde va, y el resto del grupo ya está allí. Y un inconveniente igual de grande: si algo sale mal, sale muy mal.",
       },
-      { t: "foto", src: "/fotos/boda-pista-sudor.jpg", ancho: 990, alto: 482, alt: "Hombre sudado agarrando por la cabeza a otro en plena fiesta", pie: "Fase final de la boda" },
       { t: "h2", x: "Cómo se monta para que funcione" },
       {
         t: "ol",
@@ -286,7 +282,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "Hay retos que solo funcionan en la calle. Necesitan público, vergüenza propia y un grupo de amigos dispuesto a mirar desde lejos. Estos dos son clásicos de las despedidas, y funcionan igual en la plaza de una villa gallega que en una zona peatonal de Vigo, A Coruña o Santiago un sábado por la tarde.",
       },
-      { t: "foto", src: "/fotos/peluca-azul-gafas-verdes.jpg", ancho: 868, alto: 457, alt: "Hombre sonriente con peluca azul y gafas verdes", pie: "Cuando el amigo ya entró en personaje" },
       { t: "h2", x: "Reto 1: la declaración de amor cantada" },
       {
         t: "p",
@@ -362,7 +357,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "Aquí van frases chorras, de las que se leen desde lejos, y algunas con guiño gallego. Cámbialas, mézclalas o dáselas a quien las quiera hacer peor.",
       },
-      { t: "foto", src: "/fotos/amigas-gafas-retro.jpg", ancho: 1280, alto: 744, alt: "Grupo de amigas con gafas de colores en una foto en blanco y negro", pie: "El grupo, versión vintage" },
       { t: "h2", x: "Para la novia y su cuadrilla" },
       {
         t: "ul",
@@ -394,7 +388,6 @@ export const piezas: Pieza[] = [
         tipo: "frase",
         x: "Si me ves bailando en la plaza, soy del equipo del novio.",
       },
-      { t: "foto", src: "/fotos/taza-con-lazo.jpg", ancho: 1024, alto: 580, alt: "Taza blanca con lazo rojo junto a una caja de cartón", pie: "La taza, otra vez" },
       { t: "h2", x: "Para grupos mixtos (y para los que no se conocen)" },
       {
         t: "ul",
@@ -453,7 +446,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "Las tiendas online como Amazon están llenas de opciones. El problema no es encontrar disfraces, es no pillar uno que sea incómodo, que llegue tarde o que se rompa a la segunda hora.",
       },
-      { t: "foto", src: "/fotos/disfraces-grupo-pez.jpg", ancho: 908, alto: 468, alt: "Grupo de amigas con disfraces y gorros de cocinero", pie: "Disfraces de grupo: más fáciles que ponerse de acuerdo" },
       { t: "h2", x: "Qué buscar" },
       {
         t: "ul",
@@ -492,7 +484,6 @@ export const piezas: Pieza[] = [
           "Cualquier cosa que ofenda a alguien por su origen, su aspecto o su condición.",
         ],
       },
-      { t: "foto", src: "/fotos/disfraz-acolchado-rojo.jpg", ancho: 1600, alto: 2138, alt: "Persona con un disfraz rojo acolchado con detalles dorados", pie: "Disfraz que ocupa sitio" },
       { t: "h2", x: "El disfraz como regalo" },
       {
         t: "p",
@@ -526,7 +517,6 @@ export const piezas: Pieza[] = [
         t: "p",
         x: "El tema no tiene que ser un disfraz completo ni una producción. A veces basta un detalle que cambie el chip de la gente al entrar por la puerta.",
       },
-      { t: "foto", src: "/fotos/cumple-70-baile.jpg", ancho: 960, alto: 640, alt: "Señora mayor bailando con gafas de fiesta rodeada de gente", pie: "Cumpleaños con más marcha que el tuyo" },
       { t: "h2", x: "Siete temas que funcionan con adultos" },
       {
         t: "ol",
@@ -556,7 +546,6 @@ export const piezas: Pieza[] = [
           "Tu casa: solo si cabéis, hay vecinos comprensivos y alguien se encarga de recoger.",
         ],
       },
-      { t: "foto", src: "/fotos/confeti-vasos-rojos.jpg", ancho: 740, alto: 493, alt: "Amigas lanzando confeti junto a una mesa con vasos rojos", pie: "Confeti: lo barrerá alguien" },
       { t: "h2", x: "Línea de tiempo sin agobios" },
       {
         t: "caja",
@@ -600,7 +589,6 @@ export const piezas: Pieza[] = [
       { t: "p", x: "Si tu duda no está aquí, mándanosla desde Contacto y la sumamos." },
       { t: "h2", x: "¿Puede el novio llevarse el móvil a su despedida?" },
       { t: "p", x: "Puede, pero lo normal es que se quede sin batería a las diez y sin vergüenza a las doce. Lo mejor es acordar antes quién lo guarda y quién tiene el teléfono de emergencia. Que la persona de enlace tenga el número de su familia por si acaso." },
-      { t: "foto", src: "/fotos/novio-de-flamenca-caballo.jpg", ancho: 858, alto: 485, alt: "Grupo de amigos con un disfraz de flamenca sobre un animal por una calle", pie: "El disfraz del novio, sin filtro" },
       { t: "h2", x: "¿Hay que hacer algo vergonzoso?" },
       { t: "p", x: "No. Los retos son opcionales y el límite lo pone el novio, no el grupo. Una despedida buena es la que se recuerda con risa, no la que se esconde. Si alguien dice que no, se pasa al siguiente plan y listo." },
       { t: "h2", x: "¿Quién paga la parte del novio?" },
@@ -608,7 +596,6 @@ export const piezas: Pieza[] = [
       { t: "h2", x: "¿Cuánta gente hay que invitar?" },
       { t: "p", x: "Entre seis y doce personas se maneja bien. A partir de quince conviene dividir en subgrupos, porque una mesa de veinte en un restaurante de Vigo no es una cena, es un congreso. Pregunta al novio con quién quiere estar de verdad." },
       { t: "caja", tipo: "frase", x: "Una buena despedida es la que el novio recuerda con risa y la novia, con tranquilidad." },
-      { t: "foto", src: "/fotos/peluca-azul-gafas-verdes.jpg", ancho: 868, alto: 457, alt: "Hombre sonriente con peluca azul y gafas verdes", pie: "Cuando el amigo ya entró en personaje" },
       { t: "h2", x: "¿Y si el novio no quiere despedida?" },
       { t: "p", x: "Se respeta. Una cena tranquila con los tres amigos de siempre también es una despedida. No todo el mundo se siente cómodo siendo el centro de atención, y obligarle a un plan que no quiere es el mejor modo de estropearlo." },
       { t: "h2", x: "¿Qué pasa si llueve en Galicia?" },
@@ -638,7 +625,6 @@ export const piezas: Pieza[] = [
       { t: "p", x: "En cualquier grupo de despedida de soltera hay preguntas que se piensan y no se dicen. Aquí van las más habituales, con respuesta útil y sin dramatismo. Muchas valen también para despedidas mixtas." },
       { t: "h2", x: "¿Hay que invitar a todas las amigas de la novia?" },
       { t: "p", x: "No. Pregunta a la novia con quién quiere estar y no inventes una lista. Si hay amigas de distintos grupos, mejor que se conozcan antes de la despedida, o que haya un plan de arranque que rompa el hielo sin forzarlo." },
-      { t: "foto", src: "/fotos/cabina-fotos-novios.jpg", ancho: 960, alto: 640, alt: "Grupo con accesorios y carteles en una cabina de fotos de boda", pie: "La cabina de fotos manda" },
       { t: "h2", x: "¿La novia tiene que saber qué se hace?" },
       { t: "p", x: "Depende de la novia. Hay quien disfruta de una sorpresa total y quien necesita saber a dónde va. Lo prudente es preguntarle por su nivel de sorpresa a alguien cercano y avisarle de lo básico: fecha, hora de salida y qué ropa llevar." },
       { t: "h2", x: "¿Es obligatorio llevar camiseta, tiara o banda?" },
@@ -677,7 +663,6 @@ export const piezas: Pieza[] = [
       { t: "p", x: "Cumplir años es fácil. Organizar el cumpleaños de un adulto, no tanto. Estas son las dudas que se repiten en cada mesa, con una respuesta práctica para cada una." },
       { t: "h2", x: "¿Hay que invitar a todo el mundo?" },
       { t: "p", x: "No. Invita a quien quieras tener cerca, no a quien se ofenda si no lo haces. Una mesa grande es un compromiso; una mesa pequeña, una fiesta. Si temes herir a alguien, dilo claro: «es una cena pequeña»." },
-      { t: "foto", src: "/fotos/regalo-cara-mano.jpg", ancho: 870, alto: 534, alt: "Hombre tapándose la cara mientras una mujer abre un regalo", pie: "Ese regalo no era" },
       { t: "h2", x: "¿Se puede pedir que no traigan regalos?" },
       { t: "p", x: "Sí, con gracia: «lo mejor que me podéis dar es vuestra compañía». Y si alguien trae uno, se agradece sin más. Pedir que no haya regalos es una elección tuya; no tiene que convertirse en una prohibición para el resto." },
       { t: "h2", x: "¿Quién paga la cena de cumpleaños?" },
@@ -714,15 +699,12 @@ export const piezas: Pieza[] = [
     relacionadas: ["disfraces-para-novio-o-novia-despedida", "frases-para-camisetas-despedida"],
     bloques: [
       { t: "p", x: "Regalar es fácil hasta que hay que decidir cuánto, qué y cuándo. Estas son las dudas que más se repiten, con una respuesta que sirve para cualquier ocasión." },
-      { t: "foto", src: "/fotos/calcetin-de-regalo.jpg", ancho: 1000, alto: 603, alt: "Hombre sosteniendo un calcetín con un regalo envuelto", pie: "El calcetín: clásico del mal regalo" },
       { t: "h2", x: "¿Cuánto hay que gastarse en un regalo?" },
       { t: "p", x: "Lo que pueda pagar quien regala sin que le duela, y lo que quien lo recibe agradezca sin sentirse en deuda. No hay cifra mágica. Un regalo pequeño pero pensado gana siempre a uno caro y genérico." },
       { t: "h2", x: "¿Se puede regalar dinero?" },
       { t: "p", x: "Sí, sobre todo en bodas y cumpleaños importantes. Se hace más amable con un sobre bonito, una nota y, si puedes, una pista de para qué sirve. Regalar dinero sin más es práctico; regalarlo con gracia, memorable." },
-      { t: "foto", src: "/fotos/regalo-cara-asco.jpg", ancho: 1200, alto: 900, alt: "Mujer con gesto de asco al abrir una caja roja", pie: "Gracias, de verdad" },
       { t: "h2", x: "¿Qué pasa si me regalan lo mismo dos personas?" },
       { t: "p", x: "Que tienes un regalo extra. Si es útil, quédatelo; si no, pregunta si hay ticket regalo. Y la próxima vez, en un regalo colectivo, designad una persona que lo compre." },
-      { t: "foto", src: "/fotos/amigo-invisible-regalos.jpg", ancho: 1200, alto: 754, alt: "Intercambio de regalos con una carita seria encima", pie: "Amigo invisible, cara de póker" },
       { t: "h2", x: "¿Es de mala educación pedir el ticket regalo?" },
       { t: "p", x: "No. Es de buena educación incluirlo. Quien regala un objeto con talla o color debería dejar la puerta abierta al cambio. Y quien recibe, si no le encaja, puede cambiarlo sin remordimientos." },
       { t: "caja", tipo: "frase", x: "Un regalo pensado gana a uno caro. Y uno caro con ticket, también." },
@@ -750,6 +732,7 @@ export const piezas: Pieza[] = [
     "h1": "Guía para organizar una despedida en Galicia, paso a paso",
     "dek": "De «¿qué hacemos?» a «¿quién ha pagado?»: el camino completo para organizar una despedida de soltero, de soltera o mixta, con enlaces a todo lo que vas a necesitar.",
     "fecha": "2026-11-08",
+    "imagen": { "src": "/fotos/brindis-champan-botella.jpg", "ancho": 840, "alto": 474, "alt": "Grupo de amigas brindando y bebiendo champán de la botella" },
     "galicia": true,
     "relacionadas": [
       "despedida-como-resacon-en-las-vegas",
@@ -972,6 +955,7 @@ export const piezas: Pieza[] = [
     "h1": "Mitos de las despedidas de soltero que nadie debería creer",
     "dek": "«Lo que pasa en la despedida se queda en la despedida». «Cuanto más caro, mejor». Ocho creencias que arruinan despedidas, desmontadas una a una.",
     "fecha": "2026-11-08",
+    "imagen": { "src": "/fotos/jarra-cerveza-gigante.jpg", "ancho": 850, "alto": 450, "alt": "Chorro de cerveza directo a la cara en una mesa de bar" },
     "galicia": true,
     "relacionadas": [
       "preguntas-chorras-despedida-de-soltero",
@@ -1433,6 +1417,7 @@ export const piezas: Pieza[] = [
     "h1": "Cumpleaños sorpresa: 10 cosas que salen mal y cómo evitarlas",
     "dek": "Se enteró por otro grupo, llegó 40 minutos antes y la tarta no tenía velas. Diez fallos clásicos de las fiestas sorpresa, con su solución.",
     "fecha": "2026-11-08",
+    "imagen": { "src": "/fotos/confeti-vasos-rojos.jpg", "ancho": 740, "alto": 493, "alt": "Amigas lanzando confeti junto a una mesa con vasos rojos" },
     "galicia": true,
     "relacionadas": [
       "cumpleanos-tematicos-adultos-galicia",
@@ -1502,6 +1487,7 @@ export const piezas: Pieza[] = [
     "h1": "Regalos absurdos que sí se pueden usar",
     "dek": "Un buen regalo absurdo hace reír y, sorpresa, sirve para algo. Ideas para cumpleaños, despedidas y amigos que lo tienen todo, con un toque gallego.",
     "fecha": "2026-11-08",
+    "imagen": { "src": "/fotos/taza-con-lazo.jpg", "ancho": 1024, "alto": 580, "alt": "Taza blanca con lazo rojo junto a una caja de cartón" },
     "galicia": true,
     "relacionadas": [
       "frases-para-camisetas-despedida",
@@ -1608,6 +1594,7 @@ export const piezas: Pieza[] = [
     "h1": "Actividades absurdas para despedidas en Galicia: qué hacer de loco",
     "dek": "Retos, disfraces y planes sin sentido para una despedida de soltero o de soltera, con el mapa de Galicia de fondo: A Coruña, Vigo, Sanxenxo y Ourense.",
     "fecha": "2026-11-09",
+    "imagen": { "src": "/fotos/disfraces-grupo-pez.jpg", "ancho": 908, "alto": 468, "alt": "Grupo de amigas con disfraces y gorros de cocinero" },
     "galicia": true,
     "destacada": false,
     "relacionadas": [
@@ -1722,6 +1709,7 @@ export const piezas: Pieza[] = [
     "h1": "Despedidas en A Coruña: ocho locuras para hacer de loco",
     "dek": "Del Paseo Marítimo a la plaza de María Pita, ocho retos absurdos para una despedida en A Coruña. Con humor y sin que nadie acabe mal.",
     "fecha": "2026-11-09",
+    "imagen": { "src": "/fotos/peluca-azul-gafas-verdes.jpg", "ancho": 868, "alto": 457, "alt": "Hombre sonriente con peluca azul y gafas verdes" },
     "galicia": true,
     "relacionadas": [
       "actividades-absurdas-despedidas-galicia",
@@ -1812,6 +1800,7 @@ export const piezas: Pieza[] = [
     "h1": "Despedidas en Vigo: ocho locuras para hacer de loco",
     "dek": "Del Casco Vello a O Berbés y la ría: ocho retos absurdos para una despedida en Vigo, sin coger el coche y sin que se líe.",
     "fecha": "2026-11-09",
+    "imagen": { "src": "/fotos/amigas-gafas-retro.jpg", "ancho": 1280, "alto": 744, "alt": "Grupo de amigas con gafas de colores en una foto en blanco y negro" },
     "galicia": true,
     "relacionadas": [
       "actividades-absurdas-despedidas-galicia",
@@ -1909,6 +1898,7 @@ export const piezas: Pieza[] = [
     "h1": "Despedidas en Sanxenxo: ocho locuras para hacer de loco",
     "dek": "Playas, puerto deportivo y mucho verano: ocho retos absurdos para una despedida en Sanxenxo, con humor y sin que se líe.",
     "fecha": "2026-11-09",
+    "imagen": { "src": "/fotos/pelo-al-viento-copa.jpg", "ancho": 600, "alto": 400, "alt": "Mujeres moviendo el pelo con una copa en la mano de noche" },
     "galicia": true,
     "relacionadas": [
       "actividades-absurdas-despedidas-galicia",
@@ -1996,6 +1986,7 @@ export const piezas: Pieza[] = [
     "h1": "Despedidas en Ourense: ocho locuras para hacer de loco",
     "dek": "Termas, Ponte Romana y vino del Ribeiro cerca: ocho retos absurdos para una despedida en Ourense, con humor y sin que se líe.",
     "fecha": "2026-11-09",
+    "imagen": { "src": "/fotos/novio-de-flamenca-caballo.jpg", "ancho": 858, "alto": 485, "alt": "Grupo de amigos con un disfraz de flamenca sobre un animal por una calle" },
     "galicia": true,
     "relacionadas": [
       "actividades-absurdas-despedidas-galicia",

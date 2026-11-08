@@ -53,7 +53,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
 function SeccionMagazine({ seccion }: { seccion: Cat }) {
   const s = SECCIONES[seccion];
   const list = bySeccion(seccion);
-  const lead = list.find((p) => p.destacada) ?? list[0];
+  const lead = list.find((p) => p.destacada) ?? list.find((p) => p.imagen) ?? list[0];
   const resto = list.filter((p) => p !== lead);
   const secundarias = resto.slice(0, 2);
   const ultimas = resto.slice(2, 8);
