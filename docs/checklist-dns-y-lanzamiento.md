@@ -21,7 +21,8 @@ Estado técnico verificado el 9-nov-2026 sobre la compilación de producción en
   - `SITE_INDEXABLE=true`
   - `NEXT_PUBLIC_BASE_PATH` vacío
   - `NEXT_PUBLIC_GA_ID=G-JY6XXV50MM` (opcional: es el valor por defecto)
-- [ ] Vercel → Domains: añadir `animaciongalicia.com` y `www.animaciongalicia.com`. Dejar `www` redirigiendo al dominio sin `www` (el canonical de la web es sin `www`).
+- [ ] Vercel → Domains: añadir `animaciongalicia.com` y `www.animaciongalicia.com`. **El dominio sin `www` debe ser el principal** y `www` debe redirigir a él (el canonical de la web, el sitemap y las URLs del WordPress antiguo son sin `www`). Por defecto Vercel suele hacerlo al revés: comprobar la flecha de redirección en cada dominio y corregirla.
+- [ ] Si prefieres `www` como principal, cambia entonces `NEXT_PUBLIC_SITE_URL` a `https://www.animaciongalicia.com`. Lo importante es que el dominio principal, el canonical y la variable coincidan.
 - [ ] Anotar los valores DNS que Vercel muestre para el dominio y para `www` (usa esos, no los de memoria).
 
 ## 2. El cambio

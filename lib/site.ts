@@ -15,6 +15,11 @@ export const SITE = {
   salientes: { grupo: true, terceros: false },
 } as const;
 
+// Red de seguridad en Vercel: en producción, indexable y sin URL pública sería publicar canónicos a localhost.
+if (process.env.VERCEL_ENV === "production" && SITE.indexable && SITE.url.includes("localhost")) {
+  throw new Error("Falta NEXT_PUBLIC_SITE_URL en las variables de producción de Vercel (p. ej. https://animaciongalicia.com).");
+}
+
 export const NAV = [
   { label: "Despedidas", href: "/" },
   { label: "Cumpleaños", href: "/cumpleanos/" },
