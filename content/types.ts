@@ -50,6 +50,8 @@ export type Pieza = {
   webs?: string[];
   /** Texto que precede a la línea de `webs` (por defecto «Si te toca organizarla allí»). */
   websEtiqueta?: string;
+  /** Descargas propias alojadas fuera (p. ej. Google Drive). Salen como lista al final del texto. */
+  descargas?: { texto: string; url: string }[];
   /** Foto de cabecera (se ve arriba del post, en las tarjetas y en la portada). */
   imagen?: { src: string; ancho: number; alto: number; alt: string; credito?: string };
 };

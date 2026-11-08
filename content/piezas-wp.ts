@@ -451,6 +451,11 @@ export const PIEZAS_WP: Pieza[] = [
     galicia: true,
     webs: ["test-despedidas.com", "retranca.es", "ruletadespedidas.com", "gastosdespedidas.com"],
     websEtiqueta: "Las herramientas, aquí",
+    descargas: [
+      { texto: "Guía de 10 pasos para una despedida perfecta (PDF)", url: "https://drive.google.com/file/d/1mdN1yLzH2vitNZtNMX18YCoCfPN4phCa/view" },
+      { texto: "Las 10 cagadas a evitar en una despedida (PDF)", url: "https://drive.google.com/file/d/1bE_1rYT3FOZ87Q1xTQf8tgC7plM2kzbd/view" },
+      { texto: "Excel para controlar los gastos de la despedida (hoja de cálculo)", url: "https://docs.google.com/spreadsheets/d/1mrMsO8ibejrQlnh5qwKqcH4W73Du458q/copy" },
+    ],
     relacionadas: ["presupuesto-despedida-como-calcularlo", "ideas-locas-grupo-whatsapp-despedida"],
     bloques: [
       p("Organizar una despedida en un grupo de WhatsApp es una forma segura de discutir: unos quieren fiesta, otros quieren cena y nadie quiere hablar de dinero. Hay herramientas sencillas, gratuitas y hechas para esto que ayudan a que todo sea más fácil."),
@@ -474,6 +479,7 @@ export const PIEZAS_WP: Pieza[] = [
       ),
       ojo("Son una ayuda, no un oráculo", "Un test no decide por vosotros. Sirve para que todos hablen del mismo tema y lleguen a una decisión sin pelearse."),
       p("Lo mejor es que son gratuitas y están pensadas para compartirse por WhatsApp, que es donde se organiza casi todo: un enlace y todo el grupo participa."),
+      p("Además hay tres descargas gratuitas, abajo: una guía de diez pasos para organizar la despedida, un listado de los errores más habituales y una hoja de cálculo para llevar los gastos del grupo. Se abren en Google Drive."),
       p("Si prefieres no usarlas, la idea de fondo sirve igual: decidir el tipo de despedida entre todos, animar al grupo desde el principio y dejar el dinero claro antes de empezar."),
       frase("Una despedida bien organizada es la que empieza con todos de acuerdo, no con todos agotados."),
     ],

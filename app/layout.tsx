@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   },
   description: SITE.tagline,
   applicationName: SITE.name,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
   alternates: { types: { "application/rss+xml": "/feed.xml" } },
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
   other: { "geo.region": "ES-GA", "geo.placename": "Galicia" },

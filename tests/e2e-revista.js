@@ -125,7 +125,8 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
       await page.goto(B + u);
       const h1 = (await page.$$("h1")).length;
       const todos = await page.$$eval("a[href^='http']", (a) => a.map((x) => ({ h: x.href, t: x.target, r: x.rel })));
-      const ext = todos.filter((x) => !x.h.startsWith("https://wa.me/") && !esGrupo(x.h)).map((x) => x.h);
+      const dls = await page.$$eval(".descargas a", (a) => a.map((x) => x.href));
+      const ext = todos.filter((x) => !x.h.startsWith("https://wa.me/") && !esGrupo(x.h) && !dls.includes(x.h)).map((x) => x.h);
       const malGrupo = todos.filter((x) => esGrupo(x.h) && (x.t !== "_blank" || !/noopener/.test(x.r) || /nofollow/.test(x.r))).map((x) => x.h);
       if (malGrupo.length) ok(`[${name}] ${u} enlaces al grupo abren en pestaña nueva y sin nofollow`, false, malGrupo.join());
       const ov = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
@@ -159,7 +160,7 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
       ok(`[${name}] ${u} sidebar completa (secciones, sección y contacto; sin cajas de relleno)`, info.chips === 5 && info.sideLinks.length >= 4, `links=${info.sideLinks.length} galicia=${info.galBox}`);
       ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee === 0, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
       const il = await page.$$eval(".mas-sobre:not(.mas-sobre-webs) a", (a) => a.map((x) => x.getAttribute("href")));
-      const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]:not(.mas-sobre-webs a)", (a) => a.length);
+      const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]:not(.mas-sobre-webs a):not(.descargas a)", (a) => a.length);
       ok(`[${name}] ${u} enlaces discretos: 1 línea final con máx. 2 y nada intrusivo en el texto`, il.length <= 2 && intr === 0, `${il.length}/${intr}`);
       ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= (u.split("/").filter(Boolean).length === 1 ? 900 : 650), `${info.words}`);
       // enlaces internos
@@ -234,6 +235,13 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     await page.goto(B + "/despedidas-de-soltero-y-soltera-en-sanxenxo/");
     const sx = await page.$$eval(".prose a[target=_blank]", (a) => a.map((x) => ({ h: x.href, r: x.rel })));
     ok(`[${name}] Sanxenxo enlaza sus 3 webs del grupo en pestaña nueva y sin nofollow`, sx.length === 3 && sx.every((x) => /despedidas(-|playa)?sanxenxo|despedidassanxenxo|despedidasplayasanxenxo/.test(x.h) && !/nofollow/.test(x.r)), JSON.stringify(sx));
+    await page.goto(B + "/juegos/herramientas-gratis-para-organizar-una-despedida/");
+    const dl = await page.$$eval(".descargas a", (a) => a.map((x) => ({ h: x.href, t: x.target, r: x.rel })));
+    ok(`[${name}] herramientas: 3 descargas propias en pestaña nueva`, dl.length === 3 && dl.every((x) => /(drive|docs)\.google\.com/.test(x.h) && x.t === "_blank" && /noopener/.test(x.r)), JSON.stringify(dl.map((x) => x.h.slice(0, 50))));
+    const ic = await page.$$eval("link[rel~=icon], link[rel=apple-touch-icon]", (l) => l.map((x) => x.getAttribute("href") + "|" + (x.getAttribute("sizes") || "")));
+    ok(`[${name}] favicon: enlaces a icono (ico, svg, png) y apple-touch`, ic.length >= 3, ic.join(" ; "));
+    const fav = await page.request.get(B + "/favicon.ico");
+    ok(`[${name}] /favicon.ico responde 200 en la raíz`, fav.status() === 200 && /icon/.test(fav.headers()["content-type"] || ""), fav.headers()["content-type"]);
     await page.goto(B + "/aviso-legal/");
     ok(`[${name}] aviso legal: domicilio completo`, (await page.textContent("main")).includes("Ronda de Montealto, 4, 15002 A Coruña"));
     const mal = await page.request.get(B + "/animacion-galicia/", { maxRedirects: 0 });

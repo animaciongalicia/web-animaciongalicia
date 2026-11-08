@@ -498,3 +498,7 @@ ul, ol { padding-left: 1.2em; }
 .page section[aria-labelledby] { scroll-margin-top: 16px; }
 .nombre-web { font-family: var(--font-ui); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 2px !important; }
 .form-nota { font-family: var(--font-ui); font-size: .78rem; color: var(--muted); margin: 8px 0 0; }
+
+.descargas { margin: 1.6rem 0 0; padding: 12px 16px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--sec); }
+.descargas ul { margin: 6px 0 0; padding-left: 1.1rem; }
+.descargas li { margin: 4px 0; }

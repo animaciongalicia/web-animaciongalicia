@@ -84,7 +84,7 @@ function Uno({ b }: { b: Bloque }) {
  * Renderiza los bloques de un post. Los enlaces internos van discretos: una sola línea al final
  * («Más sobre esto: A · B», máximo 2) sin enlaces al grupo dentro del texto.
  */
-export function Bloques({ bloques, slug, webs, websEtiqueta }: { bloques: Bloque[]; slug?: string; webs?: string[]; websEtiqueta?: string }) {
+export function Bloques({ bloques, slug, webs, websEtiqueta, descargas }: { bloques: Bloque[]; slug?: string; webs?: string[]; websEtiqueta?: string; descargas?: { texto: string; url: string }[] }) {
   const manuales = bloques.flatMap((b) => (b.t === "leetambien" ? [{ slug: b.slug, texto: bySlug(b.slug)?.tag ?? "" }] : []));
   const auto = (slug && ENLACES_INTERNOS[slug]) || [];
   const vistos = new Set<string>();
@@ -97,6 +97,20 @@ export function Bloques({ bloques, slug, webs, websEtiqueta }: { bloques: Bloque
         if (b.t === "grupo") return null; // las webs del grupo viven en «Cómo trabajamos», no dentro del texto
         return <Uno key={i} b={b} />;
       })}
+      {descargas && descargas.length > 0 && (
+        <aside className="descargas" aria-label="Descargas gratuitas">
+          <p className="caja-titulo">Descargas gratuitas</p>
+          <ul>
+            {descargas.map((d) => (
+              <li key={d.url}>
+                <a href={d.url} target="_blank" rel="noopener noreferrer">
+                  {d.texto}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
       {webs && SITE.salientes.grupo && (
         <p className="mas-sobre mas-sobre-webs">
           {websEtiqueta ?? "Si te toca organizarla allí"}:{" "}
