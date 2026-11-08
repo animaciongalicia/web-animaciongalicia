@@ -16,19 +16,20 @@ npm run lint
 npm run typecheck
 ```
 
-## Dominio y dónde vive
+## Dominio y plan
 
-`animaciongalicia.com` tiene 15 años y ~3.000 enlaces entrantes (dato aportado, sin verificar), y **hoy es una web
-WordPress comercial en producción**. La revista **no ocupa la raíz**: está preparada para vivir en `/revista/`.
-Ver `docs/arquitectura-subcarpeta.md`.
+`animaciongalicia.com` tiene 15 años y ~3.000 enlaces entrantes (dato aportado, sin verificar). Hoy es un WordPress
+comercial. **Decisión: se elimina el WordPress y la revista pasa a ser toda la web.** Se hace con datos y redirecciones.
+
+- **Brief completo para Claude Code:** `docs/BRIEF_CLAUDE_CODE.md` (empieza por aquí).
+- Plan de migración, inventario del WordPress y redirecciones: `docs/migracion-wordpress.md`.
+- Estrategia de visitas y banco de titulares: `docs/estrategia-seo-y-visitas.md`.
+- Titular legal: Inversiones Shiso, S.L. (B70319223, 15002 A Coruña). Faltan calle, correo y registro.
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://animaciongalicia.com   # sin subcarpeta
-NEXT_PUBLIC_BASE_PATH=/revista                      # vacío = raíz
+NEXT_PUBLIC_BASE_PATH=                              # vacío: raíz. (/revista sigue soportado)
 ```
-
-Con `NEXT_PUBLIC_BASE_PATH=/revista`, todas las rutas de abajo cuelgan de `/revista` (menú, enlaces, canonicals,
-sitemap, feed, imágenes de vista previa, formularios y botones de compartir).
 
 ## Estructura
 
@@ -40,7 +41,16 @@ sitemap, feed, imágenes de vista previa, formularios y botones de compartir).
 | `/despedidas/` | Redirige a `/` (los posts viven en `/despedidas/<slug>/`) |
 | `/contacto/` | Contacto, «Mándanos un enlace» y «Cuéntanos tu marrón» |
 | `/animacion-galicia/` | La agencia y sus webs. Solo se enlaza desde el pie |
+| URLs del WordPress antiguo | 301 a su equivalente (`content/redirects.ts`, propuesta a validar) |
 | `/aviso-legal/`, `/privacidad/`, `/cookies/`, `/como-trabajamos/` | Páginas legales, en la barra de abajo del pie |
+
+## Pruebas
+
+```bash
+npm run build && npx next start -p 3100 &
+NODE_PATH=$(npm root -g) node tests/e2e-revista.js      # ~330 comprobaciones, móvil y escritorio
+NODE_PATH=$(npm root -g) node tests/palabras.js         # palabras por post (objetivo 400-600)
+```
 
 ## Cómo se añade un post
 
@@ -109,7 +119,7 @@ Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso 
 
 ## Pendiente antes de publicar
 
-- [ ] **Datos del titular** en `lib/legal.ts` (nombre/razón social, NIF, domicilio, correo, registro). Mientras falten,
+- [ ] **Datos del titular** en `lib/legal.ts`: ya constan Inversiones Shiso, S.L., B70319223 y 15002 A Coruña. Faltan calle y número, correo y registro. Mientras falten,
   el aviso legal y la privacidad muestran «[PENDIENTE DE COMPLETAR]». Los textos son una base completa, pero conviene
   que los revise un profesional. En privacidad se habla de «proveedores» sin nombrarlos: si se activa Resend u otro,
   conviene citarlo.
@@ -118,7 +128,6 @@ Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso 
 - [ ] **Revisión editorial** de los 8 posts: son textos propios, no proceden de una fuente. Lo que dicen de Tricount
   y Splitwise está comprobado contra sus webs; falta Settle Up y Bizum (la película citada es de conocimiento general).
 - [x] Acceso de lectura a enlaces: dominios añadidos al entorno (hay que listar también la variante `www.` de cada uno).
-- [ ] **Decidir dónde vive la revista**: subcarpeta `/revista/` con proxy (recomendado), subdominio, o ninguna.
 - [ ] **Auditoría de enlaces entrantes** antes de tocar nada (Search Console → Enlaces).
 - [ ] Los 4 dominios de las herramientas y qué hace cada una, para su post.
 - [ ] Correo de los formularios, proyecto de Vercel conectado, y analítica con su aviso de cookies si se quiere medir.

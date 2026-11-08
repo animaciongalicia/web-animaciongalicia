@@ -1,9 +1,10 @@
 # Estrategia de visitas y posicionamiento (actualizada con el dominio real)
 
-> **Cambio importante respecto a la versión anterior:** el dominio no es nuevo. `animaciongalicia.com` tiene 15 años
-> y, según tus datos, unos 3.000 enlaces entrantes. Es el mayor activo del proyecto. También es una web WordPress en
-> producción con páginas comerciales que ya trabajan «despedidas en Galicia». Por eso la revista va en una
-> **subcarpeta** y no en la raíz. Detalle en `docs/arquitectura-subcarpeta.md`.
+> **Actualización:** el dominio no es nuevo. `animaciongalicia.com` tiene 15 años y, según los datos del propietario,
+> unos 3.000 enlaces entrantes. Hoy es un WordPress comercial. **Decisión posterior: se elimina el WordPress y la
+> revista ocupa toda la web**, con migración basada en datos y redirecciones 301. Detalle en
+> `docs/migracion-wordpress.md` y plan completo en `docs/BRIEF_CLAUDE_CODE.md`. Lo que sigue sobre subcarpeta
+> queda como alternativa no usada.
 
 ## A. Cómo se aprovecha la antigüedad del dominio y los enlaces
 

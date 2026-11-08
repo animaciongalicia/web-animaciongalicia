@@ -709,6 +709,846 @@ export const piezas: Pieza[] = [
       { t: "leetambien", slug: "frases-para-camisetas-despedida" },
     ],
   },
+  {
+    "slug": "guia-para-organizar-despedidas-en-galicia",
+    "seccion": "despedidas",
+    "tag": "Guía",
+    "titulo": "Guía para organizar una despedida de soltero o soltera en Galicia, paso a paso",
+    "h1": "Guía para organizar una despedida en Galicia, paso a paso",
+    "dek": "De «¿qué hacemos?» a «¿quién ha pagado?»: el camino completo para organizar una despedida de soltero, de soltera o mixta, con enlaces a todo lo que vas a necesitar.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "despedida-como-resacon-en-las-vegas",
+      "preguntas-chotas-despedida-de-soltera"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Organizar una despedida de soltero o de soltera en Galicia parece fácil hasta que alguien dice «hagamos algo guapo». A partir de ahí empieza el marrón: fechas, dinero, gente que no contesta y un plan que cambia tres veces. Esta guía ordena el camino en seis pasos y te lleva, en cada uno, al artículo donde se explica con detalle."
+      },
+      {
+        "t": "h2",
+        "x": "Paso 1: decidir cuatro cosas antes de proponer nada"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Fecha provisional. Una sola, con margen: en temporada alta, dos o tres meses antes.",
+          "Presupuesto por persona. Se pregunta al grupo y se ajusta al que menos puede pagar.",
+          "Número de personas. Entre seis y doce se maneja bien; más de quince, mejor dividir en subgrupos.",
+          "Quién decide. Una persona, no un comité. Es la que hace el marrón, así que merece mandar."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "El truco",
+        "x": "Si solo haces una cosa: pregunta el presupuesto antes de elegir plan. Evita el 80 % de las discusiones."
+      },
+      {
+        "t": "h2",
+        "x": "Paso 2: poner en marcha el grupo"
+      },
+      {
+        "t": "p",
+        "x": "El grupo de WhatsApp es donde se organiza todo y donde se muere todo. Un mensaje fijado con fecha, precio y cuenta, respuestas con emoji y plazos claros lo mantienen vivo."
+      },
+      {
+        "t": "leetambien",
+        "slug": "ideas-locas-grupo-whatsapp-despedida"
+      },
+      {
+        "t": "h2",
+        "x": "Paso 3: el dinero, sin pelearte con nadie"
+      },
+      {
+        "t": "p",
+        "x": "Decide desde el primer mensaje quién cobra, cómo y qué pasa con quien se cae del plan. Una aplicación de gastos compartidos evita las cuentas de la vieja."
+      },
+      {
+        "t": "leetambien",
+        "slug": "aplicaciones-compartir-gastos-despedida"
+      },
+      {
+        "t": "h2",
+        "x": "Paso 4: elegir el plan"
+      },
+      {
+        "t": "p",
+        "x": "Hay planes de agua (barco), de tierra (casa rural), de ciudad (cena y bares) y de calle (retos). Cada uno tiene sus riesgos y su plan B para la lluvia. Conviene mezclar sin llenar la agenda."
+      },
+      {
+        "t": "leetambien",
+        "slug": "barco-o-casa-rural-despedida-galicia"
+      },
+      {
+        "t": "leetambien",
+        "slug": "secuestro-falso-despedida-de-soltero"
+      },
+      {
+        "t": "h2",
+        "x": "Paso 5: el día de la despedida"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Una persona de enlace con batería y sin copas de más.",
+          "Ubicación compartida en el grupo antes de salir.",
+          "Transporte de vuelta reservado antes de beber.",
+          "Una foto de grupo cada hora como prueba de vida."
+        ]
+      },
+      {
+        "t": "leetambien",
+        "slug": "despedida-como-resacon-en-las-vegas"
+      },
+      {
+        "t": "h2",
+        "x": "Paso 6: las dudas que siempre aparecen"
+      },
+      {
+        "t": "p",
+        "x": "Quién paga al novio, si hay que hacer algo vergonzoso o qué hacer si llueve en Galicia: casi todo tiene respuesta corta, y están recogidas en dos artículos de preguntas con respuesta."
+      },
+      {
+        "t": "leetambien",
+        "slug": "preguntas-chotas-despedida-de-soltero"
+      },
+      {
+        "t": "leetambien",
+        "slug": "preguntas-chotas-despedida-de-soltera"
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "Para cerrar",
+        "x": "Cuando termine todo, escribe un mensaje de agradecimiento al grupo. Es lo que se recuerda y lo que hace que el año que viene alguien quiera organizar contigo."
+      }
+    ]
+  },
+  {
+    "slug": "barco-o-casa-rural-despedida-galicia",
+    "seccion": "despedidas",
+    "tag": "Versus",
+    "titulo": "Barco o casa rural para una despedida en Galicia: quién gana",
+    "h1": "Barco o casa rural para una despedida en Galicia: quién gana",
+    "dek": "Dos planes clásicos para una despedida de soltero o de soltera. Los comparamos con lo que importa de verdad: la lluvia, el grupo, el ruido y el que lleva el timón.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "guia-para-organizar-despedidas-en-galicia",
+      "despedida-como-resacon-en-las-vegas"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "En cualquier grupo de despedida llega el momento: alguien propone un barco por la ría y otro una casa rural con jardín. Los dos tienen su encanto, los dos tienen sus riesgos y los dos terminan en una votación que dura una semana. Aquí va la comparativa para que decidáis con cabeza."
+      },
+      {
+        "t": "h2",
+        "x": "El tiempo: el gran protagonista"
+      },
+      {
+        "t": "p",
+        "x": "En Galicia la lluvia no pregunta. Un barco depende del mar y del viento: si el día amanece feo, el plan puede suspenderse o cambiar. Una casa rural tiene techo, salón y chimenea. Para un grupo que no tolera la incertidumbre, la casa gana. Para uno que acepta el riesgo y tiene una alternativa, el barco es un planazo."
+      },
+      {
+        "t": "h2",
+        "x": "El grupo y el espacio"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Barco: la capacidad es fija y hay que ajustarse a ella. Ideal para grupos pequeños o medianos, con gente que se lleva bien.",
+          "Casa rural: se adapta a más gente y a más variedad, porque cada uno encuentra su rincón. Ideal si hay quien quiere fiesta y quien quiere dormir.",
+          "Si hay subgrupos que no se conocen, la casa rural da más margen para que se mezclen despacio."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "El ruido y los vecinos"
+      },
+      {
+        "t": "p",
+        "x": "La música en un barco no molesta a nadie salvo a las gaviotas. En una casa rural, sí: las ordenanzas limitan el ruido por la noche y los vecinos, aunque estén lejos, existen. Acordad un horario de música antes de llegar y respetadlo."
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Seguridad en el barco",
+        "x": [
+          "En un barco, quien lleva el timón no bebe. Es una norma de sentido común, no un consejo.",
+          "Chalecos para todos y escuchar siempre las instrucciones del patrón.",
+          "Si el parte marítimo avisa de mal tiempo, se cambia de plan sin discusión."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "La logística"
+      },
+      {
+        "t": "p",
+        "x": "El barco suele exigir reserva con antelación, hora fija de embarque y un plan para después. La casa rural pide organizar compra, cocina y limpieza, y que alguien se encargue de las llaves. Ninguna es difícil, pero ambas requieren un responsable. Si no hay nadie que mande, no hagas ninguna de las dos."
+      },
+      {
+        "t": "h2",
+        "x": "El veredicto"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Gana el barco si: el grupo es pequeño, hay un día bueno previsto y todos quieren una experiencia diferente.",
+          "Gana la casa rural si: el grupo es grande, quieres pasar más de una noche y necesitas un plan que no dependa del mar.",
+          "La mezcla funciona mejor: una mañana de barco y una tarde y noche en tierra, con casa o restaurante como base."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "El mejor plan es el que sigue en pie cuando llueve."
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "Consejo",
+        "x": "Si podéis, reservad con cancelación flexible o con un plan alternativo claro. En Galicia, el parte del tiempo manda más que el novio."
+      },
+      {
+        "t": "leetambien",
+        "slug": "guia-para-organizar-despedidas-en-galicia"
+      }
+    ]
+  },
+  {
+    "slug": "mitos-despedidas-de-soltero",
+    "seccion": "despedidas",
+    "tag": "Mitos",
+    "titulo": "Mitos de las despedidas de soltero que nadie debería creer",
+    "h1": "Mitos de las despedidas de soltero que nadie debería creer",
+    "dek": "«Lo que pasa en la despedida se queda en la despedida». «Cuanto más caro, mejor». Ocho creencias que arruinan despedidas, desmontadas una a una.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "preguntas-chotas-despedida-de-soltero",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Alrededor de las despedidas de soltero y de soltera hay un montón de ideas hechas que nadie cuestiona hasta que ya es tarde. Las repasamos, una por una, con la realidad que hay detrás."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 1: el novio tiene que pagarlo todo"
+      },
+      {
+        "t": "p",
+        "x": "Falso. Lo habitual es repartir. Lo que sí es verdad es que, si nadie lo aclara, acabará pagando el más educado. Dilo en el primer mensaje."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 2: lo que pasa en la despedida se queda en la despedida"
+      },
+      {
+        "t": "p",
+        "x": "Falso. Se queda en el grupo de WhatsApp, que tiene mejor memoria que las personas. Acordad antes qué se publica y qué no."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 3: cuanta más gente, más diversión"
+      },
+      {
+        "t": "p",
+        "x": "No necesariamente. A partir de quince personas el grupo se divide solo y se pierde la gracia. Entre seis y doce suele ser el punto dulce."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 4: hay que hacer algo vergonzoso"
+      },
+      {
+        "t": "p",
+        "x": "No. Los retos son opcionales y el límite lo marca el homenajeado. Una despedida puede ser genial sin que nadie se ponga un disfraz."
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "La mejor despedida es la que el novio cuenta con ganas, no la que niega."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 5: cuanto más cara, mejor"
+      },
+      {
+        "t": "p",
+        "x": "Falso. Un plan bueno y barato al que van todos supera a uno espectacular al que va la mitad. Ajusta el plan al bolsillo del que menos puede."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 6: la sorpresa total siempre funciona"
+      },
+      {
+        "t": "p",
+        "x": "Depende de a quién se la hagas. Hay personas a las que les hace ilusión y otras a las que les provoca ansiedad. Si dudas, pregunta a alguien cercano."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 7: tiene que durar todo el fin de semana"
+      },
+      {
+        "t": "p",
+        "x": "Una buena cena y una buena noche pueden ser una despedida completa. No hace falta viaje, ni hotel, ni barco para que se recuerde."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 8: si no bebes, no te diviertes"
+      },
+      {
+        "t": "p",
+        "x": "Falso. Hay muchas despedidas memorables en las que nadie necesita alcohol para pasarlo bien. Conviene que el plan funcione para todos."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 9: el organizador lo hace por amor al arte"
+      },
+      {
+        "t": "p",
+        "x": "No. Organizar una despedida es un trabajo, y quien lo hace merece ayuda: repartid tareas, agradecedle y no le dejéis la cuenta. Una persona sola acaba quemada y la despedida se resiente."
+      },
+      {
+        "t": "h2",
+        "x": "Mito 10: si no hay foto, no ha pasado"
+      },
+      {
+        "t": "p",
+        "x": "Una despedida no se mide en fotos. Disfrutar el momento vale más que grabarlo todo. Elegid un par de momentos para hacer fotos de grupo y dejad el móvil el resto del tiempo."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Una regla para todos",
+        "x": [
+          "Haz que el plan funcione sin alcohol y con alcohol. Quien beba lo agradecerá al día siguiente.",
+          "Deja a cada uno elegir su límite, y respétalo siempre."
+        ]
+      },
+      {
+        "t": "leetambien",
+        "slug": "preguntas-chotas-despedida-de-soltero"
+      }
+    ]
+  },
+  {
+    "slug": "diccionario-grupo-whatsapp-despedida",
+    "seccion": "despedidas",
+    "tag": "Glosario",
+    "titulo": "Diccionario del grupo de WhatsApp de una despedida (de «me lo miro» a «ya os digo»)",
+    "h1": "Diccionario del grupo de WhatsApp de una despedida",
+    "dek": "Lo que se dice en el grupo y lo que significa de verdad. Para organizadores, invitados y quien aún crea que «cuenta conmigo» es un compromiso.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "ideas-locas-grupo-whatsapp-despedida",
+      "mitos-despedidas-de-soltero"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Cualquier grupo de despedida tiene su propio idioma. Esto es una guía de traducción para quien organiza y para quien recibe los mensajes. Cualquier parecido con tu grupo es pura coincidencia."
+      },
+      {
+        "t": "h2",
+        "x": "«Me lo miro»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «probablemente no». Si el organizador oye esto, que lo cuente como un no y siga con su vida."
+      },
+      {
+        "t": "h2",
+        "x": "«Cuenta conmigo»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «sí, mientras no tenga que hacer nada». Es sincero, pero poco fiable. Pide confirmación con el pago de la señal."
+      },
+      {
+        "t": "h2",
+        "x": "«Yo me adapto»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «no voy a decidir, pero voy a opinar después». Es la frase del que vetará tu plan cuando ya esté reservado."
+      },
+      {
+        "t": "h2",
+        "x": "«Ya os digo algo»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «no». O «más adelante». Y «más adelante» suele ser «nunca»."
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "El «ya os digo» más largo de la historia es el que dura hasta el día de la despedida."
+      },
+      {
+        "t": "h2",
+        "x": "«Luego te hago el Bizum»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «no lo voy a hacer». Pídelo ahora o resígnate a esperar tres semanas."
+      },
+      {
+        "t": "h2",
+        "x": "«Fijado»"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje fijado en el grupo. Contiene toda la información que alguien preguntará de nuevo cinco minutos después."
+      },
+      {
+        "t": "h2",
+        "x": "«¿Al final qué?»"
+      },
+      {
+        "t": "p",
+        "x": "Pregunta del que no ha leído nada. La respuesta correcta es «lee el fijado». La respuesta educada es copiar el mensaje otra vez."
+      },
+      {
+        "t": "h2",
+        "x": "«Jajaja»"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta universal para cualquier cosa. Puede significar «sí», «no», «he leído» o «no sé qué decir»."
+      },
+      {
+        "t": "h2",
+        "x": "«Voy un poco justo»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «llego tarde». Suele aplicarse a quien lleva diez minutos de retraso y aún está en casa."
+      },
+      {
+        "t": "h2",
+        "x": "«Hacemos algo tranquilo»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «nada de tranquilo». Es lo que se dice cuando el plan acaba con barco, cena y discoteca."
+      },
+      {
+        "t": "h2",
+        "x": "«Lo que decida el novio»"
+      },
+      {
+        "t": "p",
+        "x": "Significa «no queremos decidir». El novio, que nunca decide, acabará eligiendo lo que le digan los demás."
+      },
+      {
+        "t": "h2",
+        "x": "Persona de enlace"
+      },
+      {
+        "t": "p",
+        "x": "La que no bebe, tiene batería y conoce el nombre del alojamiento. Es el héroe anónimo de toda despedida."
+      },
+      {
+        "t": "h2",
+        "x": "Plan B"
+      },
+      {
+        "t": "p",
+        "x": "Lo que se hace cuando llueve. En Galicia, siempre hace falta uno."
+      },
+      {
+        "t": "h2",
+        "x": "Prueba de vida"
+      },
+      {
+        "t": "p",
+        "x": "Foto de grupo cada hora. Sirve para saber quién falta desde cuándo."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Para que el grupo te entienda",
+        "x": [
+          "Si tu grupo habla otro idioma, hazle un favor: manda un mensaje fijado claro y sin ambigüedades.",
+          "Contesta siempre con un emoji: verde, voy; rojo, no voy; amarillo, me lo miro (cuenta como no)."
+        ]
+      },
+      {
+        "t": "leetambien",
+        "slug": "ideas-locas-grupo-whatsapp-despedida"
+      }
+    ]
+  },
+  {
+    "slug": "calendario-despedidas-galicia-cuando-hacerla",
+    "seccion": "despedidas",
+    "tag": "Calendario",
+    "titulo": "Cuándo hacer una despedida en Galicia: los fines de semana que conviene evitar",
+    "h1": "Cuándo hacer una despedida en Galicia: los fines de semana que conviene evitar (o reservar ya)",
+    "dek": "Semana Santa, San Xoán, fiestas patronales, el Entroido… Galicia tiene un calendario propio, y una despedida mal puesta en él se paga en reservas, precios y gente que no puede.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "guia-para-organizar-despedidas-en-galicia",
+      "barco-o-casa-rural-despedida-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Elegir la fecha de una despedida parece una cuestión de agenda. En Galicia es también una cuestión de fiestas, de tiempo y de reservas. Hay fines de semana en los que todo está lleno y otros en los que sobra sitio y falta gente."
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Antes de nada",
+        "x": "Las fechas de muchas fiestas cambian cada año o dependen de cada localidad. Antes de decidir, comprueba el calendario oficial del municipio donde vayáis."
+      },
+      {
+        "t": "h2",
+        "x": "Fines de semana que conviene reservar con antelación"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Semana Santa: la fecha cambia cada año y mucha gente aprovecha para viajar. Reserva alojamiento y actividades con tiempo.",
+          "San Xoán (noche del 23 al 24 de junio): es una de las noches más celebradas en Galicia, especialmente en A Coruña. Si va a coincidir con tu despedida, hay que prever más gente y más ruido.",
+          "Julio y agosto: temporada alta en la costa. Zonas como Sanxenxo se llenan y los precios suben.",
+          "Puentes y fines de semana largos: más gente se desplaza y hay menos plazas."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Fiestas que pueden ser un plan o un problema"
+      },
+      {
+        "t": "p",
+        "x": "Algunas fiestas gallegas son un plan en sí mismas: el Entroido (carnaval) en febrero o marzo, o fiestas gastronómicas como las del marisco o el albariño, que suelen celebrarse en octubre y a finales de verano respectivamente. Pueden añadir ambiente a la despedida, pero también llenar los locales y encarecer todo."
+      },
+      {
+        "t": "h2",
+        "x": "Las mejores épocas"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Mayo, junio (antes de San Xoán) y septiembre: buen tiempo probable, menos masificación y precios más contenidos.",
+          "Primeros fines de semana de otoño: más tranquilo, con riesgo de lluvia, pero con planes de interior que funcionan.",
+          "Entre semana, para despedidas pequeñas o de una sola cena: más fácil reservar y más barato."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "Una despedida bien situada en el calendario es la mitad del plan."
+      },
+      {
+        "t": "h2",
+        "x": "Cómo elegir fecha sin discutir"
+      },
+      {
+        "t": "p",
+        "x": "Propón dos o tres fechas y vota con un emoji. Descarta las que coincidan con fiestas locales si queréis tranquilidad, y las de temporada alta si el presupuesto es ajustado. Y comprueba antes con el novio o la novia que no tienen nada ya apuntado."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Plantilla",
+        "x": "Mensaje para el grupo: «Tres fechas posibles: [fecha 1], [fecha 2] y [fecha 3]. Votad con emoji. Gana la más votada el jueves.»"
+      },
+      {
+        "t": "leetambien",
+        "slug": "guia-para-organizar-despedidas-en-galicia"
+      }
+    ]
+  },
+  {
+    "slug": "amigo-que-no-paga-la-despedida",
+    "seccion": "despedidas",
+    "tag": "Dinero",
+    "titulo": "Qué hacer si un amigo no paga la despedida (sin montar un drama)",
+    "h1": "Qué hacer si un amigo no paga la despedida, sin montar un drama",
+    "dek": "Hay quien se despista, quien no puede y quien lo deja para después. Cómo reclamar con educación, qué decir en privado y qué normas fijar para que no vuelva a pasar.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "aplicaciones-compartir-gastos-despedida",
+      "guia-para-organizar-despedidas-en-galicia"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Organizas una despedida, recoges las señales y, a falta de una semana, hay alguien que no ha pagado. No contesta, dice «luego te lo hago» o se hace el sueco. Es el marrón dentro del marrón. Aquí tienes cómo manejarlo sin perder al amigo ni la cabeza."
+      },
+      {
+        "t": "h2",
+        "x": "Primero, entiende por qué no ha pagado"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Se le ha olvidado. Lo más habitual, y lo más fácil de resolver.",
+          "No puede y le da vergüenza decirlo. Más común de lo que parece.",
+          "Tiene dudas sobre el plan. Si no está convencido, no pagará hasta resolverlas.",
+          "Ya no quiere ir. A veces es la causa real y no se atreve a decirlo."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Paso 1: mensaje privado y amable"
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Plantilla de recordatorio",
+        "x": "Hola [nombre], te escribo por lo de la despedida. Te recuerdo que la señal era de [importe] antes del [fecha]. Si ya la has hecho, perdona. Si hay algún problema, dímelo por aquí y lo vemos."
+      },
+      {
+        "t": "p",
+        "x": "Nunca reclames delante del grupo. Humilla a quien no ha pagado y pone incómodo al resto."
+      },
+      {
+        "t": "h2",
+        "x": "Paso 2: si no contesta, un segundo aviso con plazo"
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Segundo aviso",
+        "x": "[Nombre], necesito cerrar la reserva el [fecha]. Si no recibo la señal antes, tendré que entender que no vienes. Sin problema, pero necesito saberlo para no perjudicar al resto."
+      },
+      {
+        "t": "h2",
+        "x": "Paso 3: si dice que no puede pagar"
+      },
+      {
+        "t": "p",
+        "x": "Habla con él o con ella con calma. A veces se puede ajustar: un plan más barato, un pago aplazado o una parte cubierta entre todos. Lo importante es que no se sienta señalado."
+      },
+      {
+        "t": "h2",
+        "x": "Paso 4: si no hay respuesta, se cierra"
+      },
+      {
+        "t": "p",
+        "x": "Pasado el plazo, se avisa de forma breve y neutral y se cuenta con una persona menos. Si hay lista de espera, se ofrece la plaza. No hace falta una explicación pública."
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Cosas que no se hacen",
+        "x": [
+          "No presiones con mensajes en el grupo.",
+          "No pagues tú su parte «por compromiso». Acabarás haciéndolo siempre.",
+          "No lo borres del grupo sin avisar."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Cómo evitarlo la próxima vez"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Deja claro desde el primer mensaje cuánto es, hasta cuándo y cómo se paga.",
+          "Fija una norma sobre la señal: si alguien se cae, puede pasar su plaza a otra persona.",
+          "Cobra por adelantado con una app o con Bizum, y apunta cada pago.",
+          "Habla con las personas más despistadas antes de que lleguen a ser un problema."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "El que paga a tiempo es un tesoro. El que no, un recordatorio."
+      },
+      {
+        "t": "leetambien",
+        "slug": "aplicaciones-compartir-gastos-despedida"
+      }
+    ]
+  },
+  {
+    "slug": "cumpleanos-sorpresa-cosas-que-salen-mal",
+    "seccion": "cumpleanos",
+    "tag": "Sorpresa",
+    "titulo": "Cumpleaños sorpresa: 10 cosas que salen mal (y cómo evitarlas)",
+    "h1": "Cumpleaños sorpresa: 10 cosas que salen mal y cómo evitarlas",
+    "dek": "Se enteró por otro grupo, llegó 40 minutos antes y la tarta no tenía velas. Diez fallos clásicos de las fiestas sorpresa, con su solución.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "cumpleanos-tematicos-adultos-galicia",
+      "preguntas-chotas-cumpleanos-adultos"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "Una fiesta sorpresa es una operación militar con tarta. Y como toda operación, falla casi siempre por los mismos sitios. Estos son los diez fallos más habituales, con lo que hay que hacer para que no te pasen."
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Se entera por otro grupo. Alguien menciona la fiesta en un chat donde está él. Solución: un único grupo, sin el homenajeado, y una norma clara: de la sorpresa solo se habla ahí.",
+          "Se equivoca la fecha. Se prepara todo para el sábado y el cumpleaños es el domingo. Solución: una persona confirma la fecha y la hora antes de comprar nada.",
+          "Llega antes de tiempo. Pasa más de lo que crees. Solución: un cómplice que controle sus movimientos y un plan de emergencia para esconderse.",
+          "La tarta no tiene velas. O las velas no tienen mechero. Solución: una lista de comprobación el día antes, con una sola persona al mando.",
+          "El sitio está cerrado o completo. Solución: reservar con antelación y confirmar el día anterior, sobre todo en temporada alta.",
+          "Hay alergias que nadie preguntó. Solución: consulta con la pareja o un amigo cercano antes de elegir el menú.",
+          "El invitado que lo cuenta. Siempre hay uno. Solución: no se lo digas a quien no sepa guardar un secreto, o díselo el mismo día.",
+          "Al homenajeado no le gustan las sorpresas. Solución: si dudas, no lo hagas. O haz una versión suave, con pocas personas.",
+          "El ruido molesta a los vecinos. Solución: avisarles antes y acordar un horario. Un cumpleaños que acaba con la policía no es una buena historia.",
+          "La cuenta sin dividir. Alguien paga todo y se queda esperando. Solución: decidir antes quién invita y quién paga a escote."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Si falla algo",
+        "x": "Una sorpresa que sale mal no se arregla con una explicación. Se arregla con humor, con una tarta rica y con un abrazo."
+      },
+      {
+        "t": "h2",
+        "x": "El plan B que salva casi todo"
+      },
+      {
+        "t": "p",
+        "x": "En Galicia, además, siempre hay un fallo extra: la lluvia. Reserva un sitio cubierto o ten una alternativa a mano. Una fiesta sorpresa bajo la lluvia sin techo es una forma segura de que se pase de sorpresa a desastre."
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "El kit mínimo",
+        "x": [
+          "Un cómplice con teléfono y llaves.",
+          "Una coartada ensayada y creíble.",
+          "Una frase única para todos si él pregunta.",
+          "Fecha y hora cerradas 48 horas antes."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "La mejor sorpresa es la que sale bien, y la segunda mejor es la que se cuenta riendo."
+      },
+      {
+        "t": "leetambien",
+        "slug": "cumpleanos-tematicos-adultos-galicia"
+      }
+    ]
+  },
+  {
+    "slug": "regalos-absurdos-que-si-se-pueden-usar",
+    "seccion": "regalos",
+    "tag": "Regalos",
+    "titulo": "Regalos absurdos que sí se pueden usar: ideas para amigos con sentido del humor",
+    "h1": "Regalos absurdos que sí se pueden usar",
+    "dek": "Un buen regalo absurdo hace reír y, sorpresa, sirve para algo. Ideas para cumpleaños, despedidas y amigos que lo tienen todo, con un toque gallego.",
+    "fecha": "2026-11-08",
+    "galicia": true,
+    "relacionadas": [
+      "frases-para-camisetas-despedida",
+      "preguntas-chotas-regalos"
+    ],
+    "bloques": [
+      {
+        "t": "p",
+        "x": "El regalo absurdo tiene mala fama porque casi siempre acaba en un cajón. Pero hay regalos graciosos que, además, se usan: te ríes al abrirlos y los sigues utilizando meses después. Esa es la categoría que nos interesa."
+      },
+      {
+        "t": "h2",
+        "x": "Para la resaca y la mañana siguiente"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Un kit de supervivencia: ibuprofeno, agua, un bocadillo y una nota con instrucciones.",
+          "Un cuaderno de excusas con las frases más usadas y una página en blanco para las nuevas.",
+          "Una taza gigante con su nombre y la hora de su última siesta."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Para quien lo tiene todo"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Un diploma enmarcado con un título absurdo («Licenciado en Llegar Tarde con Honores»).",
+          "Un calendario con fotos de sus peores momentos, mes a mes.",
+          "Un juego de mesa personalizado con anécdotas del grupo como preguntas."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "El detalle",
+        "x": "Lo mejor de un regalo con humor es la historia que lo acompaña. Un papel con una dedicatoria divertida convierte cualquier objeto en un recuerdo."
+      },
+      {
+        "t": "h2",
+        "x": "Con un guiño gallego"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Un kit de queimada para hacer en casa, con el conxuro impreso y todo.",
+          "Una cesta de conservas y productos de la tierra con una etiqueta personalizada.",
+          "Una camiseta con una frase en gallego que él pronuncie fatal."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Para el trabajo y el amigo invisible"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Un set de pegatinas con las frases más repetidas de la oficina.",
+          "Una planta con un cartel de «Cuídame o te lo cuento todo».",
+          "Un llavero con la frase que más dice el homenajeado."
+        ]
+      },
+      {
+        "t": "p",
+        "x": "En el amigo invisible, el truco es una nota con humor que explique el regalo. Un objeto normal con una buena frase ya es mejor que uno raro sin explicación. Y recuerda mirar el límite de precio: nadie quiere que el amigo invisible acabe en deuda."
+      },
+      {
+        "t": "h2",
+        "x": "Cómo acertar con el presupuesto"
+      },
+      {
+        "t": "p",
+        "x": "Un regalo absurdo no tiene por qué ser caro. Lo que cuenta es la idea y el cuidado: un papel de regalo bonito, una nota escrita a mano y un envoltorio que sorprenda. Para algo más especial, juntad un bote entre varios y regalad una experiencia o un objeto grande."
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Ojo con esto",
+        "x": [
+          "Evita los regalos que se burlen de algo que le duela.",
+          "Mira siempre si se puede cambiar o devolver.",
+          "Si es un regalo para el trabajo, que no sea ofensivo para nadie."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "frase",
+        "x": "Un regalo absurdo bien elegido se recuerda más que uno caro bien envuelto."
+      },
+      {
+        "t": "leetambien",
+        "slug": "preguntas-chotas-regalos"
+      }
+    ]
+  },
 ];
 
 export const SECCIONES = {
