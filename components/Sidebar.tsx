@@ -14,7 +14,7 @@ export function Sidebar({ p }: { p: Pieza }) {
 
   return (
     <aside className="sidebar" aria-label="Seguir leyendo">
-      <nav className="chips" aria-label="Secciones">
+      <nav className="chips" aria-label="Cambiar de sección">
         {ORDEN.map((s) => (
           <Link key={s} href={SECCIONES[s].path} data-seccion={s} aria-current={s === p.seccion ? "true" : undefined}>
             {SECCIONES[s].label}

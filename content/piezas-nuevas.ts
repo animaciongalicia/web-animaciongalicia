@@ -26,7 +26,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     dek: "Sin calcetines, sin tazas con frase y sin tarjeta regalo de último minuto. Ideas para acertar con quien cumple años, con humor y con algo de cabeza.",
     fecha: FECHA,
     galicia: true,
-    relacionadas: ["regalos-absurdos-que-si-se-pueden-usar", "regalos-atrevidos-para-cumpleanos"],
+    relacionadas: ["regalos-absurdos-que-si-se-pueden-usar", "regalos-atrevidos-para-cumpleanos", "regalos-para-quien-lo-tiene-todo"],
     bloques: [
       p("Regalar bien es difícil porque casi nadie se pregunta lo único que importa: ¿qué va a hacer esta persona con esto el martes? Si la respuesta es «dejarlo en un cajón», sigue buscando."),
       h2("Primero, la pregunta que lo cambia todo"),

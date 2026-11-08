@@ -875,6 +875,7 @@ export const piezas: Pieza[] = [
     "fecha": "2026-11-08",
     "galicia": true,
     "relacionadas": [
+      "despedida-en-sanxenxo-que-hacer-de-loco",
       "guia-para-organizar-despedidas-en-galicia",
       "despedida-como-resacon-en-las-vegas"
     ],
@@ -1241,6 +1242,7 @@ export const piezas: Pieza[] = [
     "fecha": "2026-11-08",
     "galicia": true,
     "relacionadas": [
+      "despedida-en-ourense-que-hacer-de-loco",
       "guia-para-organizar-despedidas-en-galicia",
       "barco-o-casa-rural-despedida-galicia"
     ],

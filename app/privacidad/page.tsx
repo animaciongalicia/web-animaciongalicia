@@ -63,7 +63,8 @@ export default function Privacidad() {
         actúan como encargados del tratamiento bajo contrato conforme al artículo 28 del RGPD:
       </p>
       <ul className="lista">
-        <li>Alojamiento de la web: Vercel Inc. (o el proveedor de alojamiento que figure en cada momento).</li>
+        <li>Alojamiento y distribución de la web: Vercel Inc.</li>
+        <li>Almacenamiento y gestión del código fuente de la web: GitHub, Inc. (sin datos de los visitantes: contiene solo el código y los contenidos publicados).</li>
         <li>Analítica, solo con tu consentimiento: Google Ireland Limited (Google Analytics 4).</li>
         <li>Correo electrónico: el proveedor de correo del titular, donde se reciben los mensajes que nos envías.</li>
       </ul>
@@ -79,8 +80,8 @@ export default function Privacidad() {
       <h2>5. Plazo de conservación</h2>
       <ul className="lista">
         <li>Mensajes de correo: el tiempo necesario para atenderlos y, después, durante los plazos legales de prescripción de posibles responsabilidades. Una anécdota citada con tu permiso se mantiene hasta que nos pidas retirarla.</li>
-        <li>Google Analytics: el periodo de retención configurado en la propiedad de analítica (el mínimo posible, máximo 14 meses). La cookie dura hasta 2 años; puedes borrarla cuando quieras.</li>
-        <li>Datos técnicos del servidor: el periodo breve que fije el proveedor de alojamiento.</li>
+        <li>Google Analytics: el periodo de retención predeterminado de Google Analytics 4 (2 meses, ampliable a un máximo de 14). La cookie dura hasta 2 años; puedes borrarla cuando quieras.</li>
+        <li>Datos técnicos del servidor: el periodo breve que fije Vercel en sus registros.</li>
       </ul>
 
       <h2>6. Tus derechos</h2>

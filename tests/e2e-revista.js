@@ -189,6 +189,12 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     ok(`[${name}] agencia: 4 nombres a la vista`, ["Suunia Viajes", "Mil Eventos Galicia", "SeaGalicia", "LuxeGalicia"].every((n) => ag.includes(n)));
     await page.screenshot({ path: `${OUT}/v5-${name}-agencia.png`, fullPage: true });
 
+    // --- Cabeceras de seguridad y robots
+    const hd = (await page.request.get(B + "/")).headers();
+    ok(`[${name}] cabeceras de seguridad (nosniff, referrer, permisos, HSTS)`, hd["x-content-type-options"] === "nosniff" && !!hd["referrer-policy"] && !!hd["permissions-policy"] && !!hd["strict-transport-security"], JSON.stringify(Object.keys(hd).filter((k) => /policy|options|security/.test(k))));
+    const rb0 = await (await page.request.get(B + "/robots.txt")).text();
+    ok(`[${name}] robots.txt sin /api/ y con sitemap`, !/api/.test(rb0) && /Sitemap:/.test(rb0), rb0.slice(0, 80));
+
     // --- Archivo de Despedidas y buscador
     await page.goto(B + "/despedidas/");
     ok(`[${name}] archivo /despedidas/ lista todos los posts de la sección`, (await page.$$(".cards .card")).length >= 16, String((await page.$$(".cards .card")).length));

@@ -7,6 +7,21 @@ const nextConfig: NextConfig = {
   ...(base ? { basePath: `/${base}` } : {}),
   trailingSlash: true,
   poweredByHeader: false,
+  // Cabeceras de seguridad básicas (sin CSP estricta: Google Analytics y los scripts de Next necesitan inline).
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // La página de la agencia se fusionó con «Cómo trabajamos».
