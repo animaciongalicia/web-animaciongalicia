@@ -22,7 +22,7 @@ export default function AvisoLegal() {
         <li>NIF/CIF: <Dato v={TITULAR.nif} /></li>
         <li>Domicilio: <Dato v={TITULAR.domicilio} /></li>
         <li>Correo electrónico de contacto: <Dato v={TITULAR.email} /></li>
-        <li>Datos registrales (si procede): <Dato v={TITULAR.registro} /></li>
+        {TITULAR.registro && <li>Datos registrales: {TITULAR.registro}</li>}
       </ul>
       <h2>2. Objeto y condiciones de uso</h2>
       <p>

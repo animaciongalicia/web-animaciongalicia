@@ -224,7 +224,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     await page.goto(B + "/privacidad/");
     const priv = await page.textContent("main");
     ok(`[${name}] privacidad: titular Inversiones Shiso, S.L. y CIF B70319223`, priv.includes("Inversiones Shiso, S.L.") && priv.includes("B70319223"));
-    ok(`[${name}] privacidad: sigue marcando lo pendiente (correo)`, (await page.$$(".pending")).length >= 1);
+    ok(`[${name}] privacidad: datos del titular completos (correo, sin pendientes)`, priv.includes("info@animaciongalicia.com") && (await page.$$(".pending")).length === 0);
 
     // --- Sección: lista con tarjetas
     await page.goto(B + "/juegos/");
