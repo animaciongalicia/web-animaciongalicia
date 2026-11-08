@@ -5,7 +5,8 @@
 
 ## 0. Encargo en una frase
 
-Sustituir la web WordPress de **animaciongalicia.com** (15 años de antigüedad, ~3.000 enlaces entrantes) por
+Sustituir la web WordPress de **animaciongalicia.com** (15 años de antigüedad; el informe de Search Console muestra 99 páginas
+de 40 sitios que la enlazan) por
 **Menú Marrón**: una revista digital hecha en Galicia sobre organizar despedidas, cumpleaños y regalos, con humor
 práctico. Se desarrolla con **Claude Code → GitHub → Vercel**, conservando la autoridad del dominio mediante una
 migración cuidadosa (datos, redirecciones 301 y QA), y debe **posicionar en Galicia** y **atraer todo tipo de
@@ -19,6 +20,12 @@ búsquedas absurdas y de cola larga**.
 - **Titular legal:** Inversiones Shiso, S.L. · CIF **B70319223** · **15002 A Coruña** (calle y número: pendientes).
 - **Marcas y webs del grupo:** Animación Galicia (agencia que organiza saraos en Galicia), Suunia Viajes,
   Mil Eventos Galicia, SeaGalicia, LuxeGalicia. (Confirmar escritura y URLs.)
+- **Webs del grupo (18 dominios)**, listadas con su descripción en `lib/company.ts` y mostradas como texto en
+  `/animacion-galicia/`: despedidasgalicia.es, despedidascoruna.es, despedidasvigo.com, despedidas-vigo.es,
+  despedidasourense.com, despedidassanxenxo.es, despedidas-sanxenxo.com, despedidasplayasanxenxo.com,
+  despedidasenoporto.com, despedidasag.com, gincanas.es (¿o ginkanas.es?), humoramarillocoruna.com, los7pc.com,
+  monologosgalicia.com, seagalicia.com (alquiler de barcos), luxegalicia.com (traslados), suunia.com (viajes por Galicia),
+  mileventosgalicia.com (eventos de empresa). **Hay tres webs de Sanxenxo y dos de Vigo para las mismas búsquedas: riesgo de canibalización.**
 - **4 herramientas propias** (dominios por llegar): test-despedidas, retranca, ruleta y gastosdespedidas. Cada una tendrá
   un post. Hoy viven en `/herramientas-gratis-para-despedidas/` del WordPress.
 - **Estrategia comercial:** *ya veremos vender*. Ahora, **cero venta directa**. La agencia aparece solo en el pie y
@@ -34,6 +41,14 @@ WordPress + Elementor + Yoast + Site Kit. Portada comercial «Despedidas en Gali
 herramientas, contacto, 2 posts, 5 páginas por ciudad (Vigo, A Coruña, Sanxenxo, Ourense, otras) y taxonomías.
 Se puede rastrear: el dominio está permitido en el entorno.
 
+## 2b. Datos de Search Console recibidos (8-nov-2026) — leer `docs/analisis-search-console.md`
+
+- 142 consultas, 8.285 impresiones, **14 clics (CTR 0,17 %)**. Demanda local real, posicionamiento malo (pos. 24–35 casi todo).
+- Solo hay una oportunidad inmediata: **«despedidas en galicia»** (548 impresiones, pos. **11,08**).
+- Demanda: Galicia genérico 2.789 · Sanxenxo 2.418 · A Coruña 1.917 · actividades/ideas 638 (pos. 66) · Ourense 188 · Vigo 37.
+- **10 de 15 páginas sin indexar.** 40 sitios enlazan (99 páginas), todos a **una** URL. La marca casi no se busca (61 impresiones).
+- Faltan: periodo de las exportaciones, Search Console de cada dominio del grupo, Analytics y el WordPress.
+
 ## 3. Decisiones ya tomadas (no reabrir sin motivo)
 
 | Tema | Decisión |
@@ -41,7 +56,8 @@ Se puede rastrear: el dominio está permitido en el entorno.
 | Plataforma | Next.js 15 + TypeScript en Vercel, contenido en archivos versionados. **Se elimina WordPress.** |
 | Raíz del dominio | La revista ocupa la raíz tras el corte. `NEXT_PUBLIC_BASE_PATH` (subcarpeta) sigue soportado pero no se usa. |
 | Menú | Despedidas (`/`) · Cumpleaños · Regalos · Juegos · Contacto, en ese orden. `/despedidas/` redirige a `/`. |
-| Páginas por ciudad | **No** en la revista. Las antiguas se redirigen a la guía pilar (revisar con datos). |
+| Páginas por ciudad | **No se crean nuevas.** Pero se **conservan A Coruña, Sanxenxo, Ourense y Actividades** (76 % de las impresiones): URL igual, contenido portado y mejorado. Vigo y «otras ciudades» se redirigen a la guía. |
+| `<title>` de la portada | «Despedidas en Galicia: menudo marrón organizar este evento · Menú Marrón» (la portada actual rankea en pos. 11 por «despedidas en galicia» y da 84 clics). El H1 sigue siendo «Menudo marrón organizar este evento». |
 | Enlaces salientes | **Apagados** (`SITE.salientes = false`) hasta que el propietario lo indique. Excepción: botón de compartir por WhatsApp (`nofollow`). |
 | Afiliación | **Ninguna** por ahora. |
 | Agencia | Solo en el pie y en `/animacion-galicia/` (nombres de las webs a la vista, sin venta). |
@@ -143,6 +159,14 @@ Plantilla: *qué problema resuelve · cómo se usa en 3 pasos · un ejemplo · p
 Hay que decidir si el enlace va al dominio de la herramienta o a un hub interno (mejor interno). Se activa
 `SITE.salientes` solo para esos dominios. Necesito de cada una: nombre, qué hace en una frase y URL.
 
+### 6.3b Pilares y páginas con demanda real (prioridad máxima, por los datos)
+
+1. **Portar y mejorar** las 4 URLs conservadas: A Coruña, Sanxenxo, Ourense y Actividades (contenido del WordPress,
+   ampliado; enlazadas desde los posts). **Sin ellas no se puede cortar** (`tests/urls-conservadas.js`).
+2. **Pilar «Despedida de soltera en Galicia»** y **pilar «Despedida de soltero en Galicia»** (≈1.500 impresiones en variantes, pos. 30–35).
+3. **Pilar «Actividades para despedidas»** muy superior al actual (pos. 52–79).
+4. Decidir con los datos de cada web del grupo **qué dominio posee cada consulta** (Sanxenxo ×3, Vigo ×2).
+
 ### 6.4 Siguientes 12 posts (prioridad alta → baja)
 
 **Urgentes por estacionalidad (hoy es noviembre; publicar ya para indexar antes de diciembre):**
@@ -181,7 +205,8 @@ enlaces del dominio. **Sin promesas de cifras o plazos:** se mide con Search Con
   posts con la búsqueda local natural. Bloque «Desde Galicia» (portada, barra lateral) y columna del pie.
   `geo.region = ES-GA`. JSON-LD de `Organization` con `areaServed: Galicia`. **Cuando se conozca la calle**, añadir
   dirección postal a `Organization` (A Coruña).
-- **Enlazado interno:** `leetambien` en el texto, «Sigue leyendo», anterior/siguiente, barra lateral. El **pilar**
+- **Enlazado interno de cola larga (hecho):** `content/enlaces.ts` inserta 2–3 enlaces contextuales con anclas propias en cada post (antes del 3.er y 5.º subtítulo), además de `leetambien`, «Sigue leyendo», anterior/siguiente y barra lateral. Cada pregunta de los posts de «preguntas chotas» tiene ancla propia y se enlaza desde la portada.
+- **Enlazado interno (resto):** El **pilar**
   (`guia-para-organizar-despedidas-en-galicia`) enlaza a todo lo demás. Cuando haya 3–4 posts por tema, una página guía
   por sección.
 - **Canibalización:** al desaparecer el WordPress no hay competencia interna, pero **no duplicar** títulos ni intenciones.
@@ -214,10 +239,10 @@ citarlos cuando estén activos (Resend, Vercel…).
 
 | Fase | Contenido | Entregable |
 | --- | --- | --- |
-| **0. Datos** | Pedir y analizar exportaciones de Search Console y Analytics; leer el contenido de las 15 URLs antiguas; validar la matriz URL → destino; verificar los ~3.000 enlaces | Informe + matriz validada |
-| **1. Construir** | Portar contenido valioso; hub de herramientas; 3 posts urgentes de Navidad; 8 de cola larga; imagen propia por post (si se aporta) | PR a `main` |
+| **0. Datos** | Recibido: consultas, páginas, problemas e informe de enlaces (analizado). Falta: periodo, Search Console de cada web del grupo, Analytics, WordPress y contenido de las 15 URLs; validar la matriz URL → destino | Informe + matriz validada |
+| **1. Construir** | **Portar las 4 URLs con demanda**; 3 pilares nuevos (soltera, soltero, actividades); hub de herramientas; 3 posts urgentes de Navidad; cola larga; imagen propia (si se aporta) | PR a `main` |
 | **2. Infraestructura** | Proyecto de Vercel conectado; variables; correo real (Resend); decisión de analítica y banner | Preview con `noindex` |
-| **3. QA de migración** | Rastreo del preview vs. rastreo del WordPress; pruebas de las 301; legales completas; envío real de formularios | Informe de QA |
+| **3. QA de migración** | Rastreo del preview vs. rastreo del WordPress; pruebas de las 301; **`tests/urls-conservadas.js` en verde**; legales completas; envío real de formularios | Informe de QA |
 | **4. Corte** | TTL bajo, copia del WordPress, DNS a Vercel, `SITE_INDEXABLE=true`, comprobaciones | Producción |
 | **5. Después** | Sitemap en Search Console, vigilancia de 404 y cobertura, ritmo de 2–3 posts por semana | Informe a las 2 y 8 semanas |
 
@@ -232,7 +257,7 @@ citarlos cuando estén activos (Resend, Vercel…).
 
 ## 12. Pendientes que debe aportar el propietario
 
-1. Exportaciones de Search Console (Páginas, Consultas, Enlaces) y de Analytics.
+1. **Ya recibidas** (Consultas, Páginas, Problemas, Enlaces). Faltan: periodo, Rendimiento por fecha, Search Console de cada web del grupo y Analytics (GA4: páginas de destino, fuentes y qué se cuenta como conversión).
 2. Calle y número, correo de contacto y datos registrales del titular.
 3. Los 4 dominios y descripción de cada herramienta.
 4. URLs y descripciones de Suunia Viajes, Mil Eventos Galicia, SeaGalicia y LuxeGalicia.
@@ -244,7 +269,8 @@ citarlos cuando estén activos (Resend, Vercel…).
 ## 13. Qué NO hacer
 
 - Poner la revista en la raíz **antes** de tener las redirecciones validadas y la copia del WordPress.
-- Redirigir URLs antiguas «a la portada» por comodidad.
+- Redirigir URLs antiguas «a la portada» por comodidad, ni **redirigir A Coruña, Sanxenxo, Ourense o Actividades**.
+- Cortar el DNS sin que pase `tests/urls-conservadas.js`.
 - Páginas por ciudad con el mismo texto cambiando el nombre.
 - Publicar posts sin revisión o con datos inventados.
 - Activar analítica con cookies sin consentimiento.

@@ -40,3 +40,26 @@ export function vecinas(p: Pieza) {
   const i = lista.findIndex((x) => x.slug === p.slug);
   return { siguiente: lista[i + 1], anterior: lista[i - 1] };
 }
+
+/** Identificador para anclas (sin acentos ni signos). */
+export function slugify(t: string) {
+  return t
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
+}
+
+/** Preguntas (subtítulos acabados en «?») de los posts de «preguntas chotas», con su ancla. */
+export function preguntas() {
+  const out: { pregunta: string; ancla: string; pieza: Pieza }[] = [];
+  for (const p of visibles()) {
+    if (p.tag !== "Preguntas chotas") continue;
+    for (const b of p.bloques) {
+      if (b.t === "h2" && b.x.trim().endsWith("?")) out.push({ pregunta: b.x, ancla: slugify(b.x), pieza: p });
+    }
+  }
+  return out;
+}

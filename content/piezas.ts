@@ -627,8 +627,6 @@ export const piezas: Pieza[] = [
       { t: "p", x: "Claro. Un buen plan en Vigo, en A Coruña o en Santiago no necesita avión ni hotel: una tarde con actividad, una buena cena y un último sitio con música. Y cada una duerme en su cama, que es un lujo." },
       { t: "h2", x: "¿Y si hay una amiga embarazada o que no bebe?" },
       { t: "p", x: "Que haya un plan que funcione sin alcohol. Una actividad, una cena larga, un sitio donde el protagonismo no sea la copa. Las mejores despedidas son aquellas en las que nadie tiene que explicar por qué no bebe." },
-      { t: "h2", x: "¿Quién lleva la tarta?" },
-      { t: "p", x: "Quien se ofrezca primero. En cuanto alguien dice «yo me encargo», el resto lo agradece y se calla. Anota el compromiso en el grupo para que no se olvide, y comprueba el día antes que sigue en pie." },
       { t: "h2", x: "¿Y si la novia odia las sorpresas?" },
       { t: "p", x: "Entonces no hay sorpresa: hay plan. Díselo con tiempo, pídele opinión y deja una única sorpresa pequeña, como un regalo o una canción. Será más fácil que lo disfrute, y habrá menos riesgo de que se escape una frase en el peor momento." },
       { t: "caja", tipo: "ojo", titulo: "Una norma sencilla", x: "Ninguna sorpresa justifica poner a la novia en un aprieto. Si dudas entre hacerlo o no, no lo hagas." },

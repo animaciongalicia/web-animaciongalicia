@@ -16,3 +16,19 @@ export const PIE_DIVERTIDO = [
   { texto: "Frases chotas para camisetas", slug: "frases-para-camisetas-despedida" },
   { texto: "Ideas locas para el grupo de WhatsApp", slug: "ideas-locas-grupo-whatsapp-despedida" },
 ];
+
+/** Portada: dos historias secundarias junto a la principal (la `destacada`). */
+export const PORTADA_SECUNDARIAS = [
+  "guia-para-organizar-despedidas-en-galicia",
+  "barco-o-casa-rural-despedida-galicia",
+];
+
+/** Portada: «¿Qué marrón te ha tocado?». Atajos por situación hacia el post que la resuelve. */
+export const SITUACIONES = [
+  { texto: "Nadie contesta en el grupo", sub: "Ideas para mover el chat", slug: "ideas-locas-grupo-whatsapp-despedida" },
+  { texto: "Un amigo no ha pagado", sub: "Mensajes y normas", slug: "amigo-que-no-paga-la-despedida" },
+  { texto: "No sabemos qué plan elegir", sub: "Barco o casa rural", slug: "barco-o-casa-rural-despedida-galicia" },
+  { texto: "¿Qué fecha elegimos?", sub: "Calendario gallego", slug: "calendario-despedidas-galicia-cuando-hacerla" },
+  { texto: "Cumpleaños sorpresa", sub: "Lo que puede salir mal", slug: "cumpleanos-sorpresa-cosas-que-salen-mal" },
+  { texto: "No sé qué regalar", sub: "Absurdos que sí se usan", slug: "regalos-absurdos-que-si-se-pueden-usar" },
+];

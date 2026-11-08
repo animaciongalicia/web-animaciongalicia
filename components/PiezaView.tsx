@@ -76,7 +76,7 @@ export function PiezaView({ p }: { p: Pieza }) {
         <div className="pieza-main">
           {SITE.salientes && p.embed && <EmbedVideo embed={p.embed} />}
           <div className="prose">
-            <Bloques bloques={p.bloques} />
+            <Bloques bloques={p.bloques} slug={p.slug} />
           </div>
 
           {p.fuentes && p.fuentes.length > 0 && (

@@ -16,8 +16,11 @@ WordPress + Elementor + Yoast + Site Kit de Google. Sitemap: `https://animaciong
 | `/organizar-una-despedida-en-galicia-animaciongalicia/` | Página | 2026-01-11 | 301 → guía pilar |
 | `/guia-para-organizar-despedidas-en-galicia/` | Página | 2026-01-02 | 301 → guía pilar |
 | `/como-organizar-una-despedida-en-galicia-sin-discusiones-ni-caos/` | Post | 2026-01-05 | 301 → guía pilar |
-| `/despedidas-de-soltero-y-soltera-en-vigo/` (y A Coruña, Sanxenxo, Ourense, otras ciudades) | Páginas por ciudad | 2026-01-11 | 301 → guía pilar (revisar con datos) |
-| `/actividades-para-despedidas-de-soltero-y-soltera/` | Página | 2026-01-11 | 301 → `/juegos/` |
+| `/despedidas-de-soltero-y-soltera-en-a-coruna/` | Ciudad | 2026-01-11 | **CONSERVAR** (2.775 impresiones, pos. 29,6). Portar y mejorar |
+| `/despedidas-de-soltero-y-soltera-en-sanxenxo/` | Ciudad | 2026-01-11 | **CONSERVAR** (2.521, pos. 27,7). Portar y mejorar |
+| `/despedidas-de-soltero-y-soltera-en-ourense/` | Ciudad | 2026-01-11 | **CONSERVAR** (849, pos. 43,8). Portar y mejorar |
+| `/actividades-para-despedidas-de-soltero-y-soltera/` | Página | 2026-01-11 | **CONSERVAR** (2.189, pos. 51,6). Será el pilar de actividades |
+| `/despedidas-de-soltero-y-soltera-en-vigo/` y `-en-otras-ciudades/` | Ciudad | 2026-01-11 | 301 → guía pilar (sin impresiones ni indexación) |
 | `/aventuras-para-despedidas/` | Página | 2026-01-11 | 301 → `/juegos/` |
 | `/preguntas-frecuentas-y-dudas-para-despedidas/` | FAQ | 2025-12-22 | 301 → preguntas chotas de soltero |
 | `/noticias-despedidas/` | Post / índice | 2026-01-05 | 301 → `/` |
@@ -29,14 +32,18 @@ WordPress + Elementor + Yoast + Site Kit de Google. Sitemap: `https://animaciong
 Ya está en el repo, en `content/redirects.ts` y `next.config.ts`, y probado: las URLs con barra final redirigen en un
 solo salto y todos los destinos responden 200. **Es una propuesta: se valida con Search Console antes de publicar.**
 
+**Las 4 URLs marcadas «CONSERVAR» no están en la lista de redirecciones a propósito y hoy dan 404 en la nueva web**
+(falta portar su contenido). `tests/urls-conservadas.js` es la **puerta del corte**: falla mientras falte alguna.
+Análisis completo y razones en `docs/analisis-search-console.md`.
+
 Observaciones:
 
 - **Se conserva el formato de URL con barra final** (`trailingSlash: true`), igual que WordPress.
 - **Solo he leído títulos y estructura, no el contenido de cada página.** Antes de cortar hay que leer el contenido
   de las 15 URLs y portar lo que merezca la pena (precios, textos que posicionan, testimonios).
-- Las páginas por ciudad (Vigo, A Coruña, Sanxenxo, Ourense) pueden tener tráfico y enlaces propios. La decisión de
-  redirigirlas a la guía pilar se revisa con datos; si resultan valiosas, se recuperan como páginas con contenido real.
-  Una redirección a algo irrelevante («a la portada por defecto») la trata Google como *soft 404*.
+- **Datos recibidos (8-nov-2026):** A Coruña, Sanxenxo, Ourense y Actividades concentran el 76 % de las impresiones de las
+  páginas. Se conservan. Vigo y «otras ciudades» no tienen impresiones y se redirigen. Una redirección a algo
+  irrelevante («a la portada por defecto») la trata Google como *soft 404*.
 
 ## 2. Datos que hay que pedir y analizar ANTES de cortar (Fase 0)
 
@@ -52,9 +59,12 @@ El propietario dispone de Analytics y Search Console. Hay que pedir exportacione
 
 **Avisos honestos sobre los datos históricos:**
 
-- Search Console conserva solo **16 meses** de rendimiento. Lo anterior solo existe si se exportó en su día.
+- Search Console conserva solo **16 meses** de rendimiento. Lo anterior solo existe si se exportó en su día. **Las
+exportaciones recibidas no indican el periodo: confirmarlo.**
 - Universal Analytics dejó de procesar datos en 2023 y se borró en 2024; sin exportación, no se recupera.
-- La cifra de **~3.000 enlaces** hay que verificarla en Search Console (Enlaces) o con una herramienta de enlaces.
+- Los enlaces: el informe de Search Console muestra **40 sitios y 99 páginas que enlazan, todas a una sola URL de destino**
+  (no 3.000). Varios son webs propias (`ginkanas.es`, `humoramarillocoruna.com`, `despedidasourense.com`, `los7pc.com`).
+- **Indexación:** 10 de las 15 páginas están sin indexar (9 «descubiertas», 1 «rastreada»). Solicitar indexación tras el corte.
 
 **Reglas de decisión por URL** (con los datos delante):
 

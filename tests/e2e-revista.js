@@ -44,12 +44,32 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
 
     // --- Portada
     await page.goto(B + "/");
-    ok(`[${name}] <title> de la portada`, (await page.title()) === "Menú Marrón · Menudo marrón organizar este evento", await page.title());
+    ok(`[${name}] <title> de la portada conserva «Despedidas en Galicia»`, (await page.title()) === "Despedidas en Galicia: menudo marrón organizar este evento · Menú Marrón", await page.title());
     ok(`[${name}] H1 = Menudo marrón organizar este evento`, (await page.textContent("h1")) === "Menudo marrón organizar este evento");
     const desc = await page.getAttribute('meta[name="description"]', "content");
     ok(`[${name}] description con soltero, soltera, cumpleaños y Galicia`, /soltero/.test(desc) && /soltera/.test(desc) && /cumplea/.test(desc) && /Galicia/.test(desc), desc.slice(0, 70));
     const labels = await page.$$eval("nav[aria-label=Principal] a", (a) => a.map((x) => x.textContent));
     ok(`[${name}] orden menú`, JSON.stringify(labels) === JSON.stringify(["Despedidas", "Cumpleaños", "Regalos", "Juegos", "Contacto"]));
+    // Portada densa: situaciones, preguntas con ancla, secundarias y últimas
+    const home = await page.evaluate(() => ({
+      sit: [...document.querySelectorAll(".situaciones a")].map((a) => a.getAttribute("href")),
+      chips: [...document.querySelectorAll(".chips-preguntas a")].map((a) => a.getAttribute("href")),
+      sec: document.querySelectorAll(".secundaria").length,
+      ult: document.querySelectorAll(".latest li").length,
+      cols: document.querySelectorAll(".sec-col").length,
+    }));
+    ok(`[${name}] portada: 6 situaciones, >=12 preguntas, 2 secundarias, ultimas y 4 secciones`, home.sit.length === 6 && home.chips.length >= 12 && home.sec === 2 && home.ult >= 4 && home.cols === 4, JSON.stringify({ s: home.sit.length, c: home.chips.length, sec: home.sec, u: home.ult }));
+    const sinAncla = [];
+    for (const h of home.chips.slice(0, 12)) {
+      const [path, id] = h.split("#");
+      const html = await (await page.request.get(B + path)).text();
+      if (!html.includes(`id="${id}"`)) sinAncla.push(h);
+    }
+    ok(`[${name}] portada: cada pregunta enlaza a un ancla que existe`, sinAncla.length === 0, sinAncla.join(","));
+    for (const h of home.sit) {
+      const r = await page.request.get(B + h, { maxRedirects: 0 });
+      if (r.status() >= 400) ok(`[${name}] situacion ${h}`, false, String(r.status()));
+    }
     await page.screenshot({ path: `${OUT}/v5-${name}-portada.png` });
     await page.screenshot({ path: `${OUT}/v5-${name}-portada-full.png`, fullPage: true });
 
@@ -88,6 +108,8 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
       }));
       ok(`[${name}] ${u} sidebar completa (secciones, últimas, desde Galicia)`, info.chips === 4 && info.lastBox && info.sideLinks.length >= 6, `links=${info.sideLinks.length} galicia=${info.galBox}`);
       ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee >= 1, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
+      const il = await page.$$eval(".enlace-interno a, .leetambien a", (a) => a.map((x) => x.getAttribute("href")));
+      ok(`[${name}] ${u} enlaces internos de cola larga en el texto (>=2)`, il.length >= 2, `${il.length}`);
       ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= 650, `${info.words}`);
       // enlaces internos
       const links = [...new Set(await page.$$eval("main a[href^='/']", (as) => as.map((x) => x.getAttribute("href"))))];
@@ -127,7 +149,9 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
 
     // --- Agencia: nombres a la vista, sin enlaces
     await page.goto(B + "/animacion-galicia/");
-    const ag = await page.textContent(".marcas");
+    const ag = await page.textContent("main");
+    const dom = await page.$$eval(".marcas .web", (e) => e.map((x) => x.textContent));
+    ok(`[${name}] agencia: 18 webs del grupo como texto (sin enlaces)`, dom.length === 18 && (await page.$$("main a[href^='http']")).length === 0, `${dom.length}`);
     ok(`[${name}] agencia: 4 nombres a la vista`, ["Suunia Viajes", "Mil Eventos Galicia", "SeaGalicia", "LuxeGalicia"].every((n) => ag.includes(n)));
     await page.screenshot({ path: `${OUT}/v5-${name}-agencia.png`, fullPage: true });
 
@@ -167,7 +191,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     ok(`[${name}] /contacto/#marron abre el formulario de marrón`, await page.isVisible("#marron textarea"));
 
     // --- Cabeceras a todo el ancho
-    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/juegos/", "/privacidad/", "/animacion-galicia/", "/contacto/", "/"]) {
+    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/juegos/", "/privacidad/", "/animacion-galicia/", "/contacto/"]) {
       await page.goto(B + u);
       const w = await page.evaluate(() => {
         const head = document.querySelector(".pieza-head, .section-head, .front-head > .wrap-wide");

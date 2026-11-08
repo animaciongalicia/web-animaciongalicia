@@ -44,6 +44,11 @@ NEXT_PUBLIC_BASE_PATH=                              # vacío: raíz. (/revista s
 | URLs del WordPress antiguo | 301 a su equivalente (`content/redirects.ts`, propuesta a validar) |
 | `/aviso-legal/`, `/privacidad/`, `/cookies/`, `/como-trabajamos/` | Páginas legales, en la barra de abajo del pie |
 
+## Datos de Search Console
+
+Ver `docs/analisis-search-console.md`: demanda, páginas, indexación, enlaces y plan de ataque. **Hay 4 URLs antiguas que
+hay que conservar** (A Coruña, Sanxenxo, Ourense, Actividades); `tests/urls-conservadas.js` bloquea el corte hasta que existan.
+
 ## Pruebas
 
 ```bash

@@ -1,5 +1,9 @@
 # Estrategia de visitas y posicionamiento (actualizada con el dominio real)
 
+> **Datos reales de Search Console (8-nov-2026):** ver `docs/analisis-search-console.md`. Donde esta estrategia hable de
+> «3.000 enlaces» o de redirigir las páginas por ciudad, mandan los datos: ~99 páginas de 40 sitios enlazan, y las
+> páginas de A Coruña, Sanxenxo, Ourense y Actividades **se conservan**.
+
 > **Actualización:** el dominio no es nuevo. `animaciongalicia.com` tiene 15 años y, según los datos del propietario,
 > unos 3.000 enlaces entrantes. Hoy es un WordPress comercial. **Decisión posterior: se elimina el WordPress y la
 > revista ocupa toda la web**, con migración basada en datos y redirecciones 301. Detalle en
