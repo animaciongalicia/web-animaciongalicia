@@ -10,6 +10,16 @@ const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
 const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "ginkanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
 const esGrupo = (h) => { try { return GRUPO.includes(new URL(h).hostname); } catch { return false; } };
 const POSTS = [
+  "/regalos/regalos-para-suegros-que-no-fallan/",
+  "/regalos/amigo-invisible-oficina-ideas-y-normas/",
+  "/regalos/que-decir-cuando-no-te-gusta-el-regalo/",
+  "/regalos/regalos-para-quien-lo-tiene-todo/",
+  "/cumpleanos/tarta-de-cumpleanos-que-sale-mal/",
+  "/cumpleanos/musica-para-fiesta-de-cumpleanos-playlist/",
+  "/cumpleanos/invitacion-cumpleanos-whatsapp-que-contesten/",
+  "/cumpleanos/cumpleanos-con-lluvia-plan-b-galicia/",
+  "/juegos/ginkana-cumpleanos-adultos-en-casa-o-parque/",
+  "/juegos/karaoke-en-casa-reglas-para-que-no-acabe-mal/",
   "/regalos/que-regalar-en-un-cumpleanos-ideas-divertidas/",
   "/regalos/regalos-atrevidos-para-cumpleanos/",
   "/regalos/regalar-un-bote-de-ahorro-con-dinero-ya-metido/",
@@ -213,7 +223,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
 
     // --- Sección: lista con tarjetas
     await page.goto(B + "/juegos/");
-    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".lead-story, .secundaria, .latest li")).length === 5);
+    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".lead-story, .secundaria, .latest li")).length === 7);
 
     // --- Contacto compacto
     await page.goto(B + "/contacto/");

@@ -41,6 +41,16 @@ export const META_PIEZAS: Record<string, { title: string; description?: string }
   "brindis-gracioso-cumpleanos": { title: "Cómo hacer un brindis gracioso de cumpleaños" },
   "juegos-para-cumpleanos-de-adultos": { title: "Juegos para un cumpleaños de adultos" },
   "juego-yo-nunca-cena-amigos-preguntas": { title: "Yo nunca y otros juegos de cena entre amigos" },
+  "regalos-para-suegros-que-no-fallan": { title: "Regalos para suegros que no fallan" },
+  "amigo-invisible-oficina-ideas-y-normas": { title: "Amigo invisible en la oficina: ideas y normas" },
+  "que-decir-cuando-no-te-gusta-el-regalo": { title: "Qué decir cuando no te gusta el regalo" },
+  "regalos-para-quien-lo-tiene-todo": { title: "Regalos para quien lo tiene todo" },
+  "tarta-de-cumpleanos-que-sale-mal": { title: "Tarta de cumpleaños en apuros: qué hacer si sale mal" },
+  "musica-para-fiesta-de-cumpleanos-playlist": { title: "Música para una fiesta de cumpleaños: la playlist" },
+  "invitacion-cumpleanos-whatsapp-que-contesten": { title: "Invitación de cumpleaños por WhatsApp que se contesta" },
+  "cumpleanos-con-lluvia-plan-b-galicia": { title: "Cumpleaños con lluvia en Galicia: el plan B" },
+  "ginkana-cumpleanos-adultos-en-casa-o-parque": { title: "Ginkana de cumpleaños para adultos: ideas y pruebas" },
+  "karaoke-en-casa-reglas-para-que-no-acabe-mal": { title: "Karaoke en casa: reglas para que no acabe mal" },
   "bromas-cumpleanos-restaurante": { title: "Bromas y retos para un cumpleaños en un restaurante" },
 };
 
