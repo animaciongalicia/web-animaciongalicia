@@ -25,3 +25,8 @@ reales ni se ha probado en Vercel.
 6. **URLs que daban 404 en el WordPress** (216 vistas en GA4) y revisión de las 5 páginas conservadas con el contenido real del WordPress.
 7. **Vercel**: conectar el proyecto, dominio y variables (`NEXT_PUBLIC_SITE_URL`, `SITE_INDEXABLE=true`).
 8. **Revisión legal profesional** de las tres páginas legales.
+
+## Actualización (9-nov-2026)
+
+- Pendiente 2 (plantilla uniforme): resuelto en parte. Los 22 posts varían ahora el cierre (test, lista, diálogo, dato, frase) y algunos abren con un resumen rápido.
+- Pendiente 3 (textos locales): reescritas A Coruña, Vigo, Sanxenxo y Ourense con lugares reconocibles (sin nombres de locales ni precios). Sigue faltando la capa de locales reales.

@@ -13,6 +13,7 @@ const ojo = (titulo: string, x: string): Bloque => ({ t: "caja", tipo: "ojo", ti
 const dato = (titulo: string, x: string): Bloque => ({ t: "caja", tipo: "dato", titulo, x });
 const frase = (x: string): Bloque => ({ t: "caja", tipo: "frase", x });
 
+const cita = (x: string, autor?: string): Bloque => ({ t: "cita", x, autor });
 const FECHA = "2026-11-08";
 
 export const PIEZAS_NUEVAS: Pieza[] = [
@@ -29,6 +30,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     relacionadas: ["regalos-absurdos-que-si-se-pueden-usar", "regalos-atrevidos-para-cumpleanos", "regalos-para-quien-lo-tiene-todo"],
     bloques: [
       p("Regalar bien es difícil porque casi nadie se pregunta lo único que importa: ¿qué va a hacer esta persona con esto el martes? Si la respuesta es «dejarlo en un cajón», sigue buscando."),
+      dato("En 30 segundos", "Pregunta qué hará con el regalo el martes. Gasta tiempo antes que dinero. Y envuelve bien: parece pensado aunque no lo esté."),
       h2("Primero, la pregunta que lo cambia todo"),
       p("Antes de comprar, responde a tres cosas: qué le gusta de verdad, qué se compra a regañadientes y qué le da vergüenza pedir. El regalo perfecto vive casi siempre en la segunda o en la tercera."),
       h2("Ideas que funcionan"),
@@ -51,7 +53,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Cuando no sabes nada de la persona"),
       p("Pregunta a quien la conozca, pero no por el regalo: pregunta por lo que le molesta, lo que se queja de no tener o lo que ha roto este año. Ahí está la lista."),
       p("Y si es de verdad un desconocido (el amigo invisible de la oficina), acierta con algo comestible bueno, algo de papelería decente o una planta que no muera. Seguro y sin dramas."),
-      frase("El mejor regalo no es el que sorprende, sino el que te hace decir: «¿cómo sabías que lo necesitaba?»."),
+      idea("Test antes de pagar", "¿Lo usará la semana que viene?", "¿Le da vergüenza pedirlo él mismo?", "¿Te lo agradecería aunque no fuera su cumpleaños?"),
       p("Cuando acabes, envuélvelo bien. Un buen papel y un lazo hacen que parezca pensado, aunque lo hayas comprado a las siete."),
     ],
   },
@@ -90,7 +92,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Y si se pasa de rosca"),
       p("Pasa. A veces la broma no cuela, y la mejor respuesta es reírse de uno mismo antes de que lo haga nadie más. Di «me he pasado, lo reconozco» y ofrece el regalo de verdad, el que llevas guardado por si acaso."),
       p("Lleva siempre un plan B envuelto: un detalle normal y bonito. Si el atrevido triunfa, el plan B se queda en el armario. Si no, salvas la noche sin que se note."),
-      frase("Un buen regalo atrevido se agradece dos veces: cuando lo abres y cuando lo recuerdas."),
+      cita("«¿Te ha gustado el regalo?» «Me he reído tanto que no sé si enfadarme.» «Entonces ha salido perfecto.»"),
     ],
   },
   {
@@ -133,7 +135,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
         "«Entrada para el concierto que dices que no vas a ir.»",
       ),
       p("Lo importante es que el nombre del bote lo haga suyo. Si sonríe al leerlo, ya has acertado. Si además empieza a ahorrar, has conseguido un regalo que sigue funcionando meses después."),
-      frase("Un sobre es dinero. Un bote con nombre es un plan."),
+      dato("Material y tiempo", "Un bote con tapa, billetes pequeños, una etiqueta con nombre y una tarjeta. Media hora de trabajo y un regalo que se recuerda."),
     ],
   },
   {
@@ -148,6 +150,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     relacionadas: ["que-regalar-en-un-cumpleanos-ideas-divertidas", "cumpleanos-sorpresa-cosas-que-salen-mal"],
     bloques: [
       p("Pasa en las mejores familias: te despistas, te acuerdas a las cinco de la tarde y tienes tres horas para parecer una persona organizada. Se puede. Pero hay que hacerlo con método, no con pánico."),
+      dato("Resumen de rescate", "Presupuesto claro, algo comestible bueno o algo útil bueno, envoltorio decente. Y hoy mismo, apunta los próximos cumpleaños."),
       h2("El plan de rescate en 60 minutos"),
       ol(
         "Respira. Nadie ha muerto por un regalo tarde.",
@@ -175,7 +178,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Y para la próxima vez"),
       p("Apunta en el móvil, hoy mismo, los cumpleaños de las diez personas más cercanas con un aviso diez días antes. Parece una tontería y te ahorra el 90 % de los apuros. Si además guardas una nota con lo que cada uno te ha dicho que le gusta, serás el rey de los regalos."),
       p("Y ten siempre en casa un regalo de reserva: una buena botella, una caja de dulces o un libro. Cuando llegue la emergencia, no tendrás que correr. Solo abrir el armario."),
-      frase("El regalo perfecto compra tiempo; el decente sale de un apuro; el malo se cuenta en la sobremesa."),
+      idea("Kit de reserva en casa", "Una buena botella.", "Una caja de dulces de calidad.", "Un libro que hayas leído y recomiendes.", "Papel de regalo y un lazo decente."),
     ],
   },
   {
@@ -290,7 +293,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("El regalo que acierta a cualquier edad"),
       p("Para un cumpleaños redondo, el mejor regalo no es un objeto: es un recuerdo. Una cena con las personas que han estado en cada etapa, una carta de cada amigo o un álbum con fotos de aquellos años. Se guarda, se enseña y no ocupa sitio."),
       p("Y si no sabes qué hacer, pregunta a su círculo más cercano: siempre hay alguien que sabe exactamente lo que necesita y no se atreve a decírselo."),
-      frase("Cumplir años no es el problema. El problema es la tarta con demasiadas velas."),
+      cita("«No quiero fiesta.» «Perfecto, será una cena pequeña.» «Bueno, pero con un poco de fiesta.» «Eso ya es otra cosa.»"),
     ],
   },
   {
@@ -329,7 +332,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Un calendario de rescate"),
       p("Con dos semanas de margen puedes hacer una fiesta decente gastando muy poco. Semana uno: lista de invitados, fecha y reparto de tareas. Semana dos: compras de lo no perecedero, playlist y decoración reciclada."),
       p("El día antes, tarta y comida fresca. El día de la fiesta, solo ocuparte de que todo fluya. Cuanta más gente colabore con algo pequeño, menos se nota el esfuerzo y menos te cuesta a ti."),
-      frase("Una fiesta barata y bien pensada gana siempre a una cara y sin alma."),
+      idea("El presupuesto en una servilleta", "Comida: lo que más pesa y donde más se nota.", "Bebida: lo que se acaba antes de lo previsto.", "Música: gratis y con el móvil cargado.", "Decoración: casi nada, que no se mira."),
     ],
   },
   {
@@ -371,7 +374,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Dónde y cuándo decirlo"),
       p("El mejor momento es antes de la tarta, cuando todos tienen una copa y aún no hay prisa. Evita hacerlo con el postre en la mano o con música alta. Pide silencio con una frase simple: «Dos minutos, os lo prometo»."),
       p("Si hay mucha gente, ponte de pie y sube la voz sin gritar. Mira al cumpleañero una vez por frase. Y si te tiembla la voz, no pasa nada: se nota que lo dices de verdad, que es lo que se recuerda."),
-      frase("Un buen brindis dura lo que dura una copa. Un buen recuerdo, toda la vida."),
+      cita("«Por [nombre], que cumple años como los buenos vinos: con ruido al abrirse y con calma al disfrutarse. Salud.»", "Brindis listo para usar"),
     ],
   },
 
@@ -388,6 +391,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     relacionadas: ["juego-yo-nunca-cena-amigos-preguntas", "bromas-cumpleanos-restaurante"],
     bloques: [
       p("Cuando dices «vamos a jugar a algo», la mitad de la mesa busca la salida. Con razón: casi todos los juegos de fiesta son infantiles, largos o humillantes. Estos no. Son cortos, se entienden en diez segundos y se puede participar o mirar."),
+      dato("Para elegir rápido", "Si no se conocen: dos verdades y una mentira. Si se conocen: quién es más probable. Si hay tarta: el álbum de fotos del cumpleañero."),
       h2("Los que funcionan casi siempre"),
       ul(
         "¿Quién es más probable que…? Cada uno vota al que encaja con una frase («perderse en Santiago»). Las frases las lee el cumpleañero.",
@@ -458,7 +462,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
         "La silla caliente: una persona responde cinco preguntas seguidas del grupo, sin pensar.",
       ),
       p("Lo importante es mantener el ritmo. Si una pregunta no arranca, pasa a la siguiente. Y si el ambiente se pone muy bueno, déjalo correr: es la mejor señal de que has acertado con el plan."),
-      frase("Una buena pregunta vale más que una buena tarta: se recuerda más."),
+      dato("Regla de la casa", "Lo que se cuenta en la mesa se queda en la mesa. Quien pasa, pasa sin dar explicaciones."),
     ],
   },
   {
@@ -498,7 +502,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
       h2("Quién hace de cómplice"),
       p("Elige a una persona del grupo que se encargue de hablar con el camarero antes de empezar. Puede avisar de la vela del postre, del brindis o de cualquier cosa especial. Así el personal está en el secreto y puede colaborar en lugar de sorprenderse."),
       p("Si además dejas buena propina y das las gracias al terminar, el restaurante te recordará bien y quizás te trate mejor la próxima vez. Un detalle pequeño que cuesta poco y se agradece mucho."),
-      frase("El mejor reto de un restaurante es salir con todos los amigos, la cuenta pagada y una buena propina."),
+      idea("Checklist antes de la tarta", "Avisar al local de lo que vais a hacer.", "Propina lista y generosa.", "Un cómplice que hable con el camarero.", "Volumen bajo y ganas de repetir restaurante."),
     ],
   },
 ];

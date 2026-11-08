@@ -7,8 +7,10 @@ const ul = (...x: string[]): Bloque => ({ t: "ul", x });
 const ol = (...x: string[]): Bloque => ({ t: "ol", x });
 const idea = (titulo: string, ...x: string[]): Bloque => ({ t: "caja", tipo: "idea", titulo, x: x.length === 1 ? x[0] : x });
 const ojo = (titulo: string, x: string): Bloque => ({ t: "caja", tipo: "ojo", titulo, x });
+const dato = (titulo: string, x: string): Bloque => ({ t: "caja", tipo: "dato", titulo, x });
 const frase = (x: string): Bloque => ({ t: "caja", tipo: "frase", x });
 
+const cita = (x: string, autor?: string): Bloque => ({ t: "cita", x, autor });
 const FECHA = "2026-11-08";
 
 export const PIEZAS_NUEVAS_2: Pieza[] = [
@@ -46,7 +48,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       ojo("Cuidado con la comparación", "Si hay otros suegros, otro cuñado o un hermano con más presupuesto, no compitas. Un regalo bien elegido gana siempre a uno caro y mal pensado."),
       h2("Cómo acertar si no sabes qué les gusta"),
       p("Pregunta a tu pareja, pero no «¿qué les regalamos?». Pregunta «¿qué han comentado que les falta?» o «¿qué usan hasta romper?». La respuesta suele ser la mejor pista. Y si dudas, vuelve a lo comestible: nadie ha ido a la ruina por regalar un buen vino."),
-      frase("Un buen regalo a los suegros es el que se comenta con cariño en la sobremesa, no el que se guarda en el trastero."),
+      dato("Regla de oro", "Si se come, se bebe o se disfruta en pareja, aciertas. Si ocupa sitio en una estantería, falla."),
     ],
   },
   {
@@ -87,7 +89,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       ojo("Si te toca el regalo malo", "Sonríe, di «muchas gracias» y no comentes nada más. El regalo es lo de menos; lo que se recuerda es la reacción. Y si es muy malo, ya sabes: existe el amigo invisible del año que viene."),
       h2("Para el que organiza"),
       p("Haz el sorteo con una herramienta sencilla, que garantice que nadie se toque a sí mismo, y avisa a cada uno en privado. Y guarda el listado: siempre habrá alguien que se olvide de a quién le tocaba."),
-      frase("El mejor amigo invisible es el que regala con ganas de acertar, no con ganas de cumplir."),
+      cita("«Presupuesto, diez euros.» «Yo he gastado doce.» «Pues devuelve dos, que es amigo invisible, no un concurso.»"),
     ],
   },
   {
@@ -127,7 +129,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("Si eres tú quien regala"),
       p("La mejor forma de evitar el problema es poner ticket de cambio sin avergonzarte. Una frase sencilla lo arregla: «Si no te encaja, me lo dices y lo cambiamos, que a mí me da igual». Quita presión a los dos y es más sincero que fingir."),
       p("Y si la persona te dice que no le gusta, agradécelo. Es la mejor información que puedes tener para acertar la próxima vez."),
-      frase("Un regalo malo se olvida rápido. Una cara de asco, nunca."),
+      cita("«Gracias, de verdad. No me lo esperaba.»", "La frase que salva casi cualquier regalo"),
     ],
   },
   {
@@ -209,7 +211,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("Alternativas a la tarta clásica"),
       p("Si no te fías, o no tienes horno, hay opciones sin complicaciones: una tarta de galletas y crema que no necesita cocción, bandejas de pastelitos, una tarta de queso fría o unos vasitos de postre con velas individuales."),
       p("Todas se montan en una hora, se enfrían en la nevera y sorprenden. Y tienen la ventaja de que, si falla alguna, quedan muchas más."),
-      frase("Una tarta no se juzga por su aspecto, sino por cuánto dura en el plato."),
+      idea("Kit de emergencia de tarta", "Una tarta de reserva o unas pastas buenas.", "Velas y mechero que funcione.", "Un cuchillo largo y fino.", "Nata o chocolate para tapar fallos."),
     ],
   },
   {
@@ -247,7 +249,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("El momento de la tarta"),
       p("Corta la música un par de minutos antes de apagar las luces. Pon una canción corta y conocida, que todos puedan cantar sin letra, y deja que el silencio haga el resto. Después, sube el volumen y el ánimo vuelve de golpe."),
       p("Si tienes una canción con significado para el cumpleañero, este es el momento. Con un poco de suerte, saldrá una lágrima y una carcajada a la vez."),
-      frase("La mejor música de una fiesta es la que nadie recuerda, porque todos estaban bailando."),
+      dato("Los tramos en una línea", "Aperitivo suave, cena tranquila, calentamiento con éxitos, baile a todo volumen."),
     ],
   },
   {
@@ -262,6 +264,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     relacionadas: ["ideas-locas-grupo-whatsapp-despedida", "diccionario-grupo-whatsapp-despedida"],
     bloques: [
       p("Organizar un cumpleaños empieza con una pregunta sencilla: «¿vienes?». Y la respuesta más habitual es el silencio. En los grupos de WhatsApp todo el mundo ve el mensaje y casi nadie contesta. Hay formas de evitarlo."),
+      dato("Lo mínimo", "Fecha, hora, sitio y una forma fácil de confirmar. En un solo mensaje y con plazo."),
       h2("El mensaje que sí se contesta"),
       p("Las invitaciones que funcionan tienen cuatro cosas: fecha, hora, sitio y una forma fácil de confirmar. Todo en un único mensaje. Cuanto menos tenga que buscar la gente, más contesta."),
       h2("Un ejemplo que puedes copiar"),
@@ -323,7 +326,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("Comida pensada para la lluvia"),
       p("Si la fiesta es al aire libre, ten un menú que aguante el mal tiempo: empanadas, caldo, bocadillos calientes y algo dulce. Evita lo que se estropea con la humedad. En Galicia, una buena empanada ha salvado más celebraciones que cualquier toldo."),
       p("Y deja un sitio seco para dejar abrigos y bolsos. La gente se relaja mucho más cuando no tiene que cuidar sus cosas."),
-      frase("En Galicia, un buen plan B no es pesimismo: es experiencia."),
+      dato("La regla", "Si a dos días vista hay más del 50 % de probabilidad de lluvia, el plan B se activa. Sin esperar al último momento."),
     ],
   },
 
@@ -365,7 +368,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("Un guion de ejemplo"),
       p("Prueba uno: tres equipos, siete pruebas y cincuenta minutos. Empieza con la foto imposible, sigue con el objeto misterioso, mete la carrera de la cuchara en el centro y cierra con la adivinanza del cumpleañero. La última pista lleva a la tarta."),
       p("Ten un reloj visible, una libreta para los puntos y un sobre para cada prueba. Así no tienes que explicar nada: cada equipo lee y actúa."),
-      frase("Una buena ginkana no la gana el más rápido, sino el que más se ríe."),
+      idea("Material que necesitas", "Tarjetas con las pruebas en sobres numerados.", "Un reloj visible para todos.", "Una libreta para los puntos.", "Un premio simbólico para el equipo ganador."),
     ],
   },
   {
@@ -410,7 +413,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       h2("Para los que no se atreven"),
       p("A los vergonzosos les ayuda cantar en grupo, de espaldas al público o con un sombrero absurdo. Quien tiene algo que lo oculte pierde el miedo antes. Pon un par de accesorios (pelucas, gafas, boas) y verás el cambio."),
       p("Y no olvides el agua: cantar da sed, y una voz cansada acaba con las mejores intenciones."),
-      frase("El karaoke no va de cantar bien, sino de perder la vergüenza juntos."),
+      cita("«¿Quién canta ahora?» «Yo, pero solo una.» «Eso dijiste hace tres canciones.»"),
     ],
   },
 ];

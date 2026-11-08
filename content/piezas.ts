@@ -1730,11 +1730,11 @@ export const piezas: Pieza[] = [
     "bloques": [
       {
         "t": "p",
-        "x": "A Coruña tiene mar a los dos lados, un paseo marítimo larguísimo y una ciudad lo bastante compacta como para recorrerla de reto en reto. Es perfecta para una despedida de soltero, de soltera o mixta que quiera hacer el loco sin coger el coche."
+        "x": "A Coruña es una ciudad con mar a los dos lados, y eso se nota: se puede ir de la Torre de Hércules a la playa del Orzán sin coger transporte, con parada obligatoria en la plaza de María Pita. Para una despedida de soltero, de soltera o mixta, es casi un tablero de juego ya montado."
       },
       {
         "t": "p",
-        "x": "Estas son ocho ideas absurdas que funcionan con un grupo de entre seis y quince personas, casi sin material y con el escenario ya montado."
+        "x": "Estas ocho locuras funcionan con grupos de seis a quince personas, casi sin material y con cada escenario a pie de calle."
       },
       {
         "t": "h2",
@@ -1743,14 +1743,14 @@ export const piezas: Pieza[] = [
       {
         "t": "ol",
         "x": [
-          "El novio, guía del faro. Foto de grupo ante la Torre de Hércules, el faro romano, mientras el novio cuenta su «historia» con total seguridad. Todo inventado y respetando las normas de la visita.",
-          "El Paseo Marítimo, versión olimpiadas. Relevos con paraguas y carrera de tres piernas en los tramos tranquilos, sin estorbar a corredores ni a ciclistas.",
-          "La foto de estatua en la plaza de María Pita. El grupo entero posa congelado frente al ayuntamiento. Gana quien aguante más.",
-          "El pregón desde la plaza. Un minuto de discurso solemne con micro de mentira, y un aplauso obligatorio.",
-          "El tour de tapas con sellos. Una hoja con casillas, una firma por local y un reto absurdo en cada parada.",
-          "El torneo de chancla en Riazor o el Orzán. Lanzamiento de chancla y carrera de sacos en la arena. Mira siempre la marea y no te acerques al agua.",
-          "El reportero del Orzán. Un amigo entrevista al novio con un micrófono de mentira. Quien quiera, se une. Quien no, pasa.",
-          "La búsqueda del tesoro por la ciudad vieja. Pistas que llevan de una plaza a otra. El premio es una tarta de las de verdad."
+          "El pregón en María Pita. Un minuto de discurso solemne desde las escaleras del ayuntamiento, con aplauso final del grupo. Sin megáfono y sin cortar el paso.",
+          "La foto de estatua ante la Torre de Hércules. El grupo se congela como si fuera un monumento. Gana quien aguante más sin reírse.",
+          "El torneo de chancla en el Orzán. Con marea baja y con espacio de sobra, por equipos y con un árbitro con gafas de sol.",
+          "La carrera del paseo marítimo. Patinete, bici de alquiler o pasos de baile: elegid un tramo, una meta y un premio simbólico.",
+          "El guía turístico imposible. El novio o la novia presenta la ciudad vieja con datos inventados. Los demás votan el más creíble.",
+          "La mímica en las galerías de la Marina. Una película, una canción o una frase gallega sin hablar. Se juega en equipos y con público casual.",
+          "El brindis de cinco paradas. Una caña y un reto en cada parada, siempre con calma y pagando cada ronda donde toca.",
+          "La búsqueda del tesoro por el casco histórico. Pistas que llevan de una plaza a otra. El tesoro es una tarta de las de verdad."
         ]
       },
       {
@@ -1758,9 +1758,25 @@ export const piezas: Pieza[] = [
         "tipo": "ojo",
         "titulo": "Antes de empezar",
         "x": [
-          "Siempre con permiso del homenajeado y de quien salga en la foto.",
-          "Respeta las normas de cada monumento, playa o paseo.",
-          "Nada cerca del tráfico, del agua con marea alta ni con menores."
+          "Siempre con permiso del homenajeado y de quien salga en una foto.",
+          "En monumentos y espacios públicos, respeta las normas y no molestes a vecinos ni turistas.",
+          "Nada con alcohol en la playa si la ordenanza no lo permite. Comprueba antes."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Dónde cenar y dónde seguir"
+      },
+      {
+        "t": "p",
+        "x": "Para cenar en grupo, busca por el centro y la zona de la ciudad vieja: hay muchos sitios con mesa larga que aceptan reservas para grupos. Pide menú cerrado y avisa si lleváis tarta o brindis. Para después, la zona de bares del centro concentra pubs y locales de copas a poca distancia unos de otros."
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Cena: mesa larga y menú cerrado, reservada con una semana de margen.",
+          "Copas: elegid dos o tres locales cerca entre sí, para no depender de taxis.",
+          "Final: un último reto frente al mar, con el grupo sentado y sin música alta."
         ]
       },
       {
@@ -1769,23 +1785,13 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "p",
-        "x": "En A Coruña llueve lo justo para estropearte el plan al aire libre. Ten un sitio cubierto reservado o a mano: un local con sala para el grupo, un restaurante con mesa larga o un sitio donde el torneo de chancla se convierta en un concurso de brindis. Y si escampa, a la arena otra vez."
-      },
-      {
-        "t": "grupo",
-        "dominio": "despedidascoruna.es",
-        "x": "Despedidas en A Coruña."
-      },
-      {
-        "t": "grupo",
-        "dominio": "humoramarillocoruna.com",
-        "x": "Humor Amarillo, en A Coruña."
+        "x": "En A Coruña llueve lo justo para estropear un plan al aire libre. Ten un sitio cubierto a mano: un local con sala para el grupo, un restaurante con mesa larga o una galería acristalada donde el torneo se convierte en concurso de mímica. Y mira siempre el viento: en el paseo marítimo, el paraguas dura poco."
       },
       {
         "t": "caja",
         "tipo": "idea",
         "titulo": "Mensaje para el grupo",
-        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid votando en el grupo. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+        "x": "Equipo, el sábado hacemos cuatro de las ocho locuras. Quedamos a las seis en María Pita. Cada uno lleva su disfraz o su excusa. Lo demás se improvisa."
       },
       {
         "t": "leetambien",
@@ -1814,11 +1820,11 @@ export const piezas: Pieza[] = [
     "bloques": [
       {
         "t": "p",
-        "x": "Vigo es una ciudad de cuestas, de ría y de mucha vida en la calle. Eso la hace ideal para una despedida de soltero, de soltera o mixta que prefiera retos de calle a un plan cerrado."
+        "x": "Vigo es una ciudad de cuestas, de ría y de mucha vida en la calle. Se recorre entre el Casco Vello, la plaza de la Constitución y el puerto, y desde casi cualquier punto se ve el agua. Perfecta para quien prefiere retos de calle a un plan cerrado."
       },
       {
         "t": "p",
-        "x": "Estas son ocho ideas absurdas para recorrerla con humor, con permiso del homenajeado y sin molestar a nadie."
+        "x": "Estas ocho ideas absurdas se pueden hacer con permiso del homenajeado y sin molestar a nadie."
       },
       {
         "t": "h2",
@@ -1827,14 +1833,14 @@ export const piezas: Pieza[] = [
       {
         "t": "ol",
         "x": [
-          "El pregón en el Casco Vello. Discurso solemne del novio, de un minuto, en una de sus plazas, con aplauso final del grupo.",
-          "La foto de estatua en cada plaza. El grupo se congela y gana quien aguante más sin moverse.",
-          "El guía de O Berbés. El novio explica al grupo la «historia» de cada rincón del barrio marinero. Inventada, claro.",
-          "La ruta de la ostra con reto. Cada parada, un reto: un brindis absurdo, una pose o una rima improvisada.",
-          "La subida a Monte do Castro. Una carrera de relevos cuesta arriba con paraguas, hasta las vistas de la ría. Sin correr de verdad si hace calor.",
-          "El torneo de chancla en Samil. Lanzamiento de chancla y carrera de sacos en la arena, mirando siempre la marea.",
-          "El reportero de la ría. Un amigo, micrófono de mentira, entrevista al novio y a quien quiera sobre su vida sentimental.",
-          "La búsqueda del tesoro por el centro. Pistas que llevan de un barrio a otro. Si la despedida cae en diciembre, las luces de Navidad de la ciudad hacen de escenario."
+          "El pregón en la plaza de la Constitución. Un minuto de discurso solemne con aplauso final. Gana el que más se lo crea.",
+          "La subida de las cuestas con ritmo. Un tramo, una canción y un baile en cada descanso. Se puntúa la cara de cansancio.",
+          "La foto de grupo con la ría de fondo. Pose de portada de revista, en tres versiones: seria, trágica y de triunfo.",
+          "El guía del Casco Vello. El novio presenta cada calle con una historia inventada. Se vota la mejor mentira.",
+          "El brindis de la ostra. En la zona de las ostreras, con calma y con quien sepa de qué va. Cada uno brinda con una excusa distinta.",
+          "La carrera de sillas en la terraza. Solo si el local lo permite y sin molestar al resto. Se corre sentado.",
+          "El reportero de la ría. Un amigo con micrófono de mentira entrevista al novio en directo y a cualquiera que quiera hablar.",
+          "El reto del Castro. Subir caminando con un objeto absurdo (un peluche, una corbata, un trofeo) y hacerse la foto arriba."
         ]
       },
       {
@@ -1843,9 +1849,31 @@ export const piezas: Pieza[] = [
         "titulo": "Antes de empezar",
         "x": [
           "Siempre con permiso del homenajeado y de quien salga en la foto.",
-          "Respeta las normas de cada plaza, playa o parque.",
-          "Nada cerca del tráfico, de las cuestas con prisas ni con menores."
+          "Nada de retos que obliguen a beber más de la cuenta.",
+          "En el puerto y la ría, la seguridad primero."
         ]
+      },
+      {
+        "t": "h2",
+        "x": "Una ruta de cinco paradas"
+      },
+      {
+        "t": "ol",
+        "x": [
+          "Quedada en la plaza de la Constitución, con el pregón.",
+          "Casco Vello, con el guía inventado.",
+          "Pausa de cena larga, con mesa de grupo reservada.",
+          "Terraza o bar del centro para el reto de las sillas.",
+          "Último brindis con vistas a la ría."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Copas y fiesta"
+      },
+      {
+        "t": "p",
+        "x": "Para seguir la noche, Vigo ofrece zonas de bares y locales de copas en el centro y alrededor del Areal. Elegid dos o tres cerca entre sí, fijad una hora de salida y un punto de encuentro."
       },
       {
         "t": "h2",
@@ -1853,23 +1881,13 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "p",
-        "x": "En Vigo la lluvia es una costumbre, no una excepción. Ten un plan cubierto: un local con sala para el grupo, un restaurante con mesa larga o un sitio donde el pregón se haga entre cañas. Y si tienes en mente las Islas Cíes, recuerda que el acceso está regulado y conviene comprobarlo con tiempo."
-      },
-      {
-        "t": "grupo",
-        "dominio": "despedidasvigo.com",
-        "x": "Despedidas en Vigo."
-      },
-      {
-        "t": "grupo",
-        "dominio": "despedidas-vigo.es",
-        "x": "Local para despedidas en Vigo."
+        "x": "En Vigo la lluvia es una costumbre, no una excepción. Ten un plan cubierto: un local con sala para el grupo, un restaurante con mesa larga o un sitio donde el pregón se haga entre cañas. Si hay sol, aprovecha las Cíes en temporada, siempre con reserva de barco."
       },
       {
         "t": "caja",
         "tipo": "idea",
         "titulo": "Mensaje para el grupo",
-        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+        "x": "Equipo, sábado en Vigo. Quedamos en la plaza de la Constitución. Cada uno lleva un objeto absurdo. El resto lo ponemos entre todos."
       },
       {
         "t": "leetambien",
@@ -1877,7 +1895,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "despedida-en-sanxenxo-que-hacer-de-loco"
+        "slug": "despedida-en-a-coruna-que-hacer-de-loco"
       }
     ]
   },
@@ -1899,11 +1917,11 @@ export const piezas: Pieza[] = [
     "bloques": [
       {
         "t": "p",
-        "x": "Sanxenxo es, para mucha gente, el sitio de las despedidas de verano: playas, puerto deportivo y ambiente hasta tarde. También es el sitio donde más se llenan los planes, así que conviene llevar los retos pensados."
+        "x": "Sanxenxo es, para mucha gente, el sitio de las despedidas de verano: playa de Silgar, puerto deportivo y ambiente hasta tarde. También es donde más se llenan los planes, así que conviene llevar los retos pensados."
       },
       {
         "t": "p",
-        "x": "Estas son ocho ideas absurdas para una despedida de soltero, de soltera o mixta, casi sin material y con el escenario ya incluido."
+        "x": "Estas ocho ideas absurdas funcionan en grupos de seis a quince personas, casi sin material y con el escenario ya incluido."
       },
       {
         "t": "h2",
@@ -1912,14 +1930,14 @@ export const piezas: Pieza[] = [
       {
         "t": "ol",
         "x": [
-          "Las olimpiadas de Silgar. Carrera de tres piernas, lanzamiento de chancla y carrera de sacos en la arena. Mira siempre la marea.",
-          "El pregón en el puerto deportivo. Un minuto de discurso solemne del novio ante los barcos, con aplauso obligatorio.",
-          "La foto de estatua en el paseo. El grupo se queda congelado y gana quien aguante más.",
-          "El torneo de palas absurdo. Raquetas de playa con reglas inventadas: gana quien invente la regla más ridícula.",
-          "El reportero del chiringuito. Un amigo entrevista al novio con micro de mentira. Quien quiera, participa.",
-          "La ruta de Portonovo con brindis. Un reto distinto en cada tramo y un brindis con excusa en cada parada.",
-          "El concurso de disfraces de playa. Cada uno se disfraza con lo que haya: toallas, flotadores, sombreros.",
-          "La puesta de sol con discurso. El grupo se sienta frente al mar y cada uno dice una frase sobre el novio, sin repetir."
+          "El desfile de la playa. De una punta de Silgar a la otra, con flotador, toalla de capa y música propia. Gana quien más se lo toma en serio.",
+          "El torneo de palas. Por equipos, con premio simbólico y el novio de árbitro.",
+          "La carrera de flotadores en la orilla. Solo con buena mar, sin adentrarse y con alguien vigilando.",
+          "La foto de portada en el puerto. El grupo posa como en una revista de yates. Se vota la más creída.",
+          "El pregón de la marea. El novio habla al mar con voz de documental. Los demás hacen de gaviotas.",
+          "La gymkhana de fotos imposibles. Doce fotos de una lista, siempre con permiso de quien salga.",
+          "El brindis de la puesta de sol. Todos de pie, con una copa y una excusa distinta cada uno.",
+          "El concurso de castillos de arena. Con jurado, tema obligatorio y premio para el más desastroso."
         ]
       },
       {
@@ -1927,9 +1945,21 @@ export const piezas: Pieza[] = [
         "tipo": "ojo",
         "titulo": "Antes de empezar",
         "x": [
-          "Siempre con permiso del homenajeado y de quien salga en la foto.",
-          "Respeta las normas de las playas y del puerto, y no te acerques al agua con marea alta ni tras beber.",
-          "Nada con menores ni cerca de los barcos."
+          "Siempre con permiso del homenajeado y de quien salga en una foto.",
+          "En el mar, nada de retos con alcohol ni con corrientes. Mira siempre las banderas de la playa.",
+          "Respeta las normas del arenal y de los locales."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Plan de día y plan de noche"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "De día: playa, retos con arena, comida en grupo y barco si el tiempo y el presupuesto lo permiten.",
+          "De tarde: terraza con vistas y brindis de despedida del sol.",
+          "De noche: cena en grupo reservada y copas en la zona de Silgar o del puerto, con dos o tres sitios cerca entre sí."
         ]
       },
       {
@@ -1938,18 +1968,13 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "p",
-        "x": "En temporada alta, Sanxenxo se llena y los sitios con sombra o techo vuelan. Reserva con tiempo un local cubierto o una mesa grande, y ten pensado qué haces si el día amanece nublado. Una de las mejores opciones es mover los retos a un sitio con música y convertirlos en un concurso de brindis."
-      },
-      {
-        "t": "grupo",
-        "dominio": "despedidassanxenxo.es",
-        "x": "Despedidas en Sanxenxo."
+        "x": "En temporada alta, Sanxenxo se llena y los sitios con sombra o techo vuelan. Reserva con tiempo un local cubierto o una mesa grande y ten pensado qué haces si el día amanece nublado: gymkhana en interior, karaoke o cena larga con juegos."
       },
       {
         "t": "caja",
         "tipo": "idea",
         "titulo": "Mensaje para el grupo",
-        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+        "x": "Equipo, sábado en Sanxenxo. Playa por la mañana, cena a las nueve. Traed toalla y mucho humor. El resto lo organizo yo."
       },
       {
         "t": "leetambien",
@@ -1957,7 +1982,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "despedida-en-ourense-que-hacer-de-loco"
+        "slug": "barco-o-casa-rural-despedida-galicia"
       }
     ]
   },
@@ -1979,7 +2004,7 @@ export const piezas: Pieza[] = [
     "bloques": [
       {
         "t": "p",
-        "x": "Ourense no tiene mar, pero tiene agua caliente: sus termas son famosas y dan para una despedida distinta. Con la ciudad, el río y la comarca del Ribeiro cerca, es un destino perfecto para quien no quiere el plan de playa de siempre."
+        "x": "Ourense no tiene mar, pero tiene agua caliente: las Burgas, en pleno centro, y las termas del río Miño dan para una despedida distinta. Con la Ponte Romana, la catedral y la comarca del Ribeiro cerca, es un destino perfecto para quien no quiere el plan de playa de siempre."
       },
       {
         "t": "p",
@@ -1995,8 +2020,8 @@ export const piezas: Pieza[] = [
           "La ruta de las Burgas en albornoz. Si las normas y los horarios lo permiten, el grupo hace un recorrido absurdo con albornoz y chancletas. Comprueba antes dónde se puede.",
           "El pregón en la Ponte Romana. Un minuto de discurso solemne del novio con aplauso final del grupo.",
           "La foto de estatua frente a la catedral. El grupo se congela. Gana quien aguante más sin moverse.",
-          "El guía termal. El novio explica al grupo la «historia» de cada fuente y de cada poza. Inventada, claro.",
-          "El concurso de brindis del Ribeiro. Cada uno brinda con una excusa distinta con vino de la zona. Gana el más ridículo.",
+          "El guía termal. El novio explica al grupo la historia de cada fuente y de cada poza. Inventada, claro.",
+          "El concurso de brindis del Ribeiro. Cada uno brinda con una excusa distinta, con vino de la zona.",
           "El reportero del río. Un amigo, con micrófono de mentira, entrevista al novio y a quien quiera.",
           "La gymkhana de fotos imposibles. Doce fotos de una lista, siempre con permiso de quien salga.",
           "La búsqueda del tesoro por el casco viejo. Pistas que llevan de una plaza a otra. El premio es una tarta de las de verdad."
@@ -2008,7 +2033,7 @@ export const piezas: Pieza[] = [
         "titulo": "Antes de empezar",
         "x": [
           "Siempre con permiso del homenajeado y de quien salga en la foto.",
-          "En las termas y piscinas, respeta siempre las normas, los horarios y los precios de cada una.",
+          "En termas y piscinas, respeta las normas, los horarios y los precios de cada una.",
           "Nada con alcohol en el agua ni con menores."
         ]
       },
@@ -2045,15 +2070,10 @@ export const piezas: Pieza[] = [
         "x": "Ourense tiene veranos calurosos e inviernos fríos y húmedos. En verano, planea los retos al aire libre a primera hora o al atardecer. En invierno, el plan B está claro: las termas, que son un plan en sí mismas, y una cena larga."
       },
       {
-        "t": "grupo",
-        "dominio": "despedidasourense.com",
-        "x": "Despedidas en Ourense."
-      },
-      {
         "t": "caja",
         "tipo": "idea",
         "titulo": "Mensaje para el grupo",
-        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid votando en el grupo. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
       },
       {
         "t": "leetambien",
