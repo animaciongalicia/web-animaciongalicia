@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactoPage() {
-  const testMode = !(process.env.RESEND_API_KEY && process.env.CONTACT_TO_EMAIL && process.env.CONTACT_FROM_EMAIL);
   return (
     <div className="wrap-wide page">
       <header className="section-head">
@@ -19,7 +18,7 @@ export default function ContactoPage() {
         <h1>Contacto, enlaces y marrones</h1>
         <p className="lead">Escríbenos, mándanos un enlace que nos tenga que hacer reír o cuéntanos tu marrón de organizar.</p>
       </header>
-      <ContactForms testMode={testMode} />
+      <ContactForms />
     </div>
   );
 }

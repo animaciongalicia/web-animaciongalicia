@@ -79,7 +79,7 @@ Todo lo de abajo **existe y está probado**.
 
 ```
 app/            páginas: portada, [section], [section]/[slug], contacto, animacion-galicia, aviso-legal,
-                privacidad, cookies, como-trabajamos, feed.xml, sitemap, robots, og/[file], api/contacto
+                privacidad, cookies, como-trabajamos, feed.xml, sitemap, robots, og/[file]
 components/     Header, Footer, Sidebar, PiezaView, PiezaCard, Bloques, ContactForms, ShareBar, JsonLd, LegalPage…
 content/        piezas.ts (los posts), types.ts, galicia.ts, redirects.ts
 lib/            site.ts (SITE, BASE, absoluteUrl, withBase), piezas.ts, company.ts, legal.ts, share.ts
@@ -111,7 +111,7 @@ buscador interno · newsletter.
 - **Rutas:** estáticas (SSG). Las de contenido salen de `generateStaticParams()`.
 - **SEO:** `lib/site.ts` + `metadata` en cada página. `SITE_INDEXABLE` controla `noindex`/`robots`.
 - **Redirecciones:** `content/redirects.ts` → `next.config.ts` (solo en raíz).
-- **Formularios:** `/api/contacto/` con Resend (variables `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`).
+- **Formularios:** abren el programa de correo del usuario (mailto: a info@animaciongalicia.com). Sin API ni proveedor.
   Sin ellas, modo de prueba con aviso visible y sin envío.
 - **Despliegue:** crear proyecto en Vercel conectado al repo, Production = `main`, previews por rama. Variables de entorno
   de `docs/migracion-wordpress.md` §5.
@@ -241,7 +241,7 @@ Páginas ya redactadas (aviso legal, privacidad, cookies, cómo trabajamos) con 
 **Pendiente:** calle y número, correo de contacto y datos del Registro Mercantil (si procede). Los textos son una
 base completa pero **conviene que los revise un profesional**. La política de cookies hoy dice que no se instalan
 cookies: **hay que cambiarla si se incorpora analítica**. En privacidad se habla de «proveedores» sin nombrarlos:
-citarlos cuando estén activos (Resend, Vercel…).
+citarlos cuando estén activos (Vercel, Google Analytics…).
 
 ## 10. Plan de trabajo (en orden)
 
@@ -249,7 +249,7 @@ citarlos cuando estén activos (Resend, Vercel…).
 | --- | --- | --- |
 | **0. Datos** | Recibido: consultas, páginas, problemas e informe de enlaces (analizado). Falta: periodo, Search Console de cada web del grupo, Analytics, WordPress y contenido de las 15 URLs; validar la matriz URL → destino | Informe + matriz validada |
 | **1. Construir** | **Portar las 4 URLs con demanda**; 3 pilares nuevos (soltera, soltero, actividades); hub de herramientas; 3 posts urgentes de Navidad; cola larga; imagen propia (si se aporta) | PR a `main` |
-| **2. Infraestructura** | Proyecto de Vercel conectado; variables; correo real (Resend); decisión de analítica y banner | Preview con `noindex` |
+| **2. Infraestructura** | Proyecto de Vercel conectado; variables; decisión de analítica y banner | Preview con `noindex` |
 | **3. QA de migración** | Rastreo del preview vs. rastreo del WordPress; pruebas de las 301; **`tests/urls-conservadas.js` en verde**; legales completas; envío real de formularios | Informe de QA |
 | **4. Corte** | TTL bajo, copia del WordPress, DNS a Vercel, `SITE_INDEXABLE=true`, comprobaciones | Producción |
 | **5. Después** | Sitemap en Search Console, vigilancia de 404 y cobertura, ritmo de 2–3 posts por semana | Informe a las 2 y 8 semanas |
@@ -270,7 +270,7 @@ citarlos cuando estén activos (Resend, Vercel…).
 2. Calle y número, correo de contacto y datos registrales del titular.
 3. Los 4 dominios y descripción de cada herramienta.
 4. URLs y descripciones de Suunia Viajes, Mil Eventos Galicia, SeaGalicia y LuxeGalicia.
-5. Decisión de analítica (con banner o sin cookies) y cuenta de Resend.
+5. Decisión de analítica (con banner o sin cookies).
 6. Acceso al DNS y al alojamiento del WordPress para el corte; qué ofrecían los packs de la portada actual.
 7. Anécdotas reales y precios reales para dar valor a los posts.
 8. Autorización expresa para activar enlaces a **terceros** (los del grupo ya están activos).

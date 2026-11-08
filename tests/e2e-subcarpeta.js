@@ -47,11 +47,11 @@ const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
   const wa = decodeURIComponent(await page.getAttribute("a.btn-wa", "href"));
   ok("WhatsApp incluye /revista", wa.includes("/revista/despedidas/"));
 
-  // Formulario: POST a /revista/api/contacto/
+  // Formulario: abre el correo
   await page.goto(B + "/revista/contacto/");
   await page.fill("#enlace input[name=url]", "https://ejemplo.com/x");
-  await page.click("#enlace >> text=Mandar el enlace");
-  await page.waitForSelector("#enlace >> text=NO se ha enviado nada");
+  await page.click("#enlace >> text=Preparar el correo con el enlace");
+  await page.waitForSelector("#enlace >> text=Se ha abierto tu programa de correo");
   ok("formulario funciona bajo /revista", true);
 
   // Redirección sin cadena

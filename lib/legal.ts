@@ -9,5 +9,5 @@ export const TITULAR = {
   domicilio: "Ronda de Montealto, 4, 15002 A Coruña" as string | undefined,
   email: "info@animaciongalicia.com" as string | undefined,
   registro: undefined as string | undefined, // Registro Mercantil: el titular indica que no se muestra; la línea se oculta si está vacío
-  actualizado: "8 de noviembre de 2026",
+  actualizado: "9 de noviembre de 2026",
 };

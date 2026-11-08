@@ -216,7 +216,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     ok(`[${name}] /animacion-galicia/ redirige a /como-trabajamos/`, mal.status() === 308 && mal.headers()["location"].endsWith("/como-trabajamos/"), mal.headers()["location"]);
 
     // --- Legales: contenido completo
-    for (const [u, claves] of [["/aviso-legal/", ["LSSI-CE", "Propiedad intelectual", "Legislación aplicable"]], ["/privacidad/", ["RGPD", "Tus derechos", "Conservación", "Base jurídica"]], ["/cookies/", ["22.2 de la LSSI-CE", "navegador"]]]) {
+    for (const [u, claves] of [["/aviso-legal/", ["LSSI-CE", "Propiedad intelectual", "Legislación aplicable"]], ["/privacidad/", ["RGPD", "Tus derechos", "conservación", "base legal", "Transferencias internacionales", "Menores"]], ["/cookies/", ["22.2 de la LSSI-CE", "navegador"]]]) {
       await page.goto(B + u);
       const t = await page.textContent("main");
       ok(`[${name}] ${u} contenido legal completo`, claves.every((c) => t.includes(c)), `${t.split(/\s+/).length} palabras`);
@@ -238,14 +238,14 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     if (name === "movil") { await page.click('[role=tab]:has-text("Tu marrón")'); ok(`[movil] pestaña «Tu marrón» muestra su formulario`, await page.isVisible("#marron textarea")); await page.click('[role=tab]:has-text("Un enlace")'); }
     await page.screenshot({ path: `${OUT}/v6-${name}-contacto.png`, fullPage: true });
     await page.fill("#enlace input[name=url]", "https://ejemplo.com/x");
-    await page.click("#enlace >> text=Mandar el enlace");
-    await page.waitForSelector("#enlace >> text=NO se ha enviado nada");
-    ok(`[${name}] formulario de enlace (modo prueba)`, true);
+    await page.click("#enlace >> text=Preparar el correo con el enlace");
+    await page.waitForSelector("#enlace >> text=Se ha abierto tu programa de correo");
+    ok(`[${name}] formulario de enlace prepara el correo a info@animaciongalicia.com`, (await page.getAttribute("#enlace .form-status a", "href")) === "mailto:info@animaciongalicia.com");
     if (name === "movil") { await page.click('[role=tab]:has-text("Tu marrón")'); }
     await page.fill("#marron textarea[name=mensaje]", "x");
-    await page.click("#marron >> text=Contar mi marrón");
-    await page.waitForSelector("#marron >> text=NO se ha enviado nada");
-    ok(`[${name}] formulario marrón (modo prueba)`, true);
+    await page.click("#marron >> text=Preparar mi correo");
+    await page.waitForSelector("#marron >> text=Se ha abierto tu programa de correo");
+    ok(`[${name}] formulario marrón prepara el correo`, true);
     await page.goto(B + "/contacto/#marron");
     await page.waitForTimeout(300);
     ok(`[${name}] /contacto/#marron abre el formulario de marrón`, await page.isVisible("#marron textarea"));

@@ -135,15 +135,14 @@ originales con GPS quedan en el historial de git: mantenlo privado. Los marcador
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | URL pública (canonicals, sitemap, Open Graph). Sin barra final. |
 | `SITE_INDEXABLE` | `true` solo en producción. |
-| `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL` | Envío real de los formularios (Resend). |
 
-Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso visible, no envían nada).
+Los formularios de contacto **abren el programa de correo del usuario** (mailto: a info@animaciongalicia.com). No hay servidor de envío ni variables que configurar.
 
 ## Pendiente antes de publicar
 
 - [ ] **Datos del titular** en `lib/legal.ts`: ya constan Inversiones Shiso, S.L., B70319223 y 15002 A Coruña. Datos del titular completos (sin registro mercantil, a petición del titular). Mientras falten,
   el aviso legal y la privacidad muestran «[PENDIENTE DE COMPLETAR]». Los textos son una base completa, pero conviene
-  que los revise un profesional. En privacidad se habla de «proveedores» sin nombrarlos: si se activa Resend u otro,
+  que los revise un profesional. En privacidad se habla de «proveedores» sin nombrarlos: si se añade otro proveedor,
   conviene citarlo.
 - [ ] **La agencia**: `web` y `descripcion` de cada marca en `lib/company.ts` (ahora solo hay una palabra para
   Suunia Viajes y Mil Eventos Galicia y nada para SeaGalicia y LuxeGalicia). Comprobar cómo se escribe cada nombre.

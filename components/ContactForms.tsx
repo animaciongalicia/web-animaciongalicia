@@ -1,38 +1,57 @@
 "use client";
 
-import { evento } from "./Cookies";
 import { useEffect, useState } from "react";
-import { withBase } from "@/lib/site";
+import { evento } from "./Cookies";
+import { TITULAR } from "@/lib/legal";
 
 type Kind = "contacto" | "marron" | "enlace";
 
-function Form({ kind }: { kind: Kind }) {
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "test" | "error">("idle");
-  const [error, setError] = useState("");
+const CORREO = TITULAR.email ?? "info@animaciongalicia.com";
+const MAX_CUERPO = 1500; // los programas de correo cortan los enlaces mailto muy largos
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+const ASUNTO: Record<Kind, string> = {
+  contacto: "Contacto",
+  marron: "Cuéntanos tu marrón",
+  enlace: "Enlace sugerido",
+};
+
+function componer(kind: Kind, fd: FormData) {
+  const mensaje = String(fd.get("mensaje") ?? "").trim();
+  const asunto = String(fd.get("asunto") ?? "").trim();
+  const url = String(fd.get("url") ?? "").trim();
+  const permiso = !!fd.get("permiso");
+  const lineas = [
+    kind === "enlace" && url ? `Enlace: ${url}` : "",
+    mensaje,
+    kind !== "contacto" ? `\nPermiso para citarlo en la revista (sin mi nombre): ${permiso ? "SÍ" : "NO"}` : "",
+  ].filter((l) => l !== "");
+  const cuerpo = lineas.join("\n\n");
+  const asuntoFinal = `[Menú Marrón] ${kind === "contacto" && asunto ? asunto : ASUNTO[kind]}`;
+  return { asunto: asuntoFinal, cuerpo, largo: cuerpo.length > MAX_CUERPO };
+}
+
+function Form({ kind }: { kind: Kind }) {
+  const [estado, setEstado] = useState<"idle" | "abierto">("idle");
+  const [copia, setCopia] = useState<{ asunto: string; cuerpo: string; largo: boolean } | null>(null);
+  const [copiado, setCopiado] = useState(false);
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
-    setError("");
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const body = Object.fromEntries(fd.entries());
-    body.kind = kind;
-    body.permiso = fd.get("permiso") ? "si" : "no";
+    const datos = componer(kind, new FormData(e.currentTarget));
+    setCopia(datos);
+    setEstado("abierto");
+    evento("generate_lead", { formulario: kind });
+    const cuerpo = datos.largo ? datos.cuerpo.slice(0, MAX_CUERPO) + "…" : datos.cuerpo;
+    window.location.href = `mailto:${CORREO}?subject=${encodeURIComponent(datos.asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  }
+
+  async function copiar() {
+    if (!copia) return;
     try {
-      const res = await fetch(withBase("/api/contacto/"), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Error");
-      setStatus(data.mode === "test" ? "test" : "ok");
-      if (data.mode !== "test") evento("generate_lead", { formulario: kind });
-      form.reset();
-    } catch (err) {
-      setStatus("error");
-      setError(err instanceof Error ? err.message : "Error");
+      await navigator.clipboard.writeText(`${copia.asunto}\n\n${copia.cuerpo}`);
+      setCopiado(true);
+    } catch {
+      setCopiado(false);
     }
   }
 
@@ -40,7 +59,6 @@ function Form({ kind }: { kind: Kind }) {
 
   return (
     <form onSubmit={onSubmit} className="form card-form">
-      <input type="text" name="web" tabIndex={-1} autoComplete="off" className="hp" aria-hidden="true" />
       {kind === "contacto" && (
         <label className="field">
           <span>Asunto</span>
@@ -57,23 +75,27 @@ function Form({ kind }: { kind: Kind }) {
         <span>{kind === "marron" ? "Tu anécdota" : kind === "enlace" ? "Por qué nos hará reír" : "Mensaje"}</span>
         <textarea name="mensaje" required={kind !== "enlace"} rows={kind === "marron" ? 5 : 3} maxLength={4000} />
       </label>
-      <label className="field">
-        <span>{kind === "contacto" ? "Tu correo" : "Tu correo (opcional)"}</span>
-        <input type="email" name="email" required={kind === "contacto"} maxLength={160} />
-      </label>
       {publica && (
         <label className="check">
           <input type="checkbox" name="permiso" />
           <span>Podéis citarlo en la revista (sin mi nombre).</span>
         </label>
       )}
-      <button className="btn btn-primary" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Enviando…" : kind === "marron" ? "Contar mi marrón" : kind === "enlace" ? "Mandar el enlace" : "Enviar mensaje"}
+      <button className="btn btn-primary" type="submit">
+        {kind === "marron" ? "Preparar mi correo" : kind === "enlace" ? "Preparar el correo con el enlace" : "Preparar mi correo"}
       </button>
+      <p className="form-nota">Se abrirá tu programa de correo con el mensaje listo. Tú le das a enviar: nosotros no recogemos nada en la web.</p>
       <div role="status" aria-live="polite" className="form-status">
-        {status === "ok" && <p className="ok">Recibido. Gracias.</p>}
-        {status === "test" && <p className="warn">Modo de prueba: NO se ha enviado nada a ningún correo.</p>}
-        {status === "error" && <p className="err">No se pudo enviar: {error}</p>}
+        {estado === "abierto" && copia && (
+          <p className="ok">
+            Se ha abierto tu programa de correo. Si no ha pasado nada,{" "}
+            <button type="button" className="link-btn" onClick={copiar}>
+              {copiado ? "copiado" : "copia el mensaje"}
+            </button>{" "}
+            y escríbenos a <a href={`mailto:${CORREO}`}>{CORREO}</a>.
+            {copia.largo && " Tu mensaje es largo: en el correo puede salir recortado, pega el mensaje completo si hace falta."}
+          </p>
+        )}
       </div>
     </form>
   );
@@ -85,7 +107,7 @@ const PANELES: { id: Kind; hash: string; tab: string; titulo: string; texto: str
   { id: "contacto", hash: "contacto", tab: "Contacto", titulo: "Escríbenos", texto: "Una duda, una colaboración o algo que corregir. También para pedir que retiremos un contenido." },
 ];
 
-export function ContactForms({ testMode }: { testMode: boolean }) {
+export function ContactForms() {
   const [tab, setTab] = useState<Kind>("enlace");
 
   useEffect(() => {
@@ -101,11 +123,6 @@ export function ContactForms({ testMode }: { testMode: boolean }) {
 
   return (
     <>
-      {testMode && (
-        <p className="banner-test">
-          Modo de prueba: el envío no está conectado a ningún correo todavía. Lo que escribas aquí no llegará a nadie.
-        </p>
-      )}
       <div className="contact-tabs" role="tablist" aria-label="Qué quieres mandarnos">
         {PANELES.map((p) => (
           <button

@@ -117,7 +117,6 @@ Hoy se usa Google Analytics a través de Site Kit. En la nueva web:
 NEXT_PUBLIC_SITE_URL=https://animaciongalicia.com
 NEXT_PUBLIC_BASE_PATH=          # vacío: la revista ocupa la raíz
 SITE_INDEXABLE=true             # solo al hacer el corte
-RESEND_API_KEY= CONTACT_TO_EMAIL= CONTACT_FROM_EMAIL=
 ```
 
 `NEXT_PUBLIC_BASE_PATH=/revista` sigue soportado (probado) por si algún día se prefiere una subcarpeta. No se usa.

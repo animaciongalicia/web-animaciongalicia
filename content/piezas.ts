@@ -1783,7 +1783,7 @@ export const piezas: Pieza[] = [
         "t": "caja",
         "tipo": "idea",
         "titulo": "Mensaje para el grupo",
-        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid con un emoji. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
+        "x": "Equipo, el sábado hacemos tres de las ocho locuras. Elegid votando en el grupo. Cada uno lleva el disfraz o la excusa que le toque. El resto se improvisa."
       },
       {
         "t": "leetambien",
@@ -1962,6 +1962,7 @@ export const piezas: Pieza[] = [
   {
     "slug": "despedida-en-ourense-que-hacer-de-loco",
     "ruta": "/despedidas-de-soltero-y-soltera-en-ourense/",
+    "webs": ["despedidasourense.com"],
     "seccion": "despedidas",
     "tag": "Actividades absurdas",
     "titulo": "Despedidas de soltero y soltera en Ourense: ocho locuras para hacer de loco",
@@ -2008,6 +2009,30 @@ export const piezas: Pieza[] = [
           "En las termas y piscinas, respeta siempre las normas, los horarios y los precios de cada una.",
           "Nada con alcohol en el agua ni con menores."
         ]
+      },
+      {
+        "t": "h2",
+        "x": "Cenas privadas en el centro"
+      },
+      {
+        "t": "p",
+        "x": "Por el centro hay comedores y salones privados donde el grupo cena sin compartir mesa con nadie. Pide menú cerrado, confirma cuántos sois y pregunta si pueden sacar la tarta o el brindis. Reserva con tiempo: los fines de semana se llenan."
+      },
+      {
+        "t": "h2",
+        "x": "La zona de los vinos"
+      },
+      {
+        "t": "p",
+        "x": "Ourense es tierra de vino y el centro lo demuestra: calles de bares donde se tapea y se brinda. Haced una ruta de cinco paradas, un vino y una tapa en cada una, con un reto por parada. Con calma: aquí el vino entra mejor de lo que sienta."
+      },
+      {
+        "t": "h2",
+        "x": "Pubs de fiesta por el centro"
+      },
+      {
+        "t": "p",
+        "x": "Para cerrar la noche, los pubs y locales de copas del centro están cerca unos de otros, así que no hace falta taxi entre uno y otro. Elegid dos o tres, fijad una hora de salida y un punto de encuentro por si alguien se pierde."
       },
       {
         "t": "h2",
