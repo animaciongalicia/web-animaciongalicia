@@ -82,7 +82,7 @@ export function PiezaView({ p }: { p: Pieza }) {
           )}
           {SITE.salientes.terceros && p.embed && <EmbedVideo embed={p.embed} />}
           <div className="prose">
-            <Bloques bloques={p.bloques} slug={p.slug} />
+            <Bloques bloques={p.bloques} slug={p.slug} webs={p.webs} />
           </div>
 
           {p.fuentes && p.fuentes.length > 0 && (

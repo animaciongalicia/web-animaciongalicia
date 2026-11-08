@@ -266,7 +266,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
       p("Las invitaciones que funcionan tienen cuatro cosas: fecha, hora, sitio y una forma fácil de confirmar. Todo en un único mensaje. Cuanto menos tenga que buscar la gente, más contesta."),
       h2("Un ejemplo que puedes copiar"),
       ul(
-        "«Cumple de [nombre]. Sábado 14, a las 21:00, en [sitio]. Cena y sobremesa. Confirmad antes del miércoles con un 👍 o un ❌. Sin respuesta cuenta como fantasma.»",
+        "«Cumple de [nombre]. Sábado 14, a las 21:00, en [sitio]. Cena y sobremesa. Confirmad antes del miércoles con «voy» o «no voy». Sin respuesta cuenta como fantasma.»",
       ),
       p("Corto, claro y con un toque de humor. La broma de «fantasma» ayuda a que contesten sin sentirse presionados."),
       idea("La encuesta de WhatsApp", "Usa la función de encuestas con las opciones «Voy», «No voy» y «Voy tarde». Se ve quién contesta y quién no, y no hay que contar mensajes."),

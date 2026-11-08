@@ -1882,6 +1882,7 @@ export const piezas: Pieza[] = [
   {
     "slug": "despedida-en-sanxenxo-que-hacer-de-loco",
     "ruta": "/despedidas-de-soltero-y-soltera-en-sanxenxo/",
+    "webs": ["despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com"],
     "seccion": "despedidas",
     "tag": "Actividades absurdas",
     "titulo": "Despedidas de soltero y soltera en Sanxenxo: ocho locuras para hacer de loco",

@@ -141,7 +141,7 @@ Sin las tres del correo, los formularios funcionan en **modo de prueba** (aviso 
 
 ## Pendiente antes de publicar
 
-- [ ] **Datos del titular** en `lib/legal.ts`: ya constan Inversiones Shiso, S.L., B70319223 y 15002 A Coruña. Faltan calle y número, correo y registro. Mientras falten,
+- [ ] **Datos del titular** en `lib/legal.ts`: ya constan Inversiones Shiso, S.L., B70319223 y 15002 A Coruña. Falta correo y registro. Mientras falten,
   el aviso legal y la privacidad muestran «[PENDIENTE DE COMPLETAR]». Los textos son una base completa, pero conviene
   que los revise un profesional. En privacidad se habla de «proveedores» sin nombrarlos: si se activa Resend u otro,
   conviene citarlo.

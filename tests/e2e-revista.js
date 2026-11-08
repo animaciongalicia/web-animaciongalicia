@@ -140,8 +140,8 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
       }));
       ok(`[${name}] ${u} sidebar completa (secciones, sección y contacto; sin cajas de relleno)`, info.chips === 4 && info.sideLinks.length >= 4, `links=${info.sideLinks.length} galicia=${info.galBox}`);
       ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee === 0, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
-      const il = await page.$$eval(".mas-sobre a", (a) => a.map((x) => x.getAttribute("href")));
-      const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]", (a) => a.length);
+      const il = await page.$$eval(".mas-sobre:not(.mas-sobre-webs) a", (a) => a.map((x) => x.getAttribute("href")));
+      const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]:not(.mas-sobre-webs a)", (a) => a.length);
       ok(`[${name}] ${u} enlaces discretos: 1 línea final con máx. 2 y nada intrusivo en el texto`, il.length <= 2 && intr === 0, `${il.length}/${intr}`);
       ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= 650, `${info.words}`);
       // enlaces internos
@@ -207,6 +207,11 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
       if (t.length > 60 && !/^(Aviso legal|Política)/.test(t)) largos.push(`${u} (${t.length})`);
     }
     ok(`[${name}] títulos de todas las páginas del sitemap ≤ 60 caracteres`, largos.length === 0, largos.join(" | "));
+    await page.goto(B + "/despedidas-de-soltero-y-soltera-en-sanxenxo/");
+    const sx = await page.$$eval(".prose a[target=_blank]", (a) => a.map((x) => ({ h: x.href, r: x.rel })));
+    ok(`[${name}] Sanxenxo enlaza sus 3 webs del grupo en pestaña nueva y sin nofollow`, sx.length === 3 && sx.every((x) => /despedidas(-|playa)?sanxenxo|despedidassanxenxo|despedidasplayasanxenxo/.test(x.h) && !/nofollow/.test(x.r)), JSON.stringify(sx));
+    await page.goto(B + "/aviso-legal/");
+    ok(`[${name}] aviso legal: domicilio completo`, (await page.textContent("main")).includes("Ronda de Montealto, 4, 15002 A Coruña"));
     const mal = await page.request.get(B + "/animacion-galicia/", { maxRedirects: 0 });
     ok(`[${name}] /animacion-galicia/ redirige a /como-trabajamos/`, mal.status() === 308 && mal.headers()["location"].endsWith("/como-trabajamos/"), mal.headers()["location"]);
 

@@ -84,7 +84,7 @@ function Uno({ b }: { b: Bloque }) {
  * Renderiza los bloques de un post. Los enlaces internos van discretos: una sola línea al final
  * («Más sobre esto: A · B», máximo 2) sin enlaces al grupo dentro del texto.
  */
-export function Bloques({ bloques, slug }: { bloques: Bloque[]; slug?: string }) {
+export function Bloques({ bloques, slug, webs }: { bloques: Bloque[]; slug?: string; webs?: string[] }) {
   const manuales = bloques.flatMap((b) => (b.t === "leetambien" ? [{ slug: b.slug, texto: bySlug(b.slug)?.tag ?? "" }] : []));
   const auto = (slug && ENLACES_INTERNOS[slug]) || [];
   const vistos = new Set<string>();
@@ -97,6 +97,20 @@ export function Bloques({ bloques, slug }: { bloques: Bloque[]; slug?: string })
         if (b.t === "grupo") return null; // las webs del grupo viven en «Cómo trabajamos», no dentro del texto
         return <Uno key={i} b={b} />;
       })}
+      {webs && SITE.salientes.grupo && (
+        <p className="mas-sobre mas-sobre-webs">
+          Si te toca organizarla allí:{" "}
+          {webs.map((d, k) => {
+            const w = webGrupo(d);
+            return w ? (
+              <Fragment key={d}>
+                {k > 0 && " · "}
+                <EnlaceGrupo dominio={d}>{w.ancla}</EnlaceGrupo>
+              </Fragment>
+            ) : null;
+          })}
+        </p>
+      )}
       {enlaces.length > 0 && (
         <p className="mas-sobre">
           Más sobre esto:{" "}

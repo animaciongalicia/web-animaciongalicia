@@ -24,7 +24,7 @@ export const GRUPO: { titulo: string; webs: WebGrupo[] }[] = [
       { nombre: "Despedidas en Sanxenxo (.com)", dominio: "despedidas-sanxenxo.com", ancla: "despedidas veraniegas en Sanxenxo", descripcion: "Otra puerta de entrada a las despedidas en Sanxenxo, con otro enfoque." },
       { nombre: "Despedidas en la playa de Sanxenxo", dominio: "despedidasplayasanxenxo.com", ancla: "despedidas en la playa", descripcion: "Despedidas con playa, sol y plan de día en Sanxenxo." },
       { nombre: "Despedidas en Oporto", dominio: "despedidasenoporto.com", ancla: "despedidas en Oporto", descripcion: "Escapada de despedida a Oporto, a un paso de Galicia." },
-      { nombre: "Despedidas AG", dominio: "despedidasag.com", ancla: "organización de despedidas AG", descripcion: "Otra de nuestras webs de despedidas en Galicia." },
+      { nombre: "Despedidas AG", dominio: "despedidasag.com", ancla: "despedidas por toda Galicia", descripcion: "Otra de nuestras webs de despedidas para toda Galicia, con planes y organización completa." },
     ],
   },
   {
