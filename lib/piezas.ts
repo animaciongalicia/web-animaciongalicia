@@ -56,6 +56,25 @@ export function slugify(t: string) {
     .slice(0, 80);
 }
 
+/** Pares pregunta-respuesta de un post (subtítulo acabado en «?» + el texto que le sigue), para datos estructurados. */
+export function faqDe(p: Pieza) {
+  const out: { q: string; a: string }[] = [];
+  for (let i = 0; i < p.bloques.length; i++) {
+    const b = p.bloques[i];
+    if (b.t !== "h2" || !b.x.trim().endsWith("?")) continue;
+    const partes: string[] = [];
+    for (let j = i + 1; j < p.bloques.length && p.bloques[j].t !== "h2"; j++) {
+      const c = p.bloques[j];
+      if (c.t === "p") partes.push(c.x);
+      else if (c.t === "ul" || c.t === "ol") partes.push(c.x.join(" "));
+      else if (c.t === "caja") partes.push(Array.isArray(c.x) ? c.x.join(" ") : c.x);
+    }
+    const a = partes.join(" ").trim();
+    if (a) out.push({ q: b.x.trim(), a });
+  }
+  return out;
+}
+
 /** Preguntas (subtítulos acabados en «?») de los posts de «preguntas chorras», con su ancla. */
 export function preguntas() {
   const out: { pregunta: string; ancla: string; pieza: Pieza }[] = [];

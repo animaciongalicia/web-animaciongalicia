@@ -214,6 +214,13 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     const rb0 = await (await page.request.get(B + "/robots.txt")).text();
     ok(`[${name}] robots.txt sin /api/ y con sitemap`, !/api/.test(rb0) && /Sitemap:/.test(rb0), rb0.slice(0, 80));
 
+    // --- llms.txt y datos estructurados de preguntas (GEO)
+    const llm = await (await page.request.get(B + "/llms.txt")).text();
+    ok(`[${name}] llms.txt describe el sitio y lista las secciones y artículos`, /^# Menú Marrón/.test(llm) && /## Despedidas/.test(llm) && /## Eventos/.test(llm) && (llm.match(/\]\(https?:\/\//g) || []).length >= 40, `${llm.length} bytes`);
+    await page.goto(B + "/despedidas/preguntas-chorras-despedida-de-soltero/");
+    const faq = await page.$$eval('script[type="application/ld+json"]', (s) => s.map((x) => JSON.parse(x.textContent)).filter((j) => j["@type"] === "FAQPage"));
+    ok(`[${name}] post de preguntas lleva FAQPage con pregunta y respuesta`, faq.length === 1 && faq[0].mainEntity.length >= 5 && faq[0].mainEntity.every((q) => q.name && q.acceptedAnswer.text), String(faq[0]?.mainEntity?.length));
+
     // --- Archivo de Despedidas y buscador
     await page.goto(B + "/despedidas/");
     ok(`[${name}] archivo /despedidas/ lista todos los posts de la sección`, (await page.$$(".cards .card")).length >= 16, String((await page.$$(".cards .card")).length));
@@ -317,8 +324,8 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     ok(`[${name}] «otras ciudades» redirige al pilar de actividades`, r.status() === 308 && r.headers()["location"].endsWith("/actividades-para-despedidas-de-soltero-y-soltera/"), r.headers()["location"]);
     // Fotos (en preview se ven los marcadores de ejemplo)
     await page.goto(B + "/fotos/");
-    await page.waitForLoadState("networkidle");
-    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
+    await page.waitForLoadState("load");
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } });
     await page.waitForTimeout(800);
     const gal = await page.$$eval(".galeria img", (i) => i.map((x) => x.naturalWidth));
     ok(`[${name}] galería: fotos cargadas`, gal.length >= 1 && gal.every((w) => w > 0), JSON.stringify(gal));

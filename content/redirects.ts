@@ -32,4 +32,13 @@ export const REDIRECTS_WORDPRESS: { source: string; destination: string }[] = [
   { source: "/category/despedidas-en-galicia", destination: "/" },
   { source: "/author/admin", destination: "/" },
   { source: "/feed", destination: "/feed.xml" },
+  { source: "/comments/feed", destination: "/feed.xml" },
+  { source: "/herramientas-gratis-para-despedidas", destination: "/juegos/herramientas-gratis-para-organizar-una-despedida/" },
+  // Sitemaps de WordPress / Yoast: apuntan al nuevo
+  { source: "/sitemap_index.xml", destination: "/sitemap.xml" },
+  { source: "/post-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/page-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/category-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/author-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/wp-sitemap.xml", destination: "/sitemap.xml" },
 ];

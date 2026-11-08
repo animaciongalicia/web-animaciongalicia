@@ -232,6 +232,7 @@ export const PIEZAS_NUEVAS: Pieza[] = [
     h1: "Dónde celebrar un cumpleaños en Galicia (en casa no, que se mancha)",
     dek: "Porque en casa se ensucia, se rompe algo y luego hay que limpiar. Lugares para celebrar un cumpleaños en Galicia sin acabar con el sofá manchado.",
     fecha: FECHA,
+    imagen: { src: "/fotos/antifaz-biblioteca.jpg", ancho: 900, alto: 600, alt: "Dos amigas con antifaces en una sala con velas" },
     galicia: true,
     relacionadas: ["cumpleanos-tematicos-adultos-galicia", "cumpleanos-con-poco-presupuesto"],
     bloques: [

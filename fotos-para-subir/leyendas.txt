@@ -35,3 +35,21 @@ regalo-cara-asco.jpg | Mujer con gesto de asco al abrir una caja roja | Gracias,
 mascara-caballo-fiesta.jpg | Persona con una máscara de caballo en una fiesta con luces | Cuando el disfraz lo elige el grupo | Cumpleaños
 
 peluca-azul-gafas-verdes.jpg | Hombre sonriente con peluca azul y gafas verdes | Cuando el amigo ya entró en personaje | Despedidas
+
+amigos-selfie-globos.jpg | Grupo de amigos haciéndose un selfie entre globos de colores | La cena empieza cuando salen los globos | Eventos
+amigas-brindis-antifaz.jpg | Amigas con antifaces y copas brindando en una fiesta | Brindis con antifaz, por si acaso | Eventos
+confeti-oficina.jpg | Grupo celebrando con confeti y globos en un espacio luminoso | Una jubilación sin confeti no es jubilación | Eventos
+gafas-bigote-pareja.jpg | Dos amigos posando con gafas y un bigote de mentira | El discurso ya empezó | Eventos
+amigos-collares-flores.jpg | Grupo de amigos sonriendo con collares de flores y copas | Reencuentro en modo verano | Eventos
+mujer-confeti-copa.jpg | Mujer riendo con una copa entre confeti y guirnaldas | Brindis por lo que sea | Eventos
+photocall-grupo.jpg | Grupo posando en un photocall con globos y accesorios | Foto de despedida, con accesorios | Eventos
+jenga-gigante-jardin.jpg | Dos amigos jugando a un jenga gigante en un jardín | Juego tranquilo, nervios de acero | Juegos
+juego-ojos-vendados.jpg | Grupo jugando con los ojos vendados y globos en el suelo | Reto con los ojos vendados | Juegos
+tira-y-afloja-boda.jpg | Invitados haciendo un tira y afloja en una celebración al aire libre | Tira y afloja: un clásico que sigue funcionando | Juegos
+fiesta-copas-antifaz.jpg | Amigos de fiesta con copas y gafas de colores | Cena y fiesta, mejor sin prisas | Despedidas
+disfraces-anos-70.jpg | Grupo disfrazado de los años 70 con pelucas y gafas | Una idea original: noche de los 70 | Despedidas
+disfraces-de-animales.jpg | Seis amigos disfrazados de animales ante una pared verde | Un grupo, cada uno con su personaje | Despedidas
+amigos-mascaras-carnaval.jpg | Amigos con máscaras de carnaval en una fiesta | Máscaras puestas y plan cerrado | Despedidas
+globos-de-colores.jpg | Globos de colores flotando en el techo | Lo que llevas se olvida, los globos se recuerdan | Eventos
+baile-globos.jpg | Mujer bailando con globos largos en una fiesta | Música, que lo demás se improvisa | Cumpleaños
+antifaz-biblioteca.jpg | Dos amigas con antifaces en una sala con velas | Si no es en casa, mejor un sitio con encanto | Cumpleaños

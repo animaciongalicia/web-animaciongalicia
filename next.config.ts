@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   ...(base ? { basePath: `/${base}` } : {}),
   trailingSlash: true,
   poweredByHeader: false,
+  images: { formats: ["image/webp"], deviceSizes: [360, 480, 640, 750, 828, 1080, 1280], imageSizes: [96, 190, 320, 480] },
   // Cabeceras de seguridad básicas (sin CSP estricta: Google Analytics y los scripts de Next necesitan inline).
   async headers() {
     return [

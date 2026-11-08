@@ -85,7 +85,7 @@ export default function Home() {
           <article className="lead-story" data-seccion={lead.seccion}>
             {lead.imagen ? (
               <div className="lead-foto">
-                <Image src={lead.imagen.src} width={lead.imagen.ancho} height={lead.imagen.alto} alt={lead.imagen.alt} priority sizes="(min-width: 1100px) 640px, 100vw" />
+                <Image src={lead.imagen.src} width={lead.imagen.ancho} height={lead.imagen.alto} alt={lead.imagen.alt} priority fetchPriority="high" quality={70} sizes="(min-width: 1100px) 640px, 100vw" />
               </div>
             ) : (
               <div className="lead-art" aria-hidden="true">

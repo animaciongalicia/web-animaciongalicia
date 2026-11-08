@@ -25,6 +25,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Ideas de despedidas originales en A Coruña: un plan de día y otro de noche",
     dek: "Un itinerario completo para una despedida en A Coruña, de la mañana a la madrugada, con ideas distintas a la cena y las copas de siempre.",
     fecha: FECHA,
+    imagen: { src: "/fotos/disfraces-anos-70.jpg", ancho: 1280, alto: 720, alt: "Grupo disfrazado de los años 70 con pelucas y gafas" },
     galicia: true,
     relacionadas: ["despedida-en-a-coruna-que-hacer-de-loco", "guia-para-organizar-despedidas-en-galicia"],
     bloques: [
@@ -64,6 +65,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Despedidas en Vigo: qué hacer según el tipo de grupo",
     dek: "Fiesteros, tranquilos o aventureros: cada grupo necesita un plan distinto. Una guía para elegir el tipo de despedida en Vigo según cómo sea el vuestro.",
     fecha: FECHA,
+    imagen: { src: "/fotos/disfraces-de-animales.jpg", ancho: 1200, alto: 900, alt: "Seis amigos disfrazados de animales ante una pared verde" },
     galicia: true,
     relacionadas: ["despedida-en-vigo-que-hacer-de-loco", "guia-para-organizar-despedidas-en-galicia"],
     bloques: [
@@ -101,6 +103,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Despedidas de fin de semana en Sanxenxo con plan cerrado",
     dek: "Un fin de semana entero da para mucho y para muchos líos. Cómo cerrar el plan de una despedida en Sanxenxo, de viernes a domingo, sin que se caiga a mitad.",
     fecha: FECHA,
+    imagen: { src: "/fotos/amigos-mascaras-carnaval.jpg", ancho: 1000, alto: 1000, alt: "Amigos con máscaras de carnaval en una fiesta" },
     galicia: true,
     relacionadas: ["despedida-en-sanxenxo-que-hacer-de-loco", "barco-o-casa-rural-despedida-galicia"],
     bloques: [
@@ -141,6 +144,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Gincanas y escape rooms para despedidas en Galicia: cómo elegir",
     dek: "Las gincanas y los escape rooms son dos de los juegos que más funcionan en una despedida. Qué incluye cada uno, para qué grupo sirve y cómo elegir bien.",
     fecha: FECHA,
+    imagen: { src: "/fotos/juego-ojos-vendados.jpg", ancho: 1200, alto: 800, alt: "Grupo jugando con los ojos vendados y globos en el suelo" },
     galicia: true,
     relacionadas: ["ginkana-cumpleanos-adultos-en-casa-o-parque", "20-juegos-y-retos-para-despedidas-sin-verguenza-ajena"],
     bloques: [
@@ -229,6 +233,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Despedidas tranquilas: planes sin excesos para grupos mixtos",
     dek: "No todo el mundo quiere fiesta hasta el amanecer. Ideas para una despedida tranquila que no sea aburrida y en la que todos, de cualquier edad, se sientan a gusto.",
     fecha: FECHA,
+    imagen: { src: "/fotos/jenga-gigante-jardin.jpg", ancho: 551, alto: 362, alt: "Dos amigos jugando a un jenga gigante en un jardín" },
     galicia: true,
     relacionadas: ["despedida-en-ourense-que-hacer-de-loco", "despedidas-en-vigo-segun-el-tipo-de-grupo"],
     bloques: [
@@ -271,6 +276,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Cena y fiesta de despedida: cómo evitar el «pack cutre» y hacerlo bien",
     dek: "Menú cerrado a toda prisa, entrada incluida con copa y una fiesta con prisas. Cómo reconocer un pack cutre y montar una cena y una fiesta de despedida que valgan la pena.",
     fecha: FECHA,
+    imagen: { src: "/fotos/fiesta-copas-antifaz.jpg", ancho: 1000, alto: 667, alt: "Amigos de fiesta con copas y gafas de colores" },
     galicia: true,
     relacionadas: ["cena-de-grupo-restaurante-reservar-y-pagar", "despedida-en-vigo-que-hacer-de-loco"],
     bloques: [
@@ -352,6 +358,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "20 juegos y retos para despedidas, sin vergüenza ajena",
     dek: "Veinte ideas de juegos y retos para una despedida, ordenadas por tipo de grupo y de momento del día. Todos con una regla común: que nadie pase un mal rato.",
     fecha: FECHA,
+    imagen: { src: "/fotos/tira-y-afloja-boda.jpg", ancho: 1280, alto: 853, alt: "Invitados haciendo un tira y afloja en una celebración al aire libre" },
     galicia: true,
     relacionadas: ["gincanas-y-escape-rooms-para-despedidas-en-galicia", "retos-de-plaza-declaracion-cantada-flashmob"],
     bloques: [
@@ -404,6 +411,7 @@ export const PIEZAS_WP: Pieza[] = [
     h1: "Qué llevar y qué no llevar a una despedida en Galicia",
     dek: "Chubasquero sí, tacones imposibles no. Una lista práctica de lo que necesitas y lo que sobra en una despedida en Galicia, según haya playa, ciudad o fiesta.",
     fecha: FECHA,
+    imagen: { src: "/fotos/globos-de-colores.jpg", ancho: 1200, alto: 800, alt: "Globos de colores flotando en el techo" },
     galicia: true,
     relacionadas: ["guia-para-organizar-despedidas-en-galicia", "calendario-despedidas-galicia-cuando-hacerla"],
     bloques: [

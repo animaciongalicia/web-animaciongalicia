@@ -7,7 +7,7 @@ import { JsonLd } from "./JsonLd";
 import { PiezaCard } from "./PiezaCard";
 import { Sidebar } from "./Sidebar";
 import { SECCIONES } from "@/content/piezas";
-import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, visibles } from "@/lib/piezas";
+import { bySeccion, bySlug, faqDe, fechaLarga, minutosLectura, piezaPath, visibles } from "@/lib/piezas";
 import { absoluteUrl, SITE } from "@/lib/site";
 import { AGENCIA } from "@/lib/company";
 import type { Pieza } from "@/content/types";
@@ -52,6 +52,15 @@ export function PiezaView({ p }: { p: Pieza }) {
           publisher: { "@type": "Organization", name: AGENCIA.nombre },
         }}
       />
+      {faqDe(p).length >= 3 && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqDe(p).map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          }}
+        />
+      )}
       <header className="pieza-head">
         <p className="crumbs">
           <Link href="/">Portada</Link>
@@ -76,7 +85,7 @@ export function PiezaView({ p }: { p: Pieza }) {
         <div className="pieza-main">
           {p.imagen && (
             <figure className="hero-foto">
-              <Image src={p.imagen.src} width={p.imagen.ancho} height={p.imagen.alto} alt={p.imagen.alt} priority sizes="(min-width: 1000px) 740px, 100vw" />
+              <Image src={p.imagen.src} width={p.imagen.ancho} height={p.imagen.alto} alt={p.imagen.alt} priority fetchPriority="high" quality={70} sizes="(min-width: 1000px) 740px, 100vw" />
               {p.imagen.credito && <figcaption>Foto: {p.imagen.credito}</figcaption>}
             </figure>
           )}

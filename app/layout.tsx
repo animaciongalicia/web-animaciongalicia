@@ -65,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 "@type": "Organization",
                 name: AGENCIA.nombre,
+                logo: absoluteUrl("/icon-192.png"),
                 description: AGENCIA.lema,
                 areaServed: { "@type": "AdministrativeArea", name: "Galicia" },
               },

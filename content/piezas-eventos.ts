@@ -22,6 +22,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Cena de amigos: cómo organizarla sin que se líe",
     dek: "Siempre hay uno que propone la cena y otro que nunca confirma. Cómo elegir fecha, sitio y menú para que la cena de amigos se haga de verdad y no se quede en un mensaje de WhatsApp.",
     fecha: FECHA,
+    imagen: { src: "/fotos/amigos-selfie-globos.jpg", ancho: 1000, alto: 666, alt: "Grupo de amigos haciéndose un selfie entre globos de colores" },
     galicia: true,
     relacionadas: ["cena-de-grupo-restaurante-reservar-y-pagar", "invitacion-cumpleanos-whatsapp-que-contesten"],
     bloques: [
@@ -61,6 +62,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Cena de grupo en un restaurante: reservar, pedir y pagar sin drama",
     dek: "Doce personas, una mesa larga y una cuenta que nadie sabe repartir. Cómo reservar, qué pedir y cómo pagar en una cena de grupo sin que acabe en discusión.",
     fecha: FECHA,
+    imagen: { src: "/fotos/amigas-brindis-antifaz.jpg", ancho: 1000, alto: 667, alt: "Amigas con antifaces y copas brindando en una fiesta" },
     galicia: true,
     relacionadas: ["cena-de-amigos-organizar-sin-caos", "aplicaciones-compartir-gastos-despedida"],
     bloques: [
@@ -98,6 +100,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Fiesta de jubilación: cómo celebrarla con humor y cariño",
     dek: "Una jubilación es un final y un principio a la vez. Cómo organizar una fiesta que haga reír, emocione un poco y no se convierta en una reunión de trabajo con tarta.",
     fecha: FECHA,
+    imagen: { src: "/fotos/confeti-oficina.jpg", ancho: 1200, alto: 747, alt: "Grupo celebrando con confeti y globos en un espacio luminoso" },
     galicia: true,
     relacionadas: ["jubilacion-discurso-y-regalo-gracioso", "brindis-gracioso-cumpleanos"],
     bloques: [
@@ -136,6 +139,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Discurso y regalo para una jubilación: ideas que emocionan y hacen reír",
     dek: "Un discurso de jubilación dura tres minutos y se recuerda toda la vida. Cómo escribirlo, qué regalar y qué ideas evitar para que emocione sin caer en el tópico.",
     fecha: FECHA,
+    imagen: { src: "/fotos/gafas-bigote-pareja.jpg", ancho: 1140, alto: 652, alt: "Dos amigos posando con gafas y un bigote de mentira" },
     galicia: true,
     relacionadas: ["fiesta-de-jubilacion-como-celebrarla", "regalo-colectivo-cumpleanos-sin-enemistades"],
     bloques: [
@@ -178,6 +182,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Reencuentro de antiguos compañeros: cómo juntar a todos (y que vengan)",
     dek: "Veinte años después, el grupo de la clase vuelve a verse. Cómo localizar a todos, elegir fecha y sitio y hacer que el reencuentro sea algo más que ver quién ha engordado.",
     fecha: FECHA,
+    imagen: { src: "/fotos/amigos-collares-flores.jpg", ancho: 1600, alto: 1067, alt: "Grupo de amigos sonriendo con collares de flores y copas" },
     galicia: true,
     relacionadas: ["cena-de-amigos-organizar-sin-caos", "juegos-para-cumpleanos-de-adultos"],
     bloques: [
@@ -215,6 +220,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Celebrar con amigos un logro: aprobado, ascenso o piso nuevo",
     dek: "Has aprobado la oposición, te han ascendido o por fin tienes piso. Cómo celebrarlo con tus amigos sin gastar de más y sin que parezca que presumes.",
     fecha: FECHA,
+    imagen: { src: "/fotos/mujer-confeti-copa.jpg", ancho: 1600, alto: 900, alt: "Mujer riendo con una copa entre confeti y guirnaldas" },
     galicia: true,
     relacionadas: ["cena-de-amigos-organizar-sin-caos", "cumpleanos-con-poco-presupuesto"],
     bloques: [
@@ -252,6 +258,7 @@ export const PIEZAS_EVENTOS: Pieza[] = [
     h1: "Despedida de un amigo que se va a vivir fuera: cómo hacerla bien",
     dek: "Se marcha a otra ciudad o a otro país y el grupo no sabe si hacer fiesta o llorar. Ideas para una despedida con humor, con emoción justa y con promesa de visitas.",
     fecha: FECHA,
+    imagen: { src: "/fotos/photocall-grupo.jpg", ancho: 800, alto: 533, alt: "Grupo posando en un photocall con globos y accesorios" },
     galicia: true,
     relacionadas: ["reencuentro-de-amigos-antiguos-companeros", "brindis-gracioso-cumpleanos"],
     bloques: [

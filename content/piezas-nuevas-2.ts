@@ -224,6 +224,7 @@ export const PIEZAS_NUEVAS_2: Pieza[] = [
     h1: "Música para una fiesta de cumpleaños: cómo montar la playlist",
     dek: "La música decide si una fiesta se anima o se muere. Cómo preparar una lista que funcione para todos, de la cena al baile, sin discusiones por el altavoz.",
     fecha: FECHA,
+    imagen: { src: "/fotos/baile-globos.jpg", ancho: 447, alto: 447, alt: "Mujer bailando con globos largos en una fiesta" },
     galicia: true,
     relacionadas: ["cumplir-30-40-50-como-celebrarlo", "juegos-para-cumpleanos-de-adultos"],
     bloques: [
