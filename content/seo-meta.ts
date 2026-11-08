@@ -30,6 +30,18 @@ export const META_PIEZAS: Record<string, { title: string; description?: string }
   "preguntas-chorras-despedida-de-soltera": { title: "Preguntas chorras sobre despedidas de soltera" },
   "preguntas-chorras-cumpleanos-adultos": { title: "Preguntas chorras sobre cumpleaños de adultos" },
   "preguntas-chorras-regalos": { title: "Preguntas chorras sobre regalos: ¿cuánto gastar?" },
+  "que-regalar-en-un-cumpleanos-ideas-divertidas": { title: "Qué regalar en un cumpleaños: ideas divertidas" },
+  "regalos-atrevidos-para-cumpleanos": { title: "Regalos atrevidos para un cumpleaños" },
+  "regalar-un-bote-de-ahorro-con-dinero-ya-metido": { title: "Bote de ahorro con dinero ya dentro: regalo original" },
+  "regalos-de-ultima-hora-cumpleanos": { title: "Regalos de última hora para un cumpleaños" },
+  "regalo-colectivo-cumpleanos-sin-enemistades": { title: "Regalo colectivo: cómo recoger el dinero sin pelear" },
+  "donde-celebrar-un-cumpleanos-en-galicia": { title: "Dónde celebrar un cumpleaños en Galicia (en casa no)" },
+  "cumplir-30-40-50-como-celebrarlo": { title: "Cumplir 30, 40 o 50: cómo celebrarlo sin dramas" },
+  "cumpleanos-con-poco-presupuesto": { title: "Cumpleaños con poco presupuesto: ideas que funcionan" },
+  "brindis-gracioso-cumpleanos": { title: "Cómo hacer un brindis gracioso de cumpleaños" },
+  "juegos-para-cumpleanos-de-adultos": { title: "Juegos para un cumpleaños de adultos" },
+  "juego-yo-nunca-cena-amigos-preguntas": { title: "Yo nunca y otros juegos de cena entre amigos" },
+  "bromas-cumpleanos-restaurante": { title: "Bromas y retos para un cumpleaños en un restaurante" },
 };
 
 /** <title> y descripción de las portadas de sección. */

@@ -1,4 +1,5 @@
 import type { Pieza } from "./types";
+import { PIEZAS_NUEVAS } from "./piezas-nuevas";
 
 /**
  * Posts de Menú Marrón. Para añadir uno: copia un objeto, cambia el slug y rellena `bloques`.
@@ -2036,6 +2037,8 @@ export const piezas: Pieza[] = [
     ]
   },
 ];
+
+piezas.push(...PIEZAS_NUEVAS);
 
 export const SECCIONES = {
   despedidas: {
