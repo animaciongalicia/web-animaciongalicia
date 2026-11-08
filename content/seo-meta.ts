@@ -51,6 +51,13 @@ export const META_PIEZAS: Record<string, { title: string; description?: string }
   "cumpleanos-con-lluvia-plan-b-galicia": { title: "Cumpleaños con lluvia en Galicia: el plan B" },
   "ginkana-cumpleanos-adultos-en-casa-o-parque": { title: "Ginkana de cumpleaños para adultos: ideas y pruebas" },
   "karaoke-en-casa-reglas-para-que-no-acabe-mal": { title: "Karaoke en casa: reglas para que no acabe mal" },
+  "cena-de-amigos-organizar-sin-caos": { title: "Cena de amigos: cómo organizarla sin que se líe" },
+  "cena-de-grupo-restaurante-reservar-y-pagar": { title: "Cena de grupo en un restaurante: reservar y pagar" },
+  "fiesta-de-jubilacion-como-celebrarla": { title: "Fiesta de jubilación: cómo celebrarla con humor" },
+  "jubilacion-discurso-y-regalo-gracioso": { title: "Discurso y regalo para una jubilación" },
+  "reencuentro-de-amigos-antiguos-companeros": { title: "Reencuentro de antiguos compañeros: cómo organizarlo" },
+  "celebrar-con-amigos-un-aprobado-un-ascenso-un-piso": { title: "Celebrar un aprobado, un ascenso o un piso nuevo" },
+  "despedida-de-amigo-que-se-va-a-vivir-fuera": { title: "Despedida de un amigo que se va a vivir fuera" },
   "bromas-cumpleanos-restaurante": { title: "Bromas y retos para un cumpleaños en un restaurante" },
 };
 
@@ -60,6 +67,11 @@ export const META_SECCIONES: Record<string, { title: string; description: string
     title: "Todas las despedidas: ideas, guías y retos en Galicia",
     description:
       "Todos los artículos sobre despedidas de soltero y soltera en Galicia: guías, retos, juegos, dinero y organización, con humor y sin humo. Busca el que te toca.",
+  },
+  eventos: {
+    title: "Eventos entre amigos: cenas, jubilaciones y fiestas",
+    description:
+      "Cenas de grupo, jubilaciones y celebraciones con amigos en Galicia: cómo organizarlas, qué decir y qué evitar, con humor y sin líos. Ideas prácticas y con cabeza.",
   },
   cumpleanos: {
     title: "Cumpleaños en Galicia: ideas, sorpresas y temas",

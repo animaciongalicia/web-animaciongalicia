@@ -1,4 +1,4 @@
-export type Seccion = "despedidas" | "cumpleanos" | "regalos" | "juegos";
+export type Seccion = "despedidas" | "cumpleanos" | "eventos" | "regalos" | "juegos";
 
 export type Fuente = {
   nombre: string;

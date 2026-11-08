@@ -10,12 +10,14 @@
   --c-cumpleanos: #2d5a63; /* petróleo */
   --c-regalos: #79581c; /* ocre oscuro */
   --c-juegos: #3d4d6b; /* azul pizarra */
+  --c-eventos: #3f5f45; /* verde apagado */
   --sec: #7b2d2d;
   --sec-soft: #f0e2df;
   --c-despedidas-soft: #f0e2df;
   --c-cumpleanos-soft: #dce9eb;
   --c-regalos-soft: #f1e8d0;
   --c-juegos-soft: #e0e5ee;
+  --c-eventos-soft: #e2eadf;
   --ok: #26623a;
   --err: #9b1c1c;
   --font-serif: "Newsreader Variable", Georgia, "Times New Roman", serif;
@@ -25,6 +27,7 @@
 }
 [data-seccion="despedidas"] { --sec: var(--c-despedidas); --sec-soft: var(--c-despedidas-soft); }
 [data-seccion="cumpleanos"] { --sec: var(--c-cumpleanos); --sec-soft: var(--c-cumpleanos-soft); }
+[data-seccion="eventos"] { --sec: var(--c-eventos); --sec-soft: var(--c-eventos-soft); }
 [data-seccion="regalos"] { --sec: var(--c-regalos); --sec-soft: var(--c-regalos-soft); }
 [data-seccion="juegos"] { --sec: var(--c-juegos); --sec-soft: var(--c-juegos-soft); }
 
@@ -129,8 +132,10 @@ ul, ol { padding-left: 1.2em; }
 .latest li a:hover { color: var(--sec); }
 
 .sections-grid { display: grid; gap: 30px 32px; grid-template-columns: 1fr; }
+.lineas-seccion { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 6px; max-width: 46rem; }
+.lineas-seccion li { padding: 8px 12px; border-left: 3px solid var(--sec); background: var(--sec-soft); font-family: var(--font-ui); font-size: .92rem; }
 @media (min-width: 640px) { .sections-grid { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 980px) { .sections-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 980px) { .sections-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
 .sec-col { border-top: 3px solid var(--sec); padding-top: 12px; }
 .sec-col h3 { font-size: 1.5rem; margin-bottom: 4px; }
 .sec-col h3 a { text-decoration: none; color: var(--sec); }

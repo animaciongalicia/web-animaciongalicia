@@ -12,7 +12,7 @@ import { bySeccion, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, 
 
 export const dynamicParams = false;
 
-const CATS = ["cumpleanos", "regalos", "juegos"] as const;
+const CATS = ["cumpleanos", "eventos", "regalos", "juegos"] as const;
 type Cat = (typeof CATS)[number];
 const raiz = (ruta?: string) => (ruta ?? "").replace(/^\/|\/$/g, "");
 
@@ -58,7 +58,7 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
   const secundarias = resto.slice(0, 2);
   const ultimas = resto.slice(2, 8);
   const chips = preguntas().filter((q) => q.pieza.seccion === seccion).slice(0, 8);
-  const otras = (["despedidas", "cumpleanos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
+  const otras = (["despedidas", "cumpleanos", "eventos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
 
   return (
     <div data-seccion={seccion}>
@@ -67,6 +67,13 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
           <p className="kicker">{s.label}</p>
           <h1>{s.title}</h1>
           <p className="lead">{s.intro}</p>
+          {"lineas" in s && (
+            <ul className="lineas-seccion">
+              {(s.lineas as readonly string[]).map((l) => (
+                <li key={l}>{l}</li>
+              ))}
+            </ul>
+          )}
           <Buscador items={visibles().map((p) => ({ t: p.titulo, d: p.dek, tag: p.tag, sec: p.seccion, href: piezaPath(p) }))} />
         </div>
       </section>

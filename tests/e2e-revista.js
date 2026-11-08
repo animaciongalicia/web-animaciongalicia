@@ -10,6 +10,13 @@ const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
 const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "ginkanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
 const esGrupo = (h) => { try { return GRUPO.includes(new URL(h).hostname); } catch { return false; } };
 const POSTS = [
+  "/eventos/cena-de-amigos-organizar-sin-caos/",
+  "/eventos/cena-de-grupo-restaurante-reservar-y-pagar/",
+  "/eventos/fiesta-de-jubilacion-como-celebrarla/",
+  "/eventos/jubilacion-discurso-y-regalo-gracioso/",
+  "/eventos/reencuentro-de-amigos-antiguos-companeros/",
+  "/eventos/celebrar-con-amigos-un-aprobado-un-ascenso-un-piso/",
+  "/eventos/despedida-de-amigo-que-se-va-a-vivir-fuera/",
   "/regalos/regalos-para-suegros-que-no-fallan/",
   "/regalos/amigo-invisible-oficina-ideas-y-normas/",
   "/regalos/que-decir-cuando-no-te-gusta-el-regalo/",
@@ -59,7 +66,7 @@ const POSTS = [
   "/cumpleanos/preguntas-chorras-cumpleanos-adultos/",
 ];
 const innerWidthSafe = (n) => (n === "escritorio" ? 1100 : 340);
-const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/despedidas/", "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"];
+const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/contacto/", "/despedidas/", "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"];
 
 (async () => {
   const browser = await chromium.launch();
@@ -78,7 +85,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
     const desc = await page.getAttribute('meta[name="description"]', "content");
     ok(`[${name}] description: despedidas en Galicia, cumpleaños, celebraciones y eventos`, /despedidas en Galicia/.test(desc) && /cumplea/.test(desc) && /celebraciones/.test(desc) && /eventos/.test(desc), desc.slice(0, 90));
     const labels = await page.$$eval("nav[aria-label=Principal] a", (a) => a.map((x) => x.textContent));
-    ok(`[${name}] orden menú`, JSON.stringify(labels) === JSON.stringify(["Despedidas", "Cumpleaños", "Regalos", "Juegos", "Contacto"]));
+    ok(`[${name}] orden menú`, JSON.stringify(labels) === JSON.stringify(["Despedidas", "Cumpleaños", "Eventos", "Regalos", "Juegos", "Contacto"]));
     // Portada densa: situaciones, preguntas con ancla, secundarias y últimas
     const home = await page.evaluate(() => ({
       sit: [...document.querySelectorAll(".situaciones a")].map((a) => a.getAttribute("href")),
@@ -87,7 +94,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
       ult: document.querySelectorAll(".latest li").length,
       cols: document.querySelectorAll(".sec-col").length,
     }));
-    ok(`[${name}] portada: 6 situaciones, >=12 preguntas, 2 secundarias, ultimas y 4 secciones`, home.sit.length === 6 && home.chips.length >= 12 && home.sec === 2 && home.ult >= 4 && home.cols === 4, JSON.stringify({ s: home.sit.length, c: home.chips.length, sec: home.sec, u: home.ult }));
+    ok(`[${name}] portada: 6 situaciones, >=12 preguntas, 2 secundarias, ultimas y 5 secciones`, home.sit.length === 6 && home.chips.length >= 12 && home.sec === 2 && home.ult >= 4 && home.cols === 5, JSON.stringify({ s: home.sit.length, c: home.chips.length, sec: home.sec, u: home.ult }));
     const sinAncla = [];
     for (const h of home.chips.slice(0, 12)) {
       const [path, id] = h.split("#");
@@ -138,7 +145,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/des
         lee: document.querySelectorAll(".leetambien").length,
         words: ((document.querySelector(".pieza-head .dek").innerText + " " + document.querySelector(".prose").innerText).match(/\S+/g) || []).length,
       }));
-      ok(`[${name}] ${u} sidebar completa (secciones, sección y contacto; sin cajas de relleno)`, info.chips === 4 && info.sideLinks.length >= 4, `links=${info.sideLinks.length} galicia=${info.galBox}`);
+      ok(`[${name}] ${u} sidebar completa (secciones, sección y contacto; sin cajas de relleno)`, info.chips === 5 && info.sideLinks.length >= 4, `links=${info.sideLinks.length} galicia=${info.galBox}`);
       ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee === 0, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
       const il = await page.$$eval(".mas-sobre:not(.mas-sobre-webs) a", (a) => a.map((x) => x.getAttribute("href")));
       const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]:not(.mas-sobre-webs a)", (a) => a.length);

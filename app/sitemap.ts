@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fixed = [
-    "/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/como-trabajamos/", "/despedidas/",
+    "/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/contacto/", "/como-trabajamos/", "/despedidas/",
     "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/",
   ];
   return [

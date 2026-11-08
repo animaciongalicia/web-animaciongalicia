@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [absoluteUrl("/og/inicio.png")] },
 };
 
-const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
+const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "eventos", "regalos", "juegos"];
 
 export default function Home() {
   const todas = visibles();

@@ -18,6 +18,7 @@ export const SITE = {
 export const NAV = [
   { label: "Despedidas", href: "/" },
   { label: "Cumpleaños", href: "/cumpleanos/" },
+  { label: "Eventos", href: "/eventos/" },
   { label: "Regalos", href: "/regalos/" },
   { label: "Juegos", href: "/juegos/" },
   { label: "Contacto", href: "/contacto/" },

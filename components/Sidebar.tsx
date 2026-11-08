@@ -3,7 +3,7 @@ import { SECCIONES } from "@/content/piezas";
 import type { Pieza, Seccion } from "@/content/types";
 import { bySeccion, piezaPath } from "@/lib/piezas";
 
-const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
+const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "eventos", "regalos", "juegos"];
 
 export function Sidebar({ p }: { p: Pieza }) {
   const mismas = bySeccion(p.seccion);

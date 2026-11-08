@@ -7,7 +7,7 @@ import { PIE_DIVERTIDO } from "@/content/galicia";
 import { bySlug, piezaPath } from "@/lib/piezas";
 import { SITE } from "@/lib/site";
 
-const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "regalos", "juegos"];
+const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "eventos", "regalos", "juegos"];
 
 export function Footer() {
   const divertido = PIE_DIVERTIDO.map((d) => ({ ...d, pieza: bySlug(d.slug) })).filter((d) => d.pieza);

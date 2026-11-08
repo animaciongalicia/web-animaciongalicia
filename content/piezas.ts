@@ -1,6 +1,7 @@
 import type { Pieza } from "./types";
 import { PIEZAS_NUEVAS } from "./piezas-nuevas";
 import { PIEZAS_NUEVAS_2 } from "./piezas-nuevas-2";
+import { PIEZAS_EVENTOS } from "./piezas-eventos";
 
 /**
  * Posts de Menú Marrón. Para añadir uno: copia un objeto, cambia el slug y rellena `bloques`.
@@ -2078,7 +2079,7 @@ export const piezas: Pieza[] = [
   },
 ];
 
-piezas.push(...PIEZAS_NUEVAS, ...PIEZAS_NUEVAS_2);
+piezas.push(...PIEZAS_NUEVAS, ...PIEZAS_NUEVAS_2, ...PIEZAS_EVENTOS);
 
 export const SECCIONES = {
   despedidas: {
@@ -2092,6 +2093,13 @@ export const SECCIONES = {
     path: "/cumpleanos/",
     title: "Cumpleaños: ideas, sorpresas y temas para organizar en Galicia",
     intro: "Cumpleaños temáticos, sorpresas que salen bien y los errores que conviene evitar.",
+  },
+  eventos: {
+    label: "Eventos",
+    path: "/eventos/",
+    title: "Eventos entre amigos: cenas, jubilaciones y celebraciones",
+    intro: "Cenas de grupo, jubilaciones y celebraciones con amigos, contadas con humor y con pies en el suelo.",
+    lineas: ["Cenas de grupo: reservar, repartir y sobrevivir.", "Jubilaciones: discursos, regalos y sorpresas con cariño.", "Celebraciones con amigos: reencuentros, logros y despedidas de quien se va."],
   },
   regalos: {
     label: "Regalos",
