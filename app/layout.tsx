@@ -5,6 +5,8 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Cookies } from "@/components/Cookies";
+import { GA_ACTIVO } from "@/lib/analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { AGENCIA } from "@/lib/company";
 import { absoluteUrl, SITE, BASE } from "@/lib/site";
@@ -66,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        {GA_ACTIVO && <Cookies />}
       </body>
     </html>
   );

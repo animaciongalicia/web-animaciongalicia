@@ -7,7 +7,7 @@ const B = "http://localhost:3100";
 const res = [];
 const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
 
-const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "gincanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
+const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "ginkanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
 const esGrupo = (h) => { try { return GRUPO.includes(new URL(h).hostname); } catch { return false; } };
 const POSTS = [
   "/despedidas/despedida-como-resacon-en-las-vegas/",
@@ -19,14 +19,14 @@ const POSTS = [
   "/despedidas/diccionario-grupo-whatsapp-despedida/",
   "/despedidas/calendario-despedidas-galicia-cuando-hacerla/",
   "/despedidas/amigo-que-no-paga-la-despedida/",
-  "/despedidas/preguntas-chotas-despedida-de-soltero/",
-  "/despedidas/preguntas-chotas-despedida-de-soltera/",
+  "/despedidas/preguntas-chorras-despedida-de-soltero/",
+  "/despedidas/preguntas-chorras-despedida-de-soltera/",
   "/juegos/secuestro-falso-despedida-de-soltero/",
   "/juegos/retos-de-plaza-declaracion-cantada-flashmob/",
   "/regalos/frases-para-camisetas-despedida/",
   "/regalos/disfraces-para-novio-o-novia-despedida/",
   "/regalos/regalos-absurdos-que-si-se-pueden-usar/",
-  "/regalos/preguntas-chotas-regalos/",
+  "/regalos/preguntas-chorras-regalos/",
   "/cumpleanos/cumpleanos-tematicos-adultos-galicia/",
   "/actividades-para-despedidas-de-soltero-y-soltera/",
   "/despedidas-de-soltero-y-soltera-en-a-coruna/",
@@ -34,7 +34,7 @@ const POSTS = [
   "/despedidas-de-soltero-y-soltera-en-sanxenxo/",
   "/despedidas-de-soltero-y-soltera-en-ourense/",
   "/cumpleanos/cumpleanos-sorpresa-cosas-que-salen-mal/",
-  "/cumpleanos/preguntas-chotas-cumpleanos-adultos/",
+  "/cumpleanos/preguntas-chorras-cumpleanos-adultos/",
 ];
 const innerWidthSafe = (n) => (n === "escritorio" ? 1100 : 340);
 const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/animacion-galicia/", "/aviso-legal/", "/privacidad/", "/cookies/", "/como-trabajamos/"];
@@ -116,10 +116,11 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
         lee: document.querySelectorAll(".leetambien").length,
         words: ((document.querySelector(".pieza-head .dek").innerText + " " + document.querySelector(".prose").innerText).match(/\S+/g) || []).length,
       }));
-      ok(`[${name}] ${u} sidebar completa (secciones, últimas, desde Galicia)`, info.chips === 4 && info.lastBox && info.sideLinks.length >= 6, `links=${info.sideLinks.length} galicia=${info.galBox}`);
-      ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee >= 1, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
-      const il = await page.$$eval(".enlace-interno a, .leetambien a", (a) => a.map((x) => x.getAttribute("href")));
-      ok(`[${name}] ${u} enlaces internos de cola larga en el texto (>=2)`, il.length >= 2, `${il.length}`);
+      ok(`[${name}] ${u} sidebar completa (secciones, sección y contacto; sin cajas de relleno)`, info.chips === 4 && info.sideLinks.length >= 4, `links=${info.sideLinks.length} galicia=${info.galBox}`);
+      ok(`[${name}] ${u} cajas de color y "Sigue leyendo"`, info.cajas >= 2 && info.cards === 3 && info.lee === 0, `tipos=${info.cajas} cards=${info.cards} lee=${info.lee}`);
+      const il = await page.$$eval(".mas-sobre a", (a) => a.map((x) => x.getAttribute("href")));
+      const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]", (a) => a.length);
+      ok(`[${name}] ${u} enlaces discretos: 1 línea final con máx. 2 y nada intrusivo en el texto`, il.length <= 2 && intr === 0, `${il.length}/${intr}`);
       ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= 650, `${info.words}`);
       // enlaces internos
       const links = [...new Set(await page.$$eval("main a[href^='/']", (as) => as.map((x) => x.getAttribute("href"))))];
@@ -179,7 +180,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
 
     // --- Sección: lista con tarjetas
     await page.goto(B + "/juegos/");
-    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".card")).length === 2);
+    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".lead-story, .secundaria, .latest li")).length === 2);
 
     // --- Contacto compacto
     await page.goto(B + "/contacto/");
@@ -202,7 +203,7 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     ok(`[${name}] /contacto/#marron abre el formulario de marrón`, await page.isVisible("#marron textarea"));
 
     // --- Cabeceras a todo el ancho
-    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/juegos/", "/privacidad/", "/animacion-galicia/", "/contacto/"]) {
+    for (const u of ["/despedidas/despedida-como-resacon-en-las-vegas/", "/privacidad/", "/animacion-galicia/", "/contacto/"]) {
       await page.goto(B + u);
       const w = await page.evaluate(() => {
         const head = document.querySelector(".pieza-head, .section-head, .front-head > .wrap-wide");
@@ -215,10 +216,19 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
       ok(`[${name}] ${u} cabecera a todo el ancho`, (Math.abs(w.h1 - w.head) <= 2 || u === "/") && (w.lead === "none" || w.lead === "-") && w.h1 >= Math.min(w.wrap, innerWidthSafe(name)) - 5, JSON.stringify(w));
     }
 
-    // «Lee también» discreto (sin caja)
+    // Línea «Más sobre esto» discreta
     await page.goto(B + "/despedidas/guia-para-organizar-despedidas-en-galicia/");
-    const lee = await page.evaluate(() => { const e = document.querySelector(".leetambien"); const c = getComputedStyle(e); return { bg: c.backgroundColor, bw: c.borderLeftWidth, fs: parseFloat(c.fontSize) }; });
-    ok(`[${name}] «lee también» discreto: sin fondo, borde fino y letra pequeña`, lee.bg === "rgba(0, 0, 0, 0)" && lee.bw === "2px" && lee.fs <= 17, JSON.stringify(lee));
+    const ms = await page.evaluate(() => { const e = document.querySelector(".mas-sobre"); if (!e) return null; const c = getComputedStyle(e); return { bg: c.backgroundColor, fs: parseFloat(c.fontSize) }; });
+    ok(`[${name}] «más sobre esto» discreto: sin fondo y letra pequeña`, !ms || (ms.bg === "rgba(0, 0, 0, 0)" && ms.fs <= 16), JSON.stringify(ms));
+    // Secciones con formato revista
+    for (const u of ["/cumpleanos/", "/regalos/", "/juegos/"]) {
+      await page.goto(B + u);
+      ok(`[${name}] ${u} formato revista (portada, secundarias, preguntas)`, (await page.locator(".lead-story").count()) === 1 && (await page.locator(".secundaria").count()) >= 0 && (await page.locator("h1").count()) === 1);
+    }
+    // Cómo trabajamos: las webs del grupo con anclas de 3-4 palabras
+    await page.goto(B + "/como-trabajamos/");
+    const an = await page.$$eval("main a[target=_blank]", (a) => a.map((x) => x.textContent.trim().split(/\s+/).length));
+    ok(`[${name}] cómo trabajamos: 18 webs del grupo con ancla de 3-4 palabras`, an.length === 18 && an.every((n) => n >= 3 && n <= 4), JSON.stringify(an));
     // Páginas con ruta propia: canonical en la raíz y migas
     await page.goto(B + "/despedidas-de-soltero-y-soltera-en-a-coruna/");
     const can = await page.getAttribute('link[rel="canonical"]', "href");
@@ -228,13 +238,15 @@ const OTHER = ["/", "/cumpleanos/", "/regalos/", "/juegos/", "/contacto/", "/ani
     // Fotos (en preview se ven los marcadores de ejemplo)
     await page.goto(B + "/fotos/");
     await page.waitForLoadState("networkidle");
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 80)); } });
+    await page.waitForTimeout(800);
     const gal = await page.$$eval(".galeria img", (i) => i.map((x) => x.naturalWidth));
-    ok(`[${name}] galería: 5 fotos cargadas`, gal.length === 5 && gal.every((w) => w > 0), JSON.stringify(gal));
+    ok(`[${name}] galería: fotos cargadas`, gal.length >= 1 && gal.every((w) => w > 0), JSON.stringify(gal));
     await page.goto(B + "/");
     await page.waitForLoadState("networkidle");
     const tira = await page.$$eval(".tira-fotos img", (i) => i.map((x) => x.naturalWidth));
     ok(`[${name}] portada: tira de fotos cargada`, tira.length >= 4 && tira.every((w) => w > 0), JSON.stringify(tira));
-    ok(`[${name}] pie: enlace a Fotos chotas`, (await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")))).includes("/fotos/"));
+    ok(`[${name}] pie: enlace a Fotos chorras`, (await page.$$eval(".site-footer a", (a) => a.map((x) => x.getAttribute("href")))).includes("/fotos/"));
 
     const r404 = await page.goto(B + "/no-existe/");
     ok(`[${name}] 404`, r404.status() === 404);

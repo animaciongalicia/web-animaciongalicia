@@ -17,17 +17,17 @@ const WHATSAPP = "ideas-locas-grupo-whatsapp-despedida";
 const DICC = "diccionario-grupo-whatsapp-despedida";
 const MITOS = "mitos-despedidas-de-soltero";
 const RESACON = "despedida-como-resacon-en-las-vegas";
-const PQ_SOLTERO = "preguntas-chotas-despedida-de-soltero";
-const PQ_SOLTERA = "preguntas-chotas-despedida-de-soltera";
+const PQ_SOLTERO = "preguntas-chorras-despedida-de-soltero";
+const PQ_SOLTERA = "preguntas-chorras-despedida-de-soltera";
 const SECUESTRO = "secuestro-falso-despedida-de-soltero";
 const RETOS = "retos-de-plaza-declaracion-cantada-flashmob";
 const CAMISETAS = "frases-para-camisetas-despedida";
 const DISFRACES = "disfraces-para-novio-o-novia-despedida";
 const REGALOS = "regalos-absurdos-que-si-se-pueden-usar";
-const PQ_REGALOS = "preguntas-chotas-regalos";
+const PQ_REGALOS = "preguntas-chorras-regalos";
 const CUMPLE_TEMA = "cumpleanos-tematicos-adultos-galicia";
 const CUMPLE_SORPRESA = "cumpleanos-sorpresa-cosas-que-salen-mal";
-const PQ_CUMPLE = "preguntas-chotas-cumpleanos-adultos";
+const PQ_CUMPLE = "preguntas-chorras-cumpleanos-adultos";
 
 export const ENLACES_INTERNOS: Record<string, EnlaceInterno[]> = {
   [RESACON]: [

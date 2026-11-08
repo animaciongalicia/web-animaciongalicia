@@ -7,14 +7,13 @@ import { JsonLd } from "./JsonLd";
 import { PiezaCard } from "./PiezaCard";
 import { Sidebar } from "./Sidebar";
 import { SECCIONES } from "@/content/piezas";
-import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, vecinas, visibles } from "@/lib/piezas";
+import { bySeccion, bySlug, fechaLarga, minutosLectura, piezaPath, visibles } from "@/lib/piezas";
 import { absoluteUrl, SITE } from "@/lib/site";
 import { AGENCIA } from "@/lib/company";
 import type { Pieza } from "@/content/types";
 
 export function PiezaView({ p }: { p: Pieza }) {
   const sec = SECCIONES[p.seccion];
-  const { anterior, siguiente } = vecinas(p);
 
   // Sigue leyendo: primero las relacionadas a mano; luego otras de la sección; luego lo último.
   const elegidas = new Map<string, Pieza>();
@@ -109,26 +108,6 @@ export function PiezaView({ p }: { p: Pieza }) {
             <ShareBar text={p.titulo} path={piezaPath(p)} copyLabel="Copiar enlace" />
           </div>
 
-          {(anterior || siguiente) && (
-            <nav className="prevnext" aria-label={`Más en ${sec.label}`}>
-              {siguiente ? (
-                <Link href={piezaPath(siguiente)} data-seccion={siguiente.seccion}>
-                  <span className="kicker">← Anterior en {sec.label}</span>
-                  {siguiente.titulo}
-                </Link>
-              ) : (
-                <span />
-              )}
-              {anterior ? (
-                <Link href={piezaPath(anterior)} data-seccion={anterior.seccion} className="next">
-                  <span className="kicker">Siguiente en {sec.label} →</span>
-                  {anterior.titulo}
-                </Link>
-              ) : (
-                <span />
-              )}
-            </nav>
-          )}
         </div>
         <Sidebar p={p} />
       </div>

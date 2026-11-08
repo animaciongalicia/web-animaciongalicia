@@ -87,7 +87,7 @@ El 404 y las 3 redirecciones hay que identificarlos en Search Console (pestaña 
   `enlacesdeturismo.com`, `enriquedans.com`, `publiespectaculos.com`, `turismoenxebre.com`, `queverengalicia.com`,
   `paginasamarillas.es`, `galiciamaxica.eu` y unos 25 más con un enlace cada uno.
 - **Todos apuntan a una sola página.** Cualquier otra URL parte de cero en enlaces, y por eso el enlazado interno pesa tanto.
-- Apunte de ortografía: el informe dice `ginkanas.es`; la lista del grupo dice `gincanas.es`. Confirmar cuál es.
+- Apunte de ortografía: el informe dice `ginkanas.es`; la lista del grupo dice `ginkanas.es`. Confirmar cuál es.
 
 ## 6. Decisiones que cambian
 
@@ -125,13 +125,13 @@ del texto de cada post).
 | organizar despedidas (soltero/soltera) | Guía pilar | `calendario` → «cuándo hacer una despedida en Galicia»; `amigo-que-no-paga` → «cómo organizar una despedida sin discusiones»; `aplicaciones-compartir-gastos` → «organizar los gastos de una despedida» |
 | actividades despedida de soltero/soltera | Pilar Actividades (por crear) | `secuestro-falso` → «actividades originales para una despedida de soltero»; `retos-de-plaza` → «retos y actividades de calle»; `barco-o-casa-rural` → «actividades para una despedida en Galicia» |
 | despedidas A Coruña / Sanxenxo / Ourense | Páginas conservadas (por portar) | `calendario`, `barco-o-casa-rural`, `despedida-como-resacon` → anclas con la ciudad (cuando existan las páginas) |
-| despedida de soltera en galicia | Pilar soltera (por crear) | `preguntas-chotas-soltera`, `frases-camisetas`, `ideas-locas-grupo-whatsapp` |
-| despedida de soltero en galicia | Pilar soltero (por crear) | `preguntas-chotas-soltero`, `mitos`, `secuestro-falso`, `despedida-como-resacon` |
-| cumpleaños en galicia | `cumpleanos-tematicos-adultos-galicia` | `cumpleanos-sorpresa`, `preguntas-chotas-cumpleanos` |
-| regalos de cumpleaños / despedida | `regalos-absurdos-*` | `frases-camisetas`, `disfraces`, `preguntas-chotas-regalos` |
+| despedida de soltera en galicia | Pilar soltera (por crear) | `preguntas-chorras-soltera`, `frases-camisetas`, `ideas-locas-grupo-whatsapp` |
+| despedida de soltero en galicia | Pilar soltero (por crear) | `preguntas-chorras-soltero`, `mitos`, `secuestro-falso`, `despedida-como-resacon` |
+| cumpleaños en galicia | `cumpleanos-tematicos-adultos-galicia` | `cumpleanos-sorpresa`, `preguntas-chorras-cumpleanos` |
+| regalos de cumpleaños / despedida | `regalos-absurdos-*` | `frases-camisetas`, `disfraces`, `preguntas-chorras-regalos` |
 
-**Preguntas con ancla propia:** cada pregunta de los posts «preguntas chotas» tiene un `id` (por ejemplo
-`/despedidas/preguntas-chotas-despedida-de-soltero/#puede-el-novio-llevarse-el-movil-a-su-despedida`). Se enlazan desde la
+**Preguntas con ancla propia:** cada pregunta de los posts «preguntas chorras» tiene un `id` (por ejemplo
+`/despedidas/preguntas-chorras-despedida-de-soltero/#puede-el-novio-llevarse-el-movil-a-su-despedida`). Se enlazan desde la
 portada («lo que se pregunta») y permiten a Google mostrar enlaces directos a cada pregunta.
 
 ## 9. El grupo de webs: canibalización y enlaces

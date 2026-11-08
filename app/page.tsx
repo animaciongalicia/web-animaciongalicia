@@ -36,7 +36,7 @@ export default function Home() {
   const situaciones = SITUACIONES.map((s) => ({ ...s, pieza: bySlug(s.slug) })).filter((s) => s.pieza);
   const gal = DESDE_GALICIA.map((g) => ({ ...g, pieza: bySlug(g.slug) })).filter((g) => g.pieza);
 
-  // Una selección variada de preguntas (3 por cada post de «preguntas chotas»).
+  // Una selección variada de preguntas (3 por cada post de «preguntas chorras»).
   const porPost = new Map<string, ReturnType<typeof preguntas>>();
   for (const q of preguntas()) porPost.set(q.pieza.slug, [...(porPost.get(q.pieza.slug) ?? []), q]);
   const chips = [...porPost.values()].flatMap((l) => l.slice(0, 3));
@@ -161,7 +161,7 @@ export default function Home() {
       {fotos.length > 0 && (
         <section className="wrap-wide section fotos-home" aria-labelledby="fot-t">
           <h2 id="fot-t" className="section-title">
-            Fotos chotas
+            Fotos chorras
           </h2>
           <ul className="tira-fotos">
             {fotos.map((f) => (

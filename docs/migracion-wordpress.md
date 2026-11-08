@@ -23,7 +23,7 @@ WordPress + Elementor + Yoast + Site Kit de Google. Sitemap: `https://animaciong
 | `/despedidas-de-soltero-y-soltera-en-vigo/` | Ciudad | 2026-01-11 | **CONSERVAR** (42 vistas en Analytics). Ya existe como página «qué hacer de loco» |
 | `/despedidas-de-soltero-y-soltera-en-otras-ciudades/` | Ciudad | 2026-01-11 | 301 → pilar de actividades |
 | `/aventuras-para-despedidas/` | Página | 2026-01-11 | 301 → `/juegos/` |
-| `/preguntas-frecuentas-y-dudas-para-despedidas/` | FAQ | 2025-12-22 | 301 → preguntas chotas de soltero |
+| `/preguntas-frecuentas-y-dudas-para-despedidas/` | FAQ | 2025-12-22 | 301 → preguntas chorras de soltero |
 | `/noticias-despedidas/` | Post / índice | 2026-01-05 | 301 → `/` |
 | `/herramientas-gratis-para-despedidas/` | Página (las 4 herramientas) | 2026-02-03 | **Pendiente** (hub de herramientas cuando lleguen los 4 dominios) |
 | `/contacto-organizar-despedidas-en-galicia/` | Contacto | 2026-02-03 | 301 → `/contacto/` |
@@ -131,3 +131,8 @@ RESEND_API_KEY= CONTACT_TO_EMAIL= CONTACT_FROM_EMAIL=
 | Contenido comercial que desaparece sin sustituto | Revisar qué ofrecía la portada (packs, ofertas) y decidir dónde vive: página de la agencia o contacto |
 | Cookies y analítica sin consentimiento | Decisión de la sección 4 antes de cargar nada |
 | Cambio de hosting con caída | TTL bajo, copia del WordPress, corte fuera de horas punta |
+
+## 7. Analítica (GA4) y Search Console — actualizado 8-nov-2026
+
+- **GA4 `G-JY6XXV50MM` instalado** con banner de cookies (aceptar/rechazar con el mismo peso, «Configurar cookies» en el pie). No se carga nada antes de aceptar y solo en producción. Evento `generate_lead` al enviar un formulario (si hay consentimiento). Política de cookies y de privacidad actualizadas.
+- **Search Console:** el código de verificación NO está en el HTML del WordPress actual (no hay `google-site-verification`; el WP usa `GT-WP4TBNDG` y `GTM-TJVVGXSF` y no tiene banner de cookies). Ver en Search Console → Ajustes → Verificación de la propiedad qué método usa. Si es por **DNS (TXT)**, hay que **copiar todos los registros DNS (TXT, MX, etc.) al nuevo DNS antes de cambiar** el dominio. Si es por GA/GTM, se mantiene mientras haya etiqueta. Alternativa: añadir `google-site-verification` a la nueva web.

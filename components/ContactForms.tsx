@@ -1,5 +1,6 @@
 "use client";
 
+import { evento } from "./Cookies";
 import { useEffect, useState } from "react";
 import { withBase } from "@/lib/site";
 
@@ -27,6 +28,7 @@ function Form({ kind }: { kind: Kind }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Error");
       setStatus(data.mode === "test" ? "test" : "ok");
+      if (data.mode !== "test") evento("generate_lead", { formulario: kind });
       form.reset();
     } catch (err) {
       setStatus("error");

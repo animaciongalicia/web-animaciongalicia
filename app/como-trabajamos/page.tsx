@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import { EnlaceGrupo } from "@/components/EnlaceGrupo";
+import { GRUPO } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Cómo trabajamos",
@@ -28,6 +30,23 @@ export default function ComoTrabajamos() {
       </p>
       <h2>Errores</h2>
       <p>Si ves un dato que no es correcto, dínoslo y lo corregimos.</p>
+      <h2>Quién hay detrás: las webs del grupo</h2>
+      <p>
+        Menú Marrón es un proyecto de Animación Galicia. La agencia tiene otras webs propias, cada una con su cosa. Aquí
+        las tienes todas, por si un día te toca el marrón de verdad. No hay prisa.
+      </p>
+      {GRUPO.map((g) => (
+        <section key={g.titulo}>
+          <h3>{g.titulo}</h3>
+          <ul className="lista">
+            {g.webs.map((w) => (
+              <li key={w.dominio}>
+                <EnlaceGrupo dominio={w.dominio}>{w.ancla}</EnlaceGrupo>. {w.descripcion}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </LegalPage>
   );
 }

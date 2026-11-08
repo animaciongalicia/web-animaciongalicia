@@ -444,3 +444,16 @@ ul, ol { padding-left: 1.2em; }
 .caja-grupo .caja-titulo { color: var(--muted); margin-bottom: 2px; }
 .caja-grupo a { font-weight: 500; color: var(--ink); }
 .side-box .more { display: inline-block; margin-top: 8px; }
+
+/* Enlaces internos discretos: una línea al final del texto */
+.mas-sobre { margin: 2rem 0 0; padding-top: 0.9rem; border-top: 1px solid var(--line, #d9d4c5); font-size: 0.9rem; color: var(--muted, #6b675c); }
+.prose p.mas-sobre { font-size: 0.9rem; margin-top: 2rem; }
+.mas-sobre a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Banner de cookies */
+.cookie-banner { position: fixed; z-index: 50; left: 1rem; right: 1rem; bottom: 1rem; max-width: 34rem; background: #fff; color: var(--ink, #1b1a17); border: 1px solid var(--ink, #1b1a17); padding: 1rem 1.1rem; font-size: 0.9rem; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+.cookie-banner p { margin: 0 0 .6rem; }
+.cookie-titulo { font-weight: 700; }
+.cookie-botones { display: flex; gap: .6rem; }
+.cookie-botones .btn { flex: 1; border: 1px solid var(--ink, #1b1a17); background: #fff; color: inherit; padding: .55rem .8rem; cursor: pointer; }
+.link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }

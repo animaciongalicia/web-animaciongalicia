@@ -23,7 +23,7 @@ búsquedas absurdas y de cola larga**.
 - **Webs del grupo (18 dominios)**, listadas con su descripción en `lib/company.ts` y mostradas como texto en
   `/animacion-galicia/`: despedidasgalicia.es, despedidascoruna.es, despedidasvigo.com, despedidas-vigo.es,
   despedidasourense.com, despedidassanxenxo.es, despedidas-sanxenxo.com, despedidasplayasanxenxo.com,
-  despedidasenoporto.com, despedidasag.com, gincanas.es (¿o ginkanas.es?), humoramarillocoruna.com, los7pc.com,
+  despedidasenoporto.com, despedidasag.com, ginkanas.es (¿o ginkanas.es?), humoramarillocoruna.com, los7pc.com,
   monologosgalicia.com, seagalicia.com (alquiler de barcos), luxegalicia.com (traslados), suunia.com (viajes por Galicia),
   mileventosgalicia.com (eventos de empresa). **Hay tres webs de Sanxenxo y dos de Vigo para las mismas búsquedas: riesgo de canibalización.**
 - **4 herramientas propias** (dominios por llegar): test-despedidas, retranca, ruleta y gastosdespedidas. Cada una tendrá
@@ -135,16 +135,16 @@ buscador interno · newsletter.
 | Despedidas | `diccionario-grupo-whatsapp-despedida` | Glosario |
 | Despedidas | `calendario-despedidas-galicia-cuando-hacerla` | Calendario (comprobar fechas de fiestas cada año) |
 | Despedidas | `amigo-que-no-paga-la-despedida` | Protocolo con plantillas |
-| Despedidas | `preguntas-chotas-despedida-de-soltero` / `-de-soltera` | Preguntas con respuesta |
+| Despedidas | `preguntas-chorras-despedida-de-soltero` / `-de-soltera` | Preguntas con respuesta |
 | Juegos | `secuestro-falso-despedida-de-soltero` | Reto con avisos de seguridad |
 | Juegos | `retos-de-plaza-declaracion-cantada-flashmob` | Retos |
 | Regalos | `frases-para-camisetas-despedida` | Listas |
 | Regalos | `disfraces-para-novio-o-novia-despedida` | Guía de compra |
 | Regalos | `regalos-absurdos-que-si-se-pueden-usar` | Lista |
-| Regalos | `preguntas-chotas-regalos` | Preguntas con respuesta |
+| Regalos | `preguntas-chorras-regalos` | Preguntas con respuesta |
 | Cumpleaños | `cumpleanos-tematicos-adultos-galicia` | Guía |
 | Cumpleaños | `cumpleanos-sorpresa-cosas-que-salen-mal` | Lista con soluciones |
-| Cumpleaños | `preguntas-chotas-cumpleanos-adultos` | Preguntas con respuesta |
+| Cumpleaños | `preguntas-chorras-cumpleanos-adultos` | Preguntas con respuesta |
 
 Todos de 400–600 palabras, con referencia gallega natural, cajas de color y enlaces internos.
 
@@ -196,7 +196,7 @@ Hay que decidir si el enlace va al dominio de la herramienta o a un hub interno 
 12. Cumpleaños de 40 y 50: ideas que no sean una tarta
 
 Banco adicional de 40 titulares en `docs/estrategia-seo-y-visitas.md` §C. **Ritmo recomendado: 2–3 posts por semana.**
-Las búsquedas de pregunta y de lista son el formato estrella; el formato «preguntas chotas» (8–11 preguntas
+Las búsquedas de pregunta y de lista son el formato estrella; el formato «preguntas chorras» (8–11 preguntas
 como subtítulos, 40–70 palabras de respuesta cada una) cubre muchas búsquedas absurdas a la vez.
 
 ### 6.5 Lo que solo puede aportar el propietario (lo más valioso)
@@ -213,7 +213,7 @@ enlaces del dominio. **Sin promesas de cifras o plazos:** se mide con Search Con
   posts con la búsqueda local natural. Bloque «Desde Galicia» (portada, barra lateral) y columna del pie.
   `geo.region = ES-GA`. JSON-LD de `Organization` con `areaServed: Galicia`. **Cuando se conozca la calle**, añadir
   dirección postal a `Organization` (A Coruña).
-- **Enlazado interno de cola larga (hecho):** `content/enlaces.ts` inserta 2–3 enlaces contextuales con anclas propias en cada post (antes del 3.er y 5.º subtítulo), además de `leetambien`, «Sigue leyendo», anterior/siguiente y barra lateral. Cada pregunta de los posts de «preguntas chotas» tiene ancla propia y se enlaza desde la portada.
+- **Enlazado interno de cola larga (hecho):** `content/enlaces.ts` inserta 2–3 enlaces contextuales con anclas propias en cada post (antes del 3.er y 5.º subtítulo), además de `leetambien`, «Sigue leyendo», anterior/siguiente y barra lateral. Cada pregunta de los posts de «preguntas chorras» tiene ancla propia y se enlaza desde la portada.
 - **Enlazado interno (resto):** El **pilar**
   (`guia-para-organizar-despedidas-en-galicia`) enlaza a todo lo demás. Cuando haya 3–4 posts por tema, una página guía
   por sección.
@@ -274,8 +274,8 @@ citarlos cuando estén activos (Resend, Vercel…).
 6. Acceso al DNS y al alojamiento del WordPress para el corte; qué ofrecían los packs de la portada actual.
 7. Anécdotas reales y precios reales para dar valor a los posts.
 8. Autorización expresa para activar enlaces a **terceros** (los del grupo ya están activos).
-9. **Fotos chotas**: subirlas a `fotos-para-subir/` (ver `LEEME.md`). Confirmar que el repositorio es **privado** (los originales con ubicación quedan en el historial).
-10. Elegir **qué web de Sanxenxo** enlazar desde la revista (hay tres) y confirmar `gincanas.es` / `ginkanas.es`.
+9. **Fotos chorras**: subirlas a `fotos-para-subir/` (ver `LEEME.md`). Confirmar que el repositorio es **privado** (los originales con ubicación quedan en el historial).
+10. Elegir **qué web de Sanxenxo** enlazar desde la revista (hay tres) y confirmar `ginkanas.es` / `ginkanas.es`.
 11. Rutas de la página 404 (GA4), informe de adquisición y datos de GA4 de cada web del grupo (`docs/analisis-analytics.md`).
 
 ## 13. Qué NO hacer

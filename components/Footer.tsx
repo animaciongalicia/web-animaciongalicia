@@ -1,3 +1,5 @@
+import { AjustarCookies } from "./Cookies";
+import { GA_ACTIVO } from "@/lib/analytics";
 import Link from "next/link";
 import { SECCIONES } from "@/content/piezas";
 import type { Seccion } from "@/content/types";
@@ -51,25 +53,22 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="La revista">
-            <p className="foot-title">La revista</p>
+          <nav aria-label="Participa">
+            <p className="foot-title">Participa</p>
             <ul>
               {hayFotos && (
                 <li>
-                  <Link href="/fotos/">Fotos chotas</Link>
+                  <Link href="/fotos/">Mira las fotos chorras</Link>
                 </li>
               )}
               <li>
-                <Link href="/contacto/#enlace">Mándanos un enlace</Link>
+                <Link href="/contacto/#enlace">Pásanos algo que nos haga reír</Link>
               </li>
               <li>
                 <Link href="/contacto/#marron">Cuéntanos tu marrón</Link>
               </li>
               <li>
-                <Link href="/contacto/">Contacto</Link>
-              </li>
-              <li>
-                <Link href="/animacion-galicia/">Animación Galicia</Link>
+                <Link href="/como-trabajamos/">Quién hay detrás</Link>
               </li>
             </ul>
           </nav>
@@ -89,6 +88,11 @@ export function Footer() {
           <li>
             <Link href="/como-trabajamos/">Cómo trabajamos</Link>
           </li>
+          {GA_ACTIVO && (
+            <li>
+              <AjustarCookies />
+            </li>
+          )}
         </ul>
       </div>
     </footer>

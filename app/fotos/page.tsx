@@ -4,8 +4,8 @@ import Link from "next/link";
 import { absoluteUrl } from "@/lib/site";
 import { fotosVisibles } from "@/lib/fotos";
 
-const TITLE = "Fotos chotas de despedidas, cumpleaños y celebraciones";
-const DESC = "Las fotos más chotas y divertidas de despedidas, cumpleaños, regalos y eventos. Mándanos la tuya.";
+const TITLE = "Fotos chorras de despedidas, cumpleaños y celebraciones";
+const DESC = "Las fotos más chorras y divertidas de despedidas, cumpleaños, regalos y eventos. Mándanos la tuya.";
 
 export function generateMetadata(): Metadata {
   const hay = fotosVisibles().length > 0;
@@ -50,7 +50,7 @@ export default function FotosPage() {
       )}
 
       <section className="closing galeria-cta" aria-labelledby="foto-t">
-        <h2 id="foto-t">¿Tienes una foto chota?</h2>
+        <h2 id="foto-t">¿Tienes una foto chorra?</h2>
         <p>
           Mándanosla con el enlace (Drive, WeTransfer…). Solo publicamos fotos propias o con permiso de quienes salen,
           y nunca con menores. Si sales en una y quieres que la retiremos, escríbenos y la quitamos.

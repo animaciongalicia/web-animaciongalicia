@@ -32,7 +32,7 @@ export default function AgenciaPage() {
                   <h3>{w.nombre}</h3>
                   <p>{w.descripcion}</p>
                   <p className="web">
-                    <EnlaceGrupo dominio={w.dominio}>{w.dominio}</EnlaceGrupo>
+                    <EnlaceGrupo dominio={w.dominio}>{w.ancla}</EnlaceGrupo>
                   </p>
                 </li>
               ))}

@@ -16,9 +16,15 @@ export default function Cookies() {
       </p>
       <h2>1. Qué cookies usamos</h2>
       <p>
-        <strong>Actualmente este sitio no instala cookies propias ni de terceros con fines analíticos, publicitarios o
-        de personalización.</strong> Solo se utilizan, si fueran necesarias, elementos técnicos imprescindibles para que
-        la web funcione, que no requieren tu consentimiento.
+        Usamos <strong>cookies técnicas</strong> imprescindibles (sin consentimiento) y, solo si las aceptas, cookies de{" "}
+        <strong>analítica de Google Analytics 4</strong>:
+      </p>
+      <ul>
+        <li><code>_ga</code> y <code>_ga_JY6XXV50MM</code>: distinguen visitas y sesiones de forma anónima. Duración: hasta 2 años. Titular: Google Ireland Ltd.</li>
+      </ul>
+      <p>
+        Google puede tratar datos fuera del Espacio Económico Europeo (por ejemplo en EE. UU.). No se cargan hasta que pulsas
+        «Aceptar». Puedes retirar el consentimiento cuando quieras desde «Configurar cookies», en la parte de abajo de cualquier página.
       </p>
       <h2>2. Contenidos incrustados</h2>
       <p>
@@ -33,8 +39,8 @@ export default function Cookies() {
       </p>
       <h2>4. Cambios</h2>
       <p>
-        Si empezamos a utilizar cookies no exentas de consentimiento (por ejemplo, de analítica), actualizaremos esta
-        política y mostraremos un aviso con las opciones de aceptar, rechazar y configurar antes de instalarlas.
+        Si empezamos a utilizar otras cookies no exentas de consentimiento, actualizaremos esta política y te pediremos
+        permiso antes de instalarlas.
       </p>
     </LegalPage>
   );

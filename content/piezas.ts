@@ -326,7 +326,7 @@ export const piezas: Pieza[] = [
         tipo: "frase",
         x: "Cantar en una plaza es fácil. Lo difícil es que luego tus amigos no lo suban a sus redes.",
       },
-      { t: "grupo", dominio: "gincanas.es", x: "Gincanas, si prefieres retos con organización." },
+      { t: "grupo", dominio: "ginkanas.es", x: "Gincanas, si prefieres retos con organización." },
       { t: "leetambien", slug: "secuestro-falso-despedida-de-soltero" },
     ],
   },
@@ -334,8 +334,8 @@ export const piezas: Pieza[] = [
     slug: "frases-para-camisetas-despedida",
     seccion: "regalos",
     tag: "Camisetas",
-    titulo: "Frases chotas para camisetas de despedida de soltera y de soltero",
-    h1: "Frases chotas para camisetas de despedida (de soltera y de soltero)",
+    titulo: "Frases chorras para camisetas de despedida de soltera y de soltero",
+    h1: "Frases chorras para camisetas de despedida (de soltera y de soltero)",
     dek: "Habrá camisetas, porque siempre hay camisetas. Que no sea otra vez «Team Novia». Frases de las buenas, con pie para Vigo, Sanxenxo o donde os lleve el marrón.",
     fecha: "2026-11-02",
     galicia: true,
@@ -347,7 +347,7 @@ export const piezas: Pieza[] = [
       },
       {
         t: "p",
-        x: "Aquí van frases chotas, de las que se leen desde lejos, y algunas con guiño gallego. Cámbialas, mézclalas o dáselas a quien las quiera hacer peor.",
+        x: "Aquí van frases chorras, de las que se leen desde lejos, y algunas con guiño gallego. Cámbialas, mézclalas o dáselas a quien las quiera hacer peor.",
       },
       { t: "h2", x: "Para la novia y su cuadrilla" },
       {
@@ -564,11 +564,11 @@ export const piezas: Pieza[] = [
     ],
   },
   {
-    slug: "preguntas-chotas-despedida-de-soltero",
+    slug: "preguntas-chorras-despedida-de-soltero",
     seccion: "despedidas",
-    tag: "Preguntas chotas",
-    titulo: "Preguntas chotas sobre despedidas de soltero (con respuestas de verdad)",
-    h1: "Preguntas chotas sobre despedidas de soltero, con respuesta de verdad",
+    tag: "Preguntas chorras",
+    titulo: "Preguntas chorras sobre despedidas de soltero (con respuestas de verdad)",
+    h1: "Preguntas chorras sobre despedidas de soltero, con respuesta de verdad",
     dek: "Las dudas que nadie se atreve a preguntar en el grupo de WhatsApp y que todos tienen. Contestadas en serio, con un poco de humor y con Galicia de fondo.",
     fecha: "2026-10-30",
     galicia: true,
@@ -600,15 +600,15 @@ export const piezas: Pieza[] = [
     ],
   },
   {
-    slug: "preguntas-chotas-despedida-de-soltera",
+    slug: "preguntas-chorras-despedida-de-soltera",
     seccion: "despedidas",
-    tag: "Preguntas chotas",
-    titulo: "Preguntas chotas sobre despedidas de soltera (que nadie pregunta en voz alta)",
-    h1: "Preguntas chotas sobre despedidas de soltera que nadie pregunta en voz alta",
+    tag: "Preguntas chorras",
+    titulo: "Preguntas chorras sobre despedidas de soltera (que nadie pregunta en voz alta)",
+    h1: "Preguntas chorras sobre despedidas de soltera que nadie pregunta en voz alta",
     dek: "¿Hay que llevar tiara? ¿Quién lleva la tarta? ¿Y si la novia odia las sorpresas? Las preguntas de cada grupo de despedida de soltera, con su respuesta.",
     fecha: "2026-10-29",
     galicia: true,
-    relacionadas: ["preguntas-chotas-despedida-de-soltero", "frases-para-camisetas-despedida"],
+    relacionadas: ["preguntas-chorras-despedida-de-soltero", "frases-para-camisetas-despedida"],
     bloques: [
       { t: "p", x: "En cualquier grupo de despedida de soltera hay preguntas que se piensan y no se dicen. Aquí van las más habituales, con respuesta útil y sin dramatismo. Muchas valen también para despedidas mixtas." },
       { t: "h2", x: "¿Hay que invitar a todas las amigas de la novia?" },
@@ -637,15 +637,15 @@ export const piezas: Pieza[] = [
     ],
   },
   {
-    slug: "preguntas-chotas-cumpleanos-adultos",
+    slug: "preguntas-chorras-cumpleanos-adultos",
     seccion: "cumpleanos",
-    tag: "Preguntas chotas",
-    titulo: "Preguntas chotas sobre cumpleaños de adultos: ¿hay que invitar a todo el mundo?",
-    h1: "Preguntas chotas sobre cumpleaños de adultos (con respuesta de verdad)",
+    tag: "Preguntas chorras",
+    titulo: "Preguntas chorras sobre cumpleaños de adultos: ¿hay que invitar a todo el mundo?",
+    h1: "Preguntas chorras sobre cumpleaños de adultos (con respuesta de verdad)",
     dek: "Quién paga, a qué hora se sopla la vela y qué hacer si te montan una sorpresa que no querías. Las dudas de cualquier cumpleaños con más de treinta años.",
     fecha: "2026-10-28",
     galicia: true,
-    relacionadas: ["preguntas-chotas-regalos", "cumpleanos-tematicos-adultos-galicia"],
+    relacionadas: ["preguntas-chorras-regalos", "cumpleanos-tematicos-adultos-galicia"],
     bloques: [
       { t: "p", x: "Cumplir años es fácil. Organizar el cumpleaños de un adulto, no tanto. Estas son las dudas que se repiten en cada mesa, con una respuesta práctica para cada una." },
       { t: "h2", x: "¿Hay que invitar a todo el mundo?" },
@@ -674,11 +674,11 @@ export const piezas: Pieza[] = [
     ],
   },
   {
-    slug: "preguntas-chotas-regalos",
+    slug: "preguntas-chorras-regalos",
     seccion: "regalos",
-    tag: "Preguntas chotas",
-    titulo: "Preguntas chotas sobre regalos: ¿cuánto hay que gastarse y se puede regalar dinero?",
-    h1: "Preguntas chotas sobre regalos (con respuesta de verdad)",
+    tag: "Preguntas chorras",
+    titulo: "Preguntas chorras sobre regalos: ¿cuánto hay que gastarse y se puede regalar dinero?",
+    h1: "Preguntas chorras sobre regalos (con respuesta de verdad)",
     dek: "¿Cuánto se gasta uno? ¿Vale regalar dinero? ¿Y si me regalan lo mismo dos personas? Las dudas de cualquier regalo, respondidas.",
     fecha: "2026-10-27",
     galicia: true,
@@ -721,7 +721,7 @@ export const piezas: Pieza[] = [
     "galicia": true,
     "relacionadas": [
       "despedida-como-resacon-en-las-vegas",
-      "preguntas-chotas-despedida-de-soltera"
+      "preguntas-chorras-despedida-de-soltera"
     ],
     "bloques": [
       {
@@ -814,7 +814,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "preguntas-chotas-despedida-de-soltero"
+        "slug": "preguntas-chorras-despedida-de-soltero"
       },
       {
         "t": "grupo",
@@ -823,7 +823,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "preguntas-chotas-despedida-de-soltera"
+        "slug": "preguntas-chorras-despedida-de-soltera"
       },
       {
         "t": "caja",
@@ -941,7 +941,7 @@ export const piezas: Pieza[] = [
     "fecha": "2026-11-08",
     "galicia": true,
     "relacionadas": [
-      "preguntas-chotas-despedida-de-soltero",
+      "preguntas-chorras-despedida-de-soltero",
       "guia-para-organizar-despedidas-en-galicia"
     ],
     "bloques": [
@@ -1045,7 +1045,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "preguntas-chotas-despedida-de-soltero"
+        "slug": "preguntas-chorras-despedida-de-soltero"
       }
     ]
   },
@@ -1402,7 +1402,7 @@ export const piezas: Pieza[] = [
     "galicia": true,
     "relacionadas": [
       "cumpleanos-tematicos-adultos-galicia",
-      "preguntas-chotas-cumpleanos-adultos"
+      "preguntas-chorras-cumpleanos-adultos"
     ],
     "bloques": [
       {
@@ -1471,7 +1471,7 @@ export const piezas: Pieza[] = [
     "galicia": true,
     "relacionadas": [
       "frases-para-camisetas-despedida",
-      "preguntas-chotas-regalos"
+      "preguntas-chorras-regalos"
     ],
     "bloques": [
       {
@@ -1561,7 +1561,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "leetambien",
-        "slug": "preguntas-chotas-regalos"
+        "slug": "preguntas-chorras-regalos"
       }
     ]
   },
@@ -1659,7 +1659,7 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "grupo",
-        "dominio": "gincanas.es",
+        "dominio": "ginkanas.es",
         "x": "Gincanas, por si prefieres un reto con organización y no montarlo tú."
       },
       {

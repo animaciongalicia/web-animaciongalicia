@@ -13,7 +13,7 @@ export const DESDE_GALICIA = [
 export const PIE_DIVERTIDO = [
   { texto: "La despedida que acaba como Resacón", slug: "despedida-como-resacon-en-las-vegas" },
   { texto: "El secuestro falso", slug: "secuestro-falso-despedida-de-soltero" },
-  { texto: "Frases chotas para camisetas", slug: "frases-para-camisetas-despedida" },
+  { texto: "Frases chorras para camisetas", slug: "frases-para-camisetas-despedida" },
   { texto: "Ideas locas para el grupo de WhatsApp", slug: "ideas-locas-grupo-whatsapp-despedida" },
 ];
 

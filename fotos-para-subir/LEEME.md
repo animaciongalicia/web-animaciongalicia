@@ -1,6 +1,6 @@
 # Fotos para subir
 
-Aquí se dejan las **fotos chotas** (despedidas, cumpleaños, regalos, eventos) para publicarlas en la revista.
+Aquí se dejan las **fotos chorras** (despedidas, cumpleaños, regalos, eventos) para publicarlas en la revista.
 
 ## Cómo subirlas desde GitHub (sin instalar nada)
 

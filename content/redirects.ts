@@ -26,7 +26,7 @@ export const REDIRECTS_WORDPRESS: { source: string; destination: string }[] = [
   { source: "/como-organizar-una-despedida-en-galicia-sin-discusiones-ni-caos", destination: GUIA },
   { source: "/despedidas-de-soltero-y-soltera-en-otras-ciudades", destination: "/actividades-para-despedidas-de-soltero-y-soltera/" },
   { source: "/aventuras-para-despedidas", destination: "/juegos/" },
-  { source: "/preguntas-frecuentas-y-dudas-para-despedidas", destination: "/despedidas/preguntas-chotas-despedida-de-soltero/" },
+  { source: "/preguntas-frecuentas-y-dudas-para-despedidas", destination: "/despedidas/preguntas-chorras-despedida-de-soltero/" },
   { source: "/noticias-despedidas", destination: "/" },
   { source: "/contacto-organizar-despedidas-en-galicia", destination: "/contacto/" },
   { source: "/category/despedidas-en-galicia", destination: "/" },

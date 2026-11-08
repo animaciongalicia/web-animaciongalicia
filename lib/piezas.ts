@@ -56,11 +56,11 @@ export function slugify(t: string) {
     .slice(0, 80);
 }
 
-/** Preguntas (subtítulos acabados en «?») de los posts de «preguntas chotas», con su ancla. */
+/** Preguntas (subtítulos acabados en «?») de los posts de «preguntas chorras», con su ancla. */
 export function preguntas() {
   const out: { pregunta: string; ancla: string; pieza: Pieza }[] = [];
   for (const p of visibles()) {
-    if (p.tag !== "Preguntas chotas") continue;
+    if (p.tag !== "Preguntas chorras") continue;
     for (const b of p.bloques) {
       if (b.t === "h2" && b.x.trim().endsWith("?")) out.push({ pregunta: b.x, ancla: slugify(b.x), pieza: p });
     }

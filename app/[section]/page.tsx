@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PiezaCard } from "@/components/PiezaCard";
+import Image from "next/image";
+import Link from "next/link";
+import { fotosVisibles } from "@/lib/fotos";
 import { PiezaView } from "@/components/PiezaView";
 import { SECCIONES } from "@/content/piezas";
 import { absoluteUrl } from "@/lib/site";
 import { metadataPieza } from "@/lib/seo";
-import { bySeccion, conRuta, getPorRaiz } from "@/lib/piezas";
+import { bySeccion, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, preguntas } from "@/lib/piezas";
 
 export const dynamicParams = false;
 
@@ -43,24 +45,138 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
   const propia = getPorRaiz(section);
   if (propia) return <PiezaView p={propia} />;
   if (!CATS.includes(section as Cat)) notFound();
-  const s = SECCIONES[section as Cat];
-  const list = bySeccion(section as Cat);
+  return <SeccionMagazine seccion={section as Cat} />;
+}
+
+function SeccionMagazine({ seccion }: { seccion: Cat }) {
+  const s = SECCIONES[seccion];
+  const list = bySeccion(seccion);
+  const lead = list.find((p) => p.destacada) ?? list[0];
+  const resto = list.filter((p) => p !== lead);
+  const secundarias = resto.slice(0, 2);
+  const ultimas = resto.slice(2, 8);
+  const chips = preguntas().filter((q) => q.pieza.seccion === seccion).slice(0, 8);
+  const fotos = fotosVisibles().slice(0, 6);
+  const otras = (["despedidas", "cumpleanos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
+
   return (
-    <div className="wrap-wide page" data-seccion={section}>
-      <header className="section-head">
-        <p className="kicker">{s.label}</p>
-        <h1>{s.title}</h1>
-        <p className="lead">{s.intro}</p>
-      </header>
-      {list.length ? (
-        <ul className="cards cards-3">
-          {list.map((p) => (
-            <PiezaCard key={p.slug} p={p} />
-          ))}
-        </ul>
+    <div data-seccion={seccion}>
+      <section className="front-head">
+        <div className="wrap-wide">
+          <p className="kicker">{s.label}</p>
+          <h1>{s.title}</h1>
+          <p className="lead">{s.intro}</p>
+        </div>
+      </section>
+
+      {lead ? (
+        <section className="wrap-wide front-grid" aria-label={`En portada de ${s.label}`}>
+          <article className="lead-story" data-seccion={lead.seccion}>
+            {lead.imagen ? (
+              <div className="lead-foto">
+                <Image src={lead.imagen.src} width={lead.imagen.ancho} height={lead.imagen.alto} alt={lead.imagen.alt} priority sizes="(min-width: 1100px) 640px, 100vw" />
+              </div>
+            ) : (
+              <div className="lead-art" aria-hidden="true">
+                <span>{lead.tag}</span>
+              </div>
+            )}
+            <p className="kicker">{lead.tag}</p>
+            <h2>
+              <Link href={piezaPath(lead)}>{lead.titulo}</Link>
+            </h2>
+            <p className="dek">{lead.dek}</p>
+            <p className="meta">
+              <time dateTime={lead.fecha}>{fechaLarga(lead.fecha)}</time>
+              <span>{minutosLectura(lead)} min</span>
+            </p>
+          </article>
+
+          <div className="secundarias">
+            {secundarias.map((p) => (
+              <article key={p.slug} className="secundaria" data-seccion={p.seccion}>
+                <p className="kicker">{p.tag}</p>
+                <h3>
+                  <Link href={piezaPath(p)}>{p.titulo}</Link>
+                </h3>
+                <p className="deck">{p.dek}</p>
+                <p className="meta">
+                  <time dateTime={p.fecha}>{fechaLarga(p.fecha)}</time>
+                  <span>{minutosLectura(p)} min</span>
+                </p>
+              </article>
+            ))}
+          </div>
+
+          {ultimas.length > 0 && (
+            <aside className="latest" aria-label="Más en esta sección">
+              <h2 className="section-title">Más en {s.label}</h2>
+              <ul>
+                {ultimas.map((p) => (
+                  <li key={p.slug} data-seccion={p.seccion}>
+                    <p className="kicker">{p.tag}</p>
+                    <Link href={piezaPath(p)}>{p.titulo}</Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
+        </section>
       ) : (
-        <p className="deck">Todavía no hay nada aquí. Mándanos el primer enlace desde Contacto.</p>
+        <section className="wrap-wide section">
+          <p className="deck">Todavía no hay nada aquí. Mándanos el primer enlace desde Contacto.</p>
+        </section>
       )}
+
+      {chips.length > 0 && (
+        <section className="preguntas" aria-labelledby="preg-t">
+          <div className="wrap-wide">
+            <h2 id="preg-t" className="section-title">
+              Lo que se pregunta
+            </h2>
+            <ul className="chips-preguntas">
+              {chips.map((q) => (
+                <li key={q.pieza.slug + q.ancla} data-seccion={q.pieza.seccion}>
+                  <Link href={`${piezaPath(q.pieza)}#${q.ancla}`}>{q.pregunta}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {fotos.length > 0 && (
+        <section className="wrap-wide section fotos-home" aria-labelledby="fot-t">
+          <h2 id="fot-t" className="section-title">
+            Fotos chorras
+          </h2>
+          <ul className="tira-fotos">
+            {fotos.map((f) => (
+              <li key={f.src}>
+                <Link href="/fotos/">
+                  <Image src={f.src} width={f.ancho} height={f.alto} alt={f.alt} sizes="(min-width: 1000px) 190px, 45vw" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section className="band">
+        <div className="wrap-wide section">
+          <h2 className="section-title">Sigue por otras secciones</h2>
+          <div className="sections-grid">
+            {otras.map((o) => (
+              <div key={o} className="sec-col" data-seccion={o}>
+                <h3>
+                  <Link href={SECCIONES[o].path}>{SECCIONES[o].label}</Link> <span className="count">{bySeccion(o).length}</span>
+                </h3>
+                <p className="muted">{SECCIONES[o].intro}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -31,7 +31,7 @@
 La idea: cubrir de forma masiva las **preguntas que la gente teclea de verdad y que nadie contesta bien**. Es el
 terreno donde un dominio con autoridad rinde más y donde la competencia (directorios y agencias) no escribe.
 
-**Formato estrella: las «preguntas chotas»** (ya hay 4 posts). Un post por tema con 8–11 preguntas como subtítulos,
+**Formato estrella: las «preguntas chorras»** (ya hay 4 posts). Un post por tema con 8–11 preguntas como subtítulos,
 cada una con una respuesta de 40–70 palabras que realmente ayuda. Los subtítulos con forma de pregunta son los que
 Google reutiliza en «Otras preguntas de los usuarios». Cada post puede aparecer por 10 búsquedas distintas.
 
@@ -39,7 +39,7 @@ Google reutiliza en «Otras preguntas de los usuarios». Cada post puede aparece
 
 | Formato | Ejemplo de titular |
 | --- | --- |
-| Pregunta chota | ¿Se puede ir a una despedida en pijama? |
+| Pregunta chorra | ¿Se puede ir a una despedida en pijama? |
 | Mito o verdad | ¿Es verdad que al novio le toca pagar? |
 | Versus | Barco o casa rural para una despedida: quién gana |
 | Lista absurda | 15 cosas que solo entiende quien organizó una despedida |
@@ -118,7 +118,7 @@ No son volúmenes de búsqueda, sino preguntas plausibles. La prioridad se decid
 
 Un post por herramienta (cuando pases los dominios): qué problema resuelve, cómo se usa y por qué es útil. Son
 posts de alto valor porque convierten visitas en uso real, y cada herramienta puede ser un imán de enlaces propio.
-Se enlazan entre sí y con las preguntas chotas relacionadas.
+Se enlazan entre sí y con las preguntas chorras relacionadas.
 
 ---
 
@@ -204,7 +204,7 @@ Sin enlaces, un dominio nuevo sube despacio. Vías limpias:
 |---|---|---|
 | **WhatsApp** | Botón «Mandar por WhatsApp» en cada post (ya está) | Es donde se organizan las despedidas: el grupo es el canal |
 | **Pinterest** | Pines verticales con el titular de cada post | Pinterest es fuerte en bodas y despedidas y manda tráfico durante meses |
-| **Instagram / TikTok** | Vídeos de 20–30 s: «3 frases chotas para camisetas», «el secuestro falso en 20 segundos» | Un mismo post da 3–4 piezas cortas |
+| **Instagram / TikTok** | Vídeos de 20–30 s: «3 frases chorras para camisetas», «el secuestro falso en 20 segundos» | Un mismo post da 3–4 piezas cortas |
 | **Google Discover** | Imágenes grandes propias (≥1.200 px), titulares con gancho | Puede dar picos de visitas sin posicionar |
 | **Newsletter semanal** | «El marrón de la semana»: suscripción suave al final de cada post | Es lo que hace volver. Requiere aviso de privacidad (ya hay base) |
 
