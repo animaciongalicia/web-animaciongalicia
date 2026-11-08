@@ -58,6 +58,17 @@ export const META_PIEZAS: Record<string, { title: string; description?: string }
   "reencuentro-de-amigos-antiguos-companeros": { title: "Reencuentro de antiguos compañeros: cómo organizarlo" },
   "celebrar-con-amigos-un-aprobado-un-ascenso-un-piso": { title: "Celebrar un aprobado, un ascenso o un piso nuevo" },
   "despedida-de-amigo-que-se-va-a-vivir-fuera": { title: "Despedida de un amigo que se va a vivir fuera" },
+  "ideas-despedidas-originales-a-coruna-dia-y-noche": { title: "Despedidas originales en A Coruña: plan de día y noche" },
+  "despedidas-en-vigo-segun-el-tipo-de-grupo": { title: "Despedidas en Vigo según el tipo de grupo" },
+  "sanxenxo-despedida-de-fin-de-semana-plan-cerrado": { title: "Despedida de fin de semana en Sanxenxo: plan cerrado" },
+  "gincanas-y-escape-rooms-para-despedidas-en-galicia": { title: "Gincanas y escape rooms para despedidas en Galicia" },
+  "actividades-de-aventura-para-despedidas-mar-motor-adrenalina": { title: "Actividades de aventura para despedidas en Galicia" },
+  "despedidas-tranquilas-planes-sin-excesos-grupos-mixtos": { title: "Despedidas tranquilas: planes sin excesos" },
+  "cena-y-fiesta-de-despedida-evitar-el-pack-cutre": { title: "Cena y fiesta de despedida: cómo evitar el pack cutre" },
+  "presupuesto-despedida-como-calcularlo": { title: "Presupuesto de una despedida: cómo calcularlo" },
+  "20-juegos-y-retos-para-despedidas-sin-verguenza-ajena": { title: "20 juegos y retos para despedidas sin vergüenza" },
+  "que-llevar-y-que-no-llevar-a-una-despedida-en-galicia": { title: "Qué llevar y qué no a una despedida en Galicia" },
+  "herramientas-gratis-para-organizar-una-despedida": { title: "Herramientas gratis para organizar una despedida" },
   "bromas-cumpleanos-restaurante": { title: "Bromas y retos para un cumpleaños en un restaurante" },
 };
 

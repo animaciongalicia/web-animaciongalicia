@@ -7,9 +7,20 @@ const B = "http://localhost:3100";
 const res = [];
 const ok = (n, c, x = "") => res.push(`${c ? "OK  " : "FAIL"} ${n} ${x}`);
 
-const GRUPO = ["despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "ginkanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
+const GRUPO = ["test-despedidas.com", "retranca.es", "ruletadespedidas.com", "gastosdespedidas.com", "despedidasgalicia.es", "despedidascoruna.es", "despedidasvigo.com", "despedidas-vigo.es", "despedidasourense.com", "despedidassanxenxo.es", "despedidas-sanxenxo.com", "despedidasplayasanxenxo.com", "despedidasenoporto.com", "despedidasag.com", "ginkanas.es", "humoramarillocoruna.com", "los7pc.com", "monologosgalicia.com", "seagalicia.com", "luxegalicia.com", "suunia.com", "mileventosgalicia.com"];
 const esGrupo = (h) => { try { return GRUPO.includes(new URL(h).hostname); } catch { return false; } };
 const POSTS = [
+  "/despedidas/ideas-despedidas-originales-a-coruna-dia-y-noche/",
+  "/despedidas/despedidas-en-vigo-segun-el-tipo-de-grupo/",
+  "/despedidas/sanxenxo-despedida-de-fin-de-semana-plan-cerrado/",
+  "/juegos/gincanas-y-escape-rooms-para-despedidas-en-galicia/",
+  "/despedidas/actividades-de-aventura-para-despedidas-mar-motor-adrenalina/",
+  "/despedidas/despedidas-tranquilas-planes-sin-excesos-grupos-mixtos/",
+  "/despedidas/cena-y-fiesta-de-despedida-evitar-el-pack-cutre/",
+  "/despedidas/presupuesto-despedida-como-calcularlo/",
+  "/juegos/20-juegos-y-retos-para-despedidas-sin-verguenza-ajena/",
+  "/despedidas/que-llevar-y-que-no-llevar-a-una-despedida-en-galicia/",
+  "/juegos/herramientas-gratis-para-organizar-una-despedida/",
   "/eventos/cena-de-amigos-organizar-sin-caos/",
   "/eventos/cena-de-grupo-restaurante-reservar-y-pagar/",
   "/eventos/fiesta-de-jubilacion-como-celebrarla/",
@@ -150,7 +161,7 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
       const il = await page.$$eval(".mas-sobre:not(.mas-sobre-webs) a", (a) => a.map((x) => x.getAttribute("href")));
       const intr = await page.$$eval(".prose .enlace-interno, .prose .leetambien, .prose .caja-grupo, .prose a[target=_blank]:not(.mas-sobre-webs a)", (a) => a.length);
       ok(`[${name}] ${u} enlaces discretos: 1 línea final con máx. 2 y nada intrusivo en el texto`, il.length <= 2 && intr === 0, `${il.length}/${intr}`);
-      ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= 650, `${info.words}`);
+      ok(`[${name}] ${u} extensión 400–600 palabras`, info.words >= 400 && info.words <= (u.split("/").filter(Boolean).length === 1 ? 900 : 650), `${info.words}`);
       // enlaces internos
       const links = [...new Set(await page.$$eval("main a[href^='/']", (as) => as.map((x) => x.getAttribute("href"))))];
       const bad = [];
@@ -241,7 +252,7 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
 
     // --- Sección: lista con tarjetas
     await page.goto(B + "/juegos/");
-    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".lead-story, .secundaria, .latest li")).length === 7);
+    ok(`[${name}] sección Juegos lista sus posts`, (await page.$$(".lead-story, .secundaria, .latest li, section[aria-label^='Más en'] .card")).length === 10);
 
     // --- Contacto compacto
     await page.goto(B + "/contacto/");

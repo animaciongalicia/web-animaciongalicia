@@ -48,6 +48,8 @@ export type Pieza = {
   ruta?: string;
   /** Webs del grupo relacionadas con el tema (dominios de lib/company.ts). Salen como una línea discreta al final del texto. */
   webs?: string[];
+  /** Texto que precede a la línea de `webs` (por defecto «Si te toca organizarla allí»). */
+  websEtiqueta?: string;
   /** Foto de cabecera (se ve arriba del post, en las tarjetas y en la portada). */
   imagen?: { src: string; ancho: number; alto: number; alt: string; credito?: string };
 };

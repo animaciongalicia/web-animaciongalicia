@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Buscador } from "@/components/Buscador";
+import { PiezaCard } from "@/components/PiezaCard";
 import Link from "next/link";
 import { PiezaView } from "@/components/PiezaView";
 import { SECCIONES } from "@/content/piezas";
@@ -57,6 +58,7 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
   const resto = list.filter((p) => p !== lead);
   const secundarias = resto.slice(0, 2);
   const ultimas = resto.slice(2, 8);
+  const mas = resto.slice(8);
   const chips = preguntas().filter((q) => q.pieza.seccion === seccion).slice(0, 8);
   const otras = (["despedidas", "cumpleanos", "eventos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
 
@@ -134,6 +136,17 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
       ) : (
         <section className="wrap-wide section">
           <p className="deck">Todavía no hay nada aquí. Mándanos el primer enlace desde Contacto.</p>
+        </section>
+      )}
+
+      {mas.length > 0 && (
+        <section className="wrap-wide section" aria-label={`Más en ${s.label}`}>
+          <h2 className="section-title">Más en {s.label}</h2>
+          <ul className="cards cards-3">
+            {mas.map((p) => (
+              <PiezaCard key={p.slug} p={p} />
+            ))}
+          </ul>
         </section>
       )}
 

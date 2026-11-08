@@ -2,6 +2,7 @@ import type { Pieza } from "./types";
 import { PIEZAS_NUEVAS } from "./piezas-nuevas";
 import { PIEZAS_NUEVAS_2 } from "./piezas-nuevas-2";
 import { PIEZAS_EVENTOS } from "./piezas-eventos";
+import { PIEZAS_WP } from "./piezas-wp";
 
 /**
  * Posts de Menú Marrón. Para añadir uno: copia un objeto, cambia el slug y rellena `bloques`.
@@ -1668,6 +1669,42 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "h2",
+        "x": "Cómo elegir las actividades según el grupo"
+      },
+      {
+        "t": "p",
+        "x": "El mayor error no es elegir mal una actividad: es elegirla sin contexto. Antes de decidir nada, piensa qué tipo de grupo sois (tranquilo, fiestero o mixto), cuánto dura la despedida y cuánto presupuesto hay. Una buena idea en el momento equivocado se convierte en un mal rato."
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Divertidas y sociales: juegos y dinámicas para romper el hielo. Mejor al principio del día y cuando no todos se conocen.",
+          "De agua y de verano: muy pedidas en la costa y en temporada buena. Siempre con plan B si el tiempo no acompaña.",
+          "Tranquilas o relajadas: no todas las despedidas buscan adrenalina. Menos actividades, mejor pensadas.",
+          "Gastronómicas: una de las opciones más seguras. Comer juntos une más que cualquier juego, si se hace en el momento adecuado.",
+          "Animaciones y espectáculos: clásicas y eficaces si encajan en el horario y con el grupo.",
+          "De tarde y noche: para cerrar el día cuando el grupo ya ha convivido. Nunca para empezar."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Según el tipo de despedida",
+        "x": [
+          "Tranquila: menos actividades y más sobremesa. El orden importa más que la cantidad.",
+          "Mixta: equilibra para que nadie sienta que esto no va con él.",
+          "De un solo día: todo muy medido, sin margen para errores.",
+          "De fin de semana: más flexibilidad, pero más riesgo de desorganización."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "Y el presupuesto",
+        "x": "Más presupuesto no arregla una mala planificación. Con poco, prioriza la experiencia de grupo; con más, cuida que todo encaje."
+      },
+      {
+        "t": "h2",
         "x": "Cómo montarlo sin que se líe"
       },
       {
@@ -1770,6 +1807,49 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "h2",
+        "x": "Qué tipo de despedida encaja en A Coruña"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Divertida sin excesos: reírse, hacer algo distinto y acabar cenando o saliendo, sin ir al límite. Es la más habitual.",
+          "Tranquila o adulta: comer bien, una actividad suave, paseo y sobremesa larga. Funciona con grupos mixtos.",
+          "Fiestera: hay zonas de copas y buen ambiente nocturno, pero conviene fijar horarios y zonas para no dar vueltas sin rumbo.",
+          "Mixta: la más complicada, porque hay ritmos y edades distintos. Gana quien reparte el día en tramos."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Cuándo ir"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Primavera: buen clima, menos saturación y mucha oferta de planes.",
+          "Verano: ambiente máximo, pero también más demanda. Reservar con antelación es clave.",
+          "Otoño: una época infravalorada, con menos gente y precios más ajustados.",
+          "Invierno: menos habitual, pero viable con planes de interior y cenas organizadas."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Cuatro errores clásicos",
+        "x": [
+          "Pensar que improvisando sale mejor.",
+          "No tener plan alternativo para la lluvia.",
+          "No centralizar las decisiones en una persona.",
+          "No contar los tiempos reales entre un plan y otro."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "El presupuesto, en tres niveles",
+        "x": "Plan sencillo con una actividad; actividad más cena; o experiencia completa. Lo que más falla no es la cifra: es no fijarla desde el principio."
+      },
+      {
+        "t": "h2",
         "x": "El plan B, porque llueve"
       },
       {
@@ -1867,6 +1947,53 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "h2",
+        "x": "Qué tipo de despedida encaja en Vigo"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Tranquila y gastronómica: comer bien, una actividad suave, disfrutar del entorno y cerrar con cena o salida moderada.",
+          "Nocturna: la vida de noche es activa y concentrada; con planificación se combina actividad de día y fiesta sin perder tiempo en desplazamientos.",
+          "Mixta: muy habitual, porque Vigo permite planes equilibrados donde nadie siente que no es su estilo.",
+          "Grupos grandes o pequeños: la clave está en adaptar actividades y horarios al número de personas."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Cuándo ir"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Primavera: temperaturas suaves, menos saturación y mejores precios.",
+          "Verano: más ambiente y más opciones, pero también más demanda. Reserva y ten plan B por si hay viento o lluvia.",
+          "Otoño: buen clima, menos gente y muy buena relación calidad-precio. Perfecto para planes tranquilos o gastronómicos.",
+          "Invierno: posible, con planes de interior, cenas y espectáculos."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "idea",
+        "titulo": "Tres preguntas que se repiten",
+        "x": [
+          "¿Cuántos días? Entre uno y dos, si el plan está bien organizado.",
+          "¿Hace falta coche? Depende, pero muchas despedidas se hacen sin él.",
+          "¿Y si llueve? Siempre conviene tener alternativas de interior."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Errores habituales",
+        "x": [
+          "Reservar tarde pensando que hay de todo.",
+          "No tener alternativa si el tiempo cambia.",
+          "No definir el presupuesto ni centralizar los pagos.",
+          "Improvisar actividades sin conocer los tiempos reales."
+        ]
+      },
+      {
+        "t": "h2",
         "x": "El plan B, porque llueve"
       },
       {
@@ -1952,6 +2079,49 @@ export const piezas: Pieza[] = [
           "De tarde: terraza con vistas y brindis de despedida del sol.",
           "De noche: cena en grupo reservada y copas en la zona de Silgar o del puerto, con dos o tres sitios cerca entre sí."
         ]
+      },
+      {
+        "t": "h2",
+        "x": "Qué tipo de despedida encaja en Sanxenxo"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Fiestera: es su punto fuerte, con ambiente, música y copas. Responde bien si se organiza con cabeza.",
+          "De verano y playa: combinan actividades de agua, comida, tardeo y noche. Muy habituales entre junio y septiembre.",
+          "Mixta con ganas de ambiente: aunque el grupo sea mixto, si el objetivo es moverse, Sanxenxo encaja.",
+          "Tranquila, con matices: se puede, pero hay que elegir bien fechas y zonas. No todo Sanxenxo es ruido."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Cuándo ir"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Junio y julio: buena combinación de ambiente y control. Mucho movimiento, pero todavía manejable.",
+          "Agosto: temporada máxima. Ambiente brutal, poco margen de improvisación y reservar no es opcional.",
+          "Septiembre: una de las mejores épocas, con buen clima y menos saturación.",
+          "Fuera de temporada: posible, con otro enfoque y menos fiesta nocturna."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Errores que se repiten",
+        "x": [
+          "Pensar que ya se verá allí.",
+          "No reservar con antelación en verano.",
+          "No tener alternativa si el mar no acompaña.",
+          "No controlar los tiempos entre un plan y otro."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "Un apunte de presupuesto",
+        "x": "En verano el gasto medio suele ser algo mayor que en otras épocas. Ajustar las expectativas a la cifra real evita el error más común."
       },
       {
         "t": "h2",
@@ -2055,6 +2225,49 @@ export const piezas: Pieza[] = [
       },
       {
         "t": "h2",
+        "x": "Qué tipo de despedida encaja en Ourense"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Tranquila y relajada: es su punto fuerte, con termas, buena comida, paseo y sobremesa larga.",
+          "Gastronómica: comer bien es el centro del plan, con restaurantes, vinos y experiencias alrededor de la mesa.",
+          "Mixta: muy habitual, porque permite planes donde nadie siente que esto no es lo suyo.",
+          "Con fiesta moderada: hay ambiente nocturno, pero no es un destino de macrofiesta. La clave es saber dónde y cuándo."
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Cuándo ir"
+      },
+      {
+        "t": "ul",
+        "x": [
+          "Primavera: buen clima y una ciudad agradable para moverse.",
+          "Verano: ideal para combinar termas, paseos y tarde-noche; mucho mejor que la costa si buscas tranquilidad.",
+          "Otoño: excelente época, con menos gente, buena temperatura y ambiente relajado.",
+          "Invierno: funciona sorprendentemente bien con planes de interior y termas."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "ojo",
+        "titulo": "Errores habituales",
+        "x": [
+          "Pensar que no hace falta organizar nada porque es tranquilo.",
+          "No coordinar horarios entre termas, comidas y actividades.",
+          "No reservar con antelación en fechas clave.",
+          "Subestimar el cansancio del grupo: aquí el ritmo es la clave."
+        ]
+      },
+      {
+        "t": "caja",
+        "tipo": "dato",
+        "titulo": "Todo cerca",
+        "x": "Lo más importante está relativamente cerca, lo que facilita mucho la logística del grupo y permite hacer una despedida completa sin disparar el gasto."
+      },
+      {
+        "t": "h2",
         "x": "El plan B, porque llueve"
       },
       {
@@ -2079,7 +2292,7 @@ export const piezas: Pieza[] = [
   },
 ];
 
-piezas.push(...PIEZAS_NUEVAS, ...PIEZAS_NUEVAS_2, ...PIEZAS_EVENTOS);
+piezas.push(...PIEZAS_NUEVAS, ...PIEZAS_NUEVAS_2, ...PIEZAS_EVENTOS, ...PIEZAS_WP);
 
 export const SECCIONES = {
   despedidas: {

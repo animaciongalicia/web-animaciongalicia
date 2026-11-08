@@ -47,5 +47,13 @@ export const GRUPO: { titulo: string; webs: WebGrupo[] }[] = [
   },
 ];
 
+/** Herramientas gratuitas propias (no son de la agencia, pero se tratan como webs propias: abren en pestaña nueva y sin nofollow). */
+export const HERRAMIENTAS: WebGrupo[] = [
+  { nombre: "Test de despedidas", dominio: "test-despedidas.com", ancla: "test de despedidas", descripcion: "Test rápido para elegir el plan: fiesta, tranquila, mixta, de día o de noche." },
+  { nombre: "Test con retranca", dominio: "retranca.es", ancla: "test con retranca", descripcion: "El test de despedidas, con humor y retranca gallega." },
+  { nombre: "Ruleta de despedidas", dominio: "ruletadespedidas.com", ancla: "ruleta para el grupo", descripcion: "Ruleta de retos para animar al grupo antes del viaje." },
+  { nombre: "Calculadora de gastos", dominio: "gastosdespedidas.com", ancla: "calculadora de gastos", descripcion: "Para repartir los gastos de la despedida sin discusiones." },
+];
+
 export const urlGrupo = (dominio: string) => `https://${dominio}`;
-export const webGrupo = (dominio: string) => GRUPO.flatMap((g) => g.webs).find((w) => w.dominio === dominio);
+export const webGrupo = (dominio: string) => [...GRUPO.flatMap((g) => g.webs), ...HERRAMIENTAS].find((w) => w.dominio === dominio);
