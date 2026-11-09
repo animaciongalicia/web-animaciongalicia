@@ -7,9 +7,10 @@ import Link from "next/link";
 import { PiezaView } from "@/components/PiezaView";
 import { SECCIONES } from "@/content/piezas";
 import { META_SECCIONES } from "@/content/seo-meta";
+import { SITUACIONES_SECCION } from "@/content/galicia";
 import { absoluteUrl } from "@/lib/site";
 import { metadataPieza } from "@/lib/seo";
-import { bySeccion, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, preguntas, visibles } from "@/lib/piezas";
+import { bySeccion, bySlug, conRuta, fechaLarga, getPorRaiz, minutosLectura, piezaPath, preguntas, visibles } from "@/lib/piezas";
 
 export const dynamicParams = false;
 
@@ -60,23 +61,49 @@ function SeccionMagazine({ seccion }: { seccion: Cat }) {
   const ultimas = resto.slice(2, 8);
   const mas = resto.slice(8);
   const chips = preguntas().filter((q) => q.pieza.seccion === seccion).slice(0, 8);
+  const situ = SITUACIONES_SECCION[seccion];
   const otras = (["despedidas", "cumpleanos", "eventos", "regalos", "juegos"] as const).filter((x) => x !== seccion);
 
   return (
     <div data-seccion={seccion}>
       <section className="front-head">
-        <div className="wrap-wide">
-          <p className="kicker">{s.label}</p>
-          <h1>{s.title}</h1>
-          <p className="lead">{s.intro}</p>
-          {"lineas" in s && (
-            <ul className="lineas-seccion">
-              {(s.lineas as readonly string[]).map((l) => (
-                <li key={l}>{l}</li>
-              ))}
-            </ul>
+        <div className="wrap-wide front-head-grid">
+          <div>
+            <p className="kicker">{s.label}</p>
+            <h1>{s.title}</h1>
+            <p className="lead">{s.intro}</p>
+            {"lineas" in s && (
+              <ul className="lineas-seccion">
+                {(s.lineas as readonly string[]).map((l) => (
+                  <li key={l}>{l}</li>
+                ))}
+              </ul>
+            )}
+            <Buscador items={visibles().map((p) => ({ t: p.titulo, d: p.dek, tag: p.tag, sec: p.seccion, href: piezaPath(p) }))} />
+          </div>
+          {situ && (
+            <nav className="situaciones" aria-labelledby="sit-t">
+              <h2 id="sit-t" className="section-title">
+                {situ.titulo}
+              </h2>
+              <ul>
+                {situ.items.map((it, i) => {
+                  const pz = bySlug(it.slug);
+                  return pz ? (
+                    <li key={it.slug} data-seccion={pz.seccion}>
+                      <Link href={piezaPath(pz)}>
+                        <span className="num" aria-hidden="true">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <strong>{it.texto}</strong>
+                        <span className="sub">{it.sub} →</span>
+                      </Link>
+                    </li>
+                  ) : null;
+                })}
+              </ul>
+            </nav>
           )}
-          <Buscador items={visibles().map((p) => ({ t: p.titulo, d: p.dek, tag: p.tag, sec: p.seccion, href: piezaPath(p) }))} />
         </div>
       </section>
 

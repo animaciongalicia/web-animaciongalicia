@@ -221,6 +221,16 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     const faq = await page.$$eval('script[type="application/ld+json"]', (s) => s.map((x) => JSON.parse(x.textContent)).filter((j) => j["@type"] === "FAQPage"));
     ok(`[${name}] post de preguntas lleva FAQPage con pregunta y respuesta`, faq.length === 1 && faq[0].mainEntity.length >= 5 && faq[0].mainEntity.every((q) => q.name && q.acceptedAnswer.text), String(faq[0]?.mainEntity?.length));
 
+    // --- «¿Qué ... te ha tocado?» en la cabecera de cada sección
+    for (const u of ["/cumpleanos/", "/eventos/", "/regalos/", "/juegos/"]) {
+      await page.goto(B + u);
+      const fichas = await page.$$eval(".situaciones a", (a) => a.map((x) => x.getAttribute("href")));
+      const titulo = await page.textContent(".situaciones h2");
+      let malas = 0;
+      for (const h of fichas) { const r = await page.request.get(B + h, { maxRedirects: 0 }); if (r.status() !== 200) malas++; }
+      ok(`[${name}] ${u} cabecera con 6 fichas «${titulo}» que llevan a posts reales`, fichas.length === 6 && malas === 0, `${fichas.length} fichas, ${malas} rotas`);
+    }
+
     // --- Archivo de Despedidas y buscador
     await page.goto(B + "/despedidas/");
     ok(`[${name}] archivo /despedidas/ lista todos los posts de la sección`, (await page.$$(".cards .card")).length >= 16, String((await page.$$(".cards .card")).length));
