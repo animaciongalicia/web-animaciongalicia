@@ -508,3 +508,5 @@ ul, ol { padding-left: 1.2em; }
 .legal-bar a { color: #4f4a3f; }
 .legal-bar a:hover { color: #5a3921; }
 @media (max-width: 640px) { .legal-bar li { padding: 0 10px; } .legal-bar li:first-child { padding-left: 0; } }
+.foot-ciudades { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.foot-ciudades a { display: inline-block; padding: 5px 10px; border: 1px solid #b9ae94; border-radius: 999px; font-family: var(--font-ui); font-size: 0.78rem; background: #f5f0e2; }

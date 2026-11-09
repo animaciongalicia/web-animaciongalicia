@@ -5,7 +5,7 @@ import { GA_ACTIVO } from "@/lib/analytics";
 import { SECCIONES } from "@/content/piezas";
 import type { Seccion } from "@/content/types";
 import { bySeccion, bySlug, piezaPath } from "@/lib/piezas";
-import { SITE, withBase } from "@/lib/site";
+import { withBase } from "@/lib/site";
 
 const ORDEN: Seccion[] = ["despedidas", "cumpleanos", "eventos", "regalos", "juegos"];
 
@@ -26,8 +26,15 @@ const EMPIEZA = [
   { texto: "Qué llevar a una despedida en Galicia", slug: "que-llevar-y-que-no-llevar-a-una-despedida-en-galicia" },
 ];
 
+const CIUDADES = [
+  { texto: "A Coruña", slug: "despedida-en-a-coruna-que-hacer-de-loco" },
+  { texto: "Vigo", slug: "despedida-en-vigo-que-hacer-de-loco" },
+  { texto: "Sanxenxo", slug: "despedida-en-sanxenxo-que-hacer-de-loco" },
+];
+
 export function Footer() {
   const empieza = EMPIEZA.map((e) => ({ ...e, pieza: bySlug(e.slug) })).filter((e) => e.pieza);
+  const ciudades = CIUDADES.map((e) => ({ ...e, pieza: bySlug(e.slug) })).filter((e) => e.pieza);
   return (
     <footer className="site-footer">
       <div className="wrap-wide">
@@ -43,10 +50,18 @@ export function Footer() {
               Menudo marrón organizar este evento. Ideas, retos y consejos para despedidas de soltero y de soltera,
               cumpleaños, cenas y celebraciones con amigos. Hecha en Galicia, con humor y sin humo.
             </p>
-            <p className="small">
-              {SITE.signature.replace("Animación Galicia", "")}
-              <Link href="/como-trabajamos/">Animación Galicia</Link>.
-            </p>
+            <nav aria-label="Despedidas por ciudad">
+              <p className="foot-title" style={{ marginTop: 14, marginBottom: 6 }}>
+                Despedidas por ciudad
+              </p>
+              <ul className="foot-ciudades">
+                {ciudades.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={piezaPath(c.pieza!)}>{c.texto}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <nav aria-label="Secciones de la revista">
