@@ -175,7 +175,7 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     await page.goto(B + "/regalos/frases-para-camisetas-despedida/");
     await page.screenshot({ path: `${OUT}/v5-${name}-post-camisetas-full.png`, fullPage: true });
 
-    // --- Pie: 4 columnas 2/5 + 1/5 + 1/5 + 1/5 y barra legal con líneas verticales
+    // --- Pie: 4 columnas iguales (4/4) y barra legal con líneas verticales
     await page.goto(B + "/");
     const f = await page.evaluate(() => {
       const cols = [...document.querySelectorAll(".foot-grid > *")].map((e) => e.getBoundingClientRect());
@@ -187,7 +187,7 @@ const OTHER = ["/", "/cumpleanos/", "/eventos/", "/regalos/", "/juegos/", "/cont
     });
     if (name === "escritorio") {
       const [a, b, c, d] = f.cols;
-      ok(`[escritorio] pie: 4 columnas, la primera ≈ 2× las otras`, f.cols.length === 4 && Math.abs(a / b - 2) < 0.15 && Math.abs(b - c) < 4 && Math.abs(c - d) < 4, JSON.stringify(f.cols));
+      ok(`[escritorio] pie: 4 columnas iguales`, f.cols.length === 4 && Math.abs(a - b) < 4 && Math.abs(b - c) < 4 && Math.abs(c - d) < 4, JSON.stringify(f.cols));
     }
     ok(`[${name}] pie: barra legal al final con separadores verticales`, f.li.slice(1).every((x) => x.bl !== "0px") && f.barTop >= f.colBottom, JSON.stringify(f.li.map((x) => x.t)));
     const legal = await page.$$eval(".legal-bar a", (a) => a.map((x) => x.getAttribute("href")));

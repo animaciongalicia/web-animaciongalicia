@@ -490,7 +490,7 @@ ul, ol { padding-left: 1.2em; }
 .site-footer { background: #ebe4d2; color: var(--ink); padding: 44px 0 0; margin-top: 72px; border-top: 4px solid #5a3921; }
 .foot-grid { display: grid; gap: 34px; grid-template-columns: 1fr; padding-bottom: 36px; }
 @media (min-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
-@media (min-width: 960px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; } .foot-brand { grid-column: auto; } }
+@media (min-width: 960px) { .foot-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; } .foot-brand { grid-column: auto; } }
 .foot-marca { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
 .foot-marca img { width: 44px; height: 44px; display: block; }
 .foot-logo { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin: 0; line-height: 1; }
