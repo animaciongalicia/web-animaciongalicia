@@ -301,23 +301,7 @@ ul, ol { padding-left: 1.2em; }
 .marcas .web { font-family: var(--font-ui); font-size: 0.85rem; }
 
 /* Pie: 4 columnas (2/5 + 1/5 + 1/5 + 1/5) y barra legal con líneas verticales */
-.site-footer { background: #201e1a; color: #e9e4d8; padding: 48px 0 0; margin-top: 72px; }
-.foot-grid { display: grid; gap: 32px; grid-template-columns: 1fr; padding-bottom: 40px; }
-@media (min-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
-@media (min-width: 960px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; } .foot-brand { grid-column: auto; } }
-.foot-logo { font-size: 2.2rem; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px; line-height: 1; }
-.foot-logo em { font-style: italic; font-weight: 500; color: #e3a79c; }
-.foot-title { font-family: var(--font-ui); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 12px; color: #bdb6a4; }
-.site-footer nav ul { list-style: none; margin: 0; padding: 0; }
-.site-footer nav li { padding: 5px 0; font-size: 1rem; }
-.site-footer a { color: #e9e4d8; text-decoration: none; }
-.site-footer a:hover { color: #fff; text-decoration: underline; }
 .small { font-size: 0.95rem; color: #cfc8b8; margin: 0 0 8px; max-width: 52ch; }
-.legal-bar { list-style: none; margin: 0; padding: 18px 0 26px; border-top: 1px solid #3a3731; display: flex; flex-wrap: wrap; gap: 6px 0; font-family: var(--font-ui); font-size: 0.72rem; color: #9d9686; }
-.legal-bar li { padding: 0 14px; border-left: 1px solid #4a463e; line-height: 1.2; }
-.legal-bar li:first-child { padding-left: 0; border-left: 0; }
-.legal-bar a { color: #9d9686; }
-.legal-bar a:hover { color: #e9e4d8; }
 
 /* Contacto compacto: 3 formularios en columnas (escritorio) o pestañas (móvil) */
 .contact-tabs { display: flex; gap: 6px; margin: 0 0 14px; flex-wrap: wrap; }
@@ -482,7 +466,6 @@ ul, ol { padding-left: 1.2em; }
 .more { display: inline-block; padding: 10px 0; }
 .link-btn { padding: 10px 0; min-height: 40px; }
 .legal-bar a, .legal-bar .link-btn { display: inline-block; padding: 10px 0; }
-.foot-grid a { display: inline-block; padding: 6px 0; }
 
 /* Buscador y temas */
 .buscador { margin: 18px 0 8px; max-width: 40rem; }
@@ -502,3 +485,28 @@ ul, ol { padding-left: 1.2em; }
 .descargas { margin: 1.6rem 0 0; padding: 12px 16px; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--sec); }
 .descargas ul { margin: 6px 0 0; padding-left: 1.1rem; }
 .descargas li { margin: 4px 0; }
+
+/* Pie: claro y cálido, con el marrón de la marca como filete superior */
+.site-footer { background: #ebe4d2; color: var(--ink); padding: 44px 0 0; margin-top: 72px; border-top: 4px solid #5a3921; }
+.foot-grid { display: grid; gap: 34px; grid-template-columns: 1fr; padding-bottom: 36px; }
+@media (min-width: 640px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
+@media (min-width: 960px) { .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; } .foot-brand { grid-column: auto; } }
+.foot-marca { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
+.foot-marca img { width: 44px; height: 44px; display: block; }
+.foot-logo { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin: 0; line-height: 1; }
+.foot-logo em { font-style: italic; font-weight: 500; color: #5a3921; }
+.foot-title { font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 12px; color: #5a3921; }
+.site-footer .small { font-size: 0.95rem; color: #3b372f; max-width: 36rem; }
+.foot-ciudades { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.foot-ciudades a { display: inline-block; padding: 5px 10px; border: 1px solid #b9ae94; border-radius: 999px; font-family: var(--font-ui); font-size: 0.78rem; background: #f5f0e2; }
+.site-footer nav ul { list-style: none; margin: 0; padding: 0; }
+.site-footer nav li { padding: 4px 0; font-size: 1rem; }
+.site-footer nav li small { display: block; font-family: var(--font-ui); font-size: 0.78rem; color: #5d594f; line-height: 1.3; }
+.site-footer a { color: var(--ink); text-decoration: none; }
+.site-footer a:hover { color: #5a3921; text-decoration: underline; }
+.legal-bar { list-style: none; margin: 0; padding: 14px 0 22px; border-top: 1px solid #c9bfa6; display: flex; flex-wrap: wrap; gap: 6px 0; font-family: var(--font-ui); font-size: 0.78rem; color: #4f4a3f; }
+.legal-bar li { padding: 0 14px; border-left: 1px solid #a99e84; line-height: 1.2; }
+.legal-bar li:first-child { padding-left: 0; border-left: 0; }
+.legal-bar a { color: #4f4a3f; }
+.legal-bar a:hover { color: #5a3921; }
+@media (max-width: 640px) { .legal-bar li { padding: 0 10px; } .legal-bar li:first-child { padding-left: 0; } }
